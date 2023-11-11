@@ -20,7 +20,7 @@ const words = [
         pro02 : "\\H\\Birthday:\\h\\ May 23",
         pro03 : "\\H\\Country/Region:\\h\\ International",
         pro04 : "\\H\\Language:\\h\\ English, Chinese, Japanese (Studying)",
-        pro05 : "\\H\\Hobbies and Interests:\\h\\ Games (Mainly RPG, Sandbox Games, Rhythm Games, Incremental Games, Chess), Anime, Music, Western Culture, Japanese Culture, Programming, Making Games, Composing, Writing, Mathematics (Mainly Set Theory, Googology and Computer Science), Natural Science， Linguistics, Cooking",
+        pro05 : "\\H\\Hobbies and Interests:\\h\\ Games (Mainly RPG, Sandbox Games, Rhythm Games, Incremental Games, Chess), Anime, Music, Western Culture, Japanese Culture, Programming, Making Games, Composing, Writing, Mathematics (Mainly Set Theory, Googology and Computer Science), Natural Science, Linguistics, Cooking",
         pro06 : "\\H\\Things I Hate:\\h\\ Unreasonable Restrictions and Rules, Threats, Traumas, Politics, History, Some Music",
         pro07 : "I'm a netizen with wide interests,",
         pro08 : "and I like to share some of my ideas with everyone on the internet.",
