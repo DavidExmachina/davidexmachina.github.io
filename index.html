@@ -1,9 +1,73 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>NOT_AVAILABLE</title>
+        <meta charset="UTF-8">
+        <meta name="author" content="David_Exmachina">
+        <meta name="description" content="David_Exmachina's Official Website - Under Construction">
+        <title id="title">David_Exmachina</title>
+        <link rel="icon" href="RESOURCE/icon.png">
+        <link rel="stylesheet" href="main.css">
+        <script src="words.js"></script>
+        <script src="DATA/blogs.js"></script>
+        <script src="DATA/articles.js"></script>
+        <script src="main.js"></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </head>
     <body>
-        When the time comes, I will wake up.
+        <div class="logo"><img id="img-logo" src="RESOURCE/logo0.png" alt></div>
+        <div class="setting">
+            <div class="lang">
+                <div id="lang-tab" class="lang-button0" onclick="open_lang();"><p id="lang" class="lang-words"></p></div>
+                <div id="lang-window"></div>
+            </div>
+            <img id="img-lang" src="RESOURCE/lang0.png" alt width="48" height="48">
+            <img id="img-bright" src="RESOURCE/bright0.png" alt width="48" height="48" onclick="change_bright();">
+        </div>
+        <div class="menu">
+            <div class="menu-split"></div>
+            <div id="m0" class="menu-button" onclick="change_section(0);">
+                <div class="menu-text1">HOME</div>
+                <div id="menu0" class="menu-text2"></div>
+            </div>
+            <div class="menu-split"></div>
+            <div id="m1" class="menu-button" onclick="change_section(1);">
+                <div class="menu-text1">PROFILE</div>
+                <div id="menu1" class="menu-text2"></div>
+            </div>
+            <div class="menu-split"></div>
+            <div id="m2" class="menu-button" onclick="change_section(2);">
+                <div class="menu-text1">PROJECTS</div>
+                <div id="menu2" class="menu-text2"></div>
+            </div>
+            <div class="menu-split"></div>
+            <div id="m3" class="menu-button" onclick="change_section(3);">
+                <div class="menu-text1">ARTICLES</div>
+                <div id="menu3" class="menu-text2"></div>
+            </div>
+            <div class="menu-split"></div>
+        </div>
+        <div id="content">
+            <div class="blog">
+                <div class="blog-left">
+                    <div class="blog-lines">
+                        <div class="blog-time">AAA</div>
+                        <div class="blog-content">
+                            <p>AAA</p>
+                            <p>AAA</p>
+                            <p>AAA</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="blog-right">
+                    <div class="blog-window">
+                        <p>AAA</p>
+                        <p>AAA</p>
+                        <p>AAA</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>main();</script>
     </body>
 </html>
