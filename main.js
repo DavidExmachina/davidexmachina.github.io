@@ -95,8 +95,6 @@ function set_lang(){
 }
 
 function set_home(){
-    //return;
-    //document.getElementById("content").innerHTML = "";
     var text = "\n", top = null, i2;
     text += `${sp(12)}<div class="blog">\n`;
     text += `${sp(16)}<div class="blog-left">\n`;
