@@ -5,7 +5,7 @@ body {
     color: #ffffff;
     margin: 0px 0px 0px 0px;
     padding: 0px 0px 0px 0px;
-    font-family: 'Times New Roman', SimSun;
+    font-family: "Times New Roman", SimSun;
     font-size: 24px;
 }
 .logo {
@@ -155,8 +155,13 @@ body {
     font-weight: bold;
     display: inline;
 }
+.warning {
+    height: 32px;
+    margin: 8px 0px 8px 0px;
+    color: #ff0000;
+}
 .blog {
-    margin: 32px 0px 0px 0px;
+    margin: 32px 32px 30px 32px;
     display: flex;
     justify-content: center;
 }
@@ -164,13 +169,24 @@ body {
     width: 960px;
 }
 .blog-lines {
-    margin: 2px 2px 2px 2px;
+    margin: 2px 2px 4px 2px;
     padding: 1px 1px 1px 1px;
     background-color: #0060c0;
 }
-.blog-time {
+.blog-info {
     height: 32px;
     margin: 5px 13px 8px 13px;
+    display: flex;
+    justify-content: space-between;
+}
+.blog-pin {
+    display: grid;
+    grid-template-columns: 1fr 32px;
+}
+.blog-comment {
+    height: 32px;
+    margin: 8px 13px 8px 13px;
+    cursor: pointer;
 }
 .blog-content {
     padding: 16px 13px 13px 13px;
@@ -180,14 +196,14 @@ body {
     width: 320px;
 }
 .blog-window {
-    margin: 8px 8px 8px 8px;
+    margin: 8px 8px 10px 8px;
     padding: 24px 24px 24px 24px;
     height: 512px;
     background-color: #0060c0;
     border-radius: 8px;
 }
 .blog-text {
-    margin: 0px 0px 0px 0px;
+    margin: 8px 0px 8px 0px;
 }
 
 /* PROFILE */
@@ -226,21 +242,20 @@ body {
 /* ARTICLE */
 
 .article {
-    margin: 32px 0px 0px 0px;
+    margin: 32px 32px 30px 32px;
     display: flex;
     justify-content: center;
 }
-.article-list {
+.article-line {
     width: 1248px;
     height: 48px;
-    margin: 2px 32px 2px 32px;
+    margin: 2px 0px 4px 0px;
     padding: 6px 16px 6px 16px;
     background-color: #0060c0;
     cursor: pointer;
 }
 .article-page {
     width: 1280px;
-    margin: 0px 32px 0px 32px;
     background-color: #0060c0;
 }
 .article-head {
@@ -270,5 +285,5 @@ body {
     background-color: #000000;
 }
 .article-text {
-    margin: 0px 0px 0px 0px;
+    margin: 8px 0px 8px 0px;
 }

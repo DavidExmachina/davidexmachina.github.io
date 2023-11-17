@@ -9,7 +9,7 @@ function intdiv(a, b){return (a - a % b) / b;}
 
 function sp(n){return " ".repeat(n);}
 
-function z(n, d){return n.toString().padStart(d, '0');}
+function z(n, d){return n.toString().padStart(d, "0");}
 
 function replaceall(text, match, target){
     var result = text;
@@ -83,8 +83,8 @@ function set_lang(){
     text = `\n${sp(16)}`;
     if (temp.lang_open){
         for (let i = 0; i < 4; i++){
-            text += `${sp(20)}<div class="lang-button${data.bright}${(data.lang === i ? "-triggered" : "")}`;
-            text += `" onclick="open_lang(${i});"><p class="lang-words">${words[i].lang}</p></div>`;
+            text += `${sp(20)}<div class="lang-button${data.bright}${(data.lang === i ? "-triggered" : "")}"`;
+            text += ` onclick="open_lang(${i});"><p class="lang-words">${words[i].lang}</p></div>`;
         }
     }
     document.getElementById("lang-window").innerHTML = text;
@@ -95,12 +95,12 @@ function set_lang(){
 }
 
 function set_home(){
-    var text = "\n", top = null, i2;
+    var text = "\n", top = null, i2, l2;
     text += `${sp(12)}<div class="blog">\n`;
     text += `${sp(16)}<div class="blog-left">\n`;
     for (let i = 0; i < blogs.length; i++){
         if (temp.now < blogs[i].time) continue;
-        if (blogs[i].top){top = i; break;}
+        if (blogs[i].pinned){top = i; break;}
     }
     for (let i = blogs.length - 1; i >= 0; i--){
         if (top === null) i2 = i;
@@ -109,12 +109,39 @@ function set_home(){
         else i2 = i;
         if (temp.now < blogs[i2].time) continue;
         text += `${sp(20)}<div class="blog-lines">\n`;
-        text += `${sp(24)}<div class="blog-time">${get_time(blogs[i2].time)}</div>\n`;
-        text += `${sp(24)}<div class="blog-content">\n`;
-        for (let j = 0; j < blogs[i2].content[data.lang].length; j++){
-            text += `${sp(28)}<p class="blog-text">${blogs[i2].content[data.lang][j]}</p>\n`;
+        text += `${sp(24)}<div class="blog-info">\n`;
+        text += `${sp(28)}${get_time(blogs[i2].time)}\n`;
+        if (i2 === top){
+            text += `${sp(28)}<div class="blog-pin">\n`;
+            text += `${sp(32)}<div>${words[data.lang].blog0}</div>\n`;
+            text += `${sp(32)}<img id="img-pin" src="RESOURCE/pin0.png" alt width="32" height="32">\n`;
+            text += `${sp(28)}</div>\n`;
         }
-        text += `${sp(24)}</div>\n${sp(20)}</div>\n`;
+        text += `${sp(24)}</div>\n`;
+        text += `${sp(24)}<div class="blog-content">\n`;
+        if (blogs[i2].default === null) l2 = 0;
+        else if (blogs[i2].content[data.lang] !== null) l2 = data.lang;
+        else {
+            l2 = blogs[i2].default;
+            text += `${sp(28)}<p class="warning">${words[data.lang].blog1}</p>\n`;
+        }
+        if (blogs[i2].content[l2] !== null) for (let j = 0; j < blogs[i2].content[l2].length; j++){
+            text += `${sp(28)}<p class="blog-text">${blogs[i2].content[l2][j]}</p>\n`;
+        }
+        text += `${sp(24)}</div>\n`;
+        if (blogs[i2].comment[data.lang] !== null){
+            text += `${sp(24)}<div class="blog-comment" onclick="check_comment(${i2});">\n`;
+            text += `${sp(28)}${words[data.lang][`blog${temp.comment.includes(i2) ? 3 : 2}`]}\n`;
+            text += `${sp(24)}</div>\n`;
+            if (temp.comment.includes(i2)){
+                text += `${sp(24)}<div class="blog-content">\n`;
+                for (let j = 0; j < blogs[i2].comment[data.lang].length; j++){
+                    text += `${sp(28)}<p class="blog-text">${blogs[i2].comment[data.lang][j]}</p>\n`;
+                }
+                text += `${sp(24)}</div>\n`;
+            }
+        }
+        text += `${sp(20)}</div>\n`;
     }
     text += `${sp(16)}</div>\n${sp(16)}<div class="blog-right">\n`;
     text += `${sp(20)}<div class="blog-window">\n`;
@@ -150,23 +177,34 @@ function set_projects(){
 }
 
 function set_articles(){
-    var text = `\n${sp(12)}<div class="article">\n`;
+    var text = `\n${sp(12)}<div class="article">\n`, l2;
     if (get_para("id") === null){
+        text += `${sp(16)}<div>\n`;
         for (let i = articles.length - 1; i >= 0; i--){
             if (temp.now < articles[i].time) continue;
-            text += `${sp(16)}<div class="article-list" onclick="open_article(${i});">\n`;
-            text += `${sp(20)}<div class="article-title">${articles[i].title[data.lang]}</div>\n`;
-            text += `${sp(20)}<div class="article-info">\n`;
-            text += `${sp(24)}<div>${get_time(articles[i].time)}</div>\n`;
-            text += `${sp(24)}<div>${articles[i].series}</div>\n`;
+            text += `${sp(20)}<div class="article-line" onclick="open_article(${i});">\n`;
+            if (articles[i].default === null) l2 = 0;
+            else if (articles[i].title[data.lang] !== null) l2 = data.lang;
+            else l2 = articles[i].default;
+            if (articles[i].title[l2] !== null){
+                text += `${sp(24)}<div class="article-title">${articles[i].title[l2]}</div>\n`;
+            } else text += `${sp(24)}<div class="article-title"></div>\n`;
+            text += `${sp(24)}<div class="article-info">\n`;
+            text += `${sp(28)}<div>${get_time(articles[i].time)}</div>\n`;
+            text += `${sp(28)}<div>${articles[i].series}</div>\n`;
+            text += `${sp(24)}</div>\n`;
             text += `${sp(20)}</div>\n`;
-            text += `${sp(16)}</div>\n`;
         }
     } else {
         text += `${sp(16)}<div class="article-page">\n`;
         text += `${sp(20)}<div class="article-head">\n`;
         text += `${sp(24)}<div class="article-title-button">\n`;
-        text += `${sp(28)}<div>${articles[get_para("id")].title[data.lang]}</div>\n`;
+        if (articles[get_para("id")].default === null) l2 = 0;
+        else if (articles[get_para("id")].title[data.lang] !== null) l2 = data.lang;
+        else l2 = articles[get_para("id")].default;
+        if (articles[get_para("id")].title[l2] !== null){
+            text += `${sp(28)}<div>${articles[get_para("id")].title[l2]}</div>\n`;
+        } else text += `${sp(28)}<div></div>\n`;
         text += `${sp(28)}<img id="img-left" src="RESOURCE/left2.png" alt width="32" height="32" onclick="">\n`;
         text += `${sp(28)}<img id="img-right" src="RESOURCE/right2.png" alt width="32" height="32" onclick="">\n`;
         text += `${sp(28)}<img id="img-back" src="RESOURCE/back0.png" alt width="32" height="32" onclick="open_article();">\n`;
@@ -177,12 +215,18 @@ function set_articles(){
         text += `${sp(24)}</div>\n`;
         text += `${sp(20)}</div>\n`;
         text += `${sp(20)}<div class="article-body">\n`;
-        for (let i = 0; i < articles[get_para("id")].content[data.lang].length; i++){
-            text += `${sp(24)}<p class="article-text">${articles[get_para("id")].content[data.lang][i]}</p>\n`;
+        if (articles[get_para("id")].default === null) l2 = 0;
+        else if (articles[get_para("id")].content[data.lang] !== null) l2 = data.lang;
+        else {
+            l2 = articles[get_para("id")].default;
+            text += `${sp(24)}<p class="warning">${words[data.lang].blog1}</p>\n`;
         }
-        text += `${sp(20)}</div>\n${sp(16)}</div>\n`;
+        if (articles[get_para("id")].content[l2] !== null) for (let i = 0; i < articles[get_para("id")].content[l2].length; i++){
+            text += `${sp(24)}<p class="article-text">${articles[get_para("id")].content[l2][i]}</p>\n`;
+        }
+        text += `${sp(20)}</div>\n`;
     }
-    text += `${sp(12)}</div>\n${sp(8)}`;
+    text += `${sp(16)}</div>\n${sp(12)}</div>\n${sp(8)}`;
     document.getElementById("content").innerHTML = text;
 }
 
@@ -204,6 +248,10 @@ function set_bright(){
         text[i].style.color = (data.bright ? "#0080ff": "#00ffff");
     }
     if (get_section() == 0){
+        text = document.querySelectorAll("#img-pin");
+        for (let i = 0; i < text.length; i++){
+            text[i].src = `RESOURCE/pin${data.bright}.png`;
+        }
         text = document.querySelectorAll(".blog-lines");
         for (let i = 0; i < text.length; i++){
             text[i].style.backgroundColor = (data.bright ? "#00c0c0": "#0060c0");
@@ -216,7 +264,7 @@ function set_bright(){
     }
     if (get_section() == 3){
         if (get_para("id") === null){
-            text = document.querySelectorAll(".article-list");
+            text = document.querySelectorAll(".article-line");
             for (let i = 0; i < text.length; i++){
                 text[i].style.backgroundColor = (data.bright ? "#00c0c0": "#0060c0");
             }
@@ -231,11 +279,17 @@ function set_bright(){
     }
 }
 
+function set_math(){
+    try {MathJax.typeset();}
+    catch {}
+}
+
 function refresh(){
     set_page();
     set_lang();
     [set_home, set_profile, set_projects, set_articles][get_section()]();
     set_bright();
+    set_math();
 }
 
 // TIME
@@ -272,6 +326,7 @@ function load_data(){
 
 function change_lang(lang){
     data.lang = lang;
+    temp.comment = [];
     refresh();
     save_data();
 }
@@ -305,6 +360,7 @@ function change_section(n = 0){
     if (get_section() == n) return;
     window.history.replaceState(null, null, "?section=" + n);
     temp.lang_open = false;
+    temp.comment = [];
     get_now();
     refresh();
 }
@@ -313,6 +369,14 @@ function open_article(id = null){
     if (get_para("id") == id) return;
     window.history.replaceState(null, null, "?section=3" + (id === null ? "" : "&id=" + id));
     temp.lang_open = false;
+    temp.comment = [];
     get_now();
+    refresh();
+}
+
+function check_comment(id){
+    if (temp.comment.includes(id)) temp.comment = temp.comment.filter(function (n){return n !== id});
+    else temp.comment.push(id);
+    temp.comment.sort();
     refresh();
 }
