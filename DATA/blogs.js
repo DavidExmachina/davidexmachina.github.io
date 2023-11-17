@@ -1,0 +1,118 @@
+const blogs = [
+    {
+        class: 0,
+        time: Date.UTC(2023, 11 - 1, 11, 12, 0, 0, 0),
+        pinned: false,
+        default: 0,
+        content: [
+            [
+                `Hello everybody. I'm David_Exmachina.`,
+                `After days of hard work, I've finally completed my website.`,
+                `Although it looks kinda ugly for now,`,
+                `I will continue to improve this.`,
+                `I don't know what to do next,`,
+                `but I'm looking forward to do something exciting in the future.`,
+            ],
+            [
+                `初次见面，我是David_Exmachina。`,
+                `经过好几天的努力，我终于把个人网站给完成了。`,
+                `虽然目前这个网站看上去很丑，`,
+                `但是接下来我会继续优化这个网站的。`,
+                `虽然我不知道接下来要做什么，`,
+                `但是接下来请大家多多指教。`,
+            ],
+            [
+                `初次見面，我是David_Exmachina。`,
+                `經過好幾天的努力，我終於把個人網站給完成了。`,
+                `雖然目前這個網站看起來很醜，`,
+                `但是接下來我會繼續優化這個網站的。`,
+                `雖然我不知道接下來要做什麼，`,
+                `但是接下來請大家多多指教。`,
+            ],
+            [
+                `初めまして。David_Exmachinaと申します。`,
+                `数日間の苦労の末、ついにホームページが完成しました。`,
+                `今のところ、このサイトはちょっと醜いだけど、`,
+                `今後もこのサイトを改善していきます。`,
+                `あとは何をするのか分からないだけど、`,
+                `これからよろしくお願いします。`,
+            ],
+        ],
+        comment: [
+            null,
+            null,
+            null,
+            null,
+        ]
+    },
+    {
+        class: 0,
+        time: Date.UTC(2023, 11 - 1, 21, 12, 0, 0, 0),
+        pinned: false,
+        default: 0,
+        content: [
+            [
+                `To the scarlet streak of light`,
+                `To the one that breaks the silence`,
+                `You illuminate the night`,
+                `In most awe-inspiring ways`,
+                `&nbsp;`,
+                `Sent up from high above`,
+                `A name like a precious poem`,
+                `Let me sing this song to you`,
+                `Gracious savior of our souls`,
+            ],
+            [
+                `致那猩红之雷光`,
+                `致那打破沉寂之人`,
+                `您那敬畏之闪光`,
+                `照耀这漆黑之夜`,
+                `&nbsp;`,
+                `从遥远他方而来`,
+                `如诗歌一般的美名`,
+                `让我献声歌唱吧`,
+                `灵魂的解放者啊`,
+            ],
+            [
+                `致那猩紅之雷光`,
+                `致那打破沉寂之人`,
+                `您那敬畏之閃光`,
+                `照耀這漆黑之夜`,
+                `&nbsp;`,
+                `從遙遠他方而來`,
+                `如詩歌一般的美名`,
+                `讓我獻聲歌唱吧`,
+                `靈魂的解放者啊`,
+            ],
+            [
+                `赤き稲妻`,
+                `高なる轟き`,
+                `夜が色付き`,
+                `闇は退く`,
+                `&nbsp;`,
+                `彼方より来す`,
+                `麗しき名前`,
+                `歌を捧げよう`,
+                `心の友よ`,
+            ],
+        ],
+        comment: [
+            [
+                `The Savior's Words`,
+                `From "Lightning Returns: Final Fantasy XIII OST"`,
+            ],
+            [
+                `解放者之歌`,
+                `出自“雷光归来 最终幻想XIII OST”`,
+            ],
+            [
+                `解放者之歌`,
+                `出自「雷光歸來 最終幻想XIII OST」`,
+            ],
+            [
+                `解放者の詩`,
+                `「ライトニング リターンズ ファイナルファンタジーXIII OST」より`,
+            ],
+        ]
+    },
+];
