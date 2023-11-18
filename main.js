@@ -179,7 +179,7 @@ function set_projects(){
 function set_articles(){
     var text = `\n${sp(12)}<div class="article">\n`, l2;
     if (get_para("id") === null){
-        text += `${sp(16)}<div>\n`;
+        text += `${sp(16)}<div class="article-list">\n`;
         for (let i = articles.length - 1; i >= 0; i--){
             if (temp.now < articles[i].time) continue;
             text += `${sp(20)}<div class="article-line" onclick="open_article(${i});">\n`;
@@ -238,6 +238,14 @@ function set_bright(){
     }
     document.querySelector("body").style.backgroundColor = (data.bright ? "#ffffff": "#000000");
     document.querySelector("body").style.color = (data.bright ? "#000000": "#ffffff");
+    text = document.querySelectorAll("a");
+    for (let i = 0; i < text.length; i++){
+        text[i].style.color = (data.bright ? "#0080ff": "#00ffff");
+    }
+    text = document.querySelectorAll("a.anchor");
+    for (let i = 0; i < text.length; i++){
+        text[i].style.color = (data.bright ? "#000000": "#ffffff");
+    }
     document.querySelector(".menu").style.backgroundColor = (data.bright ? "#00c0c0": "#0060c0");
     text = document.querySelectorAll(".menu-text2");
     for (let i = 0; i < text.length; i++){

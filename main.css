@@ -8,14 +8,23 @@ body {
     font-family: "Times New Roman", SimSun;
     font-size: 24px;
 }
+a {
+    color: #00ffff;
+}
+a.anchor {
+    color: #ffffff;
+}
+sup {
+    font-size: 12px;
+}
+
+/* SETTING */
+
 .logo {
     height: 64px;
     margin: 32px 0px 32px 0px;
     text-align: center;
 }
-
-/* SETTING */
-
 .setting {
     height: 240px;
     margin: -120px 8px -120px 8px;
@@ -246,8 +255,10 @@ body {
     display: flex;
     justify-content: center;
 }
+.article-list {
+    width: 1280px;
+}
 .article-line {
-    width: 1248px;
     height: 48px;
     margin: 2px 0px 4px 0px;
     padding: 6px 16px 6px 16px;
