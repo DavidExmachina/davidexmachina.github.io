@@ -156,7 +156,7 @@ function set_home(){
 
 function set_profile(){
     var text = `\n${sp(12)}<div class="profile">\n${sp(16)}`;
-    text += `<div><img class="profile-img" src="RESOURCE/icon.png" alt=""></div>\n`;
+    text += `<div><img class="border1" src="RESOURCE/icon.png" alt=""></div>\n`;
     text += `${sp(16)}<div class="profile-text">\n`;
     for (let i = 0; i < 11; i++){
         text += `${sp(20)}<p id="pro${z(i, 2)}"${i > 6 ? ` class="connect"` : ""}></p>\n`;
@@ -242,9 +242,17 @@ function set_bright(){
     for (let i = 0; i < text.length; i++){
         text[i].style.color = (data.bright ? "#0080ff": "#00ffff");
     }
-    text = document.querySelectorAll("a.anchor");
+    text = document.querySelectorAll("table");
     for (let i = 0; i < text.length; i++){
-        text[i].style.color = (data.bright ? "#000000": "#ffffff");
+        text[i].style.borderColor = (data.bright ? "#000000": "#ffffff");
+    }
+    text = document.querySelectorAll("th");
+    for (let i = 0; i < text.length; i++){
+        text[i].style.borderColor = (data.bright ? "#000000": "#ffffff");
+    }
+    text = document.querySelectorAll("td");
+    for (let i = 0; i < text.length; i++){
+        text[i].style.borderColor = (data.bright ? "#000000": "#ffffff");
     }
     document.querySelector(".menu").style.backgroundColor = (data.bright ? "#00c0c0": "#0060c0");
     text = document.querySelectorAll(".menu-text2");

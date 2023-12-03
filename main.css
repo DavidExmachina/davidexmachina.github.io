@@ -11,20 +11,34 @@ body {
 a {
     color: #00ffff;
 }
-a.anchor {
-    color: #ffffff;
-}
 sup {
     font-size: 12px;
 }
-
-/* SETTING */
-
+table, th, td {
+    font-size: 16px;
+    border: 1px solid #ffffff;
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+}
 .logo {
     height: 64px;
     margin: 32px 0px 32px 0px;
     text-align: center;
 }
+.border1 {
+    border-width: 1px;
+    border-color: #ffffff;
+    border-style: solid;
+}
+.border2 {
+    border-width: 1px;
+    border-color: #000000;
+    border-style: solid;
+}
+
+/* SETTING */
+
 .setting {
     height: 240px;
     margin: -120px 8px -120px 8px;
@@ -221,11 +235,6 @@ sup {
     margin: 32px 0px 0px 0px;
     display: flex;
     justify-content: center;
-}
-.profile-img {
-    border-width: 1px;
-    border-color: #ffffff;
-    border-style: solid;
 }
 .profile-text {
     width: 768px;
