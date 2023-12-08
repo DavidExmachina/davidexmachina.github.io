@@ -1434,7 +1434,7 @@ const articles = [
             null,
         ],
     },
-        {
+    {
         title: [
             `My analysis of Buchholz's OCF and two Rathjen's OCFs - Part.II`,
             null,
@@ -2069,7 +2069,7 @@ const articles = [
                 </table>
                 `,
                 `${s(8)}Ordinal #0200 is also known as the "Bachmann-Howard Ordinal" (BHO)`,
-                `<h2>#0300~#0400 - \\( \\psi_0(\\Omega_\\omega)-\\psi_0(\\Omega_{\\Omega_{\\Omega_\\ddots}}) \\)</h2>`,
+                `<h2>#0300~#0400 - \\( \\psi_0(\\Omega_\\omega)-\\psi_0(\\Omega_{\\Omega_{\\Omega_{\\cdot_{\\cdot_{\\cdot}}}}}) \\)</h2>`,
                 `<b>#0300~#0309 - \\( \\psi_0(\\Omega_\\omega)-\\psi_0(\\varepsilon_{\\Omega_\\omega+1}) \\)</b>`,
                 `${s(8)}In this part, ordinals will be represented in the same notation as in the previous part.`,
                 `
@@ -2145,7 +2145,7 @@ const articles = [
                 </table>
                 `,
                 `${s(8)}Ordinal #0300 is also known as the "Buchholz Ordinal" (BO), while I prefer the name "Small Buchholz Ordinal" (SBO).`,
-                `<b>#0310~#0400 - \\( \\psi_0(\\Omega_{\\omega+1})-\\psi_0(\\Omega_{\\Omega_{\\Omega_\\ddots}}) \\)</b>`,
+                `<b>#0310~#0400 - \\( \\psi_0(\\Omega_{\\omega+1})-\\psi_0(\\Omega_{\\Omega_{\\Omega_{\\cdot_{\\cdot_{\\cdot}}}}}) \\)</b>`,
                 `${s(8)}We have reached \\( \\psi_0(\\varepsilon_{\\Omega_\\omega+1}) \\), which is known as the "Takeuti-Feferman-Buchholz Ordinal" (TFBO) and this name was purposed by David Madore<sup><a id="goto0004" href="#cite0004">[4]</a></sup>. Unfortunately, this is the largest ordinal the original Buchholz function can represent. To continue using this function to represent ordinals, we have to use the extension of this function called the "Extended Buchholz function" proposed by Denis Maksudov<sup><a id="goto0005" href="#cite0005">[5]</a></sup>. The function is still notated as \\( \\psi \\) while I use the symbol with an asterisk as a superscript \\( \\psi^* \\) outside this article for specification.`,
                 `${s(8)}In this part, ordinals will be represented in the same notation as in the previous part except the "Buchholz" column is "Extended Buchholz" and the "Extended Buchholz function" is used instead of the original Buchholz function. Note that some WEIRD ordinals are introduced to demonstrate how the two Rathjen's OCFs works.`,
                 `
@@ -2699,9 +2699,9 @@ const articles = [
                         </tr>
                         <tr>
                             <td>0400</td>
-                            <td>\\( LBO=\\psi_0(\\Omega_{\\Omega_{\\Omega_\\ddots}}) \\)</td>
-                            <td>\\( \\psi_\\Omega(\\Omega_{\\Omega_{\\Omega_\\ddots}}) \\)</td>
-                            <td>\\( \\Psi_\\Omega^0(\\Omega_{\\Omega_{\\Omega_\\ddots}}) \\)</td>
+                            <td>\\( LBO=\\psi_0(\\Omega_{\\Omega_{\\Omega_{\\cdot_{\\cdot_{\\cdot}}}}}) \\)</td>
+                            <td>\\( \\psi_\\Omega(\\Omega_{\\Omega_{\\Omega_{\\cdot_{\\cdot_{\\cdot}}}}}) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Omega_{\\Omega_{\\Omega_{\\cdot_{\\cdot_{\\cdot}}}}}) \\)</td>
                         </tr>
                     </tbody>
                 </table>
