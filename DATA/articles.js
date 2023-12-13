@@ -3782,4 +3782,3205 @@ const articles = [
             null,
         ],
     },
+    {
+        title: [
+            `My analysis of Buchholz's OCF and two Rathjen's OCFs - Part.IV`,
+            null,
+            null,
+            null,
+        ],
+        series: ``,
+        time: Date.UTC(2023, 12 - 1, 13, 12, 0, 0, 0),
+        default: 0,
+        content: [
+            [
+                `${s(8)}In this article, I will list 200 more ordinals continued from the previous article using the two Rathjen's OCFs. If I'm notified that there are errors in my list, I'll fix'em ASAP.`,
+                `${s(8)}Throughout this article, the following abbreviation will be used:`,
+                `<div style="text-align: center;">\\( \\begin{align} \\omega^\\alpha & := \\varphi_0(\\alpha) \\\\ \\varepsilon_\\alpha & := \\varphi_1(\\alpha) \\\\ \\zeta_\\alpha & := \\varphi_2(\\alpha) \\\\ \\eta_\\alpha & := \\varphi_3(\\alpha) \\end{align} \\)</div>`,
+                `<h2>#0600~#0699 - \\( \\psi_\\Omega(\\psi_{\\chi_\\omega(0)}(0))-\\psi_\\Omega(\\psi_{\\chi_M(0)}(0)) \\)</h2>`,
+                `${s(8)}In this part, ordinals will be represented in these 2 notations:`,
+                `${s(8)}<b>Rathjen M:</b> The notation using the Rathjen's function \\( \\psi \\) based on the "Mahlo Cardinal"(\\( M \\))<sup><a id="goto0001" href="#cite0001">[1]</a></sup>. The following abbreviation will be used:`,
+                `<div style="text-align: center;">\\( \\begin{align} E_\\alpha & := \\Phi_1(\\alpha) \\\\ Z_\\alpha & := \\Phi_2(\\alpha) \\\\ H_\\alpha & := \\Phi_3(\\alpha) \\\\ \\Omega & := \\chi_0(0) \\\\ \\Omega_{2+\\alpha} & := \\chi_0(1+\\alpha) \\\\ I & := \\chi_1(0) \\\\ I_{2+\\alpha} & := \\chi_1(1+\\alpha) \\end{align} \\)</div>`,
+                `${s(8)}<b>Rathjen K:</b> The notation using the Rathjen's function \\( \\Psi \\) based on the "Weakly Compact Cardinal"(\\( K \\))<sup><a id="goto0002" href="#cite0002">[2]</a></sup>. The following abbreviation will be used:`,
+                `<div style="text-align: center;">\\( \\begin{align} \\Omega & := \\Omega_1 \\\\ \\Xi & := \\Xi(1) \\\\ \\Xi_{2+\\alpha} & := \\Xi(2+\\alpha) \\end{align} \\)</div>`,
+                `
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>#</th>
+                            <th>Rathjen M</th>
+                            <th>Rathjen K</th>
+                        </tr>
+                        <tr>
+                            <td>0600</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_\\omega(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2\\omega) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0601</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_\\omega(0)}(0)^2) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2\\omega+\\Psi_{\\Xi_2}^0(\\Xi_2\\omega)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0602</td>
+                            <td>\\( \\psi_\\Omega(\\varepsilon_{\\psi_{\\chi_\\omega(0)}(0)+1}) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2\\omega+\\varepsilon_{\\Psi_{\\Xi_2}^0(\\Xi_2\\omega)+1}) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0603</td>
+                            <td>\\( \\psi_\\Omega(\\Omega_{\\psi_{\\chi_\\omega(0)}(0)+1}) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2\\omega+\\Omega_{\\Psi_{\\Xi_2}^0(\\Xi_2\\omega)+1}) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0604</td>
+                            <td>\\( \\psi_\\Omega(E_{\\psi_{\\chi_\\omega(0)}(0)+1}) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2\\omega+\\Psi_{\\Xi_2}^0(\\Psi_{\\Xi_2}^0(\\Xi_2\\omega))) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0605</td>
+                            <td>\\( \\psi_\\Omega(I_{\\psi_{\\chi_\\omega(0)}(0)+1}) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2\\omega+\\Psi_{\\Xi_2}^1(\\Psi_{\\Xi_2}^0(\\Xi_2\\omega))^2+\\Psi_{\\Xi_2}^1(\\Psi_{\\Xi_2}^0(\\Xi_2\\omega))) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0606</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_2(\\chi_\\omega(0)+1)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2\\omega+\\Psi_{\\Xi_2}^0(\\Xi_2+\\Psi_{\\Xi_2}^0(\\Xi_2\\omega))) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0607</td>
+                            <td>\\( \\psi_\\Omega(\\chi_2(\\chi_\\omega(0)+1)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2\\omega+\\Psi_{\\Xi_2}^1(\\Xi_2+\\Psi_{\\Xi_2}^0(\\Xi_2\\omega))) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0608</td>
+                            <td>\\( \\psi_\\Omega(\\chi_3(\\chi_\\omega(0)+1)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2\\omega+\\Psi_{\\Xi_2}^1(\\Xi_22+\\Psi_{\\Xi_2}^0(\\Xi_2\\omega))) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0609</td>
+                            <td>\\( \\psi_\\Omega(\\chi_4(\\chi_\\omega(0)+1)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2\\omega+\\Psi_{\\Xi_2}^1(\\Xi_23+\\Psi_{\\Xi_2}^0(\\Xi_2\\omega))) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0610</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_\\omega(0)}(1)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2\\omega+\\Psi_{\\Psi_{\\Xi_2}^1(\\Xi_2\\omega)}^0(\\Xi_2\\omega+1)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0611</td>
+                            <td>\\( \\psi_\\Omega(\\Omega_{\\psi_{\\chi_\\omega(0)}(1)+1}) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2\\omega+\\Omega_{\\Psi_{\\Psi_{\\Xi_2}^1(\\Xi_2\\omega)}^0(\\Xi_2\\omega+1)+1}) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0612</td>
+                            <td>\\( \\psi_\\Omega(I_{\\psi_{\\chi_\\omega(0)}(1)+1}) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2\\omega+\\Psi_{\\Xi_2}^1(\\Psi_{\\Psi_{\\Xi_2}^1(\\Xi_2\\omega)}^0(\\Xi_2\\omega+1))^2+\\Psi_{\\Xi_2}^1(\\Psi_{\\Psi_{\\Xi_2}^1(\\Xi_2\\omega)}^0(\\Xi_2\\omega+1))) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0613</td>
+                            <td>\\( \\psi_\\Omega(\\chi_2(\\psi_{\\chi_\\omega(0)}(1)+1)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2\\omega+\\Psi_{\\Xi_2}^1(\\Xi_2+\\Psi_{\\Psi_{\\Xi_2}^1(\\Xi_2\\omega)}^0(\\Xi_2\\omega+1))) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0614</td>
+                            <td>\\( \\psi_\\Omega(\\chi_3(\\psi_{\\chi_\\omega(0)}(1)+1)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2\\omega+\\Psi_{\\Xi_2}^1(\\Xi_22+\\Psi_{\\Psi_{\\Xi_2}^1(\\Xi_2\\omega)}^0(\\Xi_2\\omega+1))) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0615</td>
+                            <td>\\( \\psi_\\Omega(\\chi_4(\\psi_{\\chi_\\omega(0)}(1)+1)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2\\omega+\\Psi_{\\Xi_2}^1(\\Xi_23+\\Psi_{\\Psi_{\\Xi_2}^1(\\Xi_2\\omega)}^0(\\Xi_2\\omega+1))) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0616</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_\\omega(0)}(2)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2\\omega+\\Psi_{\\Psi_{\\Xi_2}^1(\\Xi_2\\omega)}^0(\\Xi_2\\omega+2)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0617</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_\\omega(0)}(3)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2\\omega+\\Psi_{\\Psi_{\\Xi_2}^1(\\Xi_2\\omega)}^0(\\Xi_2\\omega+3)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0618</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_\\omega(0)}(\\omega)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2\\omega+\\Psi_{\\Psi_{\\Xi_2}^1(\\Xi_2\\omega)}^0(\\Xi_2\\omega+\\omega)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0619</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_\\omega(0)}(\\psi_{\\chi_\\omega(0)}(0))) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2\\omega+\\Psi_{\\Psi_{\\Xi_2}^1(\\Xi_2\\omega)}^0(\\Xi_2\\omega+\\Psi_{\\Xi_2}^0(\\Xi_2\\omega))) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0620</td>
+                            <td>\\( \\psi_\\Omega(\\chi_\\omega(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2\\omega+\\Psi_{\\Xi_2}^1(\\Xi_2\\omega)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0621</td>
+                            <td>\\( \\psi_\\Omega(\\chi_\\omega(0)*2) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2\\omega+\\Psi_{\\Xi_2}^1(\\Xi_2\\omega)+\\Psi_{\\Psi_{\\Xi_2}^1(\\Xi_2\\omega)}^0(\\Xi_2\\omega+\\Psi_{\\Xi_2}^1(\\Xi_2\\omega)+1)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0622</td>
+                            <td>\\( \\psi_\\Omega(\\chi_\\omega(0)^2) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2\\omega+\\Psi_{\\Xi_2}^1(\\Xi_2\\omega)*2) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0623</td>
+                            <td>\\( \\psi_\\Omega(\\chi_\\omega(0)^{\\chi_\\omega(0)}) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2\\omega+\\Psi_{\\Xi_2}^1(\\Xi_2\\omega)^2) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0624</td>
+                            <td>\\( \\psi_\\Omega(\\varepsilon_{\\chi_\\omega(0)+1}) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2\\omega+\\varepsilon_{\\Psi_{\\Xi_2}^1(\\Xi_2\\omega)+1}) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0625</td>
+                            <td>\\( \\psi_\\Omega(\\Omega_{\\chi_\\omega(0)+1}) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2\\omega+\\Omega_{\\Psi_{\\Xi_2}^1(\\Xi_2\\omega)+1}) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0626</td>
+                            <td>\\( \\psi_\\Omega(I_{\\chi_\\omega(0)+1}) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2\\omega+\\Psi_{\\Xi_2}^1(\\Psi_{\\Xi_2}^1(\\Xi_2\\omega))^2+\\Psi_{\\Xi_2}^1(\\Psi_{\\Xi_2}^1(\\Xi_2\\omega))) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0627</td>
+                            <td>\\( \\psi_\\Omega(\\chi_2(\\chi_\\omega(0)+1)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2\\omega+\\Psi_{\\Xi_2}^1(\\Xi_2+\\Psi_{\\Xi_2}^1(\\Xi_2\\omega))) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0628</td>
+                            <td>\\( \\psi_\\Omega(\\chi_3(\\chi_\\omega(0)+1)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2\\omega+\\Psi_{\\Xi_2}^1(\\Xi_22+\\Psi_{\\Xi_2}^1(\\Xi_2\\omega))) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0629</td>
+                            <td>\\( \\psi_\\Omega(\\chi_4(\\chi_\\omega(0)+1)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2\\omega+\\Psi_{\\Xi_2}^1(\\Xi_23+\\Psi_{\\Xi_2}^1(\\Xi_2\\omega))) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0630</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_\\omega(1)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2\\omega+\\Psi_{\\Xi_2}^0(\\Xi_2\\omega+1)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0631</td>
+                            <td>\\( \\psi_\\Omega(\\Omega_{\\psi_{\\chi_\\omega(1)}(0)+1}) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2\\omega+\\Omega_{\\Psi_{\\Xi_2}^0(\\Xi_2\\omega+1)+1}) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0632</td>
+                            <td>\\( \\psi_\\Omega(I_{\\psi_{\\chi_\\omega(1)}(0)+1}) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2\\omega+\\Psi_{\\Xi_2}^1(\\Psi_{\\Xi_2}^0(\\Xi_2\\omega+1))^2+\\Psi_{\\Xi_2}^1(\\Psi_{\\Xi_2}^0(\\Xi_2\\omega+1))) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0633</td>
+                            <td>\\( \\psi_\\Omega(\\chi_2(\\psi_{\\chi_\\omega(1)}(0)+1)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2\\omega+\\Psi_{\\Xi_2}^1(\\Xi_2+\\Psi_{\\Xi_2}^0(\\Xi_2\\omega+1))) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0634</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_\\omega(1)}(1)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2\\omega+\\Psi_{\\Psi_{\\Xi_2}^1(\\Xi_2\\omega+1)}^0(\\Xi_2\\omega+2)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0635</td>
+                            <td>\\( \\psi_\\Omega(\\chi_\\omega(1)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2\\omega+\\Psi_{\\Xi_2}^1(\\Xi_2\\omega+1)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0636</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_\\omega(2)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2\\omega+\\Psi_{\\Xi_2}^0(\\Xi_2\\omega+2)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0637</td>
+                            <td>\\( \\psi_\\Omega(\\chi_\\omega(2)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2\\omega+\\Psi_{\\Xi_2}^1(\\Xi_2\\omega+2)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0638</td>
+                            <td>\\( \\psi_\\Omega(\\chi_\\omega(\\omega)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2\\omega+\\Psi_{\\Xi_2}^0(\\Xi_2\\omega+\\omega)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0639</td>
+                            <td>\\( \\psi_\\Omega(\\chi_\\omega(\\chi_\\omega(0))) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2\\omega+\\Psi_{\\Xi_2}^0(\\Xi_2\\omega+\\Psi_{\\Xi_2}^1(\\Xi_2\\omega))) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0640</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{\\omega+1}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2\\omega+\\Xi_2) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0641</td>
+                            <td>\\( \\psi_\\Omega(\\chi_\\omega(\\psi_{\\chi_{\\omega+1}(0)}(0)+1)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2\\omega+\\Xi_2+\\Psi_{\\Xi_2}^1(\\Xi_2\\omega+\\Psi_{\\Xi_2}^0(\\Xi_2\\omega+\\Xi_2))) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0642</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{\\omega+1}(0)}(1)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2\\omega+\\Xi_2+\\Psi_{\\Psi_{\\Xi_2}^1(\\Xi_2\\omega+\\Xi_2)}^0(\\Xi_2\\omega+\\Xi_2+1)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0643</td>
+                            <td>\\( \\psi_\\Omega(\\chi_{\\omega+1}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2\\omega+\\Xi_2+\\Psi_{\\Xi_2}^1(\\Xi_2\\omega+\\Xi_2)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0644</td>
+                            <td>\\( \\psi_\\Omega(\\chi_\\omega(\\chi_{\\omega+1}(0)+1)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2\\omega+\\Xi_2+\\Psi_{\\Xi_2}^1(\\Xi_2\\omega+\\Psi_{\\Xi_2}^1(\\Xi_2\\omega+\\Xi_2))) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0645</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{\\omega+1}(1)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2\\omega+\\Xi_2+\\Psi_{\\Xi_2}^0(\\Xi_2\\omega+\\Xi_2+1)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0646</td>
+                            <td>\\( \\psi_\\Omega(\\chi_{\\omega+1}(\\omega)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2\\omega+\\Xi_2+\\Psi_{\\Xi_2}^0(\\Xi_2\\omega+\\Xi_2+\\omega)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0647</td>
+                            <td>\\( \\psi_\\Omega(\\chi_{\\omega+1}(\\chi_{\\omega+1}(0))) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2\\omega+\\Xi_2+\\Psi_{\\Xi_2}^0(\\Xi_2\\omega+\\Xi_2+\\Psi_{\\Xi_2}^1(\\Xi_2\\omega+\\Xi_2))) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0648</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{\\omega+2}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2\\omega+\\Xi_22) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0649</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{\\omega+3}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2\\omega+\\Xi_23) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0650</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{\\omega2}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2\\omega2) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0651</td>
+                            <td>\\( \\psi_\\Omega(\\chi_{\\omega2}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2\\omega2+\\Psi_{\\Xi_2}^1(\\Xi_2\\omega2)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0652</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{\\omega2+1}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2\\omega2+\\Xi_2) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0653</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{\\omega^2}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2\\omega^2) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0654</td>
+                            <td>\\( \\psi_\\Omega(\\chi_{\\omega^2}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2\\omega^2+\\Psi_{\\Xi_2}^1(\\Xi_2\\omega^2)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0655</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{\\varepsilon_0}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2\\varepsilon_0) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0656</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{\\psi_\\Omega(0)}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2*\\Psi_\\Omega^0(0)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0657</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{\\psi_\\Omega(E_0)}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2*\\Psi_\\Omega^0(\\Psi_\\Xi^0(2))) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0658</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{\\psi_\\Omega(\\psi_{\\chi_\\omega(0)}(0))}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2*\\Psi_\\Omega^0(\\Xi_2\\omega)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0659</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{\\psi_\\Omega(\\psi_{\\chi_{\\psi_\\Omega(\\psi_{\\chi_\\omega(0)}(0))}(0)}(0))}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2*\\Psi_\\Omega^0(\\Xi_2*\\Psi_\\Omega^0(\\Xi_2\\omega))) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0660</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_\\Omega(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2\\Omega) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0661</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_\\Omega(0)}(0)+\\psi_{\\chi_\\omega(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2\\omega+\\Psi_\\Omega^0(\\Xi_2\\Omega)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0662</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_\\Omega(0)}(0)+\\psi_{\\chi_{\\psi_\\Omega(0)}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2*\\Psi_\\Omega^0(0)+\\Psi_\\Omega^0(\\Xi_2\\Omega)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0663</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_\\Omega(0)}(0)+\\psi_{\\chi_{\\psi_\\Omega(\\psi_{\\chi_\\Omega(0)}(0)+\\psi_{\\chi_{\\psi_\\Omega(0)}(0)}(0))}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2*\\Psi_\\Omega^0(\\Xi_2*\\Psi_\\Omega^0(0)+\\Psi_\\Omega^0(\\Xi_2\\Omega))+\\Psi_\\Omega^0(\\Xi_2\\Omega)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0664</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_\\Omega(0)}(0)+\\psi_{\\chi_\\Omega(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2\\Omega+1) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0665</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_\\Omega(0)}(0)^2) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2\\Omega+\\Psi_{\\Xi_2}^0(\\Xi_2\\Omega)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0666</td>
+                            <td>\\( \\psi_\\Omega(\\varepsilon_{\\psi_{\\chi_\\Omega(0)}(0)+1}) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2\\Omega+\\varepsilon_{\\Psi_{\\Xi_2}^0(\\Xi_2\\Omega)+1}) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0667</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_\\omega(\\psi_{\\chi_\\Omega(0)}(0)+1)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2\\Omega+\\Psi_{\\Xi_2}^0(\\Xi_2\\omega+\\Psi_{\\Xi_2}^0(\\Xi_2\\Omega))) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0668</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{\\psi_\\Omega(0)}(\\psi_{\\chi_\\Omega(0)}(0)+1)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2\\Omega+\\Psi_{\\Xi_2}^0(\\Xi_2*\\Psi_\\Omega^0(0)+\\Psi_{\\Xi_2}^0(\\Xi_2\\Omega))) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0669</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{\\psi_\\Omega(\\psi_{\\chi_{\\psi_\\Omega(0)}(\\psi_{\\chi_\\Omega(0)}(0)+1)}(0))}(\\psi_{\\chi_\\Omega(0)}(0)+1)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2\\Omega+\\Psi_{\\Xi_2}^0(\\Xi_2*\\Psi_\\Omega^0(\\Xi_2\\Omega+\\Psi_{\\Xi_2}^0(\\Xi_2*\\Psi_\\Omega^0(0)+\\Psi_{\\Xi_2}^0(\\Xi_2\\Omega)))+\\Psi_{\\Xi_2}^0(\\Xi_2\\Omega))) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0670</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_\\Omega(0)}(1)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2\\Omega+\\Psi_{\\Psi_{\\Xi_2}^1(\\Xi_2\\Omega)}^0(\\Xi_2\\Omega+1)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0671</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_\\Omega(0)}(\\omega)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2\\Omega+\\Psi_{\\Psi_{\\Xi_2}^1(\\Xi_2\\Omega)}^0(\\Xi_2\\Omega+\\omega)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0672</td>
+                            <td>\\( \\psi_\\Omega(\\chi_\\Omega(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2\\Omega+\\Psi_{\\Xi_2}^1(\\Xi_2\\Omega)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0673</td>
+                            <td>\\( \\psi_\\Omega(\\chi_\\Omega(1)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2\\Omega+\\Psi_{\\Xi_2}^1(\\Xi_2\\Omega+1)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0674</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{\\Omega+1}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2\\Omega+\\Xi_2) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0675</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{\\Omega+\\omega}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2\\Omega+\\Xi_2\\omega) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0676</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{\\Omega2}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2\\Omega2) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0677</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{\\varepsilon_{\\Omega+1}}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2\\varepsilon_{\\Omega+1}) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0678</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{\\psi_{\\Omega_2}(0)}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2*\\Psi_{\\Omega_2}^0(0)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0679</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{\\psi_{\\Omega_2}(\\psi_{\\chi_{\\psi_{\\Omega_2}(0)}(0)}(0))}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2*\\Psi_{\\Omega_2}^0(\\Xi_2*\\Psi_{\\Omega_2}^0(0))) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0680</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{\\Omega_2}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2\\Omega_2) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0681</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{\\Omega_3}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2\\Omega_3) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0682</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{\\Omega_\\omega}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2\\Omega_\\omega) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0683</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{E_0}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2*\\Psi_\\Xi^0(2)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0684</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{\\psi_I(0)}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2*\\Psi_\\Xi^0(\\Xi^2)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0685</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{\\psi_I(\\psi_{\\chi_{\\psi_I(0)}(0)}(0))}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2*\\Psi_\\Xi^0\\Psi_\\Omega^0(\\Xi_2*\\Psi_\\Xi^0(\\Xi^2))) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0686</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_I(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2\\Xi) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0687</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{I_2}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2*\\Psi_{\\Xi_2}^1(3)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0688</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{\\chi_2(0)}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2*\\Psi_{\\Xi_2}^1(\\Xi_2)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0689</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{\\chi_3(0)}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2*\\Psi_{\\Xi_2}^1(\\Xi_22)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0690</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{\\psi_{\\chi_\\omega(0)}(0)}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2*\\Psi_{\\Xi_2}^0(\\Xi_2\\omega)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0691</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{\\psi_{\\chi_\\omega(0)}(0)}(0)}(1)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2*\\Psi_{\\Xi_2}^0(\\Xi_2\\omega)+\\Psi_{\\Psi_\\Omega^1(\\Xi_2*\\Psi_{\\Xi_2}^0(\\Xi_2\\omega))}^0(\\Xi_2*\\Psi_{\\Xi_2}^0(\\Xi_2\\omega)+1)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0692</td>
+                            <td>\\( \\psi_\\Omega(\\chi_{\\psi_{\\chi_\\omega(0)}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2*\\Psi_{\\Xi_2}^0(\\Xi_2\\omega)+\\Psi_\\Omega^1(\\Xi_2*\\Psi_{\\Xi_2}^0(\\Xi_2\\omega))) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0693</td>
+                            <td>\\( \\psi_\\Omega(\\chi_{\\psi_{\\chi_\\omega(0)}(1)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2*\\Psi_{\\Psi_{\\Xi_2}^1(\\Xi_2\\omega)}^0(\\Xi_2\\omega+1)+\\Psi_\\Omega^1(\\Xi_2*\\Psi_{\\Psi_{\\Xi_2}^1(\\Xi_2\\omega)}^0(\\Xi_2\\omega+1))) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0694</td>
+                            <td>\\( \\psi_\\Omega(\\chi_{\\chi_\\omega(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2*\\Psi_{\\Xi_2}^1(\\Xi_2\\omega)+\\Psi_\\Omega^1(\\Xi_2*\\Psi_{\\Xi_2}^1(\\Xi_2\\omega))) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0695</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{\\psi_{\\chi_{\\psi_\\Omega(0)}(0)}(0)}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2*\\Psi_{\\Xi_2}^0(\\Xi_2*\\Psi_\\Omega^0(0))) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0696</td>
+                            <td>\\( \\psi_\\Omega(\\chi_{\\psi_{\\chi_{\\psi_\\Omega(0)}(0)}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2*\\Psi_{\\Xi_2}^0(\\Xi_2*\\Psi_\\Omega^0(0))+\\Psi_{\\Xi_2}^1(\\Xi_2*\\Psi_{\\Xi_2}^0(\\Xi_2*\\Psi_\\Omega^0(0)))) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0697</td>
+                            <td>\\( \\psi_\\Omega(\\chi_{\\chi_{\\psi_\\Omega(0)}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2*\\Psi_{\\Xi_2}^1(\\Xi_2*\\Psi_\\Omega^0(0))+\\Psi_{\\Xi_2}^1(\\Xi_2*\\Psi_{\\Xi_2}^1(\\Xi_2*\\Psi_\\Omega^0(0)))) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0698</td>
+                            <td>\\( \\psi_\\Omega(\\chi_{\\chi_{\\Omega}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2*\\Psi_{\\Xi_2}^1(\\Xi_2\\Omega)+\\Psi_{\\Xi_2}^1(\\Xi_2*\\Psi_{\\Xi_2}^1(\\Xi_2\\Omega))) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0699</td>
+                            <td>\\( \\psi_\\Omega(\\chi_{\\chi_{\\chi_{\\Omega}(0)}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2*\\Psi_{\\Xi_2}^1(\\Xi_2*\\Psi_{\\Xi_2}^1(\\Xi_2\\Omega))+\\Psi_{\\Xi_2}^1(\\Xi_2*\\Psi_{\\Xi_2}^1(\\Xi_2*\\Psi_{\\Xi_2}^1(\\Xi_2\\Omega)))) \\)</td>
+                        </tr>
+                    </tbody>
+                </table>
+                `,
+                `<h2>#0700~#0800 - \\( \\psi_\\Omega(\\psi_{\\chi_M(0)}(0))-\\psi_\\Omega(\\psi_{\\chi_{\\varepsilon_{M+1}}(0)}(0)) \\)</h2>`,
+                `${s(8)}In this part, ordinals will be represented in the same notation as in the previous part.`,
+                `
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>#</th>
+                            <th>Rathjen M</th>
+                            <th>Rathjen K</th>
+                        </tr>
+                        <tr>
+                            <td>0700</td>
+                            <td>\\( JO=\\psi_\\Omega(\\psi_{\\chi_M(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^2) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0701</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_M(0)}(0)^2) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^2+\\Psi_{\\Xi_2}^0(\\Xi_2^2)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0702</td>
+                            <td>\\( \\psi_\\Omega(\\varepsilon_{\\psi_{\\chi_M(0)}(0)+1}) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^2+\\varepsilon_{\\Psi_{\\Xi_2}^0(\\Xi_2^2)+1}) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0703</td>
+                            <td>\\( \\psi_\\Omega(\\Omega_{\\psi_{\\chi_M(0)}(0)+1}) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^2+\\Omega_{\\Psi_{\\Xi_2}^0(\\Xi_2^2)+1}) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0704</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_\\omega(\\psi_{\\chi_M(0)}(0)+1)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^2+\\Psi_{\\Xi_2}^0(\\Xi_2\\omega+\\Psi_{\\Xi_2}^0(\\Xi_2^2))) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0705</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_\\Omega(\\psi_{\\chi_M(0)}(0)+1)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^2+\\Psi_{\\Xi_2}^0(\\Xi_2\\Omega+\\Psi_{\\Xi_2}^0(\\Xi_2^2))) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0706</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{\\psi_{\\chi_\\Omega(0)}(0)}(\\psi_{\\chi_M(0)}(0)+1)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^2+\\Psi_{\\Xi_2}^0(\\Xi_2*\\Psi_{\\Xi_2}^0(\\Xi_2\\Omega)+\\Psi_{\\Xi_2}^0(\\Xi_2^2))) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0707</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{\\psi_{\\chi_M(0)}(0)}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^2+\\Psi_{\\Xi_2}^0(\\Xi_2*\\Psi_{\\Xi_2}^0(\\Xi_2^2))) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0708</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{\\psi_{\\chi_M(0)}(0)}(0)}(1)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^2+\\Psi_{\\Psi_{\\Xi_2}^1(\\Xi_2*\\Psi_{\\Xi_2}^0(\\Xi_2^2))}^0(\\Xi_2*\\Psi_{\\Xi_2}^0(\\Xi_2^2)+1)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0709</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{\\psi_{\\chi_M(0)}(0)}(0)}(\\omega)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^2+\\Psi_{\\Psi_{\\Xi_2}^1(\\Xi_2*\\Psi_{\\Xi_2}^0(\\Xi_2^2))}^0(\\Xi_2*\\Psi_{\\Xi_2}^0(\\Xi_2^2)+\\omega)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0710</td>
+                            <td>\\( \\psi_\\Omega(\\chi_{\\psi_{\\chi_M(0)}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^2+\\Psi_{\\Xi_2}^1(\\Xi_2*\\Psi_{\\Xi_2}^0(\\Xi_2^2))) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0711</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{\\psi_{\\chi_M(0)}(0)}(1)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^2+\\Psi_{\\Xi_2}^0(\\Xi_2*\\Psi_{\\Xi_2}^0(\\Xi_2^2)+1)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0712</td>
+                            <td>\\( \\psi_\\Omega(\\chi_{\\psi_{\\chi_M(0)}(0)}(1)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^2+\\Psi_{\\Xi_2}^1(\\Xi_2*\\Psi_{\\Xi_2}^0(\\Xi_2^2)+1)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0713</td>
+                            <td>\\( \\psi_\\Omega(\\chi_{\\psi_{\\chi_M(0)}(0)}(\\chi_{\\psi_{\\chi_M(0)}(0)}(0))) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^2+\\Psi_{\\Xi_2}^1(\\Xi_2*\\Psi_{\\Xi_2}^0(\\Xi_2^2)+\\Psi_{\\Xi_2}^1(\\Xi_2*\\Psi_{\\Xi_2}^0(\\Xi_2^2)))) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0714</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{\\psi_{\\chi_M(0)}(0)+1}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^2+\\Psi_{\\Xi_2}^0(\\Xi_2*\\Psi_{\\Xi_2}^0(\\Xi_2^2)+\\Xi_2)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0715</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{\\psi_{\\chi_M(0)}(0)+\\omega}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^2+\\Psi_{\\Xi_2}^0(\\Xi_2*\\Psi_{\\Xi_2}^0(\\Xi_2^2)+\\Xi_2\\omega)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0716</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{\\psi_{\\chi_M(0)}(0)*2}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^2+\\Psi_{\\Xi_2}^0(\\Xi_2*\\Psi_{\\Xi_2}^0(\\Xi_2^2)*2)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0717</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{\\psi_{\\chi_{\\psi_{\\chi_M(0)}(0)}(0)}(0)}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^2+\\Psi_{\\Xi_2}^0(\\Xi_2*\\Psi_{\\Xi_2}^0(\\Xi_2*\\Psi_{\\Xi_2}^0(\\Xi_2^2)))) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0718</td>
+                            <td>\\( \\psi_\\Omega(\\chi_{\\psi_{\\chi_{\\psi_{\\chi_M(0)}(0)}(0)}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^2+\\Psi_{\\Xi_2}^1(\\Xi_2*\\Psi_{\\Xi_2}^0(\\Xi_2*\\Psi_{\\Xi_2}^0(\\Xi_2^2)))) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0719</td>
+                            <td>\\( \\psi_\\Omega(\\chi_{\\chi_{\\psi_{\\chi_M(0)}(0)}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^2+\\Psi_{\\Xi_2}^1(\\Xi_2*\\Psi_{\\Xi_2}^1(\\Xi_2*\\Psi_{\\Xi_2}^0(\\Xi_2^2)))) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0720</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_M(0)}(1)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^2+\\Psi_{\\Psi_{\\Xi_2}^1(\\Xi_2^2)}^0(\\Xi_2^2+1)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0721</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{\\psi_{\\chi_M(0)}(1)}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^2+\\Psi_{\\Xi_2}^0(\\Xi_2*\\Psi_{\\Psi_{\\Xi_2}^1(\\Xi_2^2)}^0(\\Xi_2^2+1))) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0722</td>
+                            <td>\\( \\psi_\\Omega(\\chi_{\\psi_{\\chi_M(0)}(1)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^2+\\Psi_{\\Xi_2}^1(\\Xi_2*\\Psi_{\\Psi_{\\Xi_2}^1(\\Xi_2^2)}^0(\\Xi_2^2+1))) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0723</td>
+                            <td>\\( \\psi_\\Omega(\\chi_{\\psi_{\\chi_M(0)}(1)}(1)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^2+\\Psi_{\\Xi_2}^1(\\Xi_2*\\Psi_{\\Psi_{\\Xi_2}^1(\\Xi_2^2)}^0(\\Xi_2^2+1)+1)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0724</td>
+                            <td>\\( \\psi_\\Omega(\\chi_{\\psi_{\\chi_M(0)}(1)+1}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^2+\\Psi_{\\Xi_2}^1(\\Xi_2*\\Psi_{\\Psi_{\\Xi_2}^1(\\Xi_2^2)}^0(\\Xi_2^2+1)+\\Xi_2)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0725</td>
+                            <td>\\( \\psi_\\Omega(\\chi_{\\chi_{\\psi_{\\chi_M(0)}(1)}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^2+\\Psi_{\\Xi_2}^1(\\Xi_2*\\Psi_{\\Xi_2}^1(\\Xi_2*\\Psi_{\\Psi_{\\Xi_2}^1(\\Xi_2^2)}^0(\\Xi_2^2+1)))) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0726</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_M(0)}(2)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^2+\\Psi_{\\Psi_{\\Xi_2}^1(\\Xi_2^2)}^0(\\Xi_2^2+2)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0727</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_M(0)}(3)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^2+\\Psi_{\\Psi_{\\Xi_2}^1(\\Xi_2^2)}^0(\\Xi_2^2+3)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0728</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_M(0)}(\\omega)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^2+\\Psi_{\\Psi_{\\Xi_2}^1(\\Xi_2^2)}^0(\\Xi_2^2+\\omega)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0729</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_M(0)}(\\psi_{\\chi_M(0)}(0))) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^2+\\Psi_{\\Psi_{\\Xi_2}^1(\\Xi_2^2)}^0(\\Xi_2^2+\\Psi_{\\Xi_2}^0(\\Xi_2^2))) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0730</td>
+                            <td>\\( \\psi_\\Omega(\\chi_M(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^2+\\Psi_{\\Xi_2}^1(\\Xi_2^2)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0731</td>
+                            <td>\\( \\psi_\\Omega(\\Omega_{\\chi_M(0)+1}) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^2+\\Omega_{\\Psi_{\\Xi_2}^1(\\Xi_2^2)+1}) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0732</td>
+                            <td>\\( \\psi_\\Omega(I_{\\chi_M(0)+1}) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^2+\\Psi_{\\Xi_2}^1(\\Psi_{\\Xi_2}^1(\\Xi_2^2))^2+\\Psi_{\\Xi_2}^1(\\Psi_{\\Xi_2}^1(\\Xi_2^2))) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0733</td>
+                            <td>\\( \\psi_\\Omega(\\chi_2(\\chi_M(0)+1)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^2+\\Psi_{\\Xi_2}^1(\\Xi_2+\\Psi_{\\Xi_2}^1(\\Xi_2^2))) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0734</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_\\omega(\\chi_M(0)+1)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^2+\\Psi_{\\Xi_2}^0(\\Xi_2\\omega+\\Psi_{\\Xi_2}^1(\\Xi_2^2))) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0735</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_\\Omega(\\chi_M(0)+1)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^2+\\Psi_{\\Xi_2}^0(\\Xi_2\\Omega+\\Psi_{\\Xi_2}^1(\\Xi_2^2))) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0736</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{\\psi_{\\chi_\\Omega(0)}(0)}(\\chi_M(0)+1)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^2+\\Psi_{\\Xi_2}^0(\\Xi_2*\\Psi_{\\Xi_2}^0(\\Xi_2\\Omega)+\\Psi_{\\Xi_2}^1(\\Xi_2^2))) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0737</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{\\psi_{\\chi_M(0)}(0)}(\\chi_M(0)+1)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^2+\\Psi_{\\Xi_2}^0(\\Xi_2*\\Psi_{\\Xi_2}^0(\\Xi_2^2)+\\Psi_{\\Xi_2}^1(\\Xi_2^2))) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0738</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{\\psi_{\\chi_M(0)}(\\chi_M(0))}(\\chi_M(0)+1)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^2+\\Psi_{\\Xi_2}^0(\\Xi_2*\\Psi_{\\Psi_{\\Xi_2}^1(\\Xi_2^2)}^0(\\Xi_2^2+\\Psi_{\\Xi_2}^1(\\Xi_2^2))+\\Psi_{\\Xi_2}^1(\\Xi_2^2))) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0739</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{\\psi_{\\chi_M(0)}(\\psi_{\\chi_{\\psi_{\\chi_M(0)}(0)}(\\chi_M(0)+1)}(0))}(\\chi_M(0)+1)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^2+\\Psi_{\\Xi_2}^0(\\Xi_2*\\Psi_{\\Psi_{\\Xi_2}^1(\\Xi_2^2)}^0(\\Xi_2^2+\\Psi_{\\Xi_2}^0(\\Xi_2*\\Psi_{\\Xi_2}^0(\\Xi_2^2)+\\Psi_{\\Xi_2}^1(\\Xi_2^2)))+\\Psi_{\\Xi_2}^1(\\Xi_2^2))) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0740</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{\\chi_M(0)}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^2+\\Psi_{\\Xi_2}^0(\\Xi_2*\\Psi_{\\Xi_2}^1(\\Xi_2^2))) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0741</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_\\omega(\\psi_{\\chi_{\\chi_M(0)}(0)}(0)+1)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^2+\\Psi_{\\Xi_2}^0(\\Xi_2\\omega+\\Psi_{\\Xi_2}^0(\\Xi_2*\\Psi_{\\Xi_2}^1(\\Xi_2^2)))) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0742</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{\\psi_{\\chi_M(0)}(0)}(\\psi_{\\chi_{\\chi_M(0)}(0)}(0)+1)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^2+\\Psi_{\\Xi_2}^0(\\Xi_2*\\Psi_{\\Xi_2}^0(\\Xi_2^2)+\\Psi_{\\Xi_2}^0(\\Xi_2*\\Psi_{\\Xi_2}^1(\\Xi_2^2)))) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0743</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{\\psi_{\\chi_M(0)}(\\psi_{\\chi_{\\chi_M(0)}(0)}(0))}(\\psi_{\\chi_{\\chi_M(0)}(0)}(0)+1)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^2+\\Psi_{\\Xi_2}^0(\\Xi_2*\\Psi_{\\Psi_{\\Xi_2}^1(\\Xi_2^2)}^0(\\Xi_2^2+\\Psi_{\\Xi_2}^0(\\Xi_2*\\Psi_{\\Xi_2}^1(\\Xi_2^2)))+\\Psi_{\\Xi_2}^0(\\Xi_2*\\Psi_{\\Xi_2}^1(\\Xi_2^2)))) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0744</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{\\chi_M(0)}(0)}(1)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^2+\\Psi_{\\Psi_{\\Xi_2}^1(\\Xi_2*\\Psi_{\\Xi_2}^1(\\Xi_2^2))}^0(\\Xi_2*\\Psi_{\\Xi_2}^1(\\Xi_2^2)+1)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0745</td>
+                            <td>\\( \\psi_\\Omega(\\chi_{\\chi_M(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^2+\\Psi_{\\Xi_2}^1(\\Xi_2*\\Psi_{\\Xi_2}^1(\\Xi_2^2))) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0746</td>
+                            <td>\\( \\psi_\\Omega(\\chi_{\\chi_M(0)}(1)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^2+\\Psi_{\\Xi_2}^1(\\Xi_2*\\Psi_{\\Xi_2}^1(\\Xi_2^2)+1)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0747</td>
+                            <td>\\( \\psi_\\Omega(\\chi_{\\chi_M(0)+1}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^2+\\Psi_{\\Xi_2}^1(\\Xi_2*\\Psi_{\\Xi_2}^1(\\Xi_2^2)+\\Xi_2)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0748</td>
+                            <td>\\( \\psi_\\Omega(\\chi_{\\psi_{\\chi_{\\chi_M(0)}(0)}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^2+\\Psi_{\\Xi_2}^1(\\Xi_2*\\Psi_{\\Xi_2}^0(\\Xi_2*\\Psi_{\\Xi_2}^1(\\Xi_2^2)))) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0749</td>
+                            <td>\\( \\psi_\\Omega(\\chi_{\\chi_{\\chi_M(0)}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^2+\\Psi_{\\Xi_2}^1(\\Xi_2*\\Psi_{\\Xi_2}^1(\\Xi_2*\\Psi_{\\Xi_2}^1(\\Xi_2^2)))) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0750</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_M(1)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^2+\\Psi_{\\Xi_2}^0(\\Xi_2^2+1)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0751</td>
+                            <td>\\( \\psi_\\Omega(\\chi_{\\psi_{\\chi_M(1)}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^2+\\Psi_{\\Xi_2}^1(\\Xi_2*\\Psi_{\\Xi_2}^0(\\Xi_2^2+1))) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0752</td>
+                            <td>\\( \\psi_\\Omega(\\chi_{\\chi_{\\psi_{\\chi_M(1)}(0)}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^2+\\Psi_{\\Xi_2}^1(\\Xi_2*\\Psi_{\\Xi_2}^1(\\Xi_2*\\Psi_{\\Xi_2}^0(\\Xi_2^2+1)))) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0753</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_M(1)}(1)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^2+\\Psi_{\\Psi_{\\Xi_2}^1(\\Xi_2^2+1)}^0(\\Xi_2^2+2)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0754</td>
+                            <td>\\( \\psi_\\Omega(\\chi_M(1)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^2+\\Psi_{\\Xi_2}^1(\\Xi_2^2+1)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0755</td>
+                            <td>\\( \\psi_\\Omega(\\chi_{\\chi_M(1)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^2+\\Psi_{\\Xi_2}^1(\\Xi_2*\\Psi_{\\Xi_2}^1(\\Xi_2^2+1))) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0756</td>
+                            <td>\\( \\psi_\\Omega(\\chi_{\\chi_{\\chi_M(1)}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^2+\\Psi_{\\Xi_2}^1(\\Xi_2*\\Psi_{\\Xi_2}^1(\\Xi_2*\\Psi_{\\Xi_2}^1(\\Xi_2^2+1)))) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0757</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_M(2)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^2+\\Psi_{\\Xi_2}^0(\\Xi_2^2+2)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0758</td>
+                            <td>\\( \\psi_\\Omega(\\chi_M(\\omega)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^2+\\Psi_{\\Xi_2}^0(\\Xi_2^2+\\omega)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0759</td>
+                            <td>\\( \\psi_\\Omega(\\chi_M(\\chi_M(0))) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^2+\\Psi_{\\Xi_2}^0(\\Xi_2^2+\\Psi_{\\Xi_2}^1(\\Xi_2^2))) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0760</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{M+1}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^2+\\Xi_2) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0761</td>
+                            <td>\\( \\psi_\\Omega(\\chi_{M+1}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^2+\\Xi_2+\\Psi_{\\Xi_2}^1(\\Xi_2^2+\\Xi_2)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0762</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_M(\\chi_{M+1}(0)+1)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^2+\\Xi_2+\\Psi_{\\Xi_2}^0(\\Xi_2^2+\\Psi_{\\Xi_2}^1(\\Xi_2^2+\\Xi_2))) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0763</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{M+2}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^2+\\Xi_22) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0764</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{M+\\omega}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^2+\\Xi_2\\omega) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0765</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{M+\\Omega}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^2+\\Xi_2\\Omega) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0766</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{M+\\psi_{\\chi_{M}(0)}(0)}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^2+\\Xi_2*\\Psi_{\\Xi_2}^0(\\Xi_2^2)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0767</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{M+\\chi_{M}(0)}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^2+\\Xi_2*\\Psi_{\\Xi_2}^0(\\Xi_2^2+\\Xi_2*\\Psi_{\\Xi_2}^1(\\Xi_2^2))) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0768</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{M+\\chi_{M+\\chi_{M}(0)}(0)}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^2+\\Xi_2*\\Psi_{\\Xi_2}^0(\\Xi_2^2+\\Xi_2*\\Psi_{\\Xi_2}^1(\\Xi_2^2+\\Xi_2*\\Psi_{\\Xi_2}^1(\\Xi_2^2)))) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0769</td>
+                            <td>\\( \\psi_\\Omega(\\chi_{M+\\chi_{M+\\chi_M(0)}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^2+\\Xi_2*\\Psi_{\\Xi_2}^1(\\Xi_2^2+\\Xi_2*\\Psi_{\\Xi_2}^1(\\Xi_2^2+\\Xi_2*\\Psi_{\\Xi_2}^1(\\Xi_2^2)))) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0770</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{M2}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^22) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0771</td>
+                            <td>\\( \\psi_\\Omega(\\chi_{M2}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^22+\\Psi_{\\Xi_2}^1(\\Xi_2^22)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0772</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{M2}(1)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^22+\\Psi_{\\Xi_2}^0(\\Xi_2^22+1)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0773</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{M2}(\\omega)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^22+\\Psi_{\\Xi_2}^0(\\Xi_2^22+\\omega)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0774</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{M2+1}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^22+\\Xi_2) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0775</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{M3}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^23) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0776</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{M\\omega}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^2\\omega) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0777</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{M*\\chi_M(0)}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^2*\\Psi_{\\Xi_2}^1(\\Xi_2^2)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0778</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{M*\\chi_{M*\\chi_M(0)}(0)}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^2*\\Psi_{\\Xi_2}^1(\\Xi_2^2*\\Psi_{\\Xi_2}^1(\\Xi_2^2))) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0779</td>
+                            <td>\\( \\psi_\\Omega(\\chi_{M*\\chi_{M*\\chi_M(0)}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^2*\\Psi_{\\Xi_2}^1(\\Xi_2^2*\\Psi_{\\Xi_2}^1(\\Xi_2^2))+\\Psi_{\\Xi_2}^1(\\Xi_2^2*\\Psi_{\\Xi_2}^1(\\Xi_2^2*\\Psi_{\\Xi_2}^1(\\Xi_2^2)))) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0780</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{M^2}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^3) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0781</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{M^2}(1)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^3+\\Psi_{\\Xi_2}^0(\\Xi_2^3+1)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0782</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{M^2+1}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^3+\\Xi_2) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0783</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{M^2+M}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^3+\\Xi_2^2) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0784</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{M^22}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^32) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0785</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{M^3}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^4) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0786</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{M^\\omega}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^\\omega) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0787</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{M^{\\chi_M(0)}}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^{\\Psi_{\\Xi_2}^1(\\Xi_2^2)}) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0788</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{M^{\\chi_{M^{\\chi_M(0)}}(0)}}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^{\\Psi_{\\Xi_2}^1(\\Xi_2^{\\Psi_{\\Xi_2}^1(\\Xi_2^2)})}) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0789</td>
+                            <td>\\( \\psi_\\Omega(\\chi_{M^{\\chi_{M^{\\chi_M(0)}}(0)}}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^{\\Psi_{\\Xi_2}^1(\\Xi_2^{\\Psi_{\\Xi_2}^1(\\Xi_2^2)})}+\\Psi_{\\Xi_2}^1(\\Xi_2^{\\Psi_{\\Xi_2}^1(\\Xi_2^{\\Psi_{\\Xi_2}^1(\\Xi_2^2)})})) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0790</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{M^M}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^{\\Xi_2}) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0791</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{M^M}(1)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^{\\Xi_2}+\\Psi_{\\Xi_2}^0(\\Xi_2^{\\Xi_2}+1)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0792</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{M^M+1}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^{\\Xi_2}+\\Xi_2) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0793</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{M^M2}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^{\\Xi_2}2) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0794</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{M^{M+1}}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^{\\Xi_2+1}) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0795</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{M^{M2}}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^{\\Xi_22}) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0796</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{M^{M^2}}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^{\\Xi_2^2}) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0797</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{M^{M^\\omega}}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^{\\Xi_2^\\omega}) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0798</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{M^{M^M}}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^{\\Xi_2^{\\Xi_2}}) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0799</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{M^{M^{M^M}}}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_2^{\\Xi_2^{\\Xi_2^{\\Xi_2}}}) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0800</td>
+                            <td>\\( SRO=\\psi_\\Omega(\\psi_{\\chi_{\\varepsilon_{M+1}}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\varepsilon_{\\Xi_2+1}) \\)</td>
+                        </tr>
+                    </tbody>
+                </table>
+                `,
+                `${s(8)}I call ordinal #0700 the "Jäger Ordinal" (JO) because this is the largest ordinal the "Jäger's function" can represent. Jäger's function is an OCF proposed by Gerhard Jäger<sup><a id="goto0003" href="#cite0003">[3]</a></sup>, which is easy to understand with the knowledge of how the Rathjen's function based on the Mahlo Cardinal works.`,
+                `${s(8)}I call ordinal #0800 the "Small Rathjen Ordinal" (SRO) because this is the "Proof Theoretic Ordinal" of the theory \\( KPM \\), which is important in "Proof Theory".`,
+                `${s(1)}`,
+                `${s(8)}In the next article, I will show my analysis from \\( \\Psi_\\Omega^0(\\varepsilon_{\\Xi_2+1}) \\) to \\( \\Psi_\\Omega^0(\\Psi_{\\Xi_\\omega}^0(\\omega+1)) \\).`,
+                `${s(1)}`,
+                `${s(8)}<a id="cite0001" href="#goto0001">^</a>[1] Rathjen, Michael. <a href="https://www1.maths.leeds.ac.uk/~rathjen/Ord_Notation_Weakly_Mahlo.pdf">"Ordinal Notations Based on a Weakly Mahlo Cardinal"</a>, Archive for Mathematical Logic 29 (1990) 249--263.`,
+                `${s(8)}<a id="cite0002" href="#goto0002">^</a>[2] Rathjen, Michael. <a href="https://www1.maths.leeds.ac.uk/~rathjen/Ehab.pdf">"Proof Theory of Reflection"</a>, Annals of Pure and Applied Logic 68, 181--224 (1994).`,
+                `${s(8)}<a id="cite0003" href="#goto0003">^</a>[3] M. Jäger, "\\( \\rho \\)-inaccessible ordinals, collapsing functions and a recursive notation system", Archiv für mathematische Logik und Grundlagenforschung, volume 24 (1984), pp. 49--62.`,
+            ],
+            null,
+            null,
+            null,
+        ],
+    },
+    {
+        title: [
+            `My analysis of Buchholz's OCF and two Rathjen's OCFs - Part.V`,
+            null,
+            null,
+            null,
+        ],
+        series: ``,
+        time: Date.UTC(2023, 12 - 1, 15, 12, 0, 0, 0),
+        default: 0,
+        content: [
+            [
+                `${s(8)}In this article, I will list 200 more ordinals continued from the previous article using the two Rathjen's OCFs. If I'm notified that there are errors in my list, I'll fix'em ASAP.`,
+                `${s(8)}Throughout this article, the following abbreviation will be used:`,
+                `<div style="text-align: center;">\\( \\begin{align} \\omega^\\alpha & := \\varphi_0(\\alpha) \\\\ \\varepsilon_\\alpha & := \\varphi_1(\\alpha) \\\\ \\zeta_\\alpha & := \\varphi_2(\\alpha) \\\\ \\eta_\\alpha & := \\varphi_3(\\alpha) \\end{align} \\)</div>`,
+                `<h2>#0800~#0899 - \\( \\Psi_\\Omega^0(\\varepsilon_{\\Xi_2+1})-\\Psi_\\Omega^0(\\Xi_3) \\)</h2>`,
+                `<b>#0800~#0819 - \\( \\psi_\\Omega(\\psi_{\\chi_{\\varepsilon_{M+1}}(0)}(0))-\\psi_\\Omega(\\Gamma_{M+1}) \\)</b>`,
+                `${s(8)}In this part, ordinals will be represented in these 2 notations:`,
+                `${s(8)}<b>Rathjen M:</b> The notation using the Rathjen's function \\( \\psi \\) based on the "Mahlo Cardinal"(\\( M \\))<sup><a id="goto0001" href="#cite0001">[1]</a></sup>. The following abbreviation will be used:`,
+                `<div style="text-align: center;">\\( \\begin{align} E_\\alpha & := \\Phi_1(\\alpha) \\\\ Z_\\alpha & := \\Phi_2(\\alpha) \\\\ H_\\alpha & := \\Phi_3(\\alpha) \\\\ \\Omega & := \\chi_0(0) \\\\ \\Omega_{2+\\alpha} & := \\chi_0(1+\\alpha) \\\\ I & := \\chi_1(0) \\\\ I_{2+\\alpha} & := \\chi_1(1+\\alpha) \\end{align} \\)</div>`,
+                `${s(8)}<b>Rathjen K:</b> The notation using the Rathjen's function \\( \\Psi \\) based on the "Weakly Compact Cardinal"(\\( K \\))<sup><a id="goto0002" href="#cite0002">[2]</a></sup>. The following abbreviation will be used:`,
+                `<div style="text-align: center;">\\( \\begin{align} \\Omega & := \\Omega_1 \\\\ \\Xi & := \\Xi(1) \\\\ \\Xi_{2+\\alpha} & := \\Xi(2+\\alpha) \\end{align} \\)</div>`,
+                `
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>#</th>
+                            <th>Rathjen M</th>
+                            <th>Rathjen K</th>
+                        </tr>
+                        <tr>
+                            <td>0800</td>
+                            <td>\\( SRO=\\psi_\\Omega(\\psi_{\\chi_{\\varepsilon_{M+1}}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\varepsilon_{\\Xi_2+1}) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0801</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{\\varepsilon_{M+1}}(0)}(0)^2) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\varepsilon_{\\Xi_2+1}+\\Psi_{\\Xi_2}^0(\\varepsilon_{\\Xi_2+1})) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0802</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{\\varepsilon_{M+1}}(0)}(1)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\varepsilon_{\\Xi_2+1}+\\Psi_{\\Psi_{\\Xi_2}^1(\\varepsilon_{\\Xi_2+1})}^0(\\varepsilon_{\\Xi_2+1}+1)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0803</td>
+                            <td>\\( \\psi_\\Omega(\\chi_{\\varepsilon_{M+1}}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\varepsilon_{\\Xi_2+1}+\\Psi_{\\Xi_2}^1(\\varepsilon_{\\Xi_2+1})) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0804</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{\\varepsilon_{M+1}}(1)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\varepsilon_{\\Xi_2+1}+\\Psi_{\\Xi_2}^0(\\varepsilon_{\\Xi_2+1}+1)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0805</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{\\varepsilon_{M+1}+1}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\varepsilon_{\\Xi_2+1}+\\Xi_2) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0806</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{\\varepsilon_{M+2}}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\varepsilon_{\\Xi_2+2}) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0807</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{\\zeta_{M+1}}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\zeta_{\\Xi_2+1}) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0808</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{\\varphi_\\omega(M+1)}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\varphi_\\omega(\\Xi_2+1)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0809</td>
+                            <td>\\( \\psi_\\Omega(\\psi_{\\chi_{\\varphi_M(1)}(0)}(0)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\varphi_{\\Xi_2}(1)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0810</td>
+                            <td>\\( \\psi_\\Omega(M) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Omega_{\\Xi_2+1}}^0(3)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0811</td>
+                            <td>\\( \\psi_\\Omega(M2) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Omega_{\\Xi_2+1}}^0(3)+1) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0812</td>
+                            <td>\\( \\psi_\\Omega(M^2) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Omega_{\\Xi_2+1}}^0(3)+\\Psi_{\\Xi_2}^0(\\Psi_{\\Omega_{\\Xi_2+1}}^0(3))) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0813</td>
+                            <td>\\( \\psi_\\Omega(M^M) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Omega_{\\Xi_2+1}}^0(3)+\\Psi_{\\Xi_2}^0(\\Psi_{\\Omega_{\\Xi_2+1}}^0(3))^2) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0814</td>
+                            <td>\\( \\psi_\\Omega(M^{M^M}) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Omega_{\\Xi_2+1}}^0(3)+\\Psi_{\\Xi_2}^0(\\Psi_{\\Omega_{\\Xi_2+1}}^0(3))^{\\Psi_{\\Xi_2}^0(\\Psi_{\\Omega_{\\Xi_2+1}}^0(3))}) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0815</td>
+                            <td>\\( \\psi_\\Omega(\\varepsilon_{M+1}) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Omega_{\\Xi_2+1}}^0(3)+\\varepsilon_{\\Psi_{\\Xi_2}^0(\\Psi_{\\Omega_{\\Xi_2+1}}^0(3))+1}) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0816</td>
+                            <td>\\( \\psi_\\Omega(\\varepsilon_{M+2}) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Omega_{\\Xi_2+1}}^0(3)+\\varepsilon_{\\Psi_{\\Xi_2}^0(\\Psi_{\\Omega_{\\Xi_2+1}}^0(3))+2}) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0817</td>
+                            <td>\\( \\psi_\\Omega(\\zeta_{M+1}) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Omega_{\\Xi_2+1}}^0(3)+\\zeta_{\\Psi_{\\Xi_2}^0(\\Psi_{\\Omega_{\\Xi_2+1}}^0(3))+1}) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0818</td>
+                            <td>\\( \\psi_\\Omega(\\varphi_\\omega(M+1)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Omega_{\\Xi_2+1}}^0(3)+\\varphi_\\omega(\\Psi_{\\Xi_2}^0(\\Psi_{\\Omega_{\\Xi_2+1}}^0(3))+1)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0819</td>
+                            <td>\\( \\psi_\\Omega(\\varphi_M(1)) \\)</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Omega_{\\Xi_2+1}}^0(3)+\\varphi_{\\Psi_{\\Xi_2}^0(\\Psi_{\\Omega_{\\Xi_2+1}}^0(3))}(1)) \\)</td>
+                        </tr>
+                    </tbody>
+                </table>
+                `,
+                `<b>#0820~#0899 - \\( \\psi_\\Omega(\\Gamma_{M+1})-\\Psi_\\Omega^0(\\Xi_3) \\)</b>`,
+                `${s(8)}We have reached the largest ordinal that the Rathjen's function based on the Mahlo Cardinal can represent and this ordinal looks pretty awkward. The Mahlo Cardinal acts like a relatively small cardinal \\( \\chi_{\\Gamma_{M+1}}(0) \\) (or strictly \\( \\{\\chi_{\\alpha}(0)|\\alpha< \\Gamma_{M+1}\\} \\)) or \\( \\Psi_{\\Xi_2}^0(\\Psi_{\\Omega_{\\Xi_2+1}}^0(3)) \\) instead of an extremely large cardinal as it's supposed to be. I think this is why Rathjen made the restriction that \\( M \\) or something larger can only be plugged into the function \\( \\alpha\\rightarrow\\omega^\\alpha \\) instead of the whole Veblen function.`,
+                `${s(8)}In this part, the ordinal will only be represented using the Rathjen's function based on the Weakly Compact Cardinal. There will also be a note to show what the ordinals introduced in the function looks like. The notations written in the "Notes" column are usually ill-defined and can only be treated as visualizations.`,
+                `
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>#</th>
+                            <th>Rathjen K</th>
+                            <th>Notes</th>
+                        </tr>
+                        <tr>
+                            <td>0820</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Omega_{\\Xi_2+1}}^0(3)+\\Psi_{\\Omega_{\\Psi_{\\Xi_2}^0(\\Psi_{\\Omega_{\\Xi_2+1}}^0(3))+1}}^0(\\Psi_{\\Omega_{\\Xi_2+1}}^0(3)+1)) \\)</td>
+                            <td>\\( =sup\\{\\psi_\\Omega(\\alpha)|a< \\Gamma_{M+1} \\} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0821</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Omega_{\\Xi_2+1}}^0(3)+\\Psi_{\\Xi_2}^0(\\Psi_{\\Xi_2}^0(\\Psi_{\\Omega_{\\Xi_2+1}}^0(3)))) \\)</td>
+                            <td>\\( =\\psi_\\Omega(E_{\\psi_{\\chi_{\\Gamma_{M+1}}(0)}(0)+1}) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0822</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Omega_{\\Xi_2+1}}^0(3)+\\Psi_{\\Psi_{\\Xi_2}^1(\\Psi_{\\Omega_{\\Xi_2+1}}^0(3))}^0(\\Psi_{\\Omega_{\\Xi_2+1}}^0(3)+1)) \\)</td>
+                            <td>\\( =\\psi_\\Omega(\\psi_{\\chi_{\\Gamma_{M+1}}(0)}(1)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0823</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Omega_{\\Xi_2+1}}^0(3)+\\Psi_{\\Xi_2}^1(\\Psi_{\\Omega_{\\Xi_2+1}}^0(3))) \\)</td>
+                            <td>\\( =\\psi_\\Omega(\\chi_{\\Gamma_{M+1}}(0)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0824</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Omega_{\\Xi_2+1}}^0(3)+\\Psi_{\\Xi_2}^0(\\Psi_{\\Omega_{\\Xi_2+1}}^0(3)+1)) \\)</td>
+                            <td>\\( =\\psi_\\Omega(\\psi_{\\chi_{\\Gamma_{M+1}}(1)}(0)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0825</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Omega_{\\Xi_2+1}}^0(3)+\\Xi_2) \\)</td>
+                            <td>\\( =\\psi_\\Omega(\\psi_{\\chi_{\\Gamma_{M+1}+1}(0)}(0)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0826</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Omega_{\\Xi_2+1}}^0(4)) \\)</td>
+                            <td>\\( =\\psi_\\Omega(\\psi_{\\chi_{\\Gamma_{M+2}}(0)}(0)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0827</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Omega_{\\Xi_2+1}) \\)</td>
+                            <td>\\( =\\psi_\\Omega(\\psi_{\\chi_{\\varphi(1,1,M+1)}(0)}(0)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0828</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Omega_{\\Xi_2+\\omega}) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0829</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Omega_{\\Omega_{\\Xi_2+1}}) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0830</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_3}^0(4)) \\)</td>
+                            <td>\\( \\Psi_{\\Xi_3}^0(4)=E_{M+1} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0831</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Psi_{\\Xi_3}^1(4)}^0(5)) \\)</td>
+                            <td>\\( \\Psi_{\\Psi_{\\Xi_3}^1(4)}^0(5)=E_{M+2} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0832</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Psi_{\\Xi_3}^1(4)}^0(6)) \\)</td>
+                            <td>\\( \\Psi_{\\Psi_{\\Xi_3}^1(4)}^0(6)=E_{M+3} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0833</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Psi_{\\Xi_3}^1(4)}^0(\\omega)) \\)</td>
+                            <td>\\( \\Psi_{\\Psi_{\\Xi_3}^1(4)}^0(\\omega)=E_{M+\\omega} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0834</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_3}^1(4)) \\)</td>
+                            <td>\\( \\Psi_{\\Xi_3}^1(4)=I_{M+1} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0835</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_3}^1(4)^2) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0836</td>
+                            <td>\\( \\Psi_\\Omega^0(\\varepsilon_{\\Psi_{\\Xi_3}^1(4)+1}) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0837</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Omega_{\\Psi_{\\Xi_3}^1(4)+1}) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0838</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Omega_{\\Psi_{\\Xi_3}^1(4)+\\omega}) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0839</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Omega_{\\Omega_{\\Psi_{\\Xi_3}^1(4)+1}}) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0840</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Psi_{\\Xi_3}^2(4)}^0(5)) \\)</td>
+                            <td>\\( \\Psi_{\\Psi_{\\Xi_3}^2(4)}^0(5)=E_{I_{M+1}+1} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0841</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Psi_{\\Psi_{\\Xi_3}^2(4)}^1(5)}^0(6)) \\)</td>
+                            <td>\\( \\Psi_{\\Psi_{\\Psi_{\\Xi_3}^2(4)}^1(5)}^0(6)=E_{I_{M+1}+2} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0842</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Psi_{\\Psi_{\\Xi_3}^2(4)}^1(5)}^0(7)) \\)</td>
+                            <td>\\( \\Psi_{\\Psi_{\\Psi_{\\Xi_3}^2(4)}^1(5)}^0(7)=E_{I_{M+1}+3} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0843</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Psi_{\\Xi_3}^2(4)}^1(5)) \\)</td>
+                            <td>\\( \\Psi_{\\Psi_{\\Xi_3}^2(4)}^1(5)=I_{M+2} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0844</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Psi_{\\Xi_3}^2(4)}^0(6)) \\)</td>
+                            <td>\\( \\Psi_{\\Psi_{\\Xi_3}^2(4)}^0(6)=E_{I_{M+2}+1} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0845</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Psi_{\\Psi_{\\Xi_3}^2(4)}^1(6)}^0(7)) \\)</td>
+                            <td>\\( \\Psi_{\\Psi_{\\Psi_{\\Xi_3}^2(4)}^1(6)}^0(7)=E_{I_{M+2}+2} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0846</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Psi_{\\Xi_3}^2(4)}^1(6)) \\)</td>
+                            <td>\\( \\Psi_{\\Psi_{\\Xi_3}^2(4)}^1(6)=I_{M+3} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0847</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Psi_{\\Xi_3}^2(4)}^0(\\omega)) \\)</td>
+                            <td>\\( \\Psi_{\\Psi_{\\Xi_3}^2(4)}^0(\\omega)=I_{M+\\omega} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0848</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Psi_{\\Xi_3}^2(4)}^1(\\omega)) \\)</td>
+                            <td>\\( \\Psi_{\\Psi_{\\Xi_3}^2(4)}^1(\\omega)=I_{M+\\omega+1} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0849</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Psi_{\\Xi_3}^2(4)}^0(\\Psi_{\\Psi_{\\Xi_3}^2(4)}^0(\\omega))) \\)</td>
+                            <td>\\( \\Psi_{\\Psi_{\\Xi_3}^2(4)}^0(\\Psi_{\\Psi_{\\Xi_3}^2(4)}^0(\\omega))=I_{I_{M+\\omega}} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0850</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_3}^2(4)) \\)</td>
+                            <td>\\( \\Psi_{\\Xi_3}^2(4)=M_2 \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0851</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_3}^2(4)+\\Psi_{\\Psi_{\\Xi_3}^2(4)}^0(\\Psi_{\\Xi_3}^2(4))) \\)</td>
+                            <td>\\( \\Psi_{\\Psi_{\\Xi_3}^2(4)}^0(\\Psi_{\\Xi_3}^2(4))=I_{I_{\\cdot_{\\cdot_{\\cdot_{I_{M+1}}}}}}=\\psi_{\\chi_2(M+1)}(0) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0852</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_3}^2(4)+\\Psi_{\\Psi_{\\Xi_3}^2(4)}^1(\\Psi_{\\Xi_3}^2(4))) \\)</td>
+                            <td>\\( \\Psi_{\\Psi_{\\Xi_3}^2(4)}^0(\\Psi_{\\Xi_3}^2(4))=I(2,M+1)=\\chi_2(M+1) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0853</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_3}^2(4)*2) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0854</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_3}^2(4)*2+\\Psi_{\\Psi_{\\Xi_3}^2(4)}^0(\\Psi_{\\Xi_3}^2(4)*2)) \\)</td>
+                            <td>\\( \\Psi_{\\Psi_{\\Xi_3}^2(4)}^0(\\Psi_{\\Xi_3}^2(4)*2)=I(2,I(2,\\cdots I(2,M+1)\\cdots))=\\psi_{\\chi_3(M+1)}(0) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0855</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_3}^2(4)*2+\\Psi_{\\Psi_{\\Xi_3}^2(4)}^1(\\Psi_{\\Xi_3}^2(4)*2)) \\)</td>
+                            <td>\\( \\Psi_{\\Psi_{\\Xi_3}^2(4)}^0(\\Psi_{\\Xi_3}^2(4)*2)=I(3,M+1)=\\chi_3(M+1) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0856</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_3}^2(4)^2) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0857</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_3}^2(4)^2+\\Psi_{\\Psi_{\\Xi_3}^2(4)}^0(\\Psi_{\\Xi_3}^2(4)^2)) \\)</td>
+                            <td>\\( \\Psi_{\\Psi_{\\Xi_3}^2(4)}^0(\\Psi_{\\Xi_3}^2(4)^2)=I(I(\\cdots I(M+1,0)\\cdots,0),0)=\\psi_{\\chi_M(M+1)}(0) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0858</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_3}^2(4)^2+\\Psi_{\\Psi_{\\Xi_3}^2(4)}^1(\\Psi_{\\Xi_3}^2(4)^2)) \\)</td>
+                            <td>\\( \\Psi_{\\Psi_{\\Xi_3}^2(4)}^0(\\Psi_{\\Xi_3}^2(4)^2)=I(1,0,M+1)=\\chi_M(M+1) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0859</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_3}^2(4)^{\\Psi_{\\Xi_3}^2(4)}) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0860</td>
+                            <td>\\( \\Psi_\\Omega^0(\\varepsilon_{\\Psi_{\\Xi_3}^2(4)+1}) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0861</td>
+                            <td>\\( \\Psi_\\Omega^0(\\varepsilon_{\\Psi_{\\Xi_3}^2(4)+2}) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0862</td>
+                            <td>\\( \\Psi_\\Omega^0(\\zeta_{\\Psi_{\\Xi_3}^2(4)+1}) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0863</td>
+                            <td>\\( \\Psi_\\Omega^0(\\eta_{\\Psi_{\\Xi_3}^2(4)+1}) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0864</td>
+                            <td>\\( \\Psi_\\Omega^0(\\varphi_\\omega(\\Psi_{\\Xi_3}^2(4)+1)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0865</td>
+                            <td>\\( \\Psi_\\Omega^0(\\varphi_{\\Psi_{\\Xi_3}^2(4)}(1)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0866</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Omega_{\\Psi_{\\Xi_3}^2(4)+1}}^0(5)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0867</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Omega_{\\Psi_{\\Xi_3}^2(4)+1}) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0868</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Omega_{\\Psi_{\\Xi_3}^2(4)+\\omega}) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0869</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Omega_{\\Omega_{\\Psi_{\\Xi_3}^2(4)+1}}) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0870</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_3}^0(5)) \\)</td>
+                            <td>\\( \\Psi_{\\Xi_3}^0(5)=E_{M_2+1} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0871</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Psi_{\\Xi_3}^1(5)}^0(6)) \\)</td>
+                            <td>\\( \\Psi_{\\Psi_{\\Xi_3}^1(5)}^0(6)=E_{M_2+2} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0872</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Psi_{\\Xi_3}^1(5)}^0(\\omega)) \\)</td>
+                            <td>\\( \\Psi_{\\Psi_{\\Xi_3}^1(5)}^0(6)=E_{M_2+\\omega} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0873</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_3}^1(5)) \\)</td>
+                            <td>\\( \\Psi_{\\Xi_3}^1(5)=I_{M_2+1} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0874</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Psi_{\\Xi_3}^2(5)}^0(6)) \\)</td>
+                            <td>\\( \\Psi_{\\Psi_{\\Xi_3}^2(5)}^0(6)=E_{I_{M_2+1}+1} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0875</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Psi_{\\Psi_{\\Xi_3}^2(5)}^1(6)}^0(7)) \\)</td>
+                            <td>\\( \\Psi_{\\Psi_{\\Psi_{\\Xi_3}^2(5)}^1(6)}^0(7)=E_{I_{M_2+1}+2} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0876</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Psi_{\\Xi_3}^2(5)}^1(6)) \\)</td>
+                            <td>\\( \\Psi_{\\Psi_{\\Xi_3}^2(5)}^1(6)=I_{M_2+2} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0877</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Psi_{\\Xi_3}^2(5)}^0(\\omega)) \\)</td>
+                            <td>\\( \\Psi_{\\Psi_{\\Xi_3}^2(5)}^0(\\omega)=I_{M_2+\\omega} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0878</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Psi_{\\Xi_3}^2(5)}^1(\\omega)) \\)</td>
+                            <td>\\( \\Psi_{\\Psi_{\\Xi_3}^2(5)}^1(\\omega)=I_{M_2+\\omega+1} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0879</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Psi_{\\Xi_3}^2(5)}^0(\\Psi_{\\Psi_{\\Xi_3}^2(5)}^0(\\omega))) \\)</td>
+                            <td>\\( \\Psi_{\\Psi_{\\Xi_3}^2(5)}^0(\\Psi_{\\Psi_{\\Xi_3}^2(5)}^0(\\omega))=I_{I_{M_2+\\omega}} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0880</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_3}^2(5)) \\)</td>
+                            <td>\\( \\Psi_{\\Xi_3}^2(5)=M_3 \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0881</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_3}^2(5)+\\Psi_{\\Psi_{\\Xi_3}^2(5)}^0(\\Psi_{\\Xi_3}^2(5))) \\)</td>
+                            <td>\\( \\Psi_{\\Psi_{\\Xi_3}^2(5)}^0(\\Psi_{\\Xi_3}^2(5))=I_{I_{\\cdot_{\\cdot_{\\cdot_{I_{M_2+1}}}}}}=\\psi_{\\chi_2(M_2+1)}(0) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0882</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_3}^2(5)+\\Psi_{\\Psi_{\\Xi_3}^2(5)}^1(\\Psi_{\\Xi_3}^2(5))) \\)</td>
+                            <td>\\( \\Psi_{\\Psi_{\\Xi_3}^2(5)}^0(\\Psi_{\\Xi_3}^2(5))=I(2,M_2+1)=\\chi_2(M_2+1) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0883</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_3}^2(5)*2) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0884</td>
+                            <td>\\( \\Psi_\\Omega^0(\\varepsilon_{\\Psi_{\\Xi_3}^2(5)+1}) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0885</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Omega_{\\Psi_{\\Xi_3}^2(5)+1}) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0886</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_3}^0(6)) \\)</td>
+                            <td>\\( \\Psi_{\\Xi_3}^0(6)=E_{M_3+1} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0887</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_3}^1(6)) \\)</td>
+                            <td>\\( \\Psi_{\\Xi_3}^1(6)=I_{M_3+1} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0888</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_3}^2(6)) \\)</td>
+                            <td>\\( \\Psi_{\\Xi_3}^2(6)=M_4 \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0889</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_3}^2(7)) \\)</td>
+                            <td>\\( \\Psi_{\\Xi_3}^2(7)=M_5 \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0890</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_3}^0(\\omega)) \\)</td>
+                            <td>\\( \\Psi_{\\Xi_3}^0(\\omega)=M_\\omega \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0891</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_3}^1(\\omega)) \\)</td>
+                            <td>\\( \\Psi_{\\Xi_3}^1(\\omega)=I_{M_\\omega+1} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0892</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_3}^2(\\omega)) \\)</td>
+                            <td>\\( \\Psi_{\\Xi_3}^2(\\omega)=M_{\\omega+1} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0893</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_3}^2(\\omega+1)) \\)</td>
+                            <td>\\( \\Psi_{\\Xi_3}^2(\\omega+1)=M_{\\omega+2} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0894</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_3}^0(\\omega2)) \\)</td>
+                            <td>\\( \\Psi_{\\Xi_3}^0(\\omega2)=M_{\\omega2} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0895</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_3}^0(\\Omega)) \\)</td>
+                            <td>\\( \\Psi_{\\Xi_3}^0(\\Omega)=M_\\Omega \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0896</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_3}^0(\\Omega_2)) \\)</td>
+                            <td>\\( \\Psi_{\\Xi_3}^0(\\Omega_2)=M_{\\Omega_2} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0897</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_3}^0(\\Xi)) \\)</td>
+                            <td>\\( \\Psi_{\\Xi_3}^0(\\Xi)=M_I \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0898</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_3}^0(\\Xi_2)) \\)</td>
+                            <td>\\( \\Psi_{\\Xi_3}^0(\\Xi_2)=M_M \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0899</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_3}^0(\\Psi_{\\Xi_3}^0(\\Xi_2))) \\)</td>
+                            <td>\\( \\Psi_{\\Xi_3}^0(\\Psi_{\\Xi_3}^0(\\Xi_2))=M_{M_M} \\)</td>
+                        </tr>
+                    </tbody>
+                </table>
+                `,
+                `<h2>#0900~#1000 - \\( \\Psi_\\Omega^0(\\Xi_3)-\\Psi_\\Omega^0(\\Psi_{\\Xi_\\omega}^0(\\omega+1)) \\)</h2>`,
+                `${s(8)}In this part, ordinals will be represented in the same notation as in the previous part.`,
+                `
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>#</th>
+                            <th>Rathjen K</th>
+                            <th>Notes</th>
+                        </tr>
+                        <tr>
+                            <td>0900</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_3) \\)</td>
+                            <td>\\( \\Xi_3=\\mathbb{M}_3=N \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0901</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_3+\\Psi_{\\Xi_3}^0(\\Xi_3)) \\)</td>
+                            <td>\\( \\Psi_{\\Xi_3}^0(\\Xi_3)=\\Phi M(1,0)=M_{M_{M_{\\cdot_{\\cdot_\\cdot}}}} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0902</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_3+\\Psi_{\\Xi_3}^0(\\Psi_{\\Xi_3}^0(\\Xi_3))) \\)</td>
+                            <td>\\( \\Psi_{\\Xi_3}^0(\\Psi_{\\Xi_3}^0(\\Xi_3))=E_{\\Phi M(1,0)+1} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0903</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_3+\\Psi_{\\Xi_3}^0(\\Psi_{\\Xi_3}^0(\\Xi_3)+1)) \\)</td>
+                            <td>\\( \\Psi_{\\Xi_3}^0(\\Psi_{\\Xi_3}^0(\\Xi_3)+1)=E_{\\Phi M(1,0)+2} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0904</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_3+\\Psi_{\\Psi_{\\Xi_3}^1(\\Psi_{\\Xi_3}^0(\\Xi_3))}^0(\\Xi_3+1)) \\)</td>
+                            <td>\\( \\Psi_{\\Psi_{\\Xi_3}^1(\\Psi_{\\Xi_3}^0(\\Xi_3))}^0(\\Xi_3+1)=Z_{\\Phi M(1,0)+1} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0905</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_3+\\Psi_{\\Xi_3}^1(\\Psi_{\\Xi_3}^0(\\Xi_3))) \\)</td>
+                            <td>\\( \\Psi_{\\Xi_3}^1(\\Psi_{\\Xi_3}^0(\\Xi_3))=I_{\\Phi M(1,0)+1} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0906</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_3+\\Psi_{\\Xi_3}^0(\\Psi_{\\Xi_3}^1(\\Psi_{\\Xi_3}^0(\\Xi_3)))) \\)</td>
+                            <td>\\( \\Psi_{\\Xi_3}^0(\\Psi_{\\Xi_3}^1(\\Psi_{\\Xi_3}^0(\\Xi_3)))=E_{I_{\\Phi M(1,0)+1}+1} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0907</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_3+\\Psi_{\\Psi_{\\Xi_3}^1(\\Psi_{\\Xi_3}^0(\\Xi_3)+1)}^0(\\Xi_3+1)) \\)</td>
+                            <td>\\( \\Psi_{\\Psi_{\\Xi_3}^1(\\Psi_{\\Xi_3}^0(\\Xi_3)+1)}^0(\\Xi_3+1)=Z_{I_{\\Phi M(1,0)+1}+1} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0908</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_3+\\Psi_{\\Xi_3}^1(\\Psi_{\\Xi_3}^0(\\Xi_3)+1)) \\)</td>
+                            <td>\\( \\Psi_{\\Xi_3}^1(\\Psi_{\\Xi_3}^0(\\Xi_3)+1)=I_{\\Phi M(1,0)+2} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0909</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_3+\\Psi_{\\Psi_{\\Xi_3}^1(\\Psi_{\\Xi_3}^1(\\Psi_{\\Xi_3}^0(\\Xi_3)))}^0(\\Xi_3+1)) \\)</td>
+                            <td>\\( \\Psi_{\\Psi_{\\Xi_3}^1(\\Psi_{\\Xi_3}^1(\\Psi_{\\Xi_3}^0(\\Xi_3)))}^0(\\Xi_3+1)=I_{I_{\\Phi M(1,0)+1}} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0910</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_3+\\Psi_{\\Psi_{\\Xi_3}^2(\\Psi_{\\Xi_3}^0(\\Xi_3))}^0(\\Xi_3+1)) \\)</td>
+                            <td>\\( \\Psi_{\\Psi_{\\Xi_3}^2(\\Psi_{\\Xi_3}^0(\\Xi_3))}^0(\\Xi_3+1)=I_{I_{\\cdot_{\\cdot_{\\cdot_{I_{\\Phi M(1,0)+1}}}}}}=\\psi_{\\chi_2(\\Phi M(1,0)+1)}(0) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0911</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_3+\\Psi_{\\Psi_{\\Psi_{\\Xi_3}^2(\\Psi_{\\Xi_3}^0(\\Xi_3))}^1(\\Xi_3+1)}^0(\\Xi_3+2)) \\)</td>
+                            <td>\\( \\Psi_{\\Psi_{\\Psi_{\\Xi_3}^2(\\Psi_{\\Xi_3}^0(\\Xi_3))}^1(\\Xi_3+1)}^0(\\Xi_3+2)=\\psi_{\\chi_2(\\Phi M(1,0)+1)}(1) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0912</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_3+\\Psi_{\\Psi_{\\Xi_3}^2(\\Psi_{\\Xi_3}^0(\\Xi_3))}^1(\\Xi_3+1)) \\)</td>
+                            <td>\\( \\Psi_{\\Psi_{\\Xi_3}^2(\\Psi_{\\Xi_3}^0(\\Xi_3))}^1(\\Xi_3+1)=I(2,\\Phi M(1,0)+1)=\\chi_2(\\Phi M(1,0)+1) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0913</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_3+\\Psi_{\\Psi_{\\Xi_3}^2(\\Psi_{\\Xi_3}^0(\\Xi_3))}^0(\\Xi_3+2)) \\)</td>
+                            <td>\\( \\Psi_{\\Psi_{\\Xi_3}^2(\\Psi_{\\Xi_3}^0(\\Xi_3))}^0(\\Xi_3+2)=\\psi_{\\chi_2(\\Phi M(1,0)+2)}(0) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0914</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_3+\\Psi_{\\Xi_3}^2(\\Psi_{\\Xi_3}^0(\\Xi_3))) \\)</td>
+                            <td>\\( \\Psi_{\\Xi_3}^2(\\Psi_{\\Xi_3}^0(\\Xi_3))=M_{\\Phi M(1,0)+1} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0915</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_3+\\Psi_{\\Xi_3}^0(\\Psi_{\\Xi_3}^2(\\Psi_{\\Xi_3}^0(\\Xi_3)))) \\)</td>
+                            <td>\\( \\Psi_{\\Xi_3}^0(\\Psi_{\\Xi_3}^2(\\Psi_{\\Xi_3}^0(\\Xi_3)))=E_{M_{\\Phi M(1,0)+1}+1} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0916</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_3+\\Psi_{\\Xi_3}^1(\\Psi_{\\Xi_3}^2(\\Psi_{\\Xi_3}^0(\\Xi_3)))) \\)</td>
+                            <td>\\( \\Psi_{\\Xi_3}^1(\\Psi_{\\Xi_3}^2(\\Psi_{\\Xi_3}^0(\\Xi_3)))=I_{M_{\\Phi M(1,0)+1}+1} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0917</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_3+\\Psi_{\\Psi_{\\Xi_3}^2(\\Psi_{\\Xi_3}^0(\\Xi_3)+1)}^0(\\Xi_3+1)) \\)</td>
+                            <td>\\( \\Psi_{\\Psi_{\\Xi_3}^2(\\Psi_{\\Xi_3}^0(\\Xi_3)+1)}^0(\\Xi_3+1)=I_{I_{\\cdot_{\\cdot_{\\cdot_{I_{M_{\\Phi M(1,0)+1}+1}}}}}}=\\psi_{\\chi_2(M_{\\Phi M(1,0)+1}+1)}(0) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0918</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_3+\\Psi_{\\Xi_3}^2(\\Psi_{\\Xi_3}^0(\\Xi_3)+1)) \\)</td>
+                            <td>\\( \\Psi_{\\Xi_3}^2(\\Psi_{\\Xi_3}^0(\\Xi_3)+1)=M_{\\Phi M(1,0)+2} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0919</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_3+\\Psi_{\\Psi_{\\Xi_3}^2(\\Psi_{\\Xi_3}^2(\\Psi_{\\Xi_3}^0(\\Xi_3)))}^0(\\Xi_3+1)) \\)</td>
+                            <td>\\( \\Psi_{\\Psi_{\\Xi_3}^2(\\Psi_{\\Xi_3}^2(\\Psi_{\\Xi_3}^0(\\Xi_3)))}^0(\\Xi_3+1)=M_{M_{\\Phi M(1,0)+1}} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0920</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_3+\\Psi_{\\Psi_{\\Xi_3}^1(\\Xi_3)}^0(\\Xi_3+1)) \\)</td>
+                            <td>\\( \\Psi_{\\Psi_{\\Xi_3}^1(\\Xi_3)}^0(\\Xi_3+1)=M_{M_{\\cdot_{\\cdot_{\\cdot_{M_{\\Phi M(1,0)+1}}}}}}=\\Phi M(1,1) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0921</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_3+\\Psi_{\\Xi_3}^0(\\Psi_{\\Psi_{\\Xi_3}^1(\\Xi_3)}^0(\\Xi_3+1))) \\)</td>
+                            <td>\\( \\Psi_{\\Xi_3}^0(\\Psi_{\\Psi_{\\Xi_3}^1(\\Xi_3)}^0(\\Xi_3+1))=E_{\\Phi M(1,1)+1} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0922</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_3+\\Psi_{\\Psi_{\\Xi_3}^1(\\Psi_{\\Psi_{\\Xi_3}^1(\\Xi_3)}^0(\\Xi_3+1))}^0(\\Xi_3+1)) \\)</td>
+                            <td>\\( \\Psi_{\\Psi_{\\Xi_3}^1(\\Psi_{\\Psi_{\\Xi_3}^1(\\Xi_3)}^0(\\Xi_3+1))}^0(\\Xi_3+1)=Z_{\\Phi M(1,1)+1} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0923</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_3+\\Psi_{\\Xi_3}^1(\\Psi_{\\Psi_{\\Xi_3}^1(\\Xi_3)}^0(\\Xi_3+1))) \\)</td>
+                            <td>\\( \\Psi_{\\Xi_3}^1(\\Psi_{\\Psi_{\\Xi_3}^1(\\Xi_3)}^0(\\Xi_3+1))=I_{\\Phi M(1,1)+1} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0924</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_3+\\Psi_{\\Psi_{\\Xi_3}^1(\\Psi_{\\Xi_3}^1(\\Psi_{\\Psi_{\\Xi_3}^1(\\Xi_3)}^0(\\Xi_3+1)))}^0(\\Xi_3+1)) \\)</td>
+                            <td>\\( \\Psi_{\\Psi_{\\Xi_3}^1(\\Psi_{\\Xi_3}^1(\\Psi_{\\Psi_{\\Xi_3}^1(\\Xi_3)}^0(\\Xi_3+1)))}^0(\\Xi_3+1)=I_{I_{\\Phi M(1,1)+1}} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0925</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_3+\\Psi_{\\Psi_{\\Xi_3}^2(\\Psi_{\\Psi_{\\Xi_3}^1(\\Xi_3)}^0(\\Xi_3+1))}^0(\\Xi_3+1)) \\)</td>
+                            <td>\\( \\Psi_{\\Psi_{\\Xi_3}^2(\\Psi_{\\Psi_{\\Xi_3}^1(\\Xi_3)}^0(\\Xi_3+1))}^0(\\Xi_3+1)=I_{I_{\\cdot_{\\cdot_{\\cdot_{I_{\\Phi M(1,1)+1}}}}}}=\\psi_{\\chi_2(\\Phi M(1,1)+1)}(0) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0926</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_3+\\Psi_{\\Xi_3}^2(\\Psi_{\\Psi_{\\Xi_3}^1(\\Xi_3)}^0(\\Xi_3+1))) \\)</td>
+                            <td>\\( \\Psi_{\\Xi_3}^2(\\Psi_{\\Psi_{\\Xi_3}^1(\\Xi_3)}^0(\\Xi_3+1))=M_{\\Phi M(1,1)+1} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0927</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_3+\\Psi_{\\Psi_{\\Xi_3}^2(\\Psi_{\\Xi_3}^2(\\Psi_{\\Psi_{\\Xi_3}^1(\\Xi_3)}^0(\\Xi_3+1)))}^0(\\Xi_3+1)) \\)</td>
+                            <td>\\( \\Psi_{\\Psi_{\\Xi_3}^2(\\Psi_{\\Xi_3}^2(\\Psi_{\\Psi_{\\Xi_3}^1(\\Xi_3)}^0(\\Xi_3+1)))}^0(\\Xi_3+1)=M_{M_{\\Phi M(1,1)+1}} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0928</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_3+\\Psi_{\\Psi_{\\Xi_3}^1(\\Xi_3)}^0(\\Xi_3+2)) \\)</td>
+                            <td>\\( \\Psi_{\\Psi_{\\Xi_3}^1(\\Xi_3)}^0(\\Xi_3+2)=M_{M_{\\cdot_{\\cdot_{\\cdot_{M_{\\Phi M(1,1)+1}}}}}}=\\Phi M(1,2) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0929</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_3+\\Psi_{\\Psi_{\\Xi_3}^1(\\Xi_3)}^0(\\Xi_3+\\omega)) \\)</td>
+                            <td>\\( \\Psi_{\\Psi_{\\Xi_3}^1(\\Xi_3)}^0(\\Xi_3+\\omega)=\\Phi M(1,\\omega) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0930</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_3+\\Psi_{\\Xi_3}^1(\\Xi_3)) \\)</td>
+                            <td>\\( \\Psi_{\\Xi_3}^1(\\Xi_3)=IM(1,0)=min\\{\\alpha|\\alpha\\in Reg\\land\\alpha=M_\\alpha\\} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0931</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_3+\\Psi_{\\Xi_3}^0(\\Psi_{\\Xi_3}^1(\\Xi_3))) \\)</td>
+                            <td>\\( \\Psi_{\\Xi_3}^0(\\Psi_{\\Xi_3}^1(\\Xi_3))=E_{IM(1,0)+1} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0932</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_3+\\Psi_{\\Psi_{\\Xi_3}^1(\\Psi_{\\Xi_3}^1(\\Xi_3))}^0(\\Xi_3+1)) \\)</td>
+                            <td>\\( \\Psi_{\\Psi_{\\Xi_3}^1(\\Psi_{\\Xi_3}^1(\\Xi_3))}^0(\\Xi_3+1)=Z_{IM(1,0)+1} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0933</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_3+\\Psi_{\\Xi_3}^1(\\Psi_{\\Xi_3}^1(\\Xi_3))) \\)</td>
+                            <td>\\( \\Psi_{\\Xi_3}^1(\\Psi_{\\Xi_3}^1(\\Xi_3))=I_{IM(1,0)+1} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0934</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_3+\\Psi_{\\Psi_{\\Xi_3}^2(\\Psi_{\\Xi_3}^1(\\Xi_3))}^0(\\Xi_3+1)) \\)</td>
+                            <td>\\( \\Psi_{\\Psi_{\\Xi_3}^2(\\Psi_{\\Xi_3}^1(\\Xi_3))}^0(\\Xi_3+1)=I_{I_{\\cdot_{\\cdot_{\\cdot_{I_{IM(1,0)+1}}}}}}=\\psi_{\\chi_2(IM(1,0)+1)}(0) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0935</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_3+\\Psi_{\\Psi_{\\Psi_{\\Xi_3}^2(\\Psi_{\\Xi_3}^1(\\Xi_3))}^1(\\Xi_3+1)}^0(\\Xi_3+2)) \\)</td>
+                            <td>\\( \\Psi_{\\Psi_{\\Psi_{\\Xi_3}^2(\\Psi_{\\Xi_3}^1(\\Xi_3))}^1(\\Xi_3+1)}^0(\\Xi_3+2)=\\psi_{\\chi_2(IM(1,0)+1)}(1) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0936</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_3+\\Psi_{\\Psi_{\\Xi_3}^2(\\Psi_{\\Xi_3}^1(\\Xi_3))}^1(\\Xi_3+1)) \\)</td>
+                            <td>\\( \\Psi_{\\Psi_{\\Xi_3}^2(\\Psi_{\\Xi_3}^1(\\Xi_3))}^1(\\Xi_3+1)=\\chi_2(IM(1,0)+1) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0937</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_3+\\Psi_{\\Xi_3}^2(\\Psi_{\\Xi_3}^1(\\Xi_3))) \\)</td>
+                            <td>\\( \\Psi_{\\Xi_3}^2(\\Psi_{\\Xi_3}^1(\\Xi_3))=M_{IM(1,0)+1} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0938</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_3+\\Psi_{\\Psi_{\\Xi_3}^2(\\Psi_{\\Xi_3}^1(\\Xi_3)+\\omega)}^0(\\Xi_3+1)) \\)</td>
+                            <td>\\( \\Psi_{\\Psi_{\\Xi_3}^2(\\Psi_{\\Xi_3}^1(\\Xi_3)+\\omega)}^0(\\Xi_3+1)=M_{IM(1,0)+\\omega} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0939</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_3+\\Psi_{\\Psi_{\\Xi_3}^2(\\Psi_{\\Xi_3}^2(\\Psi_{\\Xi_3}^1(\\Xi_3)))}^0(\\Xi_3+1)) \\)</td>
+                            <td>\\( \\Psi_{\\Psi_{\\Xi_3}^2(\\Psi_{\\Xi_3}^2(\\Psi_{\\Xi_3}^1(\\Xi_3)))}^0(\\Xi_3+1)=M_{M_{IM(1,0)+1}} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0940</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_3+\\Psi_{\\Psi_{\\Xi_3}^2(\\Xi_3)}^0(\\Xi_3+1)) \\)</td>
+                            <td>\\( \\Psi_{\\Psi_{\\Xi_3}^2(\\Xi_3)}^0(\\Xi_3+1)=M_{M_{\\cdot_{\\cdot_{\\cdot_{M_{IM(1,0)+1}}}}}}=\\Phi M(1,IM(1,0)+1) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0941</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_3+\\Psi_{\\Psi_{\\Psi_{\\Xi_3}^2(\\Xi_3)}^1(\\Xi_3+1)}^0(\\Xi_3+2)) \\)</td>
+                            <td>\\( \\Psi_{\\Psi_{\\Psi_{\\Xi_3}^2(\\Xi_3)}^1(\\Xi_3+1)}^0(\\Xi_3+2)=\\Phi M(1,IM(1,0)+2) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0942</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_3+\\Psi_{\\Psi_{\\Xi_3}^2(\\Xi_3)}^1(\\Xi_3+1)) \\)</td>
+                            <td>\\( \\Psi_{\\Psi_{\\Xi_3}^2(\\Xi_3)}^1(\\Xi_3+1)=IM(1,1)=min\\{\\alpha|\\alpha\\in Reg\\land\\alpha=M_\\alpha\\land\\alpha>IM(1,0)\\} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0943</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_3+\\Psi_{\\Xi_3}^0(\\Psi_{\\Psi_{\\Xi_3}^2(\\Xi_3)}^1(\\Xi_3+1))) \\)</td>
+                            <td>\\( \\Psi_{\\Xi_3}^0(\\Psi_{\\Psi_{\\Xi_3}^2(\\Xi_3)}^1(\\Xi_3+1))=E_{IM(1,1)+1} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0944</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_3+\\Psi_{\\Xi_3}^1(\\Psi_{\\Psi_{\\Xi_3}^2(\\Xi_3)}^1(\\Xi_3+1))) \\)</td>
+                            <td>\\( \\Psi_{\\Xi_3}^1(\\Psi_{\\Psi_{\\Xi_3}^2(\\Xi_3)}^1(\\Xi_3+1))=I_{IM(1,1)+1} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0945</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_3+\\Psi_{\\Psi_{\\Xi_3}^2(\\Psi_{\\Psi_{\\Xi_3}^2(\\Xi_3)}^1(\\Xi_3+1))}^0(\\Xi_3+1)) \\)</td>
+                            <td>\\( \\Psi_{\\Psi_{\\Xi_3}^2(\\Psi_{\\Psi_{\\Xi_3}^2(\\Xi_3)}^1(\\Xi_3+1))}^0(\\Xi_3+1)=I_{I_{\\cdot_{\\cdot_{\\cdot_{I_{IM(1,1)+1}}}}}}=\\psi_{\\chi_2(IM(1,1)+1)}(0) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0946</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_3+\\Psi_{\\Xi_3}^2(\\Psi_{\\Psi_{\\Xi_3}^2(\\Xi_3)}^1(\\Xi_3+1))) \\)</td>
+                            <td>\\( \\Psi_{\\Xi_3}^2(\\Psi_{\\Psi_{\\Xi_3}^2(\\Xi_3)}^1(\\Xi_3+1))=M_{IM(1,1)+1} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0947</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_3+\\Psi_{\\Psi_{\\Xi_3}^2(\\Xi_3)}^0(\\Xi_3+2)) \\)</td>
+                            <td>\\( \\Psi_{\\Psi_{\\Xi_3}^2(\\Xi_3)}^0(\\Xi_3+2)=M_{M_{\\cdot_{\\cdot_{\\cdot_{M_{IM(1,1)+1}}}}}}=\\Phi M(1,IM(1,1)+1) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0948</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_3+\\Psi_{\\Psi_{\\Xi_3}^2(\\Xi_3)}^1(\\Xi_3+2)) \\)</td>
+                            <td>\\( \\Psi_{\\Psi_{\\Xi_3}^2(\\Xi_3)}^1(\\Xi_3+2)=IM(1,2)=min\\{\\alpha|\\alpha\\in Reg\\land\\alpha=M_\\alpha\\land\\alpha>IM(1,1)\\} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0949</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_3+\\Psi_{\\Psi_{\\Xi_3}^2(\\Xi_3)}^0(\\Xi_3+\\omega)) \\)</td>
+                            <td>\\( \\Psi_{\\Psi_{\\Xi_3}^2(\\Xi_3)}^0(\\Xi_3+\\omega)=IM(1,\\omega) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0950</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_3+\\Psi_{\\Xi_3}^2(\\Xi_3)) \\)</td>
+                            <td>\\( \\Psi_{\\Xi_3}^2(\\Xi_3)=M(1,0) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0951</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_3+\\Psi_{\\Xi_3}^0(\\Psi_{\\Xi_3}^2(\\Xi_3))) \\)</td>
+                            <td>\\( \\Psi_{\\Xi_3}^0(\\Psi_{\\Xi_3}^2(\\Xi_3))=E_{M(1,0)+1} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0952</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_3+\\Psi_{\\Psi_{\\Xi_3}^1(\\Psi_{\\Xi_3}^2(\\Xi_3))}^0(\\Xi_3+1)) \\)</td>
+                            <td>\\( \\Psi_{\\Psi_{\\Xi_3}^1(\\Psi_{\\Xi_3}^2(\\Xi_3))}^0(\\Xi_3+1)=Z_{M(1,0)+1} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0953</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_3+\\Psi_{\\Xi_3}^1(\\Psi_{\\Xi_3}^2(\\Xi_3))) \\)</td>
+                            <td>\\( \\Psi_{\\Xi_3}^1(\\Psi_{\\Xi_3}^2(\\Xi_3))=I_{M(1,0)+1} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0954</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_3+\\Psi_{\\Psi_{\\Xi_3}^2(\\Psi_{\\Xi_3}^2(\\Xi_3))}^0(\\Xi_3+1)) \\)</td>
+                            <td>\\( \\Psi_{\\Psi_{\\Xi_3}^2(\\Psi_{\\Xi_3}^2(\\Xi_3))}^0(\\Xi_3+1)=I_{I_{\\cdot_{\\cdot_{\\cdot_{I_{M(1,0)+1}}}}}}=\\psi_{\\chi_2(M(1,0)+1)}(0) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0955</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_3+\\Psi_{\\Psi_{\\Xi_3}^2(\\Psi_{\\Xi_3}^2(\\Xi_3))}^1(\\Xi_3+1)) \\)</td>
+                            <td>\\( \\Psi_{\\Psi_{\\Xi_3}^2(\\Psi_{\\Xi_3}^2(\\Xi_3))}^1(\\Xi_3+1)=I(2,M(1,0)+1)=\\chi_2(M(1,0)+1) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0956</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_3+\\Psi_{\\Xi_3}^2(\\Psi_{\\Xi_3}^2(\\Xi_3))) \\)</td>
+                            <td>\\( \\Psi_{\\Xi_3}^2(\\Psi_{\\Xi_3}^2(\\Xi_3))=M_{M(1,0)+1} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0957</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_3+\\Psi_{\\Xi_3}^2(\\Psi_{\\Xi_3}^2(\\Xi_3)+1)) \\)</td>
+                            <td>\\( \\Psi_{\\Xi_3}^2(\\Psi_{\\Xi_3}^2(\\Xi_3)+1)=M_{M(1,0)+2} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0958</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_3+\\Psi_{\\Psi_{\\Xi_3}^2(\\Psi_{\\Xi_3}^2(\\Xi_3)+\\omega)}^0(\\Xi_3+1)) \\)</td>
+                            <td>\\( \\Psi_{\\Psi_{\\Xi_3}^2(\\Psi_{\\Xi_3}^2(\\Xi_3)+\\omega)}^0(\\Xi_3+1)=M_{M(1,0)+\\omega} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0959</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_3+\\Psi_{\\Psi_{\\Xi_3}^2(\\Psi_{\\Xi_3}^2(\\Psi_{\\Xi_3}^2(\\Xi_3)))}^0(\\Xi_3+1)) \\)</td>
+                            <td>\\( \\Psi_{\\Psi_{\\Xi_3}^2(\\Psi_{\\Xi_3}^2(\\Psi_{\\Xi_3}^2(\\Xi_3)))}^0(\\Xi_3+1)=M_{M_{M(1,0)+1}} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0960</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_3+\\Psi_{\\Xi_3}^0(\\Xi_3+1)) \\)</td>
+                            <td>\\( \\Psi_{\\Xi_3}^0(\\Xi_3+1)=\\Phi M(1,M(1,0)+1) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0961</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_3+\\Psi_{\\Xi_3}^0(\\Psi_{\\Xi_3}^0(\\Xi_3+1))) \\)</td>
+                            <td>\\( \\Psi_{\\Xi_3}^0(\\Psi_{\\Xi_3}^0(\\Xi_3+1))=E_{\\Phi M(1,M(1,0)+1)+1} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0962</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_3+\\Psi_{\\Xi_3}^1(\\Xi_3+1)) \\)</td>
+                            <td>\\( \\Psi_{\\Xi_3}^1(\\Xi_3+1)=IM(1,M(1,0)+1) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0963</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_3+\\Psi_{\\Xi_3}^1(\\Psi_{\\Xi_3}^1(\\Xi_3+1))) \\)</td>
+                            <td>\\( \\Psi_{\\Xi_3}^1(\\Psi_{\\Xi_3}^1(\\Xi_3+1))=I_{IM(1,M(1,0)+1)+1} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0964</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_3+\\Psi_{\\Xi_3}^2(\\Xi_3+1)) \\)</td>
+                            <td>\\( \\Psi_{\\Xi_3}^2(\\Xi_3+1)=M(1,1) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0965</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_3+\\Psi_{\\Xi_3}^2(\\Psi_{\\Xi_3}^2(\\Xi_3+1))) \\)</td>
+                            <td>\\( \\Psi_{\\Xi_3}^2(\\Psi_{\\Xi_3}^2(\\Xi_3+1))=M_{M(1,1)+1} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0966</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_3+\\Psi_{\\Xi_3}^0(\\Xi_3+2)) \\)</td>
+                            <td>\\( \\Psi_{\\Xi_3}^0(\\Xi_3+2)=\\Phi M(1,M(1,1)+1) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0967</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_3+\\Psi_{\\Xi_3}^2(\\Xi_3+2)) \\)</td>
+                            <td>\\( \\Psi_{\\Xi_3}^3(\\Xi_3+2)=M(1,2) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0968</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_3+\\Psi_{\\Xi_3}^0(\\Xi_3+\\omega)) \\)</td>
+                            <td>\\( \\Psi_{\\Xi_3}^0(\\Xi_3+\\omega)=M(1,\\omega) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0969</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_3+\\Psi_{\\Xi_3}^0(\\Xi_3+\\Psi_{\\Xi_3}^2(\\Xi_3))) \\)</td>
+                            <td>\\( \\Psi_{\\Xi_3}^0(\\Xi_3+\\Psi_{\\Xi_3}^2(\\Xi_3))=M(1,M(1,0)) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0970</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_32) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0971</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_32+\\Psi_{\\Xi_3}^0(\\Xi_32)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0972</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_32+\\Psi_{\\Xi_3}^1(\\Xi_32)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0973</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_32+\\Psi_{\\Xi_3}^2(\\Xi_32)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0974</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_32+\\Psi_{\\Xi_3}^0(\\Xi_32+1)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0975</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_32+\\Psi_{\\Xi_3}^0(\\Xi_32+\\omega)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0976</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_32+\\Psi_{\\Xi_3}^0(\\Xi_32+\\Psi_{\\Xi_3}^2(\\Xi_32))) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0977</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_33) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0978</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_3^2) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0979</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_3^{\\Xi_3}) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0980</td>
+                            <td>\\( \\Psi_\\Omega^0(\\varepsilon_{\\Xi_3+1}) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0981</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Omega_{\\Xi_3+1}) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0982</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_4}^0(5)) \\)</td>
+                            <td>\\( \\Psi_{\\Xi_4}^0(5)=E_{N+1} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0983</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_4}^1(5)) \\)</td>
+                            <td>\\( \\Psi_{\\Xi_4}^1(5)=I_{N+1} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0984</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_4}^2(5)) \\)</td>
+                            <td>\\( \\Psi_{\\Xi_4}^2(5)=M_{N+1} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0985</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_4}^3(5)) \\)</td>
+                            <td>\\( \\Psi_{\\Xi_4}^3(5)=N_2 \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0986</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_4}^3(6)) \\)</td>
+                            <td>\\( \\Psi_{\\Xi_4}^3(6)=N_3 \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0987</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_4}^0(\\omega)) \\)</td>
+                            <td>\\( \\Psi_{\\Xi_4}^0(\\omega)=N_\\omega \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0988</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_4}^0(\\Xi_3)) \\)</td>
+                            <td>\\( \\Psi_{\\Xi_4}^0(\\Xi_3)=N_N \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0989</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_4}^0(\\Psi_{\\Xi_4}^0(\\Xi_3))) \\)</td>
+                            <td>\\( \\Psi_{\\Xi_4}^0(\\Psi_{\\Xi_4}^0(\\Xi_3))=N_{N_N} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0990</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_4) \\)</td>
+                            <td>\\( \\Xi_4=\\mathbb{M}_4 \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0991</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_42) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0992</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_4^2) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0993</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_4^{\\Xi_4}) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0994</td>
+                            <td>\\( \\Psi_\\Omega^0(\\varepsilon_{\\Xi_4+1}) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0995</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_5}^0(6)) \\)</td>
+                            <td>\\( \\Psi_{\\Xi_5}^0(6)=E_{\\mathbb{M}_4+1} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0996</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_5}^4(6)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0997</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_5}^0(\\omega)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>0998</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_5) \\)</td>
+                            <td>\\( \\Xi_5=\\mathbb{M}_5 \\)</td>
+                        </tr>
+                        <tr>
+                            <td>0999</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_6) \\)</td>
+                            <td>\\( \\Xi_6=\\mathbb{M}_6 \\)</td>
+                        </tr>
+                        <tr>
+                            <td>1000</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_\\omega}^0(\\omega+1)) \\)</td>
+                            <td>\\( \\Psi_{\\Xi_\\omega}^0(\\omega+1)=\\mathbb{M}_\\omega=sup\\{\\Xi_\\alpha|\\alpha< \\omega\\} \\)</td>
+                        </tr>
+                    </tbody>
+                </table>
+                `,
+                `${s(8)}In the next article, I will show my analysis from \\( \\Psi_\\Omega^0(\\Psi_{\\Xi_\\omega}^0(\\omega+1)) \\) to \\( \\Psi_\\Omega^0(\\Gamma_{K+1}) \\).`,
+                `${s(1)}`,
+                `${s(8)}<a id="cite0001" href="#goto0001">^</a>[1] Rathjen, Michael. <a href="https://www1.maths.leeds.ac.uk/~rathjen/Ord_Notation_Weakly_Mahlo.pdf">"Ordinal Notations Based on a Weakly Mahlo Cardinal"</a>, Archive for Mathematical Logic 29 (1990) 249--263.`,
+                `${s(8)}<a id="cite0002" href="#goto0002">^</a>[2] Rathjen, Michael. <a href="https://www1.maths.leeds.ac.uk/~rathjen/Ehab.pdf">"Proof Theory of Reflection"</a>, Annals of Pure and Applied Logic 68, 181--224 (1994).`,
+            ],
+            null,
+            null,
+            null,
+        ],
+    },
+    {
+        title: [
+            `My analysis of Buchholz's OCF and two Rathjen's OCFs - Part.VI`,
+            null,
+            null,
+            null,
+        ],
+        series: ``,
+        time: Date.UTC(2023, 12 - 1, 17, 12, 0, 0, 0),
+        default: 0,
+        content: [
+            [
+                `${s(8)}In this article, I will list the last 200 ordinals continued from the previous articles using only the Rathjen's function \\( \\Psi \\) based on the "Weakly Compact Cardinal"(\\( K \\))<sup><a id="goto0001" href="#cite0001">[1]</a></sup>. If I'm notified that there are errors in my list, I'll fix'em ASAP.`,
+                `${s(8)}Throughout this article, the following abbreviation will be used:`,
+                `<div style="text-align: center;">\\( \\begin{align} \\omega^\\alpha & := \\varphi_0(\\alpha) \\\\ \\varepsilon_\\alpha & := \\varphi_1(\\alpha) \\\\ \\zeta_\\alpha & := \\varphi_2(\\alpha) \\\\ \\eta_\\alpha & := \\varphi_3(\\alpha) \\\\ \\Omega & := \\Omega_1 \\\\ \\Xi & := \\Xi(1) \\\\ \\Xi_{2+\\alpha} & := \\Xi(2+\\alpha) \\end{align} \\)</div>`,
+                `<h2>#1000~#1099 - \\( \\Psi_\\Omega^0(\\Psi_{\\Xi_\\omega}^0(\\omega+1))-\\Psi_\\Omega^0(K) \\)</h2>`,
+                `${s(8)}In this part, there will also be a note to show what the ordinals introduced in the function looks like. The notations written in the "Notes" column are usually ill-defined and can only be treated as visualizations.`,
+                `
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>#</th>
+                            <th>Rathjen K</th>
+                            <th>Notes</th>
+                        </tr>
+                        <tr>
+                            <td>1000</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_\\omega}^0(\\omega+1)) \\)</td>
+                            <td>\\( \\Psi_{\\Xi_\\omega}^0(\\omega+1)=\\mathbb{M}_\\omega=sup\\{\\Xi_\\alpha|\\alpha< \\omega\\} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>1001</td>
+                            <td>\\( \\Psi_\\Omega^0(\\varepsilon_{\\Psi_{\\Xi_\\omega}^0(\\omega+1)+1}) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1002</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Omega_{\\Psi_{\\Xi_\\omega}^0(\\omega+1)+1}) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1003</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Psi_{\\Xi_\\omega}^1(\\omega+1)}^0(\\omega+2)) \\)</td>
+                            <td>\\( \\Psi_{\\Psi_{\\Xi_\\omega}^1(\\omega+1)}^0(\\omega+2)=E_{\\mathbb{M}_\\omega+1} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>1004</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_\\omega}^1(\\omega+1)) \\)</td>
+                            <td>\\( \\Psi_{\\Xi_\\omega}^1(\\omega+1)=I_{\\mathbb{M}_\\omega+1} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>1005</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Psi_{\\Xi_\\omega}^2(\\omega+1)}^0(\\omega+2)) \\)</td>
+                            <td>\\( \\Psi_{\\Psi_{\\Xi_\\omega}^2(\\omega+1)}^0(\\omega+2)=I_{I_{\\cdot_{\\cdot_{\\cdot_{I_{\\mathbb{M}_\\omega+1}}}}}}=\\psi_{\\chi_2(\\mathbb{M}_\\omega+1)}(0) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>1006</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Psi_{\\Psi_{\\Xi_\\omega}^2(\\omega+1)}^1(\\omega+2)}^0(\\omega+3)) \\)</td>
+                            <td>\\( \\Psi_{\\Psi_{\\Psi_{\\Xi_\\omega}^2(\\omega+1)}^1(\\omega+2)}^0(\\omega+3)=\\psi_{\\chi_2(\\mathbb{M}_\\omega+1)}(1) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>1007</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Psi_{\\Xi_\\omega}^2(\\omega+1)}^1(\\omega+2)) \\)</td>
+                            <td>\\( \\Psi_{\\Psi_{\\Xi_\\omega}^2(\\omega+1)}^1(\\omega+2)=\\chi_2(\\mathbb{M}_\\omega+1) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>1008</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_\\omega}^2(\\omega+1)) \\)</td>
+                            <td>\\( \\Psi_{\\Xi_\\omega}^2(\\omega+1)=M_{\\mathbb{M}_\\omega+1} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>1009</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_\\omega}^3(\\omega+1)) \\)</td>
+                            <td>\\( \\Psi_{\\Xi_\\omega}^3(\\omega+1)=N_{\\mathbb{M}_\\omega+1} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>1010</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_\\omega}^0(\\omega+2)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1011</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_\\omega}^1(\\omega+2)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1012</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_\\omega}^2(\\omega+2)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1013</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_\\omega}^3(\\omega+2)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1014</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_\\omega}^0(\\omega+3)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1015</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_\\omega}^0(\\omega2)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1016</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_\\omega}^0(\\Omega)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1017</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_\\omega}^0(\\Xi)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1018</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_\\omega}^0(\\Xi_2)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1019</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_\\omega}^0(\\Psi_{\\Xi_\\omega}^0(\\omega+1))) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1020</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_\\omega) \\)</td>
+                            <td>\\( \\Xi_\\omega=\\mathbb{M}_{\\omega+1} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>1021</td>
+                            <td>\\( \\Psi_\\Omega^0(\\varepsilon_{\\Xi_\\omega+1}) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1022</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Omega_{\\Xi_\\omega+1}) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1023</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_{\\omega+1}}^0(\\omega+2)) \\)</td>
+                            <td>\\( \\Psi_{\\Xi_{\\omega+1}}^0(\\omega+2)=E_{\\mathbb{M}_{\\omega+1}+1} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>1024</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_{\\omega+1}}^1(\\omega+2)) \\)</td>
+                            <td>\\( \\Psi_{\\Xi_{\\omega+1}}^1(\\omega+2)=I_{\\mathbb{M}_{\\omega+1}+1} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>1025</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_{\\omega+1}}^2(\\omega+2)) \\)</td>
+                            <td>\\( \\Psi_{\\Xi_{\\omega+1}}^2(\\omega+2)=M_{\\mathbb{M}_{\\omega+1}+1} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>1026</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_{\\omega+1}}^\\omega(\\omega+2)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1027</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_{\\omega+1}}^\\omega(\\omega+3)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1028</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_{\\omega+1}}^0(\\omega2)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1029</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_{\\omega+1}}^0(\\Xi_\\omega)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1030</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_{\\omega+1}) \\)</td>
+                            <td>\\( \\Xi_{\\omega+1}=\\mathbb{M}_{\\omega+2} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>1031</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_{\\omega+2}) \\)</td>
+                            <td>\\( \\Xi_{\\omega+2}=\\mathbb{M}_{\\omega+3} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>1032</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_{\\omega2}}^0(\\omega2+1)) \\)</td>
+                            <td>\\( \\Psi_{\\Xi_{\\omega2}}^0(\\omega2+1)=\\mathbb{M}_\\omega=sup\\{\\Xi_\\alpha|\\alpha< \\omega2\\} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>1033</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_{\\omega2}) \\)</td>
+                            <td>\\( \\Xi_{\\omega2}=\\mathbb{M}_{\\omega2+1} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>1034</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_{\\varepsilon_0}}^0(\\varepsilon_0+1)) \\)</td>
+                            <td>\\( \\Psi_{\\Xi_{\\omega2}}^0(\\omega2+1)=\\mathbb{M}_\\omega=sup\\{\\Xi_\\alpha|\\alpha< \\varepsilon_0\\} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>1035</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_{\\varepsilon_0}) \\)</td>
+                            <td>\\( \\Xi_{\\omega2}=\\mathbb{M}_{\\varepsilon_0+1} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>1036</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_{\\Psi_\\Omega^0(0)}) \\)</td>
+                            <td>\\( \\Xi_{\\Psi_\\Omega^0(0)}=\\mathbb{M}_{\\Gamma_0+1} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>1037</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_{\\Psi_\\Omega^0(\\Psi_\\Xi^0(2))}) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1038</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_{\\Psi_\\Omega^0(\\varepsilon_{\\Xi_2+1})}) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1039</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_{\\Psi_\\Omega^0(\\Xi_{\\Psi_\\Omega^0(0)})}) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1040</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_\\Omega}^0(\\Omega+1)) \\)</td>
+                            <td>\\( \\Psi_{\\Xi_\\Omega}^0(\\Omega+1)=\\mathbb{M}_\\Omega=sup\\{\\Xi_\\alpha|\\alpha< \\Omega\\} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>1041</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_\\Omega}^1(\\Omega+1)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1042</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_\\Omega}^2(\\Omega+1)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1043</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_\\Omega}^\\omega(\\Omega+1)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1044</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_\\Omega}^{\\omega+1}(\\Omega+1)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1045</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_\\Omega}^{\\varepsilon_0}(\\Omega+1)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1046</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_\\Omega}^{\\Psi_\\Omega^0(0)}(\\Omega+1)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1047</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_\\Omega}^{\\Psi_\\Omega^0(\\Psi_\\Xi^0(2))}(\\Omega+1)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1048</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_\\Omega}^{\\Psi_\\Omega^0(\\varepsilon_{\\Xi_2+1})}(\\Omega+1)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1049</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_\\Omega}^{\\Psi_\\Omega^0(\\Psi_{\\Xi_\\Omega}^{\\Psi_\\Omega^0(0)}(\\Omega+1))}(\\Omega+1)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1050</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_\\Omega}^0(\\Omega+2)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1051</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_\\Omega}^\\omega(\\Omega+2)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1052</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_\\Omega}^{\\Psi_\\Omega^0(0)}(\\Omega+2)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1053</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_\\Omega}^{\\Psi_\\Omega^0(\\Psi_{\\Xi_\\Omega}^{\\Psi_\\Omega^0(0)}(\\Omega+2))}(\\Omega+2)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1054</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_\\Omega}^0(\\Omega+3)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1055</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_\\Omega}^0(\\Omega+\\omega)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1056</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_\\Omega}^0(\\Omega2)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1057</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_\\Omega}^0(\\Xi)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1058</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_\\Omega}^0(\\Xi_\\omega)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1059</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_\\Omega}^0(\\Psi_{\\Xi_\\Omega}^0(\\Omega+1))) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1060</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_\\Omega) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1061</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_{\\Omega+1}) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1062</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_{\\Omega+\\omega}) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1063</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_{\\Omega2}) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1064</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_{\\Omega^2}) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1065</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_{\\varepsilon_{\\Omega+1}}) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1066</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_{\\Psi_{\\Omega_2}^0(0)}) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1067</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_{\\Psi_{\\Omega_2}^0(\\Xi_{\\Psi_{\\Omega_2}^0(0)})}) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1068</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_{\\Omega_2}}^0(\\Omega_2+1)) \\)</td>
+                            <td>\\( \\Psi_{\\Xi_{\\Omega_2}}^0(\\Omega_2+1)=\\mathbb{M}_{\\Omega_2}=sup\\{\\Xi_\\alpha|\\alpha< \\Omega_2\\} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>1069</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Psi_{\\Xi_{\\Omega_2}}^0(\\Psi_{\\Xi_{\\Omega_2}}^0(\\Omega_2+1))) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1070</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_{\\Omega_2}) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1071</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_{\\Psi_{\\Omega_3}^0(0)}) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1072</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_{\\Psi_{\\Omega_3}^0(\\Xi_{\\Psi_{\\Omega_3}^0(0)})}) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1073</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_{\\Omega_3}) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1074</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_{\\Omega_\\omega}) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1075</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_{\\Omega_{\\varepsilon_0}}) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1076</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_{\\Omega_\\Omega}) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1077</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_{\\Omega_{\\Omega_\\Omega}}) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1078</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_{\\Psi_\\Xi^0(2)}) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1079</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_{\\Psi_\\Xi^0(\\Xi_{\\Psi_\\Xi^0(2)})}) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1080</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_\\Xi) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1081</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_{\\varepsilon_{\\Xi+1}}) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1082</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_{\\Omega_{\\Xi+1}}) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1083</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_{\\Psi_{\\Xi_2}^0(3)}) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1084</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_{\\Psi_{\\Psi_{\\Xi_2}^1(3)}^0(4)}) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1085</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_{\\Psi_{\\Xi_2}^1(3)}) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1086</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_{\\Psi_{\\Xi_2}^0(4)}) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1087</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_{\\Psi_{\\Xi_2}^0(\\omega)}) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1088</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_{\\Psi_{\\Xi_2}^0(\\Xi_2)}) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1089</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_{\\Psi_{\\Xi_2}^0(\\Xi_{\\Psi_{\\Xi_2}^0(3)})}) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1090</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_{\\Xi_2}) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1091</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_{\\Psi_{\\Xi_3}^0(4)}) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1092</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_{\\Psi_{\\Xi_3}^0(\\Xi_3)}) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1093</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_{\\Psi_{\\Xi_3}^0(\\Xi_{\\Psi_{\\Xi_3}^0(4)})}) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1094</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_{\\Xi_3}) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1095</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_{\\Xi_\\omega}) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1095</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_{\\Xi_\\Omega}) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1096</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_{\\Xi_{\\Psi_\\Xi^0(2)}}) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1097</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_{\\Xi_{\\Psi_\\Xi^0(\\Xi_{\\Xi_\\omega})}}) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1098</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_{\\Xi_\\Xi}) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1099</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Xi_{\\Xi_{\\Xi_\\Xi}}) \\)</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+                `,
+                `<h2>#1100~#1199 - \\( \\Psi_\\Omega^0(K)-\\Psi_\\Omega^0(\\Gamma_{K+1}) \\)</h2>`,
+                `${s(8)}In this part, ordinals will be represented in the same notation as in the previous part except the following abbreviations will no longer take effect and will be written out completely:`,
+                `<div style="text-align: center;">\\( \\begin{align} \\Xi & := \\Xi(1) \\\\ \\Xi_{2+\\alpha} & := \\Xi(2+\\alpha) \\end{align} \\)</div>`,
+                `
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>#</th>
+                            <th>Rathjen K</th>
+                            <th>Notes</th>
+                        </tr>
+                        <tr>
+                            <td>1100</td>
+                            <td>\\( \\Psi_\\Omega^0(K) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1101</td>
+                            <td>\\( \\Psi_\\Omega^0(K+\\Xi(1)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1102</td>
+                            <td>\\( \\Psi_\\Omega^0(K+\\Xi(\\Xi(1))) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1103</td>
+                            <td>\\( \\Psi_\\Omega^0(K+\\Psi_{\\Xi(K)}^0(K+1)) \\)</td>
+                            <td>\\( \\Psi_{\\Xi(K)}^0(K+1)=sup\\{\\Xi(1), \\Xi(\\Xi(1)), \\Xi(\\Xi(\\Xi(1)),\\cdots)\\}=\\mathbb{M}_{\\mathbb{M}_{\\mathbb{M}_{\\cdot_{\\cdot_\\cdot}}}}=\\mathbb{M}(1,0) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>1104</td>
+                            <td>\\( \\Psi_\\Omega^0(K+\\Psi_{\\Xi(\\Psi_{\\Xi(K)}^0(K+1))}^0(K+2)) \\)</td>
+                            <td>\\( \\Psi_{\\Xi(\\Psi_{\\Xi(K)}^0(K+1))}^0(K+2)=E_{\\mathbb{M}(1,0)+1} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>1105</td>
+                            <td>\\( \\Psi_\\Omega^0(K+\\Psi_{\\Xi(\\Psi_{\\Xi(K)}^0(K+1))}^1(K+2)) \\)</td>
+                            <td>\\( \\Psi_{\\Xi(\\Psi_{\\Xi(K)}^0(K+1))}^1(K+2)=I_{\\mathbb{M}(1,0)+1} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>1106</td>
+                            <td>\\( \\Psi_\\Omega^0(K+\\Psi_{\\Xi(\\Psi_{\\Xi(K)}^0(K+1))}^{\\Xi(1)}(K+2)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1107</td>
+                            <td>\\( \\Psi_\\Omega^0(K+\\Psi_{\\Xi(\\Psi_{\\Xi(K)}^0(K+1))}^{\\Xi(\\Xi(1))}(K+2)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1108</td>
+                            <td>\\( \\Psi_\\Omega^0(K+\\Psi_{\\Xi(\\Psi_{\\Xi(K)}^0(K+1))}^0(K+3)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1109</td>
+                            <td>\\( \\Psi_\\Omega^0(K+\\Psi_{\\Xi(\\Psi_{\\Xi(K)}^0(K+1))}^0(K+\\omega)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1110</td>
+                            <td>\\( \\Psi_\\Omega^0(K+\\Xi(\\Psi_{\\Xi(K)}^0(K+1))) \\)</td>
+                            <td>\\( \\Xi(\\Psi_{\\Xi(K)}^0(K+1))=\\mathbb{M}_{\\mathbb{M}(1,0)+1} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>1111</td>
+                            <td>\\( \\Psi_\\Omega^0(K+\\Psi_{\\Xi(\\Psi_{\\Xi(K)}^0(K+1)+1)}^0(K+2)) \\)</td>
+                            <td>\\( \\Psi_{\\Xi(\\Psi_{\\Xi(K)}^0(K+1)+1)}^0(K+2)=E_{\\mathbb{M}_{\\mathbb{M}(1,0)+1}+1} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>1112</td>
+                            <td>\\( \\Psi_\\Omega^0(K+\\Psi_{\\Xi(\\Psi_{\\Xi(K)}^0(K+1)+1)}^1(K+2)) \\)</td>
+                            <td>\\( \\Psi_{\\Xi(\\Psi_{\\Xi(K)}^0(K+1)+1)}^1(K+2)=I_{\\mathbb{M}_{\\mathbb{M}(1,0)+1}+1} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>1113</td>
+                            <td>\\( \\Psi_\\Omega^0(K+\\Psi_{\\Xi(\\Psi_{\\Xi(K)}^0(K+1)+1)}^{\\Xi(1)}(K+2)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1114</td>
+                            <td>\\( \\Psi_\\Omega^0(K+\\Psi_{\\Xi(\\Psi_{\\Xi(K)}^0(K+1)+1)}^{\\Xi(\\Xi(1))}(K+2)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1115</td>
+                            <td>\\( \\Psi_\\Omega^0(K+\\Psi_{\\Xi(\\Psi_{\\Xi(K)}^0(K+1)+1)}^0(K+3)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1116</td>
+                            <td>\\( \\Psi_\\Omega^0(K+\\Psi_{\\Xi(\\Psi_{\\Xi(K)}^0(K+1)+1)}^0(K+\\omega)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1117</td>
+                            <td>\\( \\Psi_\\Omega^0(K+\\Xi(\\Psi_{\\Xi(K)}^0(K+1)+1)) \\)</td>
+                            <td>\\( \\Xi(\\Psi_{\\Xi(K)}^0(K+1)+1)=\\mathbb{M}_{\\mathbb{M}(1,0)+2} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>1118</td>
+                            <td>\\( \\Psi_\\Omega^0(K+\\Xi(\\Psi_{\\Xi(K)}^0(K+1)+2)) \\)</td>
+                            <td>\\( \\Xi(\\Psi_{\\Xi(K)}^0(K+1)+2)=\\mathbb{M}_{\\mathbb{M}(1,0)+3} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>1119</td>
+                            <td>\\( \\Psi_\\Omega^0(K+\\Xi(\\Xi(\\Psi_{\\Xi(K)}^0(K+1)))) \\)</td>
+                            <td>\\( \\Xi(\\Xi(\\Psi_{\\Xi(K)}^0(K+1)))=\\mathbb{M}_{\\mathbb{M}_{\\mathbb{M}(1,0)+1}+1} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>1120</td>
+                            <td>\\( \\Psi_\\Omega^0(K+\\Psi_{\\Psi_{\\Xi(K)}^1(K+1)}^0(K+2)) \\)</td>
+                            <td>\\( \\Psi_{\\Psi_{\\Xi(K)}^1(K+1)}^0(K+2)=\\mathbb{M}_{\\mathbb{M}_{\\cdot_{\\cdot_{\\cdot_{\\mathbb{M}(1,0)+1}}}}} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>1121</td>
+                            <td>\\( \\Psi_\\Omega^0(K+\\Xi(\\Psi_{\\Psi_{\\Xi(K)}^1(K+1)}^0(K+2))) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1122</td>
+                            <td>\\( \\Psi_\\Omega^0(K+\\Xi(\\Xi(\\Psi_{\\Psi_{\\Xi(K)}^1(K+1)}^0(K+2)))) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1123</td>
+                            <td>\\( \\Psi_\\Omega^0(K+\\Psi_{\\Psi_{\\Xi(K)}^1(K+1)}^0(K+3)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1124</td>
+                            <td>\\( \\Psi_\\Omega^0(K+\\Psi_{\\Psi_{\\Xi(K)}^1(K+1)}^0(K+\\omega)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1125</td>
+                            <td>\\( \\Psi_\\Omega^0(K+\\Psi_{\\Xi(K)}^1(K+1)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1126</td>
+                            <td>\\( \\Psi_\\Omega^0(K+\\Psi_{\\Xi(K)}^2(K+1)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1127</td>
+                            <td>\\( \\Psi_\\Omega^0(K+\\Psi_{\\Xi(K)}^{\\Xi(1)}(K+1)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1128</td>
+                            <td>\\( \\Psi_\\Omega^0(K+\\Psi_{\\Xi(K)}^{\\Psi_{\\Xi(K)}^0(K+1)}(K+1)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1129</td>
+                            <td>\\( \\Psi_\\Omega^0(K+\\Psi_{\\Xi(K)}^{\\Psi_{\\Xi(K)}^{\\Psi_{\\Xi(K)}^0(K+1)}(K+1)}(K+1)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1130</td>
+                            <td>\\( \\Psi_\\Omega^0(K+\\Psi_{\\Xi(K)}^0(K+2)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1131</td>
+                            <td>\\( \\Psi_\\Omega^0(K+\\Psi_{\\Xi(\\Psi_{\\Xi(K)}^0(K+2))}^0(K+3)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1132</td>
+                            <td>\\( \\Psi_\\Omega^0(K+\\Xi(\\Psi_{\\Xi(K)}^0(K+2))) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1133</td>
+                            <td>\\( \\Psi_\\Omega^0(K+\\Xi(\\Xi(\\Psi_{\\Xi(K)}^0(K+2)))) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1134</td>
+                            <td>\\( \\Psi_\\Omega^0(K+\\Psi_{\\Psi_{\\Xi(K)}^1(K+2)}^0(K+3)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1135</td>
+                            <td>\\( \\Psi_\\Omega^0(K+\\Psi_{\\Xi(K)}^1(K+2)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1136</td>
+                            <td>\\( \\Psi_\\Omega^0(K+\\Psi_{\\Xi(K)}^{\\Psi_{\\Xi(K)}^0(K+2)}(K+2)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1137</td>
+                            <td>\\( \\Psi_\\Omega^0(K+\\Psi_{\\Xi(K)}^{\\Psi_{\\Xi(K)}^{\\Psi_{\\Xi(K)}^0(K+2)}(K+2)}(K+2)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1138</td>
+                            <td>\\( \\Psi_\\Omega^0(K+\\Psi_{\\Xi(K)}^0(K+3)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1139</td>
+                            <td>\\( \\Psi_\\Omega^0(K+\\Psi_{\\Xi(K)}^0(K+\\omega)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1140</td>
+                            <td>\\( \\Psi_\\Omega^0(K+\\Xi(K)) \\)</td>
+                            <td>\\( \\Xi(K)=\\mathbb{M}(1,1) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>1141</td>
+                            <td>\\( \\Psi_\\Omega^0(K+\\Psi_{\\Xi(\\Xi(K))}^0(K+1)) \\)</td>
+                            <td>\\( \\Psi_{\\Xi(\\Xi(K))}^0(K+1)=E_{\\mathbb{M}(1,1)+1} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>1142</td>
+                            <td>\\( \\Psi_\\Omega^0(K+\\Psi_{\\Psi_{\\Xi(\\Xi(K))}^1(K+1)}^0(K+2)) \\)</td>
+                            <td>\\( \\Psi_{\\Psi_{\\Xi(\\Xi(K))}^1(K+1)}^0(K+2)=E_{\\mathbb{M}(1,1)+2} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>1143</td>
+                            <td>\\( \\Psi_\\Omega^0(K+\\Psi_{\\Xi(\\Xi(K))}^1(K+1)) \\)</td>
+                            <td>\\( \\Psi_{\\Xi(\\Xi(K))}^1(K+1)=I_{\\mathbb{M}(1,1)+1} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>1144</td>
+                            <td>\\( \\Psi_\\Omega^0(K+\\Psi_{\\Xi(\\Xi(K))}^{\\Xi(1)}(K+1)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1145</td>
+                            <td>\\( \\Psi_\\Omega^0(K+\\Psi_{\\Xi(\\Xi(K))}^{\\Xi(\\Xi(1))}(K+1)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1146</td>
+                            <td>\\( \\Psi_\\Omega^0(K+\\Psi_{\\Xi(\\Xi(K))}^0(K+2)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1147</td>
+                            <td>\\( \\Psi_\\Omega^0(K+\\Xi(\\Xi(K))) \\)</td>
+                            <td>\\( \\Xi(\\Xi(K))=\\mathbb{M}_{\\mathbb{M}(1,1)+1} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>1148</td>
+                            <td>\\( \\Psi_\\Omega^0(K+\\Xi(\\Xi(K)+1)) \\)</td>
+                            <td>\\( \\Xi(\\Xi(K)+1)=\\mathbb{M}_{\\mathbb{M}(1,1)+2} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>1149</td>
+                            <td>\\( \\Psi_\\Omega^0(K+\\Xi(\\Xi(\\Xi(K)))) \\)</td>
+                            <td>\\( \\Xi(\\Xi(\\Xi(K)))=\\mathbb{M}_{\\mathbb{M}_{\\mathbb{M}(1,1)+1}+1} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>1150</td>
+                            <td>\\( \\Psi_\\Omega^0(K+\\Psi_{\\Xi(K+1)}^0(K+2)) \\)</td>
+                            <td>\\( \\Psi_{\\Xi(K+1)}^0(K+2)=\\mathbb{M}_{\\mathbb{M}_{\\cdot_{\\cdot_{\\cdot_{\\mathbb{M}(1,1)+1}}}}} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>1151</td>
+                            <td>\\( \\Psi_\\Omega^0(K+\\Psi_{\\Xi(K+1)}^1(K+2)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1152</td>
+                            <td>\\( \\Psi_\\Omega^0(K+\\Psi_{\\Xi(K+1)}^{\\Xi(1)}(K+2)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1153</td>
+                            <td>\\( \\Psi_\\Omega^0(K+\\Psi_{\\Xi(K+1)}^{\\Psi_{\\Xi(K+1)}^0(K+2)}(K+2)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1154</td>
+                            <td>\\( \\Psi_\\Omega^0(K+\\Psi_{\\Xi(K+1)}^{\\Psi_{\\Xi(K+1)}^{\\Psi_{\\Xi(K+1)}^0(K+2)}(K+2)}(K+2)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1155</td>
+                            <td>\\( \\Psi_\\Omega^0(K+\\Psi_{\\Psi_{\\Xi(K+1)}^K(K+2)}^0(K+3)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1156</td>
+                            <td>\\( \\Psi_\\Omega^0(K+\\Psi_{\\Xi(K+1)}^K(K+2)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1157</td>
+                            <td>\\( \\Psi_\\Omega^0(K+\\Psi_{\\Xi(K+1)}^0(K+3)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1158</td>
+                            <td>\\( \\Psi_\\Omega^0(K+\\Psi_{\\Xi(K+1)}^K(K+3)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1159</td>
+                            <td>\\( \\Psi_\\Omega^0(K+\\Psi_{\\Xi(K+1)}^0(K+\\omega)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1160</td>
+                            <td>\\( \\Psi_\\Omega^0(K+\\Xi(K+1)) \\)</td>
+                            <td>\\( \\Xi(K+1)=\\mathbb{M}(1,2) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>1161</td>
+                            <td>\\( \\Psi_\\Omega^0(K+\\Psi_{\\Xi(\\Xi(K+1))}^0(K+2)) \\)</td>
+                            <td>\\( \\Psi_{\\Xi(\\Xi(K+1))}^0(K+2)=E_{\\mathbb{M}(1,2)+1} \\)</td>
+                        </tr>
+                        <tr>
+                            <td>1162</td>
+                            <td>\\( \\Psi_\\Omega^0(K+\\Psi_{\\Xi(\\Xi(K+1))}^{\\Xi(1)}(K+2)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1163</td>
+                            <td>\\( \\Psi_\\Omega^0(K+\\Psi_{\\Xi(\\Xi(K+1))}^{\\Xi(\\Xi(1))}(K+2)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1164</td>
+                            <td>\\( \\Psi_\\Omega^0(K+\\Psi_{\\Xi(\\Xi(K+1))}^0(K+3)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1165</td>
+                            <td>\\( \\Psi_\\Omega^0(K+\\Xi(\\Xi(K+1))) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1166</td>
+                            <td>\\( \\Psi_\\Omega^0(K+\\Xi(\\Xi(\\Xi(K+1)))) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1167</td>
+                            <td>\\( \\Psi_\\Omega^0(K+\\Psi_{\\Xi(K+2)}^0(K+3)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1168</td>
+                            <td>\\( \\Psi_\\Omega^0(K+\\Xi(K+2)) \\)</td>
+                            <td>\\( \\Xi(K+2)=\\mathbb{M}(1,3) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>1169</td>
+                            <td>\\( \\Psi_\\Omega^0(K+\\Xi(K+\\Xi(K))) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1170</td>
+                            <td>\\( \\Psi_\\Omega^0(K2) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1171</td>
+                            <td>\\( \\Psi_\\Omega^0(K2+\\Psi_{\\Xi(K2)}^0(K2+1)) \\)</td>
+                            <td>\\( \\Psi_{\\Xi(K2)}^0(K2+1)=\\mathbb{M}(1,\\mathbb{M}(1,\\mathbb{M}(1,\\cdots)))=\\mathbb{M}(2,0) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>1172</td>
+                            <td>\\( \\Psi_\\Omega^0(K2+\\Xi(K2)) \\)</td>
+                            <td>\\( \\Xi(K2)=\\mathbb{M}(2,1) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>1173</td>
+                            <td>\\( \\Psi_\\Omega^0(K2+\\Xi(K2+1)) \\)</td>
+                            <td>\\( \\Xi(K2+1)=\\mathbb{M}(2,2) \\)</td>
+                        </tr>
+                        <tr>
+                            <td>1174</td>
+                            <td>\\( \\Psi_\\Omega^0(K3) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1175</td>
+                            <td>\\( \\Psi_\\Omega^0(K\\omega) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1176</td>
+                            <td>\\( \\Psi_\\Omega^0(K\\Omega) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1177</td>
+                            <td>\\( \\Psi_\\Omega^0(K*\\Xi(1)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1178</td>
+                            <td>\\( \\Psi_\\Omega^0(K*\\Xi(K)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1179</td>
+                            <td>\\( \\Psi_\\Omega^0(K*\\Xi(K*\\Xi(K))) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1180</td>
+                            <td>\\( \\Psi_\\Omega^0(K^2) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1181</td>
+                            <td>\\( \\Psi_\\Omega^0(K^2+\\Xi(K^2)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1182</td>
+                            <td>\\( \\Psi_\\Omega^0(K^2+K) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1183</td>
+                            <td>\\( \\Psi_\\Omega^0(K^22) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1184</td>
+                            <td>\\( \\Psi_\\Omega^0(K^2*\\Xi(K^2)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1185</td>
+                            <td>\\( \\Psi_\\Omega^0(K^3) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1186</td>
+                            <td>\\( \\Psi_\\Omega^0(K^{\\Xi(K)}) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1187</td>
+                            <td>\\( \\Psi_\\Omega^0(K^K) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1188</td>
+                            <td>\\( \\Psi_\\Omega^0(K^{K^2}) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1189</td>
+                            <td>\\( \\Psi_\\Omega^0(K^{K^K}) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1190</td>
+                            <td>\\( LRO=\\Psi_\\Omega^0(\\varepsilon_{K+1}) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1191</td>
+                            <td>\\( \\Psi_\\Omega^0(\\varepsilon_{K+2}) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1192</td>
+                            <td>\\( \\Psi_\\Omega^0(\\varepsilon_{K+\\omega}) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1193</td>
+                            <td>\\( \\Psi_\\Omega^0(\\varepsilon_{K2}) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1194</td>
+                            <td>\\( \\Psi_\\Omega^0(\\zeta_{K+1}) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1195</td>
+                            <td>\\( \\Psi_\\Omega^0(\\eta_{K+1}) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1196</td>
+                            <td>\\( \\Psi_\\Omega^0(\\varphi_\\omega(K+1)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1197</td>
+                            <td>\\( \\Psi_\\Omega^0(\\varphi_K(1)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1198</td>
+                            <td>\\( \\Psi_\\Omega^0(\\varphi_{\\varphi_K(1)}(0)) \\)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>1199</td>
+                            <td>\\( \\Psi_\\Omega^0(\\Gamma_{K+1}) \\)</td>
+                            <td>Or strictly \\( sup\\{\\Psi_\\Omega^0(\\alpha)|a< \\Gamma_{K+1} \\} \\)</td>
+                        </tr>
+                    </tbody>
+                </table>
+                `,
+                `${s(1)}`,
+                `${s(8)}I call ordinal #1190 the "Large Rathjen Ordinal" (LRO) because this is the "Proof Theoretic Ordinal" of the theory \\( KP+\\Pi_3 \\) Reflection, which is important in "Proof Theory".`,
+                `<h2>Conclusion</h2>`,
+                `${s(8)}And this concludes my analysis of Buchholz's OCF and two Rathjen's OCFs by listing 1,200 ordinals. I've been studying these OCFs and working on this for hundreds of hours in total because I'm interested in this, just like playing video games. I hope these tables can at least give a feeling of how strong these OCFs are. If we really want to know how these OCFs exactly work, we need to write a computer program to demonstrate the expansion rule of these OCFs.`,
+                `${s(8)}In fact, ordinal #1199 is already extremely large. If we plug this ordinal and a random natural number, let's say 10, into the FGH function and define the FS of ordinals less than or equal to this ordinal, then I say this number, written as \\( f_{\\Psi_\\Omega^0(\\Gamma_{K+1})}(10) \\), will most likely surpass about 90% of the large numbers ever coined on the internet (Dec ??, 2023).`,
+                `${s(8)}I currently studying the Stegert's OCF<sup><a id="goto0002" href="#cite0002">[2]</a></sup>, which is much stronger than the Rathjen's function based on the Weakly Compact Cardinal. This OCF is extremely difficult to understand and I've barely made any progress. Honestly, I think I really have to seek for help in the Googology community to figure out how this OCF works.`,
+                `${s(1)}`,
+                `${s(8)}<a id="cite0001" href="#goto0001">^</a>[1] Rathjen, Michael. <a href="https://www1.maths.leeds.ac.uk/~rathjen/Ehab.pdf">"Proof Theory of Reflection"</a>, Annals of Pure and Applied Logic 68, 181--224 (1994).`,
+                `${s(8)}<a id="cite0002" href="#goto0002">^</a>[2] Stegert, Jan-Carl. <a href="https://miami.uni-muenster.de/Record/429ac0b8-092f-426d-bf84-1e3a0adc8957">"Ordinal proof theory of Kripke-Platek set theory augmented by strong reflection principles"</a> (Accessed 2023-12-??).`,
+            ],
+            null,
+            null,
+            null,
+        ],
+    },
 ];
