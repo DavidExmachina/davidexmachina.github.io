@@ -6963,7 +6963,7 @@ const articles = [
                         <tr>
                             <td>1199</td>
                             <td>\\( \\Psi_\\Omega^0(\\Gamma_{K+1}) \\)</td>
-                            <td>Or strictly \\( sup\\{\\Psi_\\Omega^0(\\alpha)|a< \\Gamma_{K+1} \\} \\)</td>
+                            <td>Or strictly \\( sup\\{\\Psi_\\Omega^0(\\alpha)|\\alpha< \\Gamma_{K+1} \\} \\)</td>
                         </tr>
                     </tbody>
                 </table>
