@@ -115,4 +115,50 @@ const blogs = [
             ],
         ]
     },
+    {
+        class: 0,
+        time: Date.UTC(2023, 12 - 1, 25, 12, 0, 0, 0),
+        pinned: false,
+        default: 0,
+        content: [
+            [
+                `Joy to the world! the Lord is come;`,
+                `Let Earth receive her King;`,
+                `Let every heart prepare him room,`,
+                `And heaven and nature sing,`,
+                `And heaven and nature sing,`,
+                `And heaven, and heaven, and nature sing.`,
+            ],
+            [
+                `普世欢腾！救主下降；`,
+                `大地接她君王；`,
+                `惟愿众心预备地方，`,
+                `诸天万物歌唱，`,
+                `诸天万物歌唱，`,
+                `诸天，诸天万物歌唱。`,
+            ],
+            [
+                `普世歡騰！救主下降；`,
+                `大地接她君王；`,
+                `惟願眾心預備地方，`,
+                `諸天萬物歌唱，`,
+                `諸天萬物歌唱，`,
+                `諸天，諸天萬物歌唱。`,
+            ],
+            [
+                `民皆喜べ`,
+                `主は来ませり`,
+                `心を開きて`,
+                `迎え奉れ`,
+                `迎え奉れ`,
+                `心を開きて`,
+            ],
+        ],
+        comment: [
+            null,
+            null,
+            null,
+            null,
+        ]
+    },
 ];
