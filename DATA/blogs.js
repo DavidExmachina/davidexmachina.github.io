@@ -161,4 +161,42 @@ const blogs = [
             null,
         ]
     },
+    {
+        class: 0,
+        time: Date.UTC(2024, 1 - 1, 1, 12, 0, 0, 0),
+        pinned: false,
+        default: 0,
+        content: [
+            [
+                `Thank you, 2023.`,
+                `Thanks to this year, I was able to`,
+                `get away from most of my trauma from my past.`,
+                `May this new year be bright.`,
+            ],
+            [
+                `谢谢你，2023年。`,
+                `多亏了这一年，让我可以`,
+                `摆脱大部分曾经的创伤。`,
+                `今年也请大家多多指教。`,
+            ],
+            [
+                `謝謝你，2023年。`,
+                `多虧了這一年，讓我可以`,
+                `擺脫大部分曾經的創傷。`,
+                `今年也請大家多多指教。`,
+            ],
+            [
+                `ありがとう，2023年。`,
+                `おかげで、かつて抱えていたトラウマを`,
+                `手放すことができました。`,
+                `今年もよろしくお願いします。`,
+            ],
+        ],
+        comment: [
+            null,
+            null,
+            null,
+            null,
+        ]
+    },
 ];
