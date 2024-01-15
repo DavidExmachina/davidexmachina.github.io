@@ -6976,7 +6976,7 @@ const articles = [
                 `${s(8)}I currently studying the Stegert's OCF<sup><a id="goto0002" href="#cite0002">[2]</a></sup>, which is much stronger than the Rathjen's function based on the Weakly Compact Cardinal. This OCF is extremely difficult to understand and I've barely made any progress. Honestly, I think I really have to seek for help in the Googology community to figure out how this OCF works.`,
                 `${s(1)}`,
                 `${s(8)}<a id="cite0001" href="#goto0001">^</a>[1] Rathjen, Michael. <a href="https://www1.maths.leeds.ac.uk/~rathjen/Ehab.pdf">"Proof Theory of Reflection"</a>, Annals of Pure and Applied Logic 68, 181--224 (1994).`,
-                `${s(8)}<a id="cite0002" href="#goto0002">^</a>[2] Stegert, Jan-Carl. <a href="https://miami.uni-muenster.de/Record/429ac0b8-092f-426d-bf84-1e3a0adc8957">"Ordinal proof theory of Kripke-Platek set theory augmented by strong reflection principles"</a> (Accessed 2023-12-??).`,
+                `${s(8)}<a id="cite0002" href="#goto0002">^</a>[2] Stegert, Jan-Carl. <a href="https://miami.uni-muenster.de/Record/429ac0b8-092f-426d-bf84-1e3a0adc8957">"Ordinal proof theory of Kripke-Platek set theory augmented by strong reflection principles"</a> (Accessed 2023-12-17).`,
             ],
             null,
             null,
