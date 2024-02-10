@@ -1,0 +1,54 @@
+{
+    "en": {
+        "lang"              : "English",
+        "menu"              : ["HOME", "PROFILE", "PROJECTS", "ARTICLES"],
+        "menu_text"         : false,
+        "not_supported"     : "※This content currently does not support the language you've selected.",
+        "pinned"            : "Pinned",
+        "view_comments"     : "Click to view comments",
+        "hide_comments"     : "Click to hide comments",
+        "published_article" : "Published an article \"${ARTICLE}\".",
+        "months"            : ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+        "time_text"         : "${MONTH} ${DAY}, ${YEAR} ${HOUR}:${MINUTE}:${SECOND}.${MILLISECOND}",
+        "time_units"        : ["yr", "mo", "w", "d", "hr", "min", "s", " ago"]
+    },
+    "zh-Hans": {
+        "lang"              : "简体中文",
+        "menu"              : ["首页", "简介", "项目", "文章"],
+        "menu_text"         : true,
+        "not_supported"     : "※该内容目前不支持所选语言。",
+        "pinned"            : "已置顶",
+        "view_comments"     : "点击以查看备注",
+        "hide_comments"     : "点击以隐藏备注",
+        "published_article" : "发表了文章“${ARTICLE}”。",
+        "months"            : ["01月", "02月", "03月", "04月", "05月", "06月", "07月", "08月", "09月", "10月", "11月", "12月"],
+        "time_text"         : "${YEAR}年${MONTH}${DAY}日 ${HOUR}:${MINUTE}:${SECOND}.${MILLISECOND}",
+        "time_units"        : ["年", "个月", "周", "天", "小时", "分钟", "秒", "前"]
+    },
+    "zh-Hant": {
+        "lang"              : "繁體中文",
+        "menu"              : ["首頁", "簡介", "項目", "文章"],
+        "menu_text"         : true,
+        "not_supported"     : "※該內容目前不支持所選語言。",
+        "pinned"            : "已置頂",
+        "view_comments"     : "點擊以查看備註",
+        "hide_comments"     : "點擊以隱藏備註",
+        "published_article" : "發表了文章「${ARTICLE}」。",
+        "months"            : ["01月", "02月", "03月", "04月", "05月", "06月", "07月", "08月", "09月", "10月", "11月", "12月"],
+        "time_text"         : "${YEAR}年${MONTH}${DAY}日 ${HOUR}:${MINUTE}:${SECOND}.${MILLISECOND}",
+        "time_units"        : ["年", "個月", "週", "天", "小時", "分鐘", "秒", "前"]
+    },
+    "jp": {
+        "lang"              : "日本語",
+        "menu"              : ["トップ", "自己紹介", "プロジェクト", "記事"],
+        "menu_text"         : true,
+        "not_supported"     : "※このコンテンツは現在設定されている言語に対応しておりません。",
+        "pinned"            : "固定された",
+        "view_comments"     : "クリックしてコメントを表示",
+        "hide_comments"     : "クリックしてコメントを非表示",
+        "published_article" : "「${ARTICLE}」の記事を公開しました。",
+        "months"            : ["01月", "02月", "03月", "04月", "05月", "06月", "07月", "08月", "09月", "10月", "11月", "12月"],
+        "time_text"         : "${YEAR}年${MONTH}${DAY}日 ${HOUR}:${MINUTE}:${SECOND}.${MILLISECOND}",
+        "time_units"        : ["年", "ヶ月", "週間", "日", "時間", "分", "秒", "前"]
+    }
+}

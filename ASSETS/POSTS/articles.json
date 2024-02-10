@@ -1,0 +1,79 @@
+[
+    {
+        "time"      : "2023/11/17 12:00:00.000",
+        "series"    : "",
+        "default"   : "en",
+        "content"   : {
+            "en"        : {
+                "title"     : "Introducing Googology",
+                "location"  : "ASSETS/POSTS/article_g_001_en.html"
+            }
+        }
+    },
+    {
+        "time"      : "2023/12/03 12:00:00.000",
+        "series"    : "",
+        "default"   : "en",
+        "content"   : {
+            "en"        : {
+                "title"     : "My analysis of Buchholz's OCF and two Rathjen's OCFs - Part.I",
+                "location"  : "ASSETS/POSTS/article_g_002_001_en.html"
+            }
+        }
+    },
+    {
+        "time"      : "2023/12/06 12:00:00.000",
+        "series"    : "",
+        "default"   : "en",
+        "content"   : {
+            "en"        : {
+                "title"     : "My analysis of Buchholz's OCF and two Rathjen's OCFs - Part.II",
+                "location"  : "ASSETS/POSTS/article_g_002_002_en.html"
+            }
+        }
+    },
+    {
+        "time"      : "2023/12/09 12:00:00.000",
+        "series"    : "",
+        "default"   : "en",
+        "content"   : {
+            "en"        : {
+                "title"     : "My analysis of Buchholz's OCF and two Rathjen's OCFs - Part.III",
+                "location"  : "ASSETS/POSTS/article_g_002_003_en.html"
+            }
+        }
+    },
+    {
+        "time"      : "2023/12/13 12:00:00.000",
+        "series"    : "",
+        "default"   : "en",
+        "content"   : {
+            "en"        : {
+                "title"     : "My analysis of Buchholz's OCF and two Rathjen's OCFs - Part.IV",
+                "location"  : "ASSETS/POSTS/article_g_002_004_en.html"
+            }
+        }
+    },
+    {
+        "time"      : "2023/12/15 12:00:00.000",
+        "series"    : "",
+        "default"   : "en",
+        "content"   : {
+            "en"        : {
+                "title"     : "My analysis of Buchholz's OCF and two Rathjen's OCFs - Part.V",
+                "location"  : "ASSETS/POSTS/article_g_002_005_en.html"
+            }
+        }
+    },
+    {
+        "time"      : "2023/12/17 12:00:00.000",
+        "series"    : "",
+        "default"   : "en",
+        "content"   : {
+            "en"        : {
+                "title"     : "My analysis of Buchholz's OCF and two Rathjen's OCFs - Part.VI",
+                "location"  : "ASSETS/POSTS/article_g_002_006_en.html"
+            }
+        }
+    }
+]

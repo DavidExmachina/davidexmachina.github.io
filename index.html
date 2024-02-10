@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author" content="David_Exmachina">
+        <meta name="description" content="David_Exmachina's Official Website - Under Construction">
+        <title id="title">David_Exmachina</title>
+        <link rel="icon" href="ASSETS/SYSTEM/icon.png">
+        <link rel="stylesheet" href="ASSETS/SYSTEM/main.css">
+        <script src="ASSETS/SYSTEM/main.js"></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
+        <div class="logo"><img id="img-logo" src="ASSETS/UI/logo0.png" alt=""></div>
+        <div class="setting">
+            <div class="lang">
+                <div id="lang-tab" class="lang-button0" onclick="open_lang();"><p id="lang" class="lang-words"></p></div>
+                <div id="lang-window"></div>
+            </div>
+            <img id="img-lang" src="ASSETS/UI/lang0.png" alt="" width="48" height="48">
+            <img id="img-bright" src="ASSETS/UI/bright0.png" alt="" width="48" height="48" onclick="change_bright();">
+        </div>
+        <div class="menu">
+            <div class="menu-split"></div>
+            <div id="m0" class="menu-button" onclick="change_section(0);">
+                <div class="menu-text1">HOME</div>
+                <div id="menu0" class="menu-text2"></div>
+            </div>
+            <div class="menu-split"></div>
+            <div id="m1" class="menu-button" onclick="change_section(1);">
+                <div class="menu-text1">PROFILE</div>
+                <div id="menu1" class="menu-text2"></div>
+            </div>
+            <div class="menu-split"></div>
+            <div id="m2" class="menu-button" onclick="change_section(2);">
+                <div class="menu-text1">PROJECTS</div>
+                <div id="menu2" class="menu-text2"></div>
+            </div>
+            <div class="menu-split"></div>
+            <div id="m3" class="menu-button" onclick="change_section(3);">
+                <div class="menu-text1">ARTICLES</div>
+                <div id="menu3" class="menu-text2"></div>
+            </div>
+            <div class="menu-split"></div>
+        </div>
+        <div id="content"></div>
+        <script>main();</script>
+    </body>
+</html>
