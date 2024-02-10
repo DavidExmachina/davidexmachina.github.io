@@ -270,7 +270,7 @@ function set_home(){
             new1 = document.createElement("div");
             new1.setAttribute("class", "blog-text");
             new2 = document.createElement("a");
-            new2.setAttribute("href", `?section=3&id=0`);
+            new2.setAttribute("href", `?section=3&id=${blogs[i][4]}`);
             new2.innerHTML = content.title;
             new1.innerHTML = word().published_article.replace("${ARTICLE}", new2.outerHTML);
             line.querySelectorAll(".blog-content")[0].appendChild(new1);
