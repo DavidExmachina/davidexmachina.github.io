@@ -236,14 +236,14 @@ function set_home(){
                     content = default_;
                     new1 = document.createElement("p");
                     new1.setAttribute("class", "warning");
-                    new1.innerHTML = word().not_supported;
+                    new1.innerHTML = supertext(word().not_supported);
                     line.querySelectorAll(".blog-content")[0].appendChild(new1);
                 }
             } else content = blogs[i][3].getElementsByTagName("content")[0];
             text = content.getElementsByTagName("text")[0], comment = content.getElementsByTagName("comment");
             new1 = document.createElement("div");
             new1.setAttribute("class", "blog-text");
-            new1.innerHTML = add_space(text.innerHTML, 4);
+            new1.innerHTML = add_space(supertext(text.innerHTML), 4);
             line.querySelectorAll(".blog-content")[0].appendChild(new1);
             if (comment[0]){
                 line.querySelectorAll(".blog-comment")[0].setAttribute("onclick", `check_comment(${blogs[i][4]});`);
@@ -251,7 +251,7 @@ function set_home(){
                 if (temp.comment.includes(blogs[i][4])){
                     new1 = document.createElement("div");
                     new1.setAttribute("class", "blog-text");
-                    new1.innerHTML = add_space(comment[0].innerHTML, 4);
+                    new1.innerHTML = add_space(supertext(comment[0].innerHTML), 4);
                     line.querySelectorAll(".blog-content")[1].appendChild(new1);
                 } else {
                     line.querySelectorAll(".blog-content")[1].remove();
@@ -272,7 +272,7 @@ function set_home(){
             new2 = document.createElement("a");
             new2.setAttribute("href", `?section=3&id=${blogs[i][4]}`);
             new2.innerHTML = content.title;
-            new1.innerHTML = word().published_article.replace("${ARTICLE}", new2.outerHTML);
+            new1.innerHTML = supertext(word().published_article.replace("${ARTICLE}", new2.outerHTML));
             line.querySelectorAll(".blog-content")[0].appendChild(new1);
             line.querySelectorAll(".blog-comment")[0].remove();
             line.querySelectorAll(".blog-content")[1].remove();
