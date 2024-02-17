@@ -75,5 +75,16 @@
                 "location"  : "ASSETS/POSTS/article_g_002_006_en.html"
             }
         }
+    },
+    {
+        "time"      : "2024/02/17 12:00:00.000",
+        "series"    : "",
+        "default"   : "en",
+        "content"   : {
+            "en"        : {
+                "title"     : "\\( f_{\\omega_1^{CK}}(n) \\) VS. The Busy Beaver Function \\( \\Sigma(n) \\)",
+                "location"  : "ASSETS/POSTS/article_g_003_en.html"
+            }
+        }
     }
 ]
