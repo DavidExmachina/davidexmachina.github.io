@@ -86,5 +86,16 @@
                 "location"  : "ASSETS/POSTS/article_g_003_en.html"
             }
         }
+    },
+    {
+        "time"      : "2024/03/23 12:00:00.000",
+        "series"    : "",
+        "default"   : "en",
+        "content"   : {
+            "en"        : {
+                "title"     : "How I Actually Came Up With The Fundamental Sequence Of Rathjen's Little \\( \\psi \\) Function",
+                "location"  : "ASSETS/POSTS/article_g_004_en.html"
+            }
+        }
     }
 ]
