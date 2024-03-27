@@ -244,42 +244,42 @@
             <p>${S(8)}<span style="opacity: 0.5;">04.01.</span> If \( a_1=0 \), then:</p>
             <p>${S(8)}<span style="opacity: 0.5;">04.01.01.</span> If \( a_0=0 \), return \( 0 \)</p>
             <p>${S(8)}<span style="opacity: 0.5;">04.01.02.</span> If \( Cof(a_0)=\overline{1} \), then:</p>
-            <p>${S(8)}<span style="opacity: 0.5;">04.01.02.01.</span> If \( Cof(n)\neq\overline{1} \), return \( 0 \)</p>
-            <p>${S(8)}<span style="opacity: 0.5;">04.01.02.02.</span> If \( Cof(n)\neq\overline{1} \), return \( Norm(\varphi_{a_0[0]}(a[n[0]])) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">04.01.02.01.</span> If \( n=0 \), return \( 0 \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">04.01.02.02.</span> If \( n\neq 0 \), return \( Norm(\varphi_{a_0[0]}(a[n[0]])) \)</p>
             <p>${S(8)}<span style="opacity: 0.5;">04.01.03.</span> If \( Cof(a_0)\ge\overline{\omega} \), return \( Norm(\varphi_{a_0[n]}(0)) \)</p>
             <p>${S(8)}<span style="opacity: 0.5;">04.02.</span> If \( Cof(a_1)=\overline{1} \), then:</p>
             <p>${S(8)}<span style="opacity: 0.5;">04.02.01.</span> If \( a_0=0 \), then:</p>
-            <p>${S(8)}<span style="opacity: 0.5;">04.02.01.01.</span> If \( Cof(n)\neq\overline{1} \), return \( 0 \)</p>
-            <p>${S(8)}<span style="opacity: 0.5;">04.02.01.02.</span> If \( Cof(n)\neq\overline{1} \), return \( Add(a[n[0]], \varphi_0(a_1[0])) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">04.02.01.01.</span> If \( n=0 \), return \( 0 \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">04.02.01.02.</span> If \( n\neq 0 \), return \( Add(a[n[0]], \varphi_0(a_1[0])) \)</p>
             <p>${S(8)}<span style="opacity: 0.5;">04.02.02.</span> If \( a_0=\overline{1} \), then:</p>
-            <p>${S(8)}<span style="opacity: 0.5;">04.02.02.01.</span> If \( Cof(n)\neq\overline{1} \), return \( \varphi_{\overline{1}}(a_1[0]) \)</p>
-            <p>${S(8)}<span style="opacity: 0.5;">04.02.02.02.</span> If \( Cof(n)=\overline{1}\land Cof(n[0])\neq\overline{1} \), return \( \varphi_0(\varphi_{\overline{1}}(a_1[0])+\varphi_{\overline{1}}(a_1[0])) \)</p>
-            <p>${S(8)}<span style="opacity: 0.5;">04.02.02.03.</span> If \( Cof(n[0])=\overline{1} \), return \( \varphi_0(a[n[0]]) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">04.02.02.01.</span> If \( n=0 \), return \( \varphi_{\overline{1}}(a_1[0]) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">04.02.02.02.</span> If \( n\neq 0\land n[0]=0 \), return \( \varphi_0(\varphi_{\overline{1}}(a_1[0])+\varphi_{\overline{1}}(a_1[0])) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">04.02.02.03.</span> If \( n\neq 0\land n[0]\neq 0 \), return \( \varphi_0(a[n[0]]) \)</p>
             <p>${S(8)}<span style="opacity: 0.5;">04.02.03.</span> If \( Cof(a_0)=\overline{1}\land a_0\neq\overline{1} \), then:</p>
-            <p>${S(8)}<span style="opacity: 0.5;">04.02.03.01.</span> If \( Cof(n)\neq\overline{1} \), return \( \varphi_{a_0}(a_1[0]) \)</p>
-            <p>${S(8)}<span style="opacity: 0.5;">04.02.03.02.</span> If \( Cof(n)=\overline{1}\land Cof(n[0])\neq\overline{1} \), return \( \varphi_{a_0[0]}(S(a[n[0]])) \)</p>
-            <p>${S(8)}<span style="opacity: 0.5;">04.02.03.03.</span> If \( Cof(n[0])=\overline{1} \), return \( \varphi_{a_0[0]}(a[n[0]]) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">04.02.03.01.</span> If \( n=0 \), return \( \varphi_{a_0}(a_1[0]) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">04.02.03.02.</span> If \( n\neq 0\land n[0]=0 \), return \( \varphi_{a_0[0]}(S(a[n[0]])) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">04.02.03.03.</span> If \( n\neq 0\land n[0]\neq 0 \), return \( \varphi_{a_0[0]}(a[n[0]]) \)</p>
             <p>${S(8)}<span style="opacity: 0.5;">04.02.04.</span> If \( Cof(a_0)\ge\overline{\omega} \), return \( \varphi_{a_0[n]}(S(Norm(\varphi_{a_0}(a_1[0])))) \)</p>
             <p>${S(8)}<span style="opacity: 0.5;">04.03.</span> If \( Cof(a_1)\ge\overline{\omega} \), return \( Norm(\varphi_{a_0}(a_1[n])) \)</p>
             <br>
             <p>${S(8)}<span style="opacity: 0.5;">05.</span> If \( a=\Phi_{a_0}(a_1)\land a_0,a_1\in T_m \), then:</p>
             <p>${S(8)}<span style="opacity: 0.5;">05.01.</span> If \( a_1=0 \), then:</p>
             <p>${S(8)}<span style="opacity: 0.5;">05.01.01.</span> If \( a_0=\overline{1} \), then:</p>
-            <p>${S(8)}<span style="opacity: 0.5;">05.01.01.01.</span> If \( Cof(n)\neq\overline{1} \), return \( 0 \)</p>
-            <p>${S(8)}<span style="opacity: 0.5;">05.01.01.02.</span> If \( Cof(n)\neq\overline{1} \), return \( \chi_0(a[n[0]]) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">05.01.01.01.</span> If \( n=0 \), return \( 0 \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">05.01.01.02.</span> If \( n\neq 0 \), return \( \chi_0(a[n[0]]) \)</p>
             <p>${S(8)}<span style="opacity: 0.5;">05.01.02.</span> If \( Cof(a_0)=\overline{1}\land a_0\neq\overline{1} \), then:</p>
-            <p>${S(8)}<span style="opacity: 0.5;">05.01.02.01.</span> If \( Cof(n)\neq\overline{1} \), return \( 0 \)</p>
-            <p>${S(8)}<span style="opacity: 0.5;">05.01.02.02.</span> If \( Cof(n)\neq\overline{1} \), return \( \Phi_{a_0[0]}(a[n[0]]) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">05.01.02.01.</span> If \( n=0 \), return \( 0 \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">05.01.02.02.</span> If \( n\neq 0 \), return \( \Phi_{a_0[0]}(a[n[0]]) \)</p>
             <p>${S(8)}<span style="opacity: 0.5;">05.01.03.</span> If \( Cof(a_0)\ge\overline{\omega} \), return \( Norm(\Phi_{a_0[n]}(0)) \)</p>
             <p>${S(8)}<span style="opacity: 0.5;">05.02.</span> If \( Cof(a_1)=\overline{1} \), then:</p>
             <p>${S(8)}<span style="opacity: 0.5;">05.02.01.</span> If \( a_0=\overline{1} \), then:</p>
-            <p>${S(8)}<span style="opacity: 0.5;">05.02.01.01.</span> If \( Cof(n)\neq\overline{1} \), return \( \Phi_{\overline{1}}(a_1[0]) \)</p>
-            <p>${S(8)}<span style="opacity: 0.5;">05.02.01.02.</span> If \( Cof(n)=\overline{1}\land Cof(n[0])\neq\overline{1} \), return \( \chi_0(S(a[n[0]])) \)</p>
-            <p>${S(8)}<span style="opacity: 0.5;">05.02.01.03.</span> If \( Cof(n[0])=\overline{1} \), return \( \chi_0(a[n[0]]) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">05.02.01.01.</span> If \( n=0 \), return \( \Phi_{\overline{1}}(a_1[0]) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">05.02.01.02.</span> If \( n\neq 0\land n[0]=0 \), return \( \chi_0(S(a[n[0]])) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">05.02.01.03.</span> If \( n\neq 0\land n[0]\neq 0 \), return \( \chi_0(a[n[0]]) \)</p>
             <p>${S(8)}<span style="opacity: 0.5;">05.02.02.</span> If \( Cof(a_0)=\overline{1}\land a_0\neq\overline{1} \), then:</p>
-            <p>${S(8)}<span style="opacity: 0.5;">05.02.02.01.</span> If \( Cof(n)\neq\overline{1} \), return \( \Phi_{a_0}(a_1[0]) \)</p>
-            <p>${S(8)}<span style="opacity: 0.5;">05.02.02.02.</span> If \( Cof(n)=\overline{1}\land Cof(n[0])\neq\overline{1} \), return \( \Phi_{a_0[0]}(S(a[n[0]])) \)</p>
-            <p>${S(8)}<span style="opacity: 0.5;">05.02.02.03.</span> If \( Cof(n[0])=\overline{1} \), return \( \Phi_{a_0[0]}(a[n[0]]) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">05.02.02.01.</span> If \( n=0 \), return \( \Phi_{a_0}(a_1[0]) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">05.02.02.02.</span> If \( n\neq 0\land n[0]=0 \), return \( \Phi_{a_0[0]}(S(a[n[0]])) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">05.02.02.03.</span> If \( n\neq 0\land n[0]\neq 0 \), return \( \Phi_{a_0[0]}(a[n[0]]) \)</p>
             <p>${S(8)}<span style="opacity: 0.5;">05.02.03.</span> If \( Cof(a_0)\ge\overline{\omega} \), return \( Norm(\Phi_{a_0[n]}(S(Norm(\Phi_{a_0}(a_1[0]))))) \)</p>
             <p>${S(8)}<span style="opacity: 0.5;">05.03.</span> If \( Cof(a_1)\ge\overline{\omega} \), return \( Norm(\Phi_{a_0}(a_1[n])) \)</p>
             <br>
@@ -288,66 +288,68 @@
             <p>${S(8)}<span style="opacity: 0.5;">06.01.</span> If \( Cof(a_1)\ge\overline{\omega} \), return \( \chi_{a_0}(a_1[n]) \)</p>
             <br>
             <p>${S(8)}<span style="opacity: 0.5;">07.</span> If \( a=\psi_{\chi_{a_0}(a_1)}(a_2)\land a_0,a_1,a_2\in T_m \), then:</p>
-            <p>${S(8)}<span style="opacity: 0.5;">07.01.</span> If \( Cof(a_2)=M \), return \( \psi_{\chi_{a_0}(a_1)}(a_2[M^\Gamma[n]]) \)</p>
-            <p>${S(8)}<span style="opacity: 0.5;">07.02.</span> If \( \chi_{a_0}(a_1)&lt;Cof(a_2)\land Cof(a_2)&lt;M \), return \( \psi_{\chi_{a_0}(a_1)}(Re(a_2,n)) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.01.</span> If \( Cof(a_2)=M \), return \( \psi_{\chi_{a_0}(a_1)}(a_2[\psi_{\chi_{M^\Gamma[n]}(0)}(0)]) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.02.</span> If \( \chi_{a_0}(a_1)&lt;Cof(a_2)\land Cof(a_2)&lt;M \), then:</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.02.01.</span> If \( n=0 \), return \( 0 \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.02.02.</span> If \( n\neq 0 \), return \( \psi_{\chi_{a_0}(a_1)}(Re(a_2,n[0])) \)</p>
             <p>${S(8)}<span style="opacity: 0.5;">07.03.</span> If \( Cof(a_2)=_*\chi_{a_0}(a_1) \), then:</p>
-            <p>${S(8)}<span style="opacity: 0.5;">07.03.01.</span> If \( Cof(n)\neq\overline{1} \), return \( 0 \)</p>
-            <p>${S(8)}<span style="opacity: 0.5;">07.03.02.</span> If \( Cof(n)=\overline{1} \), return \( \psi_{\chi_{a_0}(a_1)}(a_2[a[n[0]]]) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.03.01.</span> If \( n=0 \), return \( 0 \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.03.02.</span> If \( n\neq 0 \), return \( \psi_{\chi_{a_0}(a_1)}(a_2[a[n[0]]]) \)</p>
             <p>${S(8)}<span style="opacity: 0.5;">07.04.</span> If \( \overline{\omega}\le Cof(a_2)\land Cof(a_2)&lt;\chi_{a_0}(a_1) \), return \( \psi_{\chi_{a_0}(a_1)}(a_2[n]) \)</p>
             <br>
             <p>${S(8)}<span style="opacity: 0.5;">07.05.</span> If \( Cof(a_2)&lt;\overline{\omega} \), then:</p>
             <p>${S(8)}<span style="opacity: 0.5;">07.05.01.</span> If \( a_0=0 \), then:</p>
             <p>${S(8)}<span style="opacity: 0.5;">07.05.01.01.</span> If \( a_1=0\land a_2=0 \), then:</p>
-            <p>${S(8)}<span style="opacity: 0.5;">07.05.01.01.01.</span> If \( Cof(n)\neq\overline{1} \), return \( 0 \)</p>
-            <p>${S(8)}<span style="opacity: 0.5;">07.05.01.01.02.</span> If \( Cof(n)=\overline{1} \), return \( \varphi_{a[n[0]]}(0) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.05.01.01.01.</span> If \( n=0 \), return \( 0 \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.05.01.01.02.</span> If \( n\neq 0 \), return \( \varphi_{a[n[0]]}(0) \)</p>
             <p>${S(8)}<span style="opacity: 0.5;">07.05.01.02.</span> If \( a_1\neq 0\vee a_2\neq 0 \), then:</p>
-            <p>${S(8)}<span style="opacity: 0.5;">07.05.01.02.01.</span> If \( Cof(n)\neq\overline{1} \), then:</p>
-            <p>${S(8)}<span style="opacity: 0.5;">07.05.01.02.01.01.</span> If \( a_2=0 \), return \( \chi_0(a_1[0]) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.05.01.02.01.</span> If \( n=0 \), then:</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.05.01.02.01.01.</span> If \( a_2=0 \), return \( Norm(\chi_0(a_1[0])) \)</p>
             <p>${S(8)}<span style="opacity: 0.5;">07.05.01.02.01.02.</span> If \( a_2\neq 0 \), return \( \psi_{\chi_0(a_1)}(a_2[0]) \)</p>
-            <p>${S(8)}<span style="opacity: 0.5;">07.05.01.02.02.</span> If \( Cof(n)=\overline{1}\land Cof(n[0])\neq\overline{1} \), return \( \varphi_{a[n[0]]}(\overline{1}) \)</p>
-            <p>${S(8)}<span style="opacity: 0.5;">07.05.01.02.03.</span> If \( Cof(n[0])=\overline{1} \), return \( \varphi_{a[n[0]]}(0) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.05.01.02.02.</span> If \( n\neq 0\land n[0]=0 \), return \( \varphi_{a[n[0]]}(\overline{1}) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.05.01.02.03.</span> If \( n\neq 0\land n[0]\neq 0 \), return \( \varphi_{a[n[0]]}(0) \)</p>
             <br>
             <p>${S(8)}<span style="opacity: 0.5;">07.05.02.</span> If \( a_0=\overline{1} \), then:</p>
             <p>${S(8)}<span style="opacity: 0.5;">07.05.02.01.</span> If \( a_1=0\land a_2=0 \), then:</p>
-            <p>${S(8)}<span style="opacity: 0.5;">07.05.02.01.01.</span> If \( Cof(n)\neq\overline{1} \), return \( 0 \)</p>
-            <p>${S(8)}<span style="opacity: 0.5;">07.05.02.01.02.</span> If \( Cof(n)=\overline{1}\land Cof(n[0])\neq\overline{1} \), return \( \chi_0(0) \)</p>
-            <p>${S(8)}<span style="opacity: 0.5;">07.05.02.01.03.</span> If \( Cof(n[0])=\overline{1} \), return \( \Phi_{a[n[0]]}(0) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.05.02.01.01.</span> If \( n=0 \), return \( 0 \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.05.02.01.02.</span> If \( n\neq 0\land n[0]=0 \), return \( \chi_0(0) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.05.02.01.03.</span> If \( n\neq 0\land n[0]\neq 0 \), return \( \Phi_{a[n[0]]}(0) \)</p>
             <p>${S(8)}<span style="opacity: 0.5;">07.05.02.02.</span> If \( a_1\neq 0\vee a_2\neq 0 \), then:</p>
-            <p>${S(8)}<span style="opacity: 0.5;">07.05.02.02.01.</span> If \( Cof(n)\neq\overline{1} \), then:</p>
-            <p>${S(8)}<span style="opacity: 0.5;">07.05.02.02.01.01.</span> If \( a_2=0 \), return \( \chi_{\overline{1}}(a_1[0]) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.05.02.02.01.</span> If \( n=0 \), then:</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.05.02.02.01.01.</span> If \( a_2=0 \), return \( Norm(\chi_{\overline{1}}(a_1[0])) \)</p>
             <p>${S(8)}<span style="opacity: 0.5;">07.05.02.02.01.02.</span> If \( a_2\neq 0 \), return \( \psi_{\chi_{\overline{1}}(a_1)}(a_2[0]) \)</p>
-            <p>${S(8)}<span style="opacity: 0.5;">07.05.02.02.02.</span> If \( Cof(n)=\overline{1}\land Cof(n[0])\neq\overline{1} \), return \( \Phi_{a[n[0]]}(\overline{1}) \)</p>
-            <p>${S(8)}<span style="opacity: 0.5;">07.05.02.02.03.</span> If \( Cof(n[0])=\overline{1} \), return \( \Phi_{a[n[0]]}(0) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.05.02.02.02.</span> If \( n\neq 0\land n[0]=0 \), return \( \Phi_{a[n[0]]}(\overline{1}) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.05.02.02.03.</span> If \( n\neq 0\land n[0]\neq 0 \), return \( \Phi_{a[n[0]]}(0) \)</p>
             <br>
             <p>${S(8)}<span style="opacity: 0.5;">07.05.03.</span> If \( Cof(a_0)=\overline{1}\land a_0\neq\overline{1} \), then:</p>
             <p>${S(8)}<span style="opacity: 0.5;">07.05.03.01.</span> If \( a_1=0\land a_2=0 \), then:</p>
-            <p>${S(8)}<span style="opacity: 0.5;">07.05.03.01.01.</span> If \( Cof(n)\neq\overline{1} \), return \( 0 \)</p>
-            <p>${S(8)}<span style="opacity: 0.5;">07.05.03.01.02.</span> If \( Cof(n)=\overline{1} \), return \( \chi_{a_0[0]}(a[n[0]]) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.05.03.01.01.</span> If \( n=0 \), return \( 0 \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.05.03.01.02.</span> If \( n\neq 0 \), return \( \chi_{a_0[0]}(a[n[0]]) \)</p>
             <p>${S(8)}<span style="opacity: 0.5;">07.05.03.02.</span> If \( a_1\neq 0\vee a_2\neq 0 \), then:</p>
-            <p>${S(8)}<span style="opacity: 0.5;">07.05.03.02.01.</span> If \( Cof(n)\neq\overline{1} \), then:</p>
-            <p>${S(8)}<span style="opacity: 0.5;">07.05.03.02.01.01.</span> If \( a_2=0 \), return \( \chi_{a_0}(a_1[0]) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.05.03.02.01.</span> If \( n=0 \), then:</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.05.03.02.01.01.</span> If \( a_2=0 \), return \( Norm(\chi_{a_0}(a_1[0])) \)</p>
             <p>${S(8)}<span style="opacity: 0.5;">07.05.03.02.01.02.</span> If \( a_2\neq 0 \), return \( \psi_{\chi_{a_0}(a_1)}(a_2[0]) \)</p>
-            <p>${S(8)}<span style="opacity: 0.5;">07.05.03.02.02.</span> If \( Cof(n)=\overline{1}\land Cof(n[0])\neq\overline{1} \), return \( \chi_{a_0[0]}(S(a[n[0]])) \)</p>
-            <p>${S(8)}<span style="opacity: 0.5;">07.05.03.02.03.</span> If \( Cof(n[0])=\overline{1} \), return \( \chi_{a_0[0]}(a[n[0]]) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.05.03.02.02.</span> If \( n\neq 0\land n[0]=0 \), return \( \chi_{a_0[0]}(S(a[n[0]])) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.05.03.02.03.</span> If \( n\neq 0\land n[0]\neq 0 \), return \( \chi_{a_0[0]}(a[n[0]]) \)</p>
             <br>
             <p>${S(8)}<span style="opacity: 0.5;">07.05.04.</span> If \( \overline{\omega}\le Cof(a_0)\land Cof(a_0)&lt;M \), then:</p>
             <p>${S(8)}<span style="opacity: 0.5;">07.05.04.01.</span> If \( a_1=0\land a_2=0 \), then:</p>
-            <p>${S(8)}<span style="opacity: 0.5;">07.05.04.01.01.</span> If \( \chi_{a_0[0]}(S(Tail(a_0)))&lt;\chi_{a_0[1]}(0) \), return \( \chi_{a_0[n]}(0) \)</p>
-            <p>${S(8)}<span style="opacity: 0.5;">07.05.04.01.02.</span> If \( \chi_{a_0[0]}(S(Tail(a_0)))\ge\chi_{a_0[1]}(0) \), return \( \chi_{a_0[n]}(S(Tail(a_0))) \)</p>
-            <p>${S(8)}<span style="opacity: 0.5;">07.05.04.02.</span> If \( a_1\neq 0\land a_2=0 \), return \( \chi_{a_0[n]}(S(Norm(\chi_{a_0}(a_1[n])))) \)</p>
-            <p>${S(8)}<span style="opacity: 0.5;">07.05.04.03.</span> If \( a_2\neq 0 \), return \( \chi_{a_0[n]}(S(\psi_{\chi_{a_0}(a_1)}(a_2[0]))) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.05.04.01.01.</span> If \( \chi_{a_0[0]}(S(Tail(a_0)))&lt;\chi_{a_0[1]}(0) \), return \( \psi_{\chi_{a_0[n]}(0)}(0) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.05.04.01.02.</span> If \( \chi_{a_0[0]}(S(Tail(a_0)))\ge\chi_{a_0[1]}(0) \), return \( \psi_{\chi_{a_0[n]}(S(Tail(a_0)))}(0) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.05.04.02.</span> If \( a_1\neq 0\land a_2=0 \), return \( \psi_{\chi_{a_0[n]}(S(Norm(\chi_{a_0}(a_1[n]))))}(0) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.05.04.03.</span> If \( a_2\neq 0 \), return \( \psi_{\chi_{a_0[n]}(S(\psi_{\chi_{a_0}(a_1)}(a_2[0])))}(0) \)</p>
             <br>
             <p>${S(8)}<span style="opacity: 0.5;">07.05.05.</span> If \( Cof(a_0)=M \), then:</p>
-            <p>${S(8)}<span style="opacity: 0.5;">07.05.05.01.</span> If \( Cof(n)\neq\overline{1} \), then:</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.05.05.01.</span> If \( n=0 \), then:</p>
             <p>${S(8)}<span style="opacity: 0.5;">07.05.05.01.01.</span> If \( a_1=0\land a_2=0 \), return \( 0 \)</p>
             <p>${S(8)}<span style="opacity: 0.5;">07.05.05.01.02.</span> If \( a_1\neq 0\land a_2=0 \), return \( Norm(\chi_{a_0}(a_1[0])) \)</p>
             <p>${S(8)}<span style="opacity: 0.5;">07.05.05.01.03.</span> If \( a_2\neq 0 \), return \( a=\psi_{\chi_{a_0}(a_1)}(a_2[0]) \)</p>
-            <p>${S(8)}<span style="opacity: 0.5;">07.05.05.02.</span> If \( Cof(n)=\overline{1} \), return \( \chi_{a_0[a[n[0]]]}(0) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.05.05.02.</span> If \( n\neq 0 \), return \( \psi_{\chi_{a_0[a[n[0]]]}(0)}(0) \)</p>
             <br>
             <p>${S(8)}We define the recursion function \( Re(a,n) \) as follows:</p>
             <p>${S(8)}\( (a\in T,n\in T)\rightarrow Re(a,n)\in T \)</p>
-            <p>${S(8)}<span style="opacity: 0.5;">01.</span> If \( Cof(n)\neq\overline{1} \), return \( 0 \)</p>
-            <p>${S(8)}<span style="opacity: 0.5;">02.</span> If \( Cof(n)=\overline{1} \), return \( a[\psi_{Cof(a)}(Re(a,n[0]))] \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">01.</span> If \( n=0 \), return \( a[0] \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">02.</span> If \( n\neq 0 \), return \( a[\psi_{Cof(a)}(Re(a,n[0]))] \)</p>
             <br>
             <p>${S(8)}We define the tail function \( Tail(a) \) as follows:</p>
             <p>${S(8)}\( (a\in T)\rightarrow Tail(a)\in T \)</p>
@@ -361,9 +363,9 @@
             <br>
             <p>${S(8)}We define the limit symbol \( M^\Gamma \) (Which is equal to \( \Gamma_{M+1} \)) as follows:</p>
             <p>${S(8)}\( (n\in T)\rightarrow M^\Gamma[n]\in T \)</p>
-            <p>${S(8)}<span style="opacity: 0.5;">01.</span> If \( Cof(n)\neq\overline{1} \), return \( M \)</p>
-            <p>${S(8)}<span style="opacity: 0.5;">02.</span> If \( Cof(n)=\overline{1}\land Cof(n[0])\neq\overline{1} \), return \( \varphi_{M^\Gamma[n[0]]}(\overline{1}) \)</p>
-            <p>${S(8)}<span style="opacity: 0.5;">03.</span> If \( Cof(n[0])=\overline{1} \), return \( \varphi_{M^\Gamma[n[0]]}(0) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">01.</span> If \( n=0 \), return \( M \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">02.</span> If \( n\neq 0\land n[0]=0 \), return \( \varphi_{M^\Gamma[n[0]]}(\overline{1}) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">03.</span> If \( n\neq 0\land n[0]\neq 0 \), return \( \varphi_{M^\Gamma[n[0]]}(0) \)</p>
             <br>
             <p>${S(8)}And this is another long definition other than the \( &lt; \) symbol. Wow. Line 07.01. explains why Rathjen made restrictions on the function \( \psi \), this is because when we plug something greater than \( M \) into the function, \( M \) actually acts like something smaller that looks like \( \psi_{\chi_{\Gamma_{M+1}}(0)}(0) \), which can be considered a bug. The reason why Rathjen also made restrictions on the function \( \varphi \) is probably because \( \psi_{\chi_{\varepsilon_{M+1}}(0)}(0)=\psi_{\chi_{\varphi_1(M+1)}(0)}(0) \) is already equal to the PTO (Proof-Theoretic Ordinal) of \( KPM \).</p>
             <p>${S(8)}Line 07.05.04.01.01. and 07.05.04.01.02. are the trickiest lines in the definition and took me about 8 hours to figure out. This is because it's extremely hard to reason the difference between the FS of \( \psi_{\chi_M(0)}(0) \) and the FS of \( \psi_{\chi_{\psi_{\chi_M(0)}(0)}(0)}(0) \) without using mathematical analysis and thus extremely hard to come up with the FS using programming language.</p>
