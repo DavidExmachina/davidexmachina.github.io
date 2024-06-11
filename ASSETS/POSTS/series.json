@@ -1,0 +1,9 @@
+[
+    {
+        "list"    : [1, 2, 3, 4, 5, 6],
+        "default" : "en",
+        "name"    : {
+            "en"      : "My analysis of Buchholz's OCF and two Rathjen's OCFs"
+        }
+    }
+]

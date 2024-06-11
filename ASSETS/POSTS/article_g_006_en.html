@@ -1,0 +1,1394 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <content>
+            <p>${S(8)}So far, most of the articles I've posted about googology are about large ordinals. And I didn't talk about actual numbers that often. This is because with the ordinals and their FSes (Fundamental Sequences) well-defined, it is really easy to define a large number well. But since I've had some difficulties and setbacks while studying complex OCFs (Ordinal Collapsing Functions), I decide to change my mood and post something else that only scratches the surface of OCFs.</p>
+            <p>${S(8)}In this article, I'm going to share my standard to classify large numbers, i.e. "Googological Ruler", which is a measure of how far we have gone in this journey of large numbers. We all have to start from "small" numbers that we use in our daily life. And as the number goes up ridiculously quickly, it's quite easy to get lost and ask something like "What am I doing?". As milestones are set, we know where we are, how to proceed, and when to celebrate. And after I show my googological ruler, I'm going to show my statistics on the distribution of numbers on Googology Wiki by level on this ruler.</p>
+            <p>${S(8)}Before we start, here are some abbreviations and specifications that'll be used throughout this article:</p>
+            <div style="text-align: center;">\( \begin{align} \omega^\alpha & := \varphi_0(\alpha) \\ \varepsilon_\alpha & := \varphi_1(\alpha) \\ \zeta_\alpha & := \varphi_2(\alpha) \\ \eta_\alpha & := \varphi_3(\alpha) \\ E_\alpha & := \Phi_1(\alpha) \\ Z_\alpha & := \Phi_2(\alpha) \\ H_\alpha & := \Phi_3(\alpha) \\ \Omega & := \chi_0(0):=\Omega_1:=\omega^+ \\ \Omega_{2+\alpha} & := \chi_0(1+\alpha) \\ I & := \chi_1(0) \\ I_{2+\alpha} & := \chi_1(1+\alpha) \\ \Xi & := \Xi(1) \\ \Xi_{2+\alpha} & := \Xi(2+\alpha)\quad(\alpha&lt;\Xi(\Xi(\cdots\Xi(1)\cdots))) \end{align} \)</div>
+            <p>${S(8)}\( \{\} \) denotes BAN (Bird's Array Notation)${C(1)}.</p>
+            <p>${S(8)}\( \psi \) denotes Buchholz's OCF${C(2)}.</p>
+            <p>${S(8)}\( \psi^* \) denotes Extended Buchholz's OCF${C(3)}.</p>
+            <p>${S(8)}\( \rho \) denotes Rathjen's little \( \psi \)${C(4)}, due to the first letter of "Rathjen".</p>
+            <p>${S(8)}\( \Psi \) denotes Rathjen's capital \( \Psi \)${C(5)}.</p>
+            <p>${S(8)}\( \mathfrak{P} \) denotes Stegert's OCF${C(6)}, due to the frequent use of letters in Fraktal font on his original paper.</p>
+            <p>${S(8)}\( X \) denotes the least \( \Pi_0^2 \)-indescribable cardinal, the letter \( X \) is used instead of \( \Xi \) on Stegert's original paper because the function \( \Xi(\alpha) \) is already used in Rathjen's capital \( \Psi \).</p>
+            <p>${S(8)}\( \Upsilon \) denotes the least cardinal that, uhm...</p>
+            <p>${S(8)}1.\( \forall\theta&lt;\Upsilon\exists\kappa&lt;\Upsilon(\kappa \) is \( \theta \)-indescribable\( ) \)</p>
+            <p>${S(8)}2.\( \forall\theta&lt;\Upsilon\forall\kappa&lt;\Upsilon(\kappa \) is \( \theta \)-indescribable\( \Rightarrow\theta&lt;\kappa) \)</p>
+            <p>${S(8)}Man! This cardinal really needs a name! I'll just call this the "Hyper-Indescribable Cardinal" in this article.</p>
+            <h2>The Googological Ruler</h2>
+            <table>
+                <tbody>
+                    <tr>
+                        <th>Lv.</th>
+                        <th>Lower Bound</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>---<br>${S(1)}</td>
+                        <td>\( ??? \)</td>
+                        <td>Unknown</td>
+                        <td>The level of this number is unknown.<br>Probably because this number is ill-defined.</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>X-Y<br>${S(1)}</td>
+                        <td>\( ??? \)</td>
+                        <td>Between Level X and Y</td>
+                        <td>The exact level of this number is unknown.<br>But we're sure that the level is between X and Y.</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>(X)<br>${S(1)}</td>
+                        <td>\( ??? \)</td>
+                        <td>Likely Level X</td>
+                        <td>This number is likely level X but we're not sure.</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>0<br>${S(1)}</td>
+                        <td>\( 1 \)</td>
+                        <td>Small</td>
+                        <td>It only takes one digit to represent this number.<br>Unless this is not a natural number.</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>1<br>${S(1)}</td>
+                        <td>\( 10 \)</td>
+                        <td>Medium</td>
+                        <td>One digit is not enough for this number.<br>But this is still a number we can handle.</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>2<br>${S(1)}</td>
+                        <td>\( 100 \)</td>
+                        <td>Large</td>
+                        <td>This number is larger but still takes short enough to count.</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>3<br>${S(1)}</td>
+                        <td>\( 1,000 \)</td>
+                        <td>Extra-Large</td>
+                        <td>This number is so large<br>that you probably need a separator on it.</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>4<br>${S(1)}</td>
+                        <td>\( 1,000,000 \)</td>
+                        <td>Enormous</td>
+                        <td>This number is already EXTREMELY large, but it's still achievable.<br>For example, it shouldn't be too hard to walk \( 1,000,000 \) steps in a year.</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>5<br>${S(1)}</td>
+                        <td>\( 10^{10}=10,000,000,000 \)</td>
+                        <td>Astronomical</td>
+                        <td>This number is often too large to achieve.<br>You might really want to use scientific notation to write this down.</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>6<br>${S(1)}</td>
+                        <td>\( 10^{100} \)</td>
+                        <td>Hyper-Practical</td>
+                        <td>This number is impractical to achieve.<br>For example, it's impossible to compute \( 10^{100} \) steps fast enough<br>because of the Bremermann's limit: \( 1.356*10^{50}bit/(kg\cdot s) \).</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>7<br>${S(1)}</td>
+                        <td>\( 10^{1,000} \)</td>
+                        <td>Hyper-Physical</td>
+                        <td>This number is too large to be used in physics.<br>Because the volume of the observable universe<br>is "ONLY" \( 8.451*10^{184}(Planck\ length)^3 \).</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>8<br>${S(1)}</td>
+                        <td>\( 10\uparrow\uparrow3=10^{10^{10}} \)</td>
+                        <td>Hyper-Exponential</td>
+                        <td>Even the scientific notation starts to fail to represent this number.<br>The difference of even a single little digit is SIGNIFICANT.</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>9<br>${S(1)}</td>
+                        <td>\( 10\uparrow\uparrow4=10^{10^{10^{10}}} \)</td>
+                        <td>Hyper-Probabilistic</td>
+                        <td>If you take this many retries,<br>almost everything possible in this universe must happen.</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>10<br>${S(1)}</td>
+                        <td>\( 10\uparrow\uparrow10 \)</td>
+                        <td>Hyper-Scientific</td>
+                        <td>Most of the people might never ever encounter this number<br>in his/her entire life because this number almost<br>never appears in science other than googology.</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>11<br>${S(1)}</td>
+                        <td>\( 10\uparrow\uparrow10\uparrow\uparrow2 \)</td>
+                        <td>Power-Towered</td>
+                        <td>At least it's still possible to write down this number in exponential form.</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>12<br>${S(1)}</td>
+                        <td>\( 10\uparrow\uparrow10\uparrow\uparrow3 \)</td>
+                        <td>Hyper-Towered</td>
+                        <td>It's impossible to write down this number<br>without the knowledge of large number notations.</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>13<br>${S(1)}</td>
+                        <td>\( 10\uparrow\uparrow\uparrow3=10\uparrow\uparrow10\uparrow\uparrow10 \)</td>
+                        <td>Double-Tetrational</td>
+                        <td>You tetrate the number twice.</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>14<br>${S(1)}</td>
+                        <td>\( 10\uparrow\uparrow\uparrow4 \)</td>
+                        <td>Triple-Tetrational</td>
+                        <td>You tetrate the number thrice or more.</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>15<br>${S(1)}</td>
+                        <td>\( \{10,10,3\}=10\{3\}10=10\uparrow\uparrow\uparrow10 \)</td>
+                        <td>Pentational</td>
+                        <td>It's time to learn a next-level operation.</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>16<br>${S(1)}</td>
+                        <td>\( \{10,3,4\}=10\{4\}3 \)</td>
+                        <td>Hyper-Pentational</td>
+                        <td>It's impossible to write down this number in tetrational form.</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>17<br>${S(1)}</td>
+                        <td>\( \{10,10,4\}=10\{4\}10 \)</td>
+                        <td>Hexational</td>
+                        <td>It's time to learn another next-level operation.</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>18<br>${S(1)}</td>
+                        <td>\( \{10,10,5\}=10\{5\}10 \)</td>
+                        <td>Heptational</td>
+                        <td>What's after hexation? This is the answer.</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>19<br>${S(1)}</td>
+                        <td>\( \{10,10,6\}=10\{6\}10 \)</td>
+                        <td>Octational</td>
+                        <td>We go one more level deeper in case people ask.</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>20<br>${S(1)}</td>
+                        <td>\( \{10,10,10\}=10\{10\}10&lt;f_{\omega}(10) \)</td>
+                        <td>Hyperoperational</td>
+                        <td>It's time to generalize these operations.</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>21<br>${S(1)}</td>
+                        <td>\( \{10,3,1,2\}&lt;f_{\omega}(f_{\omega}(10)) \)</td>
+                        <td>Hyper-Hyperoperational</td>
+                        <td>Since we can write a number on the arrow,<br>why don't we do the recursion?</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>22<br>${S(1)}</td>
+                        <td>\( \{10,10,1,2\}&lt;f_{\omega+1}(10) \)</td>
+                        <td>Expansional</td>
+                        <td>So, this is how they call this recursion.</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>23<br>${S(1)}</td>
+                        <td>\( \{10,10,2,2\}&lt;f_{\omega+2}(10) \)</td>
+                        <td>Multiexpansional</td>
+                        <td>What does multiplication have to do with this?</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>24<br>${S(1)}</td>
+                        <td>\( \{10,10,3,2\}&lt;f_{\omega+3}(10) \)</td>
+                        <td>Powerexpansional</td>
+                        <td>Again. What does power (exponentiation) have to do with this?</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>25<br>${S(1)}</td>
+                        <td>\( \{10,10,10,2\}&lt;f_{\omega2}(10) \)</td>
+                        <td>Hyperexpansional</td>
+                        <td>Another layer of recursion generalized.</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>26<br>${S(1)}</td>
+                        <td>\( \{10,10,10,3\}&lt;f_{\omega3}(10) \)</td>
+                        <td>Hyperexplosional</td>
+                        <td>Yet another layer of recursion generalized.</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>27<br>${S(1)}</td>
+                        <td>\( \{10,10,10,4\}&lt;f_{\omega4}(10) \)</td>
+                        <td>Hyperdetonational</td>
+                        <td>Yet yet another layer of recursion generalized.</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>28<br>${S(1)}</td>
+                        <td>\( \{10,10,10,10\}&lt;f_{\omega^2}(10) \)</td>
+                        <td>Quadruple-Arrayed</td>
+                        <td>You gotta start learning how BAN works to understand this number.</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>29<br>${S(1)}</td>
+                        <td>\( \{10,10,10,10,10\}&lt;f_{\omega^3}(10) \)</td>
+                        <td>Quintuple-Arrayed</td>
+                        <td>OMG! It has more than 4 numbers! What do I do?</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>30<br>${S(1)}</td>
+                        <td>\( \{10,10[2]2\}&lt;f_{\omega^\omega}(10) \)</td>
+                        <td>Linear</td>
+                        <td>Because it literally expands into a line.</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>31<br>${S(1)}</td>
+                        <td>\( \{10,10[2]3\}&lt;f_{\omega^\omega2}(10) \)</td>
+                        <td>Multi-Linear</td>
+                        <td>You have to expand it multiple times to expand it into a line.</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>32<br>${S(1)}</td>
+                        <td>\( \{10,10[2]1,2\}&lt;f_{\omega^{\omega+1}}(10) \)</td>
+                        <td>Hyper-Linear</td>
+                        <td>Trust me, the expansion of this number won't get pretty.</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>33<br>${S(1)}</td>
+                        <td>\( \{10,10[3]2\}&lt;f_{\omega^{\omega^2}}(10) \)</td>
+                        <td>Square</td>
+                        <td>Because it literally expands into a square.</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>34<br>${S(1)}</td>
+                        <td>\( \{10,10[4]2\}&lt;f_{\omega^{\omega^3}}(10) \)</td>
+                        <td>Cubic</td>
+                        <td>Because it literally expands into a cube, a tesseract or a penteract etc.</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>35<br>${S(1)}</td>
+                        <td>\( \{10,10[1,2]2\}&lt;f_{\omega^{\omega^\omega}}(10) \)</td>
+                        <td>Hyperdimensional</td>
+                        <td>The dimensions it has is inestimable.</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>36<br>${S(1)}</td>
+                        <td>\( \{10,10[1,1,2]2\}&lt;f_{\omega^{\omega^{\omega^2}}}(10) \)</td>
+                        <td>Hyper-Hyperdimensional</td>
+                        <td>The dimensions it has is even worse than inestimable.</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>37<br>${S(1)}</td>
+                        <td>\( \{10,10[1[2]2]2\}&lt;f_{\omega\uparrow\uparrow4}(10) \)</td>
+                        <td>Nested</td>
+                        <td>Good. Now we put brackets within brackets.</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>38<br>${S(1)}</td>
+                        <td>\( \{10,10[1[1,2]2]2\}&lt;f_{\omega\uparrow\uparrow5}(10) \)</td>
+                        <td>Hyper-Nested</td>
+                        <td>There is a comma in the brackets in the brackets.</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>39<br>${S(1)}</td>
+                        <td>\( \{10,10[1[1[2]2]2]2\}&lt;f_{\omega\uparrow\uparrow6}(10) \)</td>
+                        <td>Triple-Nested</td>
+                        <td>Now we're building a tower of brackets.</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>40<br>${S(1)}</td>
+                        <td>\( f_{\varepsilon_0}(10)=f_{\psi_0(\Omega)}(10) \)</td>
+                        <td>Hyper-Peano</td>
+                        <td>Even the Peano Arithmetic struggles to or cannot "handle" this number.</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>41<br>${S(1)}</td>
+                        <td>\( f_{\varepsilon_1}(10)=f_{\psi_0(\Omega2)}(10) \)</td>
+                        <td>Epsilon</td>
+                        <td>You try the power tower trick again and get \( \varepsilon_1 \) from \( \varepsilon_0 \).</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>42<br>${S(1)}</td>
+                        <td>\( f_{\zeta_0}(10)=f_{\psi_0(\Omega^2)}(10) \)</td>
+                        <td>Zeta</td>
+                        <td>Even doing the power tower trick infinite times<br>doesn't get you to this level. You have to try something better.</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>43<br>${S(1)}</td>
+                        <td>\( f_{\eta_0}(10)=f_{\psi_0(\Omega^3)}(10) \)</td>
+                        <td>Eta</td>
+                        <td>Even doing the power tower trick infinite times<br>doesn't get you to \( \zeta_1 \). You have to try something even better.</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>44<br>${S(1)}</td>
+                        <td>\( f_{\varphi_\omega(0)}(10)=f_{\psi_0(\Omega^\omega)}(10) \)</td>
+                        <td>Veblen</td>
+                        <td>You realize that \( \varepsilon_0 \), \( \zeta_0 \), \( \eta_0 \) and so on forms a hierarchy.</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>45<br>${S(1)}</td>
+                        <td>\( f_{\Gamma_0}(10)=f_{\psi_0(\Omega^\Omega)}(10) \)</td>
+                        <td>Feferman</td>
+                        <td>You realize that you can do the recursion on the Veblen function.</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>46<br>${S(1)}</td>
+                        <td>\( f_{AO}(10)=f_{\psi_0(\Omega^{\Omega^2})}(10) \)</td>
+                        <td>Ackermann</td>
+                        <td>You realize that you need 3 variables<br>on the Veblen function and try harder.</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>47<br>${S(1)}</td>
+                        <td>\( f_{SVO}(10)=f_{\psi_0(\Omega^{\Omega^\omega})}(10) \)</td>
+                        <td>Small-Veblen</td>
+                        <td>You realize that you can have<br>even more variables on the Veblen function.</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>48<br>${S(1)}</td>
+                        <td>\( f_{LVO}(10)=f_{\psi_0(\Omega^{\Omega^\Omega})}(10) \)</td>
+                        <td>Large-Veblen</td>
+                        <td>You've achieved the best the extended Veblen function can achieve.</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>49<br>${S(1)}</td>
+                        <td>\( f_{XLVO}(10)=f_{\psi_0(\Omega^{\Omega^{\Omega^\Omega}})}(10) \)</td>
+                        <td>Extra-Veblen</td>
+                        <td>You refuse to stop there and extended the Veblen function even more.</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>50<br>${S(1)}</td>
+                        <td>\( f_{BHO}(10)=f_{\psi_0(\Omega_2)}(10) \)</td>
+                        <td>Hyper-Bachmann</td>
+                        <td>You gotta start learning the OCFs to understand this number.</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>51<br>${S(1)}</td>
+                        <td>\( f_{\psi_0(\Omega_22)}(10) \)</td>
+                        <td>Extra-Epsilon</td>
+                        <td>You know that you can do the power tower trick<br>on the least uncountable cardinal \( \Omega \).</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>52<br>${S(1)}</td>
+                        <td>\( f_{\psi_0({\Omega_2}^2)}(10) \)</td>
+                        <td>Extra-Zeta</td>
+                        <td>Since you know how to reach \( \zeta_0 \), do it on \( \Omega \).</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>53<br>${S(1)}</td>
+                        <td>\( f_{\psi_0({\Omega_2}^{\Omega_2})}(10) \)</td>
+                        <td>Extra-Feferman</td>
+                        <td>Again, since you know how to reach \( \Gamma_0 \), do it on \( \Omega \).</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>54<br>${S(1)}</td>
+                        <td>\( f_{\psi_0(\Omega_3)}(10) \)</td>
+                        <td>Extra-Bachmann</td>
+                        <td>Now you use an even larger cardinal, what's coming next?</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>55<br>${S(1)}</td>
+                        <td>\( f_{SBO}(10)=f_{\psi_0(\Omega_\omega)}(10) \)</td>
+                        <td>Buchholz</td>
+                        <td>The next cardinal doesn't bring you there.<br>You need infinitely more of them.</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>56<br>${S(1)}</td>
+                        <td>\( f_{TFBO}(10)=f_{\psi_0^*(\Omega_{\omega+1})}(10) \)</td>
+                        <td>Takeuti</td>
+                        <td>Even the original Buchholz's OCF stops working here.<br>Try the extension!</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>57<br>${S(1)}</td>
+                        <td>\( f_{\psi_0^*(\Omega_{\varepsilon_0})}(10)=f_{\psi_0^*(\Omega_{\psi_0^*(\Omega)})}(10) \)</td>
+                        <td>Extra-Buchholz</td>
+                        <td>Another infinitely many cardinals later...</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>58<br>${S(1)}</td>
+                        <td>\( f_{\psi_0^*(\Omega_\Omega)}(10) \)</td>
+                        <td>Hyper-Bird</td>
+                        <td>Not even BAN can handle this number.</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>59<br>${S(1)}</td>
+                        <td>\( f_{\psi_0^*(\Omega_{\Omega_\Omega})}(10) \)</td>
+                        <td>Extra-Bird</td>
+                        <td>You're trying to build a power tower using \( \Omega \),<br>except it goes in the other direction.</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>60<br>${S(1)}</td>
+                        <td>\( f_{LBO}(10)=f_{\psi_0^*(\Omega_{\Omega_{\cdot_{\cdot_\cdot}}})}(10) \)</td>
+                        <td>Hyper-Buchholz</td>
+                        <td>You gotta start learning complex OCFs to understand this number.<br>SPOILER ALERT: It's gonna be tough.</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>61<br>${S(1)}</td>
+                        <td>\( f_{\rho_\Omega(\varepsilon_{I+1})}(10) \)</td>
+                        <td>Inaccessible</td>
+                        <td>You understand the method to create even larger Omega Fixed-Points<br>and understand the Inaccessible Cardinal \( I \).</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>62<br>${S(1)}</td>
+                        <td>\( f_{\rho_\Omega(\rho_{\chi_2(0)}(0))}(10) \)</td>
+                        <td>Hyper-Inaccessible</td>
+                        <td>You created the Inaccessible Fixed-Point using<br>a next-level Inaccessible Cardinal.</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>63<br>${S(1)}</td>
+                        <td>\( f_{\rho_\Omega(\rho_{\chi_\omega(0)}(0))}(10) \)</td>
+                        <td>Omega-Inaccessible</td>
+                        <td>Even the next-next-level Inaccessible Cardinal doesn't take you there.<br>You need to go through infinite levels.</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>64<br>${S(1)}</td>
+                        <td>\( f_{JO}(10)=f_{\rho_\Omega(\rho_{\chi_M(0)}(0))}(10) \)</td>
+                        <td>Hyper-Jäger</td>
+                        <td>The Mahlo Cardinal \( M \) has joined the chat.</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>65<br>${S(1)}</td>
+                        <td>\( f_{SRO}(10)=f_{\rho_\Omega(\rho_{\chi_{\varepsilon_{M+1}}(0)}(0))}(10) \)</td>
+                        <td>Rathjen</td>
+                        <td>Congratulations! You've just conquered a complex OCF.<br>This OCF is already tough enough.<br>But, are you ready for the next one?</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>66<br>${S(1)}</td>
+                        <td>\( f_{\Psi_\Omega^0(\Xi_3)}(10) \)</td>
+                        <td>Hyper-Mahlo</td>
+                        <td>You try to create an OCF \( \psi' \)<br>with the idea of \( \psi_0'(\psi_1'(0)*\alpha+\beta)=\psi_\alpha(\beta) \),<br>and this is the best you can get.</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>67<br>${S(1)}</td>
+                        <td>\( f_{\Psi_\Omega^0(\Xi_4)}(10) \)</td>
+                        <td>Hyper-Hyper-Mahlo</td>
+                        <td>You try to create another OCF \( \psi'' \)<br>with the idea of \( \psi_0''(\psi_1''(0)*\alpha+\beta)=\psi_\alpha'(\beta) \),<br>and this is the best you can get.</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>68<br>${S(1)}</td>
+                        <td>\( f_{\Psi_\Omega^0(\Psi_{\Xi_\omega}^0(\omega+1))}(10) \)</td>
+                        <td>Omega-Mahlo</td>
+                        <td>This is the best the idea above can bring you to, unfortunately.</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>69<br>${S(1)}</td>
+                        <td>\( f_{\Psi_\Omega^0(K)}(10) \)</td>
+                        <td>Weakly-Compact</td>
+                        <td>The Weakly Compact Cardinal \( K \) has joined the chat.<br>Anyways, 69 nice.</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>70<br>${S(1)}</td>
+                        <td>\( f_{LRO}(10)=f_{\Psi_\Omega^0(\varepsilon_{K+1})}(10) \)</td>
+                        <td>Hyper-Rathjen</td>
+                        <td>Congratulations! You've just conquered another complex OCF.<br>But the next one will definitely let you give up.</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>71<br>${S(1)}</td>
+                        <td>\( ??? \)</td>
+                        <td>???</td>
+                        <td>???</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>72<br>${S(1)}</td>
+                        <td>\( ??? \)</td>
+                        <td>???</td>
+                        <td>???</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>73<br>${S(1)}</td>
+                        <td>\( ??? \)</td>
+                        <td>???</td>
+                        <td>???</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>74<br>${S(1)}</td>
+                        <td>\( f_{\mathfrak{P}_{(\omega^+;P_0;\epsilon;\epsilon;0)}^X}(10) \)</td>
+                        <td>???</td>
+                        <td>(I don't know. I'm just doing the similar thing as Lv.64 and Lv.69)</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>75<br>${S(1)}</td>
+                        <td>\( f_{SSO}(10)=f_{\mathfrak{P}_{(\omega^+;P_0;\epsilon;\epsilon;0)}^{\varepsilon_{X+1}}}(10) \)</td>
+                        <td>Stegert</td>
+                        <td>It seems that you've conquered this complex OCF.<br>But actually, you're just halfway there.</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>76<br>${S(1)}</td>
+                        <td>\( ??? \)</td>
+                        <td>???</td>
+                        <td>???</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>77<br>${S(1)}</td>
+                        <td>\( ??? \)</td>
+                        <td>???</td>
+                        <td>???</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>78<br>${S(1)}</td>
+                        <td>\( ??? \)</td>
+                        <td>???</td>
+                        <td>???</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>79<br>${S(1)}</td>
+                        <td>\( f_{\mathfrak{P}_{(\omega^+;P_0;\epsilon;\epsilon;0)}^\Upsilon}(10) \)</td>
+                        <td>???</td>
+                        <td>(Similar to Lv.74)</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>80<br>${S(1)}</td>
+                        <td>\( f_{LSO}(10)=f_{\mathfrak{P}_{(\omega^+;P_0;\epsilon;\epsilon;0)}^{\varepsilon_{\Upsilon+1}}}(10) \)</td>
+                        <td>Hyper-Stegert</td>
+                        <td>Congratulations. You've just defeated the current final boss of OCFs,<br>probably. Anyways, What will happen next?</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>81<br>${S(1)}</td>
+                        <td>\( ??? \)</td>
+                        <td>???</td>
+                        <td>???</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>82<br>${S(1)}</td>
+                        <td>\( ??? \)</td>
+                        <td>???</td>
+                        <td>???</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>83<br>${S(1)}</td>
+                        <td>\( ??? \)</td>
+                        <td>???</td>
+                        <td>???</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>84<br>${S(1)}</td>
+                        <td>\( ??? \)</td>
+                        <td>???</td>
+                        <td>???</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>85<br>${S(1)}</td>
+                        <td>\( ??? \)</td>
+                        <td>???</td>
+                        <td>???</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>86<br>${S(1)}</td>
+                        <td>\( ??? \)</td>
+                        <td>???</td>
+                        <td>???</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>87<br>${S(1)}</td>
+                        <td>\( ??? \)</td>
+                        <td>???</td>
+                        <td>???</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>88<br>${S(1)}</td>
+                        <td>\( ??? \)</td>
+                        <td>???</td>
+                        <td>???</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>89<br>${S(1)}</td>
+                        <td>\( ??? \)</td>
+                        <td>???</td>
+                        <td>???</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>90<br>${S(1)}</td>
+                        <td>\( f_{\omega_{ZFC}}(10)=f_{PTO(ZFC)}(10) \)</td>
+                        <td>Hyper-Mathematical</td>
+                        <td>Even the axioms of modern mathematics (ZFC)<br>struggles to or cannot "handle" this number.</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>91<br>${S(1)}</td>
+                        <td>\( ??? \)</td>
+                        <td>???</td>
+                        <td>???</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>92<br>${S(1)}</td>
+                        <td>\( ??? \)</td>
+                        <td>???</td>
+                        <td>???</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>93<br>${S(1)}</td>
+                        <td>\( ??? \)</td>
+                        <td>???</td>
+                        <td>???</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>94<br>${S(1)}</td>
+                        <td>\( ??? \)</td>
+                        <td>???</td>
+                        <td>???</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>95<br>${S(1)}</td>
+                        <td>\( ??? \)</td>
+                        <td>???</td>
+                        <td>???</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>96<br>${S(1)}</td>
+                        <td>\( ??? \)</td>
+                        <td>???</td>
+                        <td>???</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>97<br>${S(1)}</td>
+                        <td>\( ??? \)</td>
+                        <td>???</td>
+                        <td>???</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>98<br>${S(1)}</td>
+                        <td>\( ??? \)</td>
+                        <td>???</td>
+                        <td>???</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>99<br>${S(1)}</td>
+                        <td>\( ??? \)</td>
+                        <td>???</td>
+                        <td>???</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">${S(1)}<br>100<br>${S(1)}</td>
+                        <td>\( f_{\omega_1^{CK}}(10^{10}) \)</td>
+                        <td>Hyper-Computational</td>
+                        <td>Not even computers, however fast, can "handle" this number.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h2>Some More Explanation</h2>
+            <p>${S(8)}Before we classify numbers, the first thing we need to do is to apply a "Normalization Function" to the number as follows: (That's right, we also consider real numbers and complex numbers. We can even consider quaternions, octonions, sedenions and so on if we want.)</p>
+            <p>${S(8)}\( f:\mathbb{C}\rightarrow[1,+\infty) \)</p>
+            <p>${S(8)}\( f(z)=\begin{cases} f(|z|) & z\notin[0,+\infty) \\ 1 & z=0 \\ 1/z & z\in(0,1) \\ z & z\in[1,+\infty) \end{cases} \)</p>
+            <p>${S(8)}This is because I see a lot of people creating numbers as SMALL as possible. But since these numbers are usually created using large numbers that are relatively hard to define, I think their level should remain the same after the extra steps that makes the number extremely small. But if you plug a large number into a weird function that nullifies the normalization like \( g(x)=1+1/x \), Then there's no saving this number, get back to the lowest level. This is the reason why my googological ruler starts from the number 1.</p>
+            <p>${S(8)}After the normalization, we start by comparing the normalized number to the lower bound of level 0. If the normalized number is greater than or equal to the lower bound of the current level, we move to the next level and rinse and repeat. If we encounter the level whose lower bound is greater than the normalized number, then we get the previous level as a result.</p>
+            <p>${S(8)}Lv.71-73 and Lv.76-78 are undefined because I currently don't understand how Stegert's OCF works. I will complete the definition later after I understand how Stegert's OCF works. Lv.81-89, Lv.91-99 and Lv.101 and above are undefined for placeholders in case there are stronger OCF, mathematical axioms and non-recursive ordinals in the future. We use Lv.70+ to classify Lv.70-73 numbers, use Lv.75+ to classify Lv.75-78 numbers, use Lv.80+ to classify Lv.80-89 numbers, use Lv.90+ to classify Lv.90-99 numbers and use Lv.100+ to classify Lv.100 or larger numbers.</p>
+            <p>${S(8)}The lower bound of Lv.15-39 follows the expansion rule of BAN.</p>
+            <p>${S(8)}The ordinals in the lower bound of Lv.40-60 follows the following FS: (Same for the original Buchholz's OCF and its extension)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">01.</span>\( 0[n]=0 \) and \( cof(0)=0 \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">02.</span>If \( \alpha=\psi_{\beta_1}(\gamma_1)+\psi_{\beta_2}(\gamma_2)+\cdots+\psi_{\beta_m}(\gamma_m) \) and \( m&gt;1 \), then:</p>
+            <p>${S(8)}<span style="opacity: 0.5;">02.01.</span>\( \alpha[n]=\psi_{\beta_1}(\gamma_1)+\psi_{\beta_2}(\gamma_2)+\cdots+\psi_{\beta_m}(\gamma_m)[n] \) and \( cof(\alpha)=cof(\psi_{\beta_m}(\gamma_m)) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">03.</span>If \( \alpha=\psi_0(0)=1 \), then: \( \alpha[n]=0 \) and \( cof(\alpha)=1 \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">04.</span>If \( \alpha=\psi_{\beta}(0)=\Omega_\beta \) and \( cof(\beta)=1 \), then: \( \alpha[n]=n \) and \( cof(\alpha)=\alpha \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">05.</span>If \( \alpha=\psi_{\beta}(0)=\Omega_\beta \) and \( cof(\beta)&gt;1 \), then: \( \alpha[n]=\psi_{\beta[n]}(0) \) and \( cof(\alpha)=cof(\beta) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">06.</span>If \( \alpha=\psi_{\beta}(\gamma) \) and \( cof(\gamma)=1 \), then: \( \alpha[n]=\psi_{\beta}(\gamma[0])*n \) and \( cof(\alpha)=\psi_0(\psi_0(0))=\omega \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.</span>If \( \alpha=\psi_{\beta}(\gamma) \) and \( 1&lt;cof(\gamma)\le\Omega_\beta \), then: \( \alpha[n]=\psi_{\beta}(\gamma[n]) \) and \( cof(\alpha)=cof(\gamma) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">08.</span>If \( \alpha=\psi_{\beta}(\gamma) \) and \( \Omega_\beta&lt;cof(\gamma) \), then: \( \alpha[0]=0 \) and \( \alpha[n+1]=\psi_{\beta}(Re(\gamma,n)) \) and \( cof(\alpha)=\omega \),</p>
+            <p>${S(8)}<span style="opacity: 0.5;">08.01.</span>where \( Re(\gamma,0)=\gamma[0] \) and \( Re(\gamma,n+1)=\gamma[\psi_{\delta}(Re(\gamma,n))] \) and \( \Omega_{\delta+1}=cof(\gamma) \)</p>
+            <br>
+            <p>${S(8)}The ordinals in the lower bound of Lv.61-65 follows the FS in <a href="?section=3&id=8">this article</a>.</p>
+            <p>${S(8)}The FSes for the ordinals in the lower bound of Lv.66-99 are currently undefined. It's fine to consider these lower bounds ill-defined. I'm currently working on the FS of Rathjen's capital \( \Psi \), which is Lv.66-70.</p>
+            <p>${S(8)}The ordinals in the lower bound of Lv.100 follows the FS in <a href="?section=3&id=7">this article</a>.</p>
+            <p>${S(8)}Besides the main classifications above, we also have subclasses. We follow the instruction below in order. We denote the number as \( n \), \( \mathfrak{R}(n) \) as the real part of \( n \), \( \mathfrak{I}(n) \) as the imaginary part of \( n \) and \( |n| \) as the modulus of \( n \).</p>
+            <p>${S(8)}<span style="opacity: 0.5;">01.</span>If \( n=0 \), we add "Z" (Zero) in the end.</p>
+            <p>${S(8)}<span style="opacity: 0.5;">02.</span>If \( |n|&lt;1 \), we add "M" (Micro) in the end.</p>
+            <p>${S(8)}<span style="opacity: 0.5;">03.</span>If \( \mathfrak{R}(n)&lt;0 \) and \( \mathfrak{I}(n)=0 \), we add "N" (Negative) in the end.</p>
+            <p>${S(8)}<span style="opacity: 0.5;">04.</span>If \( \mathfrak{R}(n)=0 \) and \( \mathfrak{I}(n)&gt;0 \), we add "I" (Imaginary) in the end.</p>
+            <p>${S(8)}<span style="opacity: 0.5;">05.</span>If \( \mathfrak{R}(n)=0 \) and \( \mathfrak{I}(n)&lt;0 \), we add "NI" (Negative Imaginary) in the end.</p>
+            <p>${S(8)}<span style="opacity: 0.5;">06.</span>If \( \mathfrak{R}(n)&gt;0 \) and \( \mathfrak{I}(n)&gt;0 \), we add "Q1" (Quadrant I) in the end.</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.</span>If \( \mathfrak{R}(n)&lt;0 \) and \( \mathfrak{I}(n)&gt;0 \), we add "Q2" (Quadrant II) in the end.</p>
+            <p>${S(8)}<span style="opacity: 0.5;">08.</span>If \( \mathfrak{R}(n)&lt;0 \) and \( \mathfrak{I}(n)&lt;0 \), we add "Q3" (Quadrant III) in the end.</p>
+            <p>${S(8)}<span style="opacity: 0.5;">09.</span>If \( \mathfrak{R}(n)&gt;0 \) and \( \mathfrak{I}(n)&lt;0 \), we add "Q4" (Quadrant IV) in the end.</p>
+            <p>${S(8)}<span style="opacity: 0.5;">10.</span>If \( n \) is possibly ill-defined, we add "?" in the end.</p>
+            <p>${S(8)}<span style="opacity: 0.5;">11.</span>If \( n \) is known to be ill-defined, we add "??" in the end.</p>
+            <br>
+            <p>${S(8)}For example:</p>
+            <p>${S(8)}\( 0 \) is Lv.0Z</p>
+            <p>${S(8)}\( \sqrt{2} \) is Lv.0</p>
+            <p>${S(8)}\( -2 \) is Lv.0N</p>
+            <p>${S(8)}\( 6+8i \) is Lv.1Q1</p>
+            <p>${S(8)}\( 69,420 \) is Lv.3</p>
+            <p>${S(8)}Googol \( =10^{100} \) is Lv.6</p>
+            <p>${S(8)}Googolplex \( =10^{10^{100}} \) is Lv.8</p>
+            <p>${S(8)}Graham's number \( =g_{64} \) is Lv.22</p>
+            <p>${S(8)}Hexadecal \( =\{10,10,10,10,10,10\} \) is Lv.29</p>
+            <p>${S(8)}\( f_{\varepsilon_{2.5}}(10) \) is Lv.41??. Despite being ill-defined, we can agree that this is between \( f_{\varepsilon_1}(10) \) and \( f_{\zeta_0}(10) \).</p>
+            <p>${S(8)}\( TREE(3) \) is Lv.47</p>
+            <p>${S(8)}Meameamealokkapoowa Oompa \( ={\{{\{L100,10\}}_{10,10}\&L,10\}}_{10,10} \) is Lv.48?? (Implied from Chris Bird's PDF${C(7)})</p>
+            <p>${S(8)}\( SCG(13) \) is Lv.55</p>
+            <p>${S(8)}\( f_{\omega_{\Pi_4-Ref}}(10)=f_{PTO(\Pi_4-Ref)}(10) \) is Lv.70+??</p>
+            <p>${S(8)}Bashicu matrix number is Lv.80+?</p>
+            <p>${S(8)}Tarintar \( =Tar^{Tar(10)}(Tar(10)) \) is Lv.80+?</p>
+            <p>${S(8)}Loader's number \( =D^{5}(99) \) is Lv.80+</p>
+            <p>${S(8)}\( f_{\omega_{\Pi_2^1-CA}}(10) \) is Lv.80+??</p>
+            <p>${S(8)}\( f_{\omega_{\Pi_3^1-CA}}(10) \) is Lv.80+??</p>
+            <p>${S(8)}\( f_{\omega_{Z_2}}(10) \) is Lv.80+??</p>
+            <p>${S(8)}\( f_{\omega_{ZF}}(10) \) is Lv.(80+)??</p>
+            <p>${S(8)}\( f_{\omega_{ZFC+CH}}(10) \) is Lv.90+??</p>
+            <p>${S(8)}\( f_{\omega_{ZFC+GCH}}(10) \) is Lv.90+??</p>
+            <p>${S(8)}\( f_{\omega_{ZF+(V=L)}}(10) \) is Lv.90+??</p>
+            <p>${S(8)}\( f_{\omega_{ZFC+I0}}(10) \) is Lv.90+??</p>
+            <p>${S(8)}\( \Sigma(1,919) \) is Lv.90+, despite being uncomputable</p>
+            <p>${S(8)}\( f_{\omega_1^{CK}}(1,000,000) \) is Lv.90+, despite being uncomputable</p>
+            <p>${S(8)}\( f_{\omega_1^{CK}}(10^{100}) \) is Lv.100+</p>
+            <p>${S(8)}\( f_{\omega_1^{CK}+1}(10) \) is Lv.100+</p>
+            <p>${S(8)}\( f_{CKBO}(10) \) is Lv.100+ (See <a href="?section=3&id=7">this article</a>)</p>
+            <p>${S(8)}Rayo's number \( =Rayo(10^{100}) \) is Lv.100+?</p>
+            <p>${S(8)}Large Number Garden Number \( =f^{10}(10\uparrow^{10}10) \) is Lv.100+?</p>
+            <h2>Statistics on The Distribution of Numbers on Googology Wiki by Level</h2>
+            <p>${S(8)}I'm going to show my statistics on how the numbers are distributed on my googological ruler. I counted all 13,145 numbers that are known to be well-defined or unknown to be ill-defined on the subpages on the <a href="https://googology.fandom.com/wiki/List_of_googolisms">List of googolisms</a> page on Googology Wiki. The statistics I'm going to show assumes that the numbers on the list are well-sorted.</p>
+            <p>${S(8)}Num: Number of numbers at this level</p>
+            <p>${S(8)}NumUnder: Number of numbers under this level</p>
+            <p>${S(8)}%: Percentage of NumUnder</p>
+            <p>${S(8)}First: First number on the list</p>
+            <p>${S(8)}Last: Last on the list</p>
+            <p>${S(8)}(Exact): The number is exactly equal to the lower bound of this level.</p>
+            <table>
+                <tbody>
+                    <tr>
+                        <th>Lv.</th>
+                        <th>Num</th>
+                        <th>NumUnder</th>
+                        <th>%</th>
+                        <th>First</th>
+                        <th>Last</th>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">M/Z</td>
+                        <td style="text-align: right;">37</td>
+                        <td style="text-align: right;">0</td>
+                        <td style="text-align: right;">0.00%</td>
+                        <td>\( 0 \)</td>
+                        <td>\( 0.8 \) - Cheese mite-crumb</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">0</td>
+                        <td style="text-align: right;">15</td>
+                        <td style="text-align: right;">37</td>
+                        <td style="text-align: right;">0.28%</td>
+                        <td>\( 1 \) (Exact)</td>
+                        <td>\( 9 \)</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">1</td>
+                        <td style="text-align: right;">63</td>
+                        <td style="text-align: right;">52</td>
+                        <td style="text-align: right;">0.40%</td>
+                        <td>\( 10 \) (Exact)</td>
+                        <td>\( 90 \)</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">2</td>
+                        <td style="text-align: right;">50</td>
+                        <td style="text-align: right;">115</td>
+                        <td style="text-align: right;">0.87%</td>
+                        <td>\( 100 \) (Exact)</td>
+                        <td>\( 900 \)</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">3</td>
+                        <td style="text-align: right;">133</td>
+                        <td style="text-align: right;">165</td>
+                        <td style="text-align: right;">1.26%</td>
+                        <td>\( 1,000 \) (Exact)</td>
+                        <td>\( 985,321 \) - Srae</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">4</td>
+                        <td style="text-align: right;">67</td>
+                        <td style="text-align: right;">298</td>
+                        <td style="text-align: right;">2.27%</td>
+                        <td>\( 1,000,000 \) (Exact)</td>
+                        <td>\( 8,000,000,000 \) - Cheese mite-crowd</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">5</td>
+                        <td style="text-align: right;">247</td>
+                        <td style="text-align: right;">365</td>
+                        <td style="text-align: right;">2.78%</td>
+                        <td>\( 10,000,000,000 \) (Exact)</td>
+                        <td>Centix</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">6</td>
+                        <td style="text-align: right;">310</td>
+                        <td style="text-align: right;">612</td>
+                        <td style="text-align: right;">4.66%</td>
+                        <td>Googol (Exact)</td>
+                        <td>Nine-Toorol</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">7</td>
+                        <td style="text-align: right;">254</td>
+                        <td style="text-align: right;">922</td>
+                        <td style="text-align: right;">7.01%</td>
+                        <td>Googolchime (Exact)</td>
+                        <td>Tremilliamilliamilliatrecentretriginmilliamillia-<br>trecentretriginmilliatrecendotrigintillion</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">8</td>
+                        <td style="text-align: right;">318</td>
+                        <td style="text-align: right;">1176</td>
+                        <td style="text-align: right;">8.95%</td>
+                        <td>Trialogue (Exact)</td>
+                        <td>Hyper-oct-exitillion</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">9</td>
+                        <td style="text-align: right;">612</td>
+                        <td style="text-align: right;">1494</td>
+                        <td style="text-align: right;">11.37%</td>
+                        <td>Tetralogue (Exact)</td>
+                        <td>Toillion</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">10</td>
+                        <td style="text-align: right;">259</td>
+                        <td style="text-align: right;">2106</td>
+                        <td style="text-align: right;">16.02%</td>
+                        <td>Decker (Exact)</td>
+                        <td>Googolgigaplex</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">11</td>
+                        <td style="text-align: right;">52</td>
+                        <td style="text-align: right;">2365</td>
+                        <td style="text-align: right;">17.99%</td>
+                        <td>Dialogialogue (Exact)</td>
+                        <td>ŠŸoyo hay</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">12</td>
+                        <td style="text-align: right;">53</td>
+                        <td style="text-align: right;">2417</td>
+                        <td style="text-align: right;">18.39%</td>
+                        <td>Trialogialogue (Exact)</td>
+                        <td>Googolseptiplexidex</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">13</td>
+                        <td style="text-align: right;">77</td>
+                        <td style="text-align: right;">2470</td>
+                        <td style="text-align: right;">18.79%</td>
+                        <td>Tria-taxis (Exact)</td>
+                        <td>Googolseptiplexidudex</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">14</td>
+                        <td style="text-align: right;">122</td>
+                        <td style="text-align: right;">2547</td>
+                        <td style="text-align: right;">19.38%</td>
+                        <td>Tetra-taxis (Exact)</td>
+                        <td>Nonomega</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">15</td>
+                        <td style="text-align: right;">214</td>
+                        <td style="text-align: right;">2669</td>
+                        <td style="text-align: right;">20.30%</td>
+                        <td>Fancy K (Exact)</td>
+                        <td>Grand exaexpofaxul</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">16</td>
+                        <td style="text-align: right;">140</td>
+                        <td style="text-align: right;">2883</td>
+                        <td style="text-align: right;">21.93%</td>
+                        <td>Super K (Exact)</td>
+                        <td>A-ooennea</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">17</td>
+                        <td style="text-align: right;">235</td>
+                        <td style="text-align: right;">3023</td>
+                        <td style="text-align: right;">23.00%</td>
+                        <td>Deka-petaxis (Exact)</td>
+                        <td>Betoxota</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">18</td>
+                        <td style="text-align: right;">153</td>
+                        <td style="text-align: right;">3258</td>
+                        <td style="text-align: right;">24.79%</td>
+                        <td>Deka-exaxis (Exact)</td>
+                        <td>Gigolseptenplex</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">19</td>
+                        <td style="text-align: right;">320</td>
+                        <td style="text-align: right;">3411</td>
+                        <td style="text-align: right;">25.95%</td>
+                        <td>Deka-eptaxis (Exact)</td>
+                        <td>Enna-endekaxis</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">20</td>
+                        <td style="text-align: right;">377</td>
+                        <td style="text-align: right;">3731</td>
+                        <td style="text-align: right;">28.38%</td>
+                        <td>Tridecal (Exact)</td>
+                        <td>Great gargantuul</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">21</td>
+                        <td style="text-align: right;">75</td>
+                        <td style="text-align: right;">4108</td>
+                        <td style="text-align: right;">31.25%</td>
+                        <td>Tridecalplex (Exact)</td>
+                        <td>Gugolda-septisuplex</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">22</td>
+                        <td style="text-align: right;">130</td>
+                        <td style="text-align: right;">4183</td>
+                        <td style="text-align: right;">31.82%</td>
+                        <td>Dialogue-corporal (Exact)</td>
+                        <td>Biance</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">23</td>
+                        <td style="text-align: right;">49</td>
+                        <td style="text-align: right;">4313</td>
+                        <td style="text-align: right;">32.81%</td>
+                        <td>Multiexpandecal (Exact)</td>
+                        <td>Quadhexar</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">24</td>
+                        <td style="text-align: right;">153</td>
+                        <td style="text-align: right;">4362</td>
+                        <td style="text-align: right;">33.18%</td>
+                        <td>Triance</td>
+                        <td>Googondolda-dusudecexigong</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">25</td>
+                        <td style="text-align: right;">185</td>
+                        <td style="text-align: right;">4515</td>
+                        <td style="text-align: right;">34.35%</td>
+                        <td>Grand tridecal (Exact)</td>
+                        <td>Googondolthra-tridecexitris</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">26</td>
+                        <td style="text-align: right;">58</td>
+                        <td style="text-align: right;">4700</td>
+                        <td style="text-align: right;">35.76%</td>
+                        <td>Great tridecal (Exact)</td>
+                        <td>Googondoltesla</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">27</td>
+                        <td style="text-align: right;">238</td>
+                        <td style="text-align: right;">4758</td>
+                        <td style="text-align: right;">36.20%</td>
+                        <td>Gigantic tridecal (Exact)</td>
+                        <td>Googondoldeka-decexideka</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">28</td>
+                        <td style="text-align: right;">381</td>
+                        <td style="text-align: right;">4996</td>
+                        <td style="text-align: right;">38.01%</td>
+                        <td>General (Exact)</td>
+                        <td>Coruzotial</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">29</td>
+                        <td style="text-align: right;">275</td>
+                        <td style="text-align: right;">5377</td>
+                        <td style="text-align: right;">40.91%</td>
+                        <td>Pentadecal (Exact)</td>
+                        <td>Hayden's Dekatri</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">30</td>
+                        <td style="text-align: right;">293</td>
+                        <td style="text-align: right;">5652</td>
+                        <td style="text-align: right;">43.00%</td>
+                        <td>Iteral (Exact)</td>
+                        <td>Ogdoogahlah</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">31</td>
+                        <td style="text-align: right;">92</td>
+                        <td style="text-align: right;">5945</td>
+                        <td style="text-align: right;">45.23%</td>
+                        <td>Entoogahlah</td>
+                        <td>Kilulin-Googol</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">32</td>
+                        <td style="text-align: right;">252</td>
+                        <td style="text-align: right;">6037</td>
+                        <td style="text-align: right;">45.93%</td>
+                        <td>Grangol-carta-godgoldgahlah</td>
+                        <td>Duennadecal</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">33</td>
+                        <td style="text-align: right;">161</td>
+                        <td style="text-align: right;">6289</td>
+                        <td style="text-align: right;">47.84%</td>
+                        <td>Xappol (Exact)</td>
+                        <td>Plantrel</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">34</td>
+                        <td style="text-align: right;">141</td>
+                        <td style="text-align: right;">6450</td>
+                        <td style="text-align: right;">49.07%</td>
+                        <td>Hayden's Dimentri</td>
+                        <td>Decicahlah</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">35</td>
+                        <td style="text-align: right;">221</td>
+                        <td style="text-align: right;">6591</td>
+                        <td style="text-align: right;">50.14%</td>
+                        <td>Cosmal (Exact)</td>
+                        <td>Godgathornonice</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">36</td>
+                        <td style="text-align: right;">693</td>
+                        <td style="text-align: right;">6812</td>
+                        <td style="text-align: right;">51.82%</td>
+                        <td>Godgathordecice</td>
+                        <td>Ennaelgathornonice</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">37</td>
+                        <td style="text-align: right;">639</td>
+                        <td style="text-align: right;">7505</td>
+                        <td style="text-align: right;">57.09%</td>
+                        <td>Quadritetrom</td>
+                        <td>Hyper-ennaelgathorquad</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">38</td>
+                        <td style="text-align: right;">255</td>
+                        <td style="text-align: right;">8144</td>
+                        <td style="text-align: right;">61.96%</td>
+                        <td>Quintitetrom</td>
+                        <td>Hyper-hyper-ennaelgathordeus</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">39</td>
+                        <td style="text-align: right;">353</td>
+                        <td style="text-align: right;">8399</td>
+                        <td style="text-align: right;">63.90%</td>
+                        <td>Sextitetrom</td>
+                        <td>Quintuple-hyper-ennaelgathordeus</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">40</td>
+                        <td style="text-align: right;">1075</td>
+                        <td style="text-align: right;">8752</td>
+                        <td style="text-align: right;">66.58%</td>
+                        <td>Nonitetrom</td>
+                        <td>Tethrathoth-octupletetrate</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">41</td>
+                        <td style="text-align: right;">730</td>
+                        <td style="text-align: right;">9827</td>
+                        <td style="text-align: right;">74.76%</td>
+                        <td>Nonitetrep</td>
+                        <td>Ennastaculated-tethrathoth</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">42</td>
+                        <td style="text-align: right;">327</td>
+                        <td style="text-align: right;">10557</td>
+                        <td style="text-align: right;">80.31%</td>
+                        <td>Noninep</td>
+                        <td>Ennastaculated-tethracross</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">43</td>
+                        <td style="text-align: right;">830</td>
+                        <td style="text-align: right;">10884</td>
+                        <td style="text-align: right;">82.80%</td>
+                        <td>Noninzet</td>
+                        <td>Tethradu-ennon</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">44</td>
+                        <td style="text-align: right;">181</td>
+                        <td style="text-align: right;">11714</td>
+                        <td style="text-align: right;">89.11%</td>
+                        <td>Dekophi</td>
+                        <td>Tethrarxi-enn</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">45</td>
+                        <td style="text-align: right;">678</td>
+                        <td style="text-align: right;">11895</td>
+                        <td style="text-align: right;">90.49%</td>
+                        <td>Noninphi</td>
+                        <td>Ohmygosh-ohmygosh-ohmygooosh</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">46</td>
+                        <td style="text-align: right;">140</td>
+                        <td style="text-align: right;">12573</td>
+                        <td style="text-align: right;">95.65%</td>
+                        <td>Bexommthet</td>
+                        <td>Demagoogol</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">47</td>
+                        <td style="text-align: right;">130</td>
+                        <td style="text-align: right;">12713</td>
+                        <td style="text-align: right;">96.71%</td>
+                        <td>Nonexommthet</td>
+                        <td>Bigreat Bigrand Destruquaxul</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">48</td>
+                        <td style="text-align: right;">3</td>
+                        <td style="text-align: right;">12843</td>
+                        <td style="text-align: right;">97.70%</td>
+                        <td>Bitetrommthet</td>
+                        <td>Mega Super Even More Godder Tritri</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">49</td>
+                        <td style="text-align: right;">4</td>
+                        <td style="text-align: right;">12846</td>
+                        <td style="text-align: right;">97.73%</td>
+                        <td>Tritetrommthet</td>
+                        <td>Sextitetrommthet</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">50</td>
+                        <td style="text-align: right;">37</td>
+                        <td style="text-align: right;">12850</td>
+                        <td style="text-align: right;">97.76%</td>
+                        <td>Septitetrommthet</td>
+                        <td>Yottotetrommthet</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">51</td>
+                        <td style="text-align: right;">10</td>
+                        <td style="text-align: right;">12887</td>
+                        <td style="text-align: right;">98.04%</td>
+                        <td>Trugubrigoogol</td>
+                        <td>Centugubrigoogol</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">52</td>
+                        <td style="text-align: right;">6</td>
+                        <td style="text-align: right;">12897</td>
+                        <td style="text-align: right;">98.11%</td>
+                        <td>Big Bird</td>
+                        <td>Tria-hierarchaxis</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">53</td>
+                        <td style="text-align: right;">2</td>
+                        <td style="text-align: right;">12903</td>
+                        <td style="text-align: right;">98.16%</td>
+                        <td>Bommthet</td>
+                        <td>Gigantixul</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">54</td>
+                        <td style="text-align: right;">19</td>
+                        <td style="text-align: right;">12905</td>
+                        <td style="text-align: right;">98.17%</td>
+                        <td>Gigantibixul</td>
+                        <td>Nonommthet</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">55</td>
+                        <td style="text-align: right;">16</td>
+                        <td style="text-align: right;">12924</td>
+                        <td style="text-align: right;">98.32%</td>
+                        <td>Dekommthet</td>
+                        <td>Mulporalmax</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">56</td>
+                        <td style="text-align: right;">18</td>
+                        <td style="text-align: right;">12940</td>
+                        <td style="text-align: right;">98.44%</td>
+                        <td>Big Chunk</td>
+                        <td>Goplexulusmax</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">57</td>
+                        <td style="text-align: right;">18</td>
+                        <td style="text-align: right;">12958</td>
+                        <td style="text-align: right;">98.58%</td>
+                        <td>Bimixommwil</td>
+                        <td>Dekomixommwil</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">58</td>
+                        <td style="text-align: right;">14</td>
+                        <td style="text-align: right;">12976</td>
+                        <td style="text-align: right;">98.71%</td>
+                        <td>Binommwil</td>
+                        <td>Nucleatrixul</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">59</td>
+                        <td style="text-align: right;">7</td>
+                        <td style="text-align: right;">12990</td>
+                        <td style="text-align: right;">98.82%</td>
+                        <td>Trinommwil</td>
+                        <td>Octinommwil</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">60</td>
+                        <td style="text-align: right;">18</td>
+                        <td style="text-align: right;">12997</td>
+                        <td style="text-align: right;">98.87%</td>
+                        <td>Noninommwil</td>
+                        <td>Septitetrotos</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">61</td>
+                        <td style="text-align: right;">16</td>
+                        <td style="text-align: right;">13015</td>
+                        <td style="text-align: right;">99.01%</td>
+                        <td>Octitetrotos</td>
+                        <td>Sextinotos</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">62</td>
+                        <td style="text-align: right;">19</td>
+                        <td style="text-align: right;">13031</td>
+                        <td style="text-align: right;">99.13%</td>
+                        <td>Dekinotos</td>
+                        <td>Nonimah</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">63</td>
+                        <td style="text-align: right;">17</td>
+                        <td style="text-align: right;">13050</td>
+                        <td style="text-align: right;">99.28%</td>
+                        <td>Dekimah</td>
+                        <td>Septinimah</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">64</td>
+                        <td style="text-align: right;">6</td>
+                        <td style="text-align: right;">13067</td>
+                        <td style="text-align: right;">99.41%</td>
+                        <td>Terinimah</td>
+                        <td>Sextitetremar</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">65</td>
+                        <td style="text-align: right;">10</td>
+                        <td style="text-align: right;">13073</td>
+                        <td style="text-align: right;">99.45%</td>
+                        <td>Terotetremar</td>
+                        <td>Sextinemar</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">66</td>
+                        <td style="text-align: right;">8</td>
+                        <td style="text-align: right;">13083</td>
+                        <td style="text-align: right;">99.53%</td>
+                        <td>Kilinemar</td>
+                        <td>Yottinemar</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">67</td>
+                        <td style="text-align: right;">0</td>
+                        <td style="text-align: right;">13091</td>
+                        <td style="text-align: right;">99.59%</td>
+                        <td>(None)</td>
+                        <td>(None)</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">68</td>
+                        <td style="text-align: right;">1</td>
+                        <td style="text-align: right;">13091</td>
+                        <td style="text-align: right;">99.59%</td>
+                        <td>Uninamus</td>
+                        <td>Uninamus</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">69</td>
+                        <td style="text-align: right;">3</td>
+                        <td style="text-align: right;">13092</td>
+                        <td style="text-align: right;">99.60%</td>
+                        <td>Meginamus</td>
+                        <td>Yottinamus</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">70-79</td>
+                        <td style="text-align: right;">0</td>
+                        <td style="text-align: right;">13095</td>
+                        <td style="text-align: right;">99.62%</td>
+                        <td>(None)</td>
+                        <td>(None)</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">80+</td>
+                        <td style="text-align: right;">41</td>
+                        <td style="text-align: right;">13095</td>
+                        <td style="text-align: right;">99.62%</td>
+                        <td>Tritar</td>
+                        <td>Y sequence number</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">90+</td>
+                        <td style="text-align: right;">3</td>
+                        <td style="text-align: right;">13136</td>
+                        <td style="text-align: right;">99.93%</td>
+                        <td>the least transcendental integer</td>
+                        <td>\( \Sigma(1919) \)</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: right;">100+</td>
+                        <td style="text-align: right;">6</td>
+                        <td style="text-align: right;">13139</td>
+                        <td style="text-align: right;">99.95%</td>
+                        <td>Fish number 4</td>
+                        <td>Large Number Garden Number</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>${S(8)}From the table, we can see that Lv.45 numbers beats 90% of all numbers on the Googology Wiki. Which means the number \( f_{\Gamma_0}(10) \) and the Feferman-Schütte ordinal \( \Gamma_0 \) can already be considered very large by googological standards, at least statistically.</p>
+            <p>${S(8)}After Lv.50, the number of numbers per level starts to decline drastically. We can find at least 100 numbers in most of the levels under Lv.50, but there are no levels at Lv.50 or above that has at least 100 numbers. Which means if you understand Buchholz's OCF well enough, you can coin a number that beats about 98% of all numbers on the Googology Wiki. Actually, such decline already happens at Lv.48, this is because most of the numbers at Lv.48-49 (167 of 174) are known to be ill-defined. By the way, I found 323 ill-defined numbers at Lv.40-59 and 7 ill-defined numbers at Lv.100+. Also, if we look at the names of the numbers at Lv.50 or above, one can argue that most of these names seem to share their styles. It turns out that most of the numbers at Lv.50-89 are coined by Denis Maksudov.</p>
+            <p>${S(8)}In <a href="?section=3&id=8">one of my previous articles</a>, I claimed that "\( f_{SRO}(10) \) is well-defined and will most likely surpass about 85% of the large numbers ever coined on the internet". That was actually a strict claim because I didn't know that Lv.65 numbers beats almost 99.5% of all numbers on the Googology Wiki until now. (I meant well-defined numbers, if we also consider numbers coined on the <a href="https://fictional-googology.fandom.com/wiki/Fictional_Googology_Wiki">Fictional Googology Wiki</a>, then the claim will obviously be false) If we consider all of the factors like ignoring all of the numbers below Lv.5, including more well-defined numbers on the internet but not on the list, I will say that 99% would be a better claim. Of course, it's possible that there will be someone intentionally spam-coin numbers at somewhere unknown on the internet to break this claim.</p>
+            <p>${S(8)}We can see that there are ZERO numbers at Lv.70-79. Which means that to coin numbers that beats some of the largest numbers ever coined on the internet, studying Stegert's OCF doesn't seems to help. This is because Stegert's OCF is too difficult and there are few people who understands this OCF or something of the same strength as this OCF and jumping all the way to Lv.80+ is just an easier path to go. Also, most of the numbers at this level range are from Denis' "Tar Series", which are possibly but not known to be ill-defined.</p>
+            <p>${S(8)}There are ONLY 7 uncomputable numbers on this list, which are \( \Sigma(1919) \) and all of the 6 Lv.100+ numbers. These 7 numbers are the largest numbers on the list, which means if you really want to coin a number that beats some of the largest numbers ever coined on the internet, you'll really have to understand uncomputable numbers.</p>
+            <p>${S(8)}The version of the subpages (As of May 24, 2024) I used for analysis are as follows:</p>
+            <p>${S(8)}<a href="https://googology.fandom.com/wiki/List_of_googolisms/Class_0_and_1?oldid=424942">List of googolisms/Class 0 and 1</a></p>
+            <p>${S(8)}<a href="https://googology.fandom.com/wiki/List_of_googolisms/Class_2?oldid=426048">List of googolisms/Class 2</a></p>
+            <p>${S(8)}<a href="https://googology.fandom.com/wiki/List_of_googolisms/Class_3?oldid=426050">List of googolisms/Class 3</a></p>
+            <p>${S(8)}<a href="https://googology.fandom.com/wiki/List_of_googolisms/Class_4?oldid=426732">List of googolisms/Class 4</a></p>
+            <p>${S(8)}<a href="https://googology.fandom.com/wiki/List_of_googolisms/Class_5?oldid=425794">List of googolisms/Class 5</a></p>
+            <p>${S(8)}<a href="https://googology.fandom.com/wiki/List_of_googolisms/Tetration_level?oldid=425134">List of googolisms/Tetration level</a></p>
+            <p>${S(8)}<a href="https://googology.fandom.com/wiki/List_of_googolisms/Up-arrow_notation_level?oldid=423522">List of googolisms/Up-arrow notation level</a></p>
+            <p>${S(8)}<a href="https://googology.fandom.com/wiki/List_of_googolisms/Linear_omega_level?oldid=425678">List of googolisms/Linear omega level</a></p>
+            <p>${S(8)}<a href="https://googology.fandom.com/wiki/List_of_googolisms/Quadratic_omega_level?oldid=421845">List of googolisms/Quadratic omega level</a></p>
+            <p>${S(8)}<a href="https://googology.fandom.com/wiki/List_of_googolisms/Polynomial_omega_level?oldid=424376">List of googolisms/Polynomial omega level</a></p>
+            <p>${S(8)}<a href="https://googology.fandom.com/wiki/List_of_googolisms/Exponentiated_linear_omega_level?oldid=426567">List of googolisms/Exponentiated linear omega level</a></p>
+            <p>${S(8)}<a href="https://googology.fandom.com/wiki/List_of_googolisms/Exponentiated_polynomial_omega_level?oldid=423643">List of googolisms/Exponentiated polynomial omega level</a></p>
+            <p>${S(8)}<a href="https://googology.fandom.com/wiki/List_of_googolisms/Double_exponentiated_polynomial_omega_level?oldid=416241">List of googolisms/Double exponentiated polynomial omega level</a></p>
+            <p>${S(8)}<a href="https://googology.fandom.com/wiki/List_of_googolisms/Triple_exponentiated_polynomial_omega_level?oldid=416253">List of googolisms/Triple exponentiated polynomial omega level</a></p>
+            <p>${S(8)}<a href="https://googology.fandom.com/wiki/List_of_googolisms/Iterated_Cantor_normal_form_level?oldid=418506">List of googolisms/Iterated Cantor normal form level</a></p>
+            <p>${S(8)}<a href="https://googology.fandom.com/wiki/List_of_googolisms/Epsilon_level?oldid=426467">List of googolisms/Epsilon level</a></p>
+            <p>${S(8)}<a href="https://googology.fandom.com/wiki/List_of_googolisms/Binary_phi_level?oldid=426608">List of googolisms/Binary phi level</a></p>
+            <p>${S(8)}<a href="https://googology.fandom.com/wiki/List_of_googolisms/Bachmann%27s_collapsing_level?oldid=417455">List of googolisms/Bachmann's collapsing level</a></p>
+            <p>${S(8)}<a href="https://googology.fandom.com/wiki/List_of_googolisms/Higher_computable_level?oldid=419759">List of googolisms/Higher computable level</a></p>
+            <p>${S(8)}<a href="https://googology.fandom.com/wiki/List_of_googolisms/Uncomputable_numbers?oldid=422993">List of googolisms/Uncomputable numbers</a></p>
+            <h2>Conclusion</h2>
+            <p>${S(8)}And there you have it, my googological ruler and statistics. In fact, I follow some principles when creating this ruler like making the numbers we use in our daily life take up a lot of levels, making a lot of space for numbers that can be handled by the Peano Arithmetic, making space for something we don't know and so on.</p>
+            <p>${S(8)}Although studying Stegert's OCF doesn't help us to beat the top numbers on the internet, it does help us to beat the top COMPUTABLE numbers on the internet. We can all learn uncomputable functions before learning complex computable functions that are much weaker, but we cannot easily know how to create computable functions under uncomputable systems like Turing Machine, Lambda Calculus and so on.</p>
+            <p>${S(8)}Googology is like BLACKJACK. In blackjack, you want your number to get close to some number but not to surpass it. In the game, we want to reach 21 points or as close as possible, or should we say we want to get as close to 22 points as possible but not to reach or surpass it. In googology, we want a number that is as close to \( \omega \) as possible but not to reach or surpass it. Sometimes, we want an ordinal that is as close to \( \varepsilon_0 \), \( \omega_1^{CK} \), \( \Omega \) and so on as possible but not to reach or surpass it. So, it should be reasonable to understand computable functions that grows as fast as possible but not uncomputable.</p>
+            <p>${S(8)}Furthermore, studying extremely complex OCFs like Stegert's OCF helps to understand more complicated and potential systems like BMS (Bashicu Matrix System) and Taranovsky's C${C(8)}. I see a lot of people using some unknown OCFs or Ordinal Notations to analyze these systems, this is probably due to lack of knowledge of complex OCFs. If they understood complex OCFs like Rathjen's little \( \psi \), Rathjen's capital \( \Psi \), their analysis would be more robust. In fact, I see a lot of people in the googology community who understands Taranovsky's C and has done some analyses that I completely don't understand. Since I currently don't understand Taranovsky's C, I'm really curious about their knowledge of this system.</p>
+            <p>${S(8)}Speaking of Stegert's OCF, I claimed that this OCF is the "Current final boss of OCFs" on my ruler. Actually, this might not be true. I see an ordinal written as \( \psi_{\omega_1^{CK}}(\varepsilon_{\mathbb{I}+1}) \) at the end of the table on the <a href="https://en.wikipedia.org/w/index.php?title=Ordinal_analysis&oldid=1223014717#Table_of_ordinal_analyses">"Ordinal analysis"</a> page on Wikipedia. This seems to be the PTO (Proof-Theoretic Ordinal) of \( KP+\Pi_1-Collection \)${C(9)}, which as the table suggests, seems to be even larger than \( LSO=\mathfrak{P}_{(\omega^+;P_0;\epsilon;\epsilon;0)}^{\varepsilon_{\Upsilon+1}} \). This ordinal is due to Arai, who also created Arai's \( \psi \) function${C(10)}. But when I see the webpage of the paper about this ordinal, it says that the newest version of this paper is WITHDRAWN. I don't know what's happening. Does this new OCF have problems? Or is it actually going to BEAT Stegert's OCF? Without enough information, I decide to ignore this new OCF for now. Maybe I'm just in denial and don't want to go any further.</p>
+            <p>${S(8)}EDIT 2024/05/25: It turn's out that the claim above isn't true! Arai has published an upgraded version of his withdrawn OCF with a new large ordinal written as \( \psi_{\omega_1^{CK}}(\mathbb{I}_\omega) \) and it's claimed to be the PTO of \( Z_2 \) (not \( \Phi_2(2) \)) or the WHOLE second-order arithmetic!${C(11)} (With Dependent Choice Schema. I don't know whether this theory and \( Z_2 \) alone are equiconsistent) If this paper contains no critical mistakes, then this will be the true current final boss of OCFs!</p>
+            <p>${S(8)}Googology is such an amazing journey. As the number goes up, you learn more. Hopefully this googological ruler can guide people on this journey.</p>
+        </content>
+        <citation>
+            <!-- 0001 -->Chris Bird. <a href="http://www.mrob.com/users/chrisb/index.html">Chris Bird's Super Huge Numbers.</a> Retrieved 2024-05-24.
+            <!-- 0002 -->Buchholz, W. (1986). <a href="https://www.sciencedirect.com/science/article/pii/0168007286900527">A new system of proof-theoretic ordinal functions.</a> Annals of Pure and Applied Logic, 32, 195-207. Retrieved 2024-05-24. https://doi.org/10.1016/0168-0072(86)90052-7
+            <!-- 0003 -->Denis Maksudov. <a href="https://sites.google.com/site/travelingtotheinfinity/the-extension-of-buchholz-s-function">The extended Wilfried Buchholz's functions.</a> Traveling To The Infinity. Retrieved 2024-05-24.
+            <!-- 0004 -->Rathjen, M. (1990). <a href="https://www1.maths.leeds.ac.uk/~rathjen/Ord_Notation_Weakly_Mahlo.pdf">Ordinal notations based on a weakly Mahlo Cardinal.</a> Archive for Mathematical Logic, 29(4), 249-263. Retrieved 2024-05-24. https://doi.org/10.1007/bf01651328
+            <!-- 0005 -->Rathjen, M. (1994). <a href="https://www1.maths.leeds.ac.uk/~rathjen/Ehab.pdf">Proof theory of reflection.</a> Annals of Pure and Applied Logic, 68(2), 181-224. Retrieved 2024-05-24. https://doi.org/10.1016/0168-0072(94)90074-4
+            <!-- 0006 -->Stegert, J. (2010). <a href="https://miami.uni-muenster.de/Record/429ac0b8-092f-426d-bf84-1e3a0adc8957">Ordinal proof theory of Kripke-Platek set theory augmented by strong reflection principles.</a> Retrieved 2024-05-24.
+            <!-- 0007 -->Chris Bird. <a href="http://www.mrob.com/users/chrisb/Bowers_Named_Numbers.pdf">Bowers' Named Numbers.</a> Retrieved 2024-05-24.
+            <!-- 0008 -->Dmytro Taranovsky. (2022). <a href="https://web.mit.edu/dmytro/www/other/OrdinalNotation.htm">Ordinal Notation.</a> Retrieved 2024-05-24.
+            <!-- 0009 -->Arai, T. (2023). <a href="https://arxiv.org/abs/2112.09871v11">An ordinal analysis of \( \Pi_1 \)-Collection.</a> arXiv.org. Retrieved 2024-05-24. https://doi.org/10.48550/arXiv.2112.09871
+            <!-- 0010 -->Arai, T. (2019). <a href="https://arxiv.org/abs/1907.07611">A simplified ordinal analysis of first-order reflection.</a> arXiv.org. Retrieved 2024-05-24. https://doi.org/10.48550/arXiv.1907.07611
+            <!-- 0011 -->Arai, T. (2024). <a href="https://arxiv.org/abs/2311.12459">An ordinal analysis of \( \Pi_N \)-Collection.</a> arXiv.org. Retrieved 2024-05-25. https://doi.org/10.48550/arXiv.2311.12459
+        </citation>
+    </body>
+</html>

@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <content>
+            <p>${S(8)}I've been working on a JavaScript program that explores in ordinals just like Rgetar's <a href="https://rgetar.github.io/">"Ordinal Explorer"</a>. My program is weaker compared to his because it can express less ordinals. And I use some Ordinal Notations base on some "official" OCFs (Ordinal Collapsing Functions) like Buchholz's OCF${C(1)} and Rathjen's OCF based on the "Mahlo Cardinal"(\( M \))${C(2)}. Buchholz's OCF is kinda easy and it didn't take long to complete, including the extended version${C(3)}. But Rathjen's little psi was pretty PAINFUL and took me a long time because the notation was so complicated and I had too many bugs to fix.</p>
+            <p>${S(8)}But because of the complexity of Rathjen's little psi, I think now is the time to share the "Fundamental Sequence System" (Or whatever this is called by this community) I came up with based on this OCF and how I managed to do this.</p>
+            <p>${S(8)}To my understanding, Fundamental Sequence Systems are like programs written in mathematical language that describes how ordinals works. Examples are <a href="https://googology.fandom.com/wiki/User_blog:Kanrokoti/Translation_of_%E4%B8%89_function">this</a>, <a href="https://googology.fandom.com/wiki/User_blog:Kanrokoti/Notations_fit_between_EBO_and_Kumakuma_3-var_psi">this</a>, and so on.</p>
+            <p>${S(8)}Fundamental Sequence Systems are NOT EASY to write. It's possible that some bugs and errors may occur and the System might not work as intended. But since the system I'm going to share is a byproduct of my well-tested JavaScript program, I think it's less likely that this has bugs.</p>
+            <h2>Notation</h2>
+            <p>${S(8)}The first step is to declare the symbols we use. Rathjen's little psi contains the following symbols:</p>
+            <p>${S(8)}Constant "\( \overline{0} \)" and "\( M \)",</p>
+            <p>${S(8)}Function symbol "\( \varphi \)", "\( \Phi \)", "\( \chi \)" and "\( \psi \)",</p>
+            <p>${S(8)}And other symbols "\( + \)", "\( ( \)", "\( ) \)", and "\( , \)".</p>
+            <br>
+            <p>${S(8)}That's a LOT symbols. Note that I added an overline to \( 0 \), this is because ordinals and ordinal notations are different, just like numbers and number strings. After all, in most cases, errors may happen if data types are messed up.</p>
+            <p>${S(8)}Now, we define a set \( S \) that contains all the strings composed of these 10 symbols. Technically, you can think of it as a function that takes a natural number less than the length of the string (The number of symbols the string uses) as input and returns a natural number less than 10. This is notated as \( s:L\rightarrow 10 \), where \( L \) is the length of the string, which is a natural number.</p>
+            <p>${S(8)}And then, we define the set \( T_m \) (Or maybe \( T \) elsewhere) that contains all the valid strings and the set \( T_s \) (Or maybe \( PT \) elsewhere) that contains all the valid strings composed of only one terms. Apparently, \( S\supset T_m\supset T_s \) (Proper subset).</p>
+            <p>${S(8)}<span style="opacity: 0.5;">01.</span> \( \overline{0}\in T_m \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">02.</span> \( M\in T_m \) and \( M\in T_s \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">03.</span> For all \( a\in T_s \) and \( b\in T_m\backslash\{\overline{0}\} \), \( a+b\in T_m \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">04.</span> For all \( a\in T_m \) and \( b\in T_m \), \( \varphi(a,b)\in T_m \) and \( \varphi(a,b)\in T_s \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">05.</span> For all \( a\in T_m \) and \( b\in T_m \), \( \Phi(a,b)\in T_m \) and \( \Phi(a,b)\in T_s \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">06.</span> For all \( a\in T_m \) and \( b\in T_m \), \( \chi(a,b)\in T_m \) and \( \chi(a,b)\in T_s \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.</span> For all \( a\in T_m \) and \( b\in T_m \), \( \psi(a,b)\in T_m \) and \( \psi(a,b)\in T_s \)</p>
+            <h2>Abbreviation</h2>
+            <p>${S(8)}We don't actually want to write functions as \( \varphi(a,b) \), \( \Phi(a,b) \), \( \chi(a,b) \) and \( \psi(a,b) \) because that makes the symbol hard to read. We also don't want to write \( 1 \) as \( \varphi_\overline{0}(\overline{0}) \) and \( \omega \) as \( \varphi_\overline{0}(\varphi_\overline{0}(\overline{0})) \) for the same reason. So, we gotta introduce some abbreviations.</p>
+            <p>${S(8)}<span style="opacity: 0.5;">01.</span> \( \varphi(a,b)=\varphi_a(b) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">02.</span> \( \Phi(a,b)=\Phi_a(b) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">03.</span> \( \chi(a,b)=\chi_a(b) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">04.</span> \( \psi(a,b)=\psi_a(b) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">05.</span> \( \varphi_\overline{0}(\overline{0})=\overline{1} \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">06.</span> \( \varphi_\overline{0}(\overline{1})=\overline{\omega} \)</p>
+            <br>
+            <p>${S(8)}Note that I added an overline to \( 1 \) and \( \omega \) as well for the same reason above.</p>
+            <h2>Ordering</h2>
+            <p>${S(8)}This is the most important part for ALL OCFs and ordinal notation systems. This is because without order, or comparison, there are no ordinals. What we're going to do here is just to define the less than symbol \( &lt; \) because we can define all the other comparison symbols using only this one.</p>
+            <p>${S(8)}We define the binary relation \( &lt; \) recursively as follows:</p>
+            <p>${S(8)}\( (a\in T_m,b\in T_m)\rightarrow a&lt;b\in\{\mathbb{T},\mathbb{F}\} \) (Which is written like \( {T_m}^2\mapsto\{\mathbb{T},\mathbb{F}\}\quad(a,b)\rightarrow a&lt;b \) in other articles)</p>
+            <br>
+            <p>${S(8)}<span style="opacity: 0.5;">01.</span> If \( b=\overline{0} \), return \( \mathbb{F} \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">02.</span> If \( a=\overline{0}\land b\neq\overline{0} \), return \( \mathbb{T} \) (\( \land \) means "and")</p>
+            <br>
+            <p>${S(8)}<span style="opacity: 0.5;">03.</span> If \( a=a_0+a_1\land b=b_0+b_1\land a_0,b_0\in T_s\land a_1,b_1\in T_m\backslash\{\overline{0}\} \), then:</p>
+            <p>${S(8)}<span style="opacity: 0.5;">03.01.</span> If \( a_0&lt;b_0 \) (Meaning that \( a_0&lt;b_0 \) returns \( \mathbb{T} \)), return \( \mathbb{T} \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">03.02.</span> If \( \neg a_0&lt;b_0 \) (Meaning that \( a_0&lt;b_0 \) returns \( \mathbb{F} \)), return \( \neg b_0&lt;a_0\land a_1&lt;b_1 \) (\( \neg \) means "not")</p>
+            <p>${S(8)}<span style="opacity: 0.5;">04.</span> If \( a=a_0+a_1\land b,a_0\in T_s\land a_1\in T_m\backslash\{\overline{0}\} \), return \( a_0&lt;b \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">05.</span> If \( b=b_0+b_1\land a,b_0\in T_s\land b_1\in T_m\backslash\{\overline{0}\} \), return \( \neg b_0&lt;a \)</p>
+            <br>
+            <p>${S(8)}<span style="opacity: 0.5;">06.</span> If \( a=M\land b=M \), return \( \mathbb{F} \)</p>
+            <br>
+            <p>${S(8)}<span style="opacity: 0.5;">07.</span> If \( a=\varphi_{a_0}(a_1)\land b=\varphi_{b_0}(b_1)\land a_0,a_1,b_0,b_1\in T_m \), then:</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.01.</span> If \( a_0&lt;b_0 \), return \( a_1&lt;b \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.02.</span> If \( b_0&lt;a_0 \), return \( a&lt;b_1 \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.03.</span> If \( a_0=_*b_0 \), return \( a_1&lt;b_1 \)</p>
+            <br>
+            <p>${S(8)}<span style="opacity: 0.5;">08.</span> If \( a=\Phi_{a_0}(a_1)\land b=\Phi_{b_0}(b_1)\land a_0,a_1,b_0,b_1\in T_m \), then:</p>
+            <p>${S(8)}<span style="opacity: 0.5;">08.01.</span> If \( a_0&lt;b_0 \), return \( a_1&lt;b \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">08.02.</span> If \( b_0&lt;a_0 \), return \( a&lt;b_1 \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">08.03.</span> If \( a_0=_*b_0 \), return \( a_1&lt;b_1 \)</p>
+            <br>
+            <p>${S(8)}<span style="opacity: 0.5;">09.</span> If \( a=\chi_{a_0}(a_1)\land b=\chi_{b_0}(b_1)\land a_0,a_1,b_0,b_1\in T_m \), then:</p>
+            <p>${S(8)}<span style="opacity: 0.5;">09.01.</span> If \( a=_*b_1 \), return \( \neg b_0&lt;a_0\vee\neg {b_0}^*&lt;a \) (\( \vee \) means "or")</p>
+            <p>${S(8)}<span style="opacity: 0.5;">09.02.</span> If \( a\neq_*b_1 \), then:</p>
+            <p>${S(8)}<span style="opacity: 0.5;">09.02.01.</span> If \( a_0&lt;b_0 \), return \( a_1&lt;b\land{a_0}^*&lt;b \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">09.02.02.</span> If \( b_0&lt;a_0 \), return \( \neg b_1&lt;a\vee\neg{b_0}^*&lt;a \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">09.02.03.</span> If \( a_0=_*b_0 \), return \( a_1&lt;b_1 \)</p>
+            <br>
+            <p>${S(8)}<span style="opacity: 0.5;">10.</span> If \( a=\psi_{a_0}(a_1)\land b=\psi_{b_0}(b_1)\land a_0,a_1,b_0,b_1\in T_m \), then:</p>
+            <p>${S(8)}<span style="opacity: 0.5;">10.01.</span> If \( a_0&lt;b_0 \), return \( a_0&lt;b \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">10.02.</span> If \( b_0&lt;a_0 \), return \( a&lt;b_0 \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">10.03.</span> If \( a_0=_*b_0 \), return \( a_1&lt;b_1 \)</p>
+            <br>
+            <p>${S(8)}<span style="opacity: 0.5;">11.</span> If \( a=M\land b\neq M \), then:</p>
+            <p>${S(8)}<span style="opacity: 0.5;">11.01.</span> If \( b=\varphi_{b_0}(b_1)\land b_0,b_1\in T_m \), return \( (a&lt;b_0\vee b_1\neq\overline{0})\land(\neg b_0&lt;a\vee a&lt;b_1) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">11.02.</span> If \( b=\Phi_{b_0}(b_1)\land b_0,b_1\in T_m \), return \( (a&lt;b_0\vee b_1\neq\overline{0})\land(\neg b_0&lt;a\vee a&lt;b_1) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">11.03.</span> If \( b=\chi_{b_0}(b_1)\land b_0,b_1\in T_m \), return \( \mathbb{F} \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">11.04.</span> If \( b=\psi_{b_0}(b_1)\land b_0,b_1\in T_m \), return \( \mathbb{F} \)</p>
+            <br>
+            <p>${S(8)}<span style="opacity: 0.5;">12.</span> If \( a\neq M\land b=M \), then:</p>
+            <p>${S(8)}<span style="opacity: 0.5;">12.01.</span> If \( a=\varphi_{a_0}(a_1)\land a_0,a_1\in T_m \), return \( a_0&lt;b\land a_1&lt;b \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">12.02.</span> If \( a=\Phi_{a_0}(a_1)\land a_0,a_1\in T_m \), return \( a_0&lt;b\land a_1&lt;b \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">12.03.</span> If \( a=\chi_{a_0}(a_1)\land a_0,a_1\in T_m \), return \( \mathbb{T} \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">12.04.</span> If \( a=\psi_{a_0}(a_1)\land a_0,a_1\in T_m \), return \( \mathbb{T} \)</p>
+            <br>
+            <p>${S(8)}<span style="opacity: 0.5;">13.</span> If \( a=\varphi_{a_0}(a_1)\land(b=\Phi_{b_0}(b_1)\vee b=\chi_{b_0}(b_1)\vee b=\psi_{b_0}(b_1))\land a_0,a_1,b_0,b_1\in T_m \), then:</p>
+            <p>${S(8)}<span style="opacity: 0.5;">13.01.</span> Return \( a_0&lt;b\land a_1&lt;b \)</p>
+            <br>
+            <p>${S(8)}<span style="opacity: 0.5;">14.</span> If \( (a=\Phi_{a_0}(a_1)\vee a=\chi_{a_0}(a_1)\vee a=\psi_{a_0}(a_1))\land b=\varphi_{b_0}(b_1)\land a_0,a_1,b_0,b_1\in T_m \), then:</p>
+            <p>${S(8)}<span style="opacity: 0.5;">14.01.</span> Return \( (a&lt;b_0\vee b_1\neq\overline{0})\land(\neg b_0&lt;a\vee a&lt;b_1) \)</p>
+            <br>
+            <p>${S(8)}<span style="opacity: 0.5;">15.</span> If \( a=\Phi_{a_0}(a_1)\land b=\chi_{b_0}(b_1)\land a_0,a_1,b_0,b_1\in T_m \), then:</p>
+            <p>${S(8)}<span style="opacity: 0.5;">15.01.</span> If \( b_0=\overline{0} \), return \( a&lt;b_1 \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">15.02.</span> If \( b_0\neq\overline{0} \), return \( a_0&lt;b\land a_1&lt;b \)</p>
+            <br>
+            <p>${S(8)}<span style="opacity: 0.5;">16.</span> If \( a=\chi_{a_0}(a_1)\land b=\Phi_{b_0}(b_1)\land a_0,a_1,b_0,b_1\in T_m \), then:</p>
+            <p>${S(8)}<span style="opacity: 0.5;">16.01.</span> If \( a_0=\overline{0} \), return \( a_1&lt;b \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">16.02.</span> If \( a_0\neq\overline{0} \), then:</p>
+            <p>${S(8)}<span style="opacity: 0.5;">16.02.01.</span> If \( a&lt;b_0 \), return \( \mathbb{T} \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">16.02.02.</span> If \( b_0&lt;a \), return \( a&lt;b_1 \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">16.02.03.</span> If \( a=_*b_0 \), return \( b_1\neq\overline{0} \)</p>
+            <br>
+            <p>${S(8)}<span style="opacity: 0.5;">17.</span> If \( a=\Phi_{a_0}(a_1)\land b=\psi_{b_0}(b_1)\land a_0,a_1,b_0,b_1\in T_m \), return \( a_0&lt;b\land a_1&lt;b\land a&lt;b_0 \)</p>
+            <br>
+            <p>${S(8)}<span style="opacity: 0.5;">18.</span> If \( a=\psi_{\chi_{a_0}(a_1)}(a_2)\land b=\Phi_{b_0}(b_1)\land a_0,a_1,a_2,b_0,b_1\in T_m \), then:</p>
+            <p>${S(8)}<span style="opacity: 0.5;">18.01.</span> If \( a_0=\overline{0} \), return \( a_1&lt;b \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">18.02.</span> If \( a_0\neq\overline{0} \), then:</p>
+            <p>${S(8)}<span style="opacity: 0.5;">18.02.01.</span> If \( a&lt;b_0 \), return \( \mathbb{T} \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">18.02.02.</span> If \( b_0&lt;a \), return \( a&lt;b_1 \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">18.02.03.</span> If \( a=_*b_0 \), return \( b_1\neq\overline{0} \)</p>
+            <br>
+            <p>${S(8)}<span style="opacity: 0.5;">19.</span> If \( a=\chi_{a_0}(a_1)\land b=\psi_{b_0}(b_1)\land a_0,a_1,b_0,b_1\in T_m \), return \( a&lt;b_0\land a\in C(b_0,b_1) \)</p>
+            <br>
+            <p>${S(8)}<span style="opacity: 0.5;">20.</span> If \( a=\psi_{\chi_{a_0}(a_1)}(a_2)\land b=\chi_{b_0}(b_1)\land a_0,a_1,a_2,b_0,b_1\in T_m \), then:</p>
+            <p>${S(8)}<span style="opacity: 0.5;">20.01.</span> If \( a=_*b_1 \), return \( \neg b_0&lt;a_0\vee\neg{b_0}^*&lt;\chi_{a_0}(a_1)\vee\neg b_0\in C(\chi_{a_0}(a_1),a_2) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">20.02.</span> If \( a\neq_*b_1 \), return \( \neg b&lt;\chi_{a_0}(a_1)\vee\neg b\in C(\chi_{a_0}(a_1),a_2) \)</p>
+            <br>
+            <p>${S(8)}Wow! That's a LONG definition!!! This is the reason why Rathjen's little psi is difficult. Most of these cases are derived from Rathjen's PDF on this OCF${C(2)}. But there are some cases missing so I had to figure out myself. In fact, the PDF actually has some errors. For example, line 17. is based on Lemma 5.13.(ii) on the PDF, it should be "\( \gamma&lt;\psi\kappa\xi\Leftrightarrow\alpha,\beta&lt;\psi\kappa \)<span style="color: #ff0000;">\( \xi \)</span>\( \land\gamma&lt;\kappa \)" rather than "\( \gamma&lt;\psi\kappa\xi\Leftrightarrow\alpha,\beta&lt;\psi\kappa \)<span style="color: #ff0000;">\( \alpha \)</span>\( \land\gamma&lt;\kappa \)". Although, there might be republished versions that fixed this error.</p>
+            <p>${S(8)}And now, we can define all the other comparison symbols:</p>
+            <p>${S(8)}\( (a\in T_m,b\in T_m)\rightarrow a&gt;b\in\{\mathbb{T},\mathbb{F}\} \)</p>
+            <p>${S(8)}return \( b&lt;a \)</p>
+            <br>
+            <p>${S(8)}\( (a\in T_m,b\in T_m)\rightarrow a\le b\in\{\mathbb{T},\mathbb{F}\} \)</p>
+            <p>${S(8)}return \( \neg b&lt;a \)</p>
+            <br>
+            <p>${S(8)}\( (a\in T_m,b\in T_m)\rightarrow a\ge b\in\{\mathbb{T},\mathbb{F}\} \)</p>
+            <p>${S(8)}return \( \neg a&lt;b \)</p>
+            <br>
+            <p>${S(8)}\( (a\in T_m,b\in T_m)\rightarrow a=_*b\in\{\mathbb{T},\mathbb{F}\} \)</p>
+            <p>${S(8)}return \( \neg a&lt;b\land\neg b&lt;a \)</p>
+            <br>
+            <p>${S(8)}\( (a\in T_m,b\in T_m)\rightarrow a\neq_*b\in\{\mathbb{T},\mathbb{F}\} \)</p>
+            <p>${S(8)}return \( a&lt;b\vee b&lt;a \)</p>
+            <br>
+            <p>${S(8)}We can see that the special symbols \( =_* \) and \( \neq_* \) are introduced. The difference from \( = \) and \( \neq \) respectively is that \( = \) and \( \neq \) cares about the symbols we use and \( =_* \) and \( \neq_* \) only cares about ordinal values, for example:</p>
+            <p>${S(8)}\( \chi_{\overline{3}}(\overline{0})=\chi_{\overline{1}+\overline{1}+\overline{1}}(\overline{0}) \)</p>
+            <p>${S(8)}\( \chi_{\overline{2}}(\chi_{\overline{3}}(\overline{0}))=\chi_{\overline{1}+\overline{1}}(\chi_{\overline{1}+\overline{1}+\overline{1}}(\overline{0})) \)</p>
+            <p>${S(8)}\( \chi_{\overline{3}}(\overline{0})=_*\chi_{\overline{2}}(\chi_{\overline{3}}(\overline{0})) \) but \( \chi_{\overline{3}}(\overline{0})\neq\chi_{\overline{2}}(\chi_{\overline{3}}(\overline{0})) \)</p>
+            <br>
+            <p>${S(8)}To avoid errors, we have to normalize the symbols we use. The definition will be written in the next part.</p>
+            <h2>Normal Form</h2>
+            <p>${S(8)}We can also see some symbols like \( a^* \) and \( a\in C(b_0,b_1) \) appeared in the definition of \( a&lt;b \). We will define them as well.</p>
+            <p>${S(8)}We define the symbol \( a^* \) as follows:</p>
+            <p>${S(8)}\( (a\in T_m)\rightarrow a^*\in T_m \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">01.</span> If \( a=\overline{0}\vee a=M \), return \( \overline{0} \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">02.</span> If \( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\backslash\{\overline{0}\} \), then:</p>
+            <p>${S(8)}<span style="opacity: 0.5;">02.01.</span> If \( a^*&lt;b^* \), return \( b^* \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">02.02.</span> If \( \neg a^*&lt;b^* \), return \( a^* \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">03.</span> If \( a=\varphi_{a_0}(a_1)\land a_0,a_1\in T_m \), then:</p>
+            <p>${S(8)}<span style="opacity: 0.5;">03.01.</span> If \( a^*&lt;b^* \), return \( b^* \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">03.02.</span> If \( \neg a^*&lt;b^* \), return \( a^* \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">04.</span> If \( (a=\Phi_{a_0}(a_1)\vee a=\chi_{a_0}(a_1)\vee a=\psi_{a_0}(a_1))\land a_0,a_1\in T_m \), return \( a \)</p>
+            <br>
+            <p>${S(8)}We define addition \( Add(a,b) \) as follows. This is just to prevent inappropriate forms like \( 0+a \) and \( a+0 \). I didn't have to do this in my original program because \( a+b \) is just written as \( ab \) in my program and there is no multiplication.</p>
+            <p>${S(8)}\( (a\in T_m,b\in T_m)\rightarrow Add(a,b)\in T_m \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">01.</span> If \( a=\overline{0} \), return \( b \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">02.</span> If \( a\neq\overline{0}\land b=\overline{0} \), return \( a \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">03.</span> If \( a\neq\overline{0}\land b\neq\overline{0} \), return \( a+b \)</p>
+            <br>
+            <p>${S(8)}We define succession \( S(a) \) as follows. Which is simple but comes in handy in simplifying later definitions.</p>
+            <p>${S(8)}\( (a\in T_m)\rightarrow S(a)\in T_m\backslash\{\overline{0}\} \)</p>
+            <p>${S(8)}return \( Add(a,\overline{1}) \)</p>
+            <br>
+            <p>${S(8)}We define the set \( R \). Which is actually \( (Reg\cap M)\backslash\chi_\overline{0}(\overline{0}) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">01.</span> For all \( a\in T_m \), \( \chi_a(\overline{0})\in R \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">02.</span> For all \( a\in T_m \) and \( b\in T_m \), \( \chi_a(S(b))\in R \)</p>
+            <br>
+            <p>${S(8)}We define the set \( C(a,b) \). Which is actually the first step or the most important step in all OCF definitions.</p>
+            <p>${S(8)}<span style="opacity: 0.5;">01.</span> \( M\in C(a,b) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">02.</span> If \( a=\chi_{a_0}(\overline{0}) \), For all \( c\le a_0 \), \( c\in C(a,b) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">03.</span> If \( a=\chi_{a_0}(S(a_1)) \), For all \( c\le \chi_{a_0}(a_1) \), \( c\in C(a,b) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">04.</span> For all \( c_0\in C(a,b)\cap T_s \) and \( c_1\in C(a,b)\backslash\{\overline{0}\} \), \( c_0+c_1\in C(a,b) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">05.</span> For all \( c_0,c_1\in C(a,b) \), \( \varphi_{c_0}(c_1)\in C(a,b) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">06.</span> For all \( c_0,c_1\in C(a,b) \) and \( c_0,c_1&lt;M \) and \( c_0\neq\overline{0} \), \( \Phi_{c_0}(c_1)\in C(a,b) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.</span> For all \( c_0,c_1\in C(a,b) \), \( \chi_{c_0}(c_1)\in C(a,b) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">08.</span> For all \( c_0,c_1\in C(a,b) \) and \( c_1&lt;b \) and \( c_1\in C(c_0,c_1) \), \( \psi_{c_0}(c_1)\in C(a,b) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">09.</span> For all \( d\in C(a,b)\cap R \) and \( c&lt;d&lt;a \), \( c\in C(a,b) \)</p>
+            <br>
+            <p>${S(8)}We define the set \( T \) (Or maybe \( OT \) elsewhere) that contains all the valid strings in NORMAL FORM.</p>
+            <p>${S(8)}<span style="opacity: 0.5;">01.</span> \( \overline{0}\in T \) and \( M\in T \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">02.</span> For all \( a_0,a_1,\cdots,a_n\in T_s \) and \( a_0\ge a_1\ge\cdots\ge a_n \), \( a_0+a_1+\cdots+a_n\in T \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">03.</span> For all \( a_0,a_1&lt;\varphi_{a_0}(a_1) \), \( \varphi_{a_0}(a_1)\in T \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">04.</span> For all \( a_0,a_1&lt;\Phi_{a_0}(a_1) \) and \( a_0,a_1&lt;M \) and \( a_0\neq\overline{0} \), \( \Phi_{a_0}(a_1)\in T \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">05.</span> For all \( a_0\in T_m \) and \( a_1&lt;\chi_{a_0}(a_1) \), \( \chi_{a_0}(a_1)\in T \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">06.</span> For all \( a_0\in R \) and \( a_1\in C(a_0,a_1) \), \( \psi_{a_0}(a_1)\in T \)</p>
+            <br>
+            <p>${S(8)}And everything in the set \( T \) is exactly what we're gonna use in comparison and the definition later. Although these definitions use sets and seems mathematical, rest assured, they can actually be written in programming languages and I've already done that.</p>
+            <p>${S(8)}We define the function \( Norm \) that normalizes symbols to their normal form, without doing this, errors will happen.</p>
+            <p>${S(8)}\( (a\in T_m)\rightarrow Norm(a)\in T \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">01.</span> If \( a\in T \), return \( a \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">02.</span> If \( \neg a\in T \), then:</p>
+            <p>${S(8)}<span style="opacity: 0.5;">02.01.</span> If \( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\backslash\{\overline{0}\} \), return \( Norm(a_0)+Norm(a_1) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">02.02.</span> If \( a=\varphi_{a_0}(a_1)\land a_0,a_1\in T_m \), then:</p>
+            <p>${S(8)}<span style="opacity: 0.5;">02.02.01.</span> If \( a=a_1 \), return \( a_1 \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">02.02.02.</span> If \( a=a_0 \), return \( a_0 \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">02.02.03.</span> If \( a\neq a_0\land a\neq a_1 \), return \( a \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">02.03.</span> If \( a=\Phi_{a_0}(a_1)\land a_0,a_1\in T_m \), then:</p>
+            <p>${S(8)}<span style="opacity: 0.5;">02.03.01.</span> If \( a_0=\overline{0} \), return \( \chi_\overline{0}(a_1) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">02.03.02.</span> If \( a_0\neq\overline{0} \), then:</p>
+            <p>${S(8)}<span style="opacity: 0.5;">02.03.02.01.</span> If \( a=a_1 \), return \( a_1 \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">02.03.02.02.</span> If \( a=a_0 \), return \( a_0 \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">02.03.02.03.</span> If \( a\neq a_0\land a\neq a_1 \), return \( a \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">02.04.</span> If \( a=\chi_{a_0}(a_1)\land a_0,a_1\in T_m \), return \( a_1 \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">02.05.</span> If \( a=\psi_{a_0}(a_1)\land a_0,a_1\in T_m \), return \( a \)</p>
+            <br>
+            <p>${S(8)}Now, we're done with normalizing symbols. But before proceeding, I should mention that the notation system \( T(M) \) in his PDF does not contain all the notations in \( T \), we can have something like \( \zeta_{M+\overline{1}}=\varphi_{\overline{1}+\overline{1}}(M+\overline{1}) \) and \( \psi_{\Omega}(M2)=\psi_{\chi_\overline{0}(\overline{0})}(M+M) \) in \( T \), but not in his \( T(M) \).</p>
+            <p>${S(8)}To make things clear, we define the original notation system set \( T(M) \) as follows. This is actually a translation of his language in the language in this article. <b>Note that all the notations used in this definition are all in \( T \).</b></p>
+            <p>${S(8)}<span style="opacity: 0.5;">01.</span> \( \overline{0}\in T(M) \) and \( M\in T(M) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">02.</span> For all \( a_0\in T(M)\cap T_s \) and \( a_1\in T(M)\backslash\{\overline{0}\} \), \( a_0+a_1\in T(M) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">03.</span> For all \( a_0,a_1\in T(M) \) and \( a_0,a_1&lt;M \), \( \varphi_{a_0}(a_1)\in T(M) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">04.</span> For all \( a_0,a_1\in T(M) \) and \( a_0,a_1&lt;M \) and \( a_0\neq\overline{0} \), \( \Phi_{a_0}(a_1)\in T(M) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">05.</span> For all \( a_0,a_1\in T(M) \), \( \chi_{a_0}(a_1)\in T(M) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">06.</span> For all \( a_0,a_1\in T(M) \) and \( a_1&lt;M \), \( \psi_{a_0}(a_1)\in T(M) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.</span> For all \( a\in T(M) \) and \( M&gt;a \), \( \varphi_\overline{0}(a)\in T(M) \)</p>
+            <br>
+            <p>${S(8)}Apparently, the definition has made some restrictions on the use of function \( \varphi \) and \( \psi \). I'll explain the possible reasons later in this article.</p>
+            <h2>Cofinality</h2>
+            <p>${S(8)}Now, we define cofinality \( Cof \), which is important in defining the FS (Fundamental Sequence). Some people will use \( Dom \) instead, which stands for "Domain". I don't think this makes as many senses as \( Cof \). The only idea I can think of is to regard every ordinal as a function whose domain is its cofinality. Actually, this notation is due to Buchholz${C(1)} in his OCF.</p>
+            <p>${S(8)}\( (a\in T)\rightarrow Cof(a)\in T \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">01.</span> If \( a=\overline{0}\vee a=M \), return \( a \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">02.</span> If \( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\backslash\{\overline{0}\} \), return \( Cof(a_1) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">03.</span> If \( (a=\varphi_{a_0}(a_1)\vee a=\Phi_{a_0}(a_1))\land a_0,a_1\in T_m \), then:</p>
+            <p>${S(8)}<span style="opacity: 0.5;">03.01.</span> If \( \neg Cof(a_1)&lt;\overline{\omega} \), return \( Cof(a_1) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">03.02.</span> If \( \neg Cof(a_0)&lt;\overline{\omega}\land Cof(a_1)&lt;\overline{\omega} \), return \( Cof(a_0) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">03.03.</span> If \( Cof(a_0)&lt;\overline{\omega}\land Cof(a_1)&lt;\overline{\omega}\land(a_0\neq\overline{0}\vee a_1\neq\overline{0}) \), return \( \overline{\omega} \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">03.04.</span> If \( a_0=\overline{0}\land a_1=\overline{0} \), return \( \overline{1} \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">04.</span> If \( a=\chi_{a_0}(a_1)\land a_0,a_1\in T_m \), then:</p>
+            <p>${S(8)}<span style="opacity: 0.5;">04.01.</span> If \( a\in R \), return \( a \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">04.02.</span> If \( \neg a\in R \), return \( Cof(a_1) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">05.</span> If \( a=\psi_{\chi_{a_0}(a_1)}(a_2)\land a_0,a_1,a_2\in T_m \), then:</p>
+            <p>${S(8)}<span style="opacity: 0.5;">05.01.</span> If \( \chi_{a_0}(a_1)\le Cof(a_2) \), return \( \overline{\omega} \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">05.02.</span> If \( \overline{\omega}\le Cof(a_2)\land Cof(a_2)&lt;\chi_{a_0}(a_1) \), return \( Cof(a_2) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">05.03.</span> If \( Cof(a_2)&lt;\overline{\omega} \), then:</p>
+            <p>${S(8)}<span style="opacity: 0.5;">05.03.01.</span> If \( Cof(a_0)&lt;\overline{\omega} \), return \( \overline{\omega} \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">05.03.02.</span> If \( Cof(a_0)=M \), return \( \overline{\omega} \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">05.03.03.</span> If \( \overline{\omega}\le Cof(a_0)\land Cof(a_0)&lt;M \), return \( Cof(a_0) \)</p>
+            <h2>Fundamental Sequence</h2>
+            <p>${S(8)}Now comes the most important part in googology. If we use an ordinal in the FGH (Fast-Growing Hierarchy) function, to make the result number well-defined, we need to define the FS for all the ordinals less than or equal to this ordinal.</p>
+            <p>${S(8)}But the problem is, mathematicians don't usually define a FS system for their OCFs (Although Buchholz DOES${C(1)}). This is because this process is completely artificial (At least for now). So, we have to do this ourselves and this is DIFFICULT.</p>
+            <p>${S(8)}\( (a\in T,n\in T)\rightarrow a[n]\in T \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">01.</span> If \( a=\overline{0} \), return \( \overline{0} \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">02.</span> If \( a=M \), return \( n \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">03.</span> If \( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\backslash\{\overline{0}\} \), return \( Add(a_0,a_1[n]) \)</p>
+            <br>
+            <p>${S(8)}<span style="opacity: 0.5;">04.</span> If \( a=\varphi_{a_0}(a_1)\land a_0,a_1\in T_m \), then:</p>
+            <p>${S(8)}<span style="opacity: 0.5;">04.01.</span> If \( a_1=\overline{0} \), then:</p>
+            <p>${S(8)}<span style="opacity: 0.5;">04.01.01.</span> If \( a_0=\overline{0} \), return \( \overline{0} \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">04.01.02.</span> If \( Cof(a_0)=\overline{1} \), then:</p>
+            <p>${S(8)}<span style="opacity: 0.5;">04.01.02.01.</span> If \( n=\overline{0} \), return \( \overline{0} \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">04.01.02.02.</span> If \( n\neq\overline{0} \), return \( Norm(\varphi_{a_0[\overline{0}]}(a[n[\overline{0}]])) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">04.01.03.</span> If \( Cof(a_0)\ge\overline{\omega} \), return \( Norm(\varphi_{a_0[n]}(\overline{0})) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">04.02.</span> If \( Cof(a_1)=\overline{1} \), then:</p>
+            <p>${S(8)}<span style="opacity: 0.5;">04.02.01.</span> If \( a_0=\overline{0} \), then:</p>
+            <p>${S(8)}<span style="opacity: 0.5;">04.02.01.01.</span> If \( n=\overline{0} \), return \( \overline{0} \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">04.02.01.02.</span> If \( n\neq\overline{0} \), return \( Add(a[n[\overline{0}]], \varphi_\overline{0}(a_1[\overline{0}])) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">04.02.02.</span> If \( a_0=\overline{1} \), then:</p>
+            <p>${S(8)}<span style="opacity: 0.5;">04.02.02.01.</span> If \( n=\overline{0} \), return \( \varphi_{\overline{1}}(a_1[\overline{0}]) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">04.02.02.02.</span> If \( n\neq\overline{0}\land n[\overline{0}]=\overline{0} \), return \( \varphi_\overline{0}(\varphi_{\overline{1}}(a_1[\overline{0}])+\varphi_{\overline{1}}(a_1[\overline{0}])) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">04.02.02.03.</span> If \( n\neq\overline{0}\land n[\overline{0}]\neq\overline{0} \), return \( \varphi_\overline{0}(a[n[\overline{0}]]) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">04.02.03.</span> If \( Cof(a_0)=\overline{1}\land a_0\neq\overline{1} \), then:</p>
+            <p>${S(8)}<span style="opacity: 0.5;">04.02.03.01.</span> If \( n=\overline{0} \), return \( \varphi_{a_0}(a_1[\overline{0}]) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">04.02.03.02.</span> If \( n\neq\overline{0}\land n[\overline{0}]=\overline{0} \), return \( \varphi_{a_0[\overline{0}]}(S(a[n[\overline{0}]])) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">04.02.03.03.</span> If \( n\neq\overline{0}\land n[\overline{0}]\neq\overline{0} \), return \( \varphi_{a_0[\overline{0}]}(a[n[\overline{0}]]) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">04.02.04.</span> If \( Cof(a_0)\ge\overline{\omega} \), return \( \varphi_{a_0[n]}(S(Norm(\varphi_{a_0}(a_1[\overline{0}])))) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">04.03.</span> If \( Cof(a_1)\ge\overline{\omega} \), return \( Norm(\varphi_{a_0}(a_1[n])) \)</p>
+            <br>
+            <p>${S(8)}<span style="opacity: 0.5;">05.</span> If \( a=\Phi_{a_0}(a_1)\land a_0,a_1\in T_m \), then:</p>
+            <p>${S(8)}<span style="opacity: 0.5;">05.01.</span> If \( a_1=\overline{0} \), then:</p>
+            <p>${S(8)}<span style="opacity: 0.5;">05.01.01.</span> If \( a_0=\overline{1} \), then:</p>
+            <p>${S(8)}<span style="opacity: 0.5;">05.01.01.01.</span> If \( n=\overline{0} \), return \( \overline{0} \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">05.01.01.02.</span> If \( n\neq\overline{0} \), return \( \chi_\overline{0}(a[n[\overline{0}]]) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">05.01.02.</span> If \( Cof(a_0)=\overline{1}\land a_0\neq\overline{1} \), then:</p>
+            <p>${S(8)}<span style="opacity: 0.5;">05.01.02.01.</span> If \( n=\overline{0} \), return \( \overline{0} \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">05.01.02.02.</span> If \( n\neq\overline{0} \), return \( \Phi_{a_0[\overline{0}]}(a[n[\overline{0}]]) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">05.01.03.</span> If \( Cof(a_0)\ge\overline{\omega} \), return \( Norm(\Phi_{a_0[n]}(\overline{0})) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">05.02.</span> If \( Cof(a_1)=\overline{1} \), then:</p>
+            <p>${S(8)}<span style="opacity: 0.5;">05.02.01.</span> If \( a_0=\overline{1} \), then:</p>
+            <p>${S(8)}<span style="opacity: 0.5;">05.02.01.01.</span> If \( n=\overline{0} \), return \( \Phi_{\overline{1}}(a_1[\overline{0}]) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">05.02.01.02.</span> If \( n\neq\overline{0}\land n[\overline{0}]=\overline{0} \), return \( \chi_\overline{0}(S(a[n[\overline{0}]])) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">05.02.01.03.</span> If \( n\neq\overline{0}\land n[\overline{0}]\neq\overline{0} \), return \( \chi_\overline{0}(a[n[\overline{0}]]) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">05.02.02.</span> If \( Cof(a_0)=\overline{1}\land a_0\neq\overline{1} \), then:</p>
+            <p>${S(8)}<span style="opacity: 0.5;">05.02.02.01.</span> If \( n=\overline{0} \), return \( \Phi_{a_0}(a_1[\overline{0}]) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">05.02.02.02.</span> If \( n\neq\overline{0}\land n[\overline{0}]=\overline{0} \), return \( \Phi_{a_0[\overline{0}]}(S(a[n[\overline{0}]])) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">05.02.02.03.</span> If \( n\neq\overline{0}\land n[\overline{0}]\neq\overline{0} \), return \( \Phi_{a_0[\overline{0}]}(a[n[\overline{0}]]) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">05.02.03.</span> If \( Cof(a_0)\ge\overline{\omega} \), return \( Norm(\Phi_{a_0[n]}(S(Norm(\Phi_{a_0}(a_1[\overline{0}]))))) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">05.03.</span> If \( Cof(a_1)\ge\overline{\omega} \), return \( Norm(\Phi_{a_0}(a_1[n])) \)</p>
+            <br>
+            <p>${S(8)}<span style="opacity: 0.5;">06.</span> If \( a=\chi_{a_0}(a_1)\land a_0,a_1\in T_m \), then:</p>
+            <p>${S(8)}<span style="opacity: 0.5;">06.01.</span> If \( Cof(a_1)&lt;\overline{\omega} \), return \( n \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">06.01.</span> If \( Cof(a_1)\ge\overline{\omega} \), return \( \chi_{a_0}(a_1[n]) \)</p>
+            <br>
+            <p>${S(8)}<span style="opacity: 0.5;">07.</span> If \( a=\psi_{\chi_{a_0}(a_1)}(a_2)\land a_0,a_1,a_2\in T_m \), then:</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.01.</span> If \( Cof(a_2)=M \), return \( \psi_{\chi_{a_0}(a_1)}(a_2[\psi_{\chi_{M^\Gamma[n]}(\overline{0})}(\overline{0})]) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.02.</span> If \( \chi_{a_0}(a_1)\le Cof(a_2)\land Cof(a_2)&lt;M \), then:</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.02.01.</span> If \( n=\overline{0} \), return \( \overline{0} \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.02.02.</span> If \( n\neq\overline{0} \), return \( \psi_{\chi_{a_0}(a_1)}(Re(a_2,n[\overline{0}])) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.03.</span> If \( \overline{\omega}\le Cof(a_2)\land Cof(a_2)&lt;\chi_{a_0}(a_1) \), return \( \psi_{\chi_{a_0}(a_1)}(a_2[n]) \)</p>
+            <br>
+            <p>${S(8)}<span style="opacity: 0.5;">07.04.</span> If \( Cof(a_2)&lt;\overline{\omega} \), then:</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.04.01.</span> If \( a_0=\overline{0} \), then:</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.04.01.01.</span> If \( a_1=\overline{0}\land a_2=\overline{0} \), then:</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.04.01.01.01.</span> If \( n=\overline{0} \), return \( \overline{0} \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.04.01.01.02.</span> If \( n\neq\overline{0} \), return \( \varphi_{a[n[\overline{0}]]}(\overline{0}) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.04.01.02.</span> If \( a_1\neq\overline{0}\vee a_2\neq\overline{0} \), then:</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.04.01.02.01.</span> If \( n=\overline{0} \), then:</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.04.01.02.01.01.</span> If \( a_2=\overline{0} \), return \( Norm(\chi_\overline{0}(a_1[\overline{0}])) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.04.01.02.01.02.</span> If \( a_2\neq\overline{0} \), return \( \psi_{\chi_\overline{0}(a_1)}(a_2[\overline{0}]) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.04.01.02.02.</span> If \( n\neq\overline{0}\land n[\overline{0}]=\overline{0} \), return \( \varphi_{a[n[\overline{0}]]}(\overline{1}) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.04.01.02.03.</span> If \( n\neq\overline{0}\land n[\overline{0}]\neq\overline{0} \), return \( \varphi_{a[n[\overline{0}]]}(\overline{0}) \)</p>
+            <br>
+            <p>${S(8)}<span style="opacity: 0.5;">07.04.02.</span> If \( a_0=\overline{1} \), then:</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.04.02.01.</span> If \( a_1=\overline{0}\land a_2=\overline{0} \), then:</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.04.02.01.01.</span> If \( n=\overline{0} \), return \( \overline{0} \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.04.02.01.02.</span> If \( n\neq\overline{0}\land n[\overline{0}]=\overline{0} \), return \( \chi_\overline{0}(\overline{0}) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.04.02.01.03.</span> If \( n\neq\overline{0}\land n[\overline{0}]\neq\overline{0} \), return \( \Phi_{a[n[\overline{0}]]}(\overline{0}) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.04.02.02.</span> If \( a_1\neq\overline{0}\vee a_2\neq\overline{0} \), then:</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.04.02.02.01.</span> If \( n=\overline{0} \), then:</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.04.02.02.01.01.</span> If \( a_2=\overline{0} \), return \( Norm(\chi_{\overline{1}}(a_1[\overline{0}])) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.04.02.02.01.02.</span> If \( a_2\neq\overline{0} \), return \( \psi_{\chi_{\overline{1}}(a_1)}(a_2[\overline{0}]) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.04.02.02.02.</span> If \( n\neq\overline{0}\land n[\overline{0}]=\overline{0} \), return \( \Phi_{a[n[\overline{0}]]}(\overline{1}) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.04.02.02.03.</span> If \( n\neq\overline{0}\land n[\overline{0}]\neq\overline{0} \), return \( \Phi_{a[n[\overline{0}]]}(\overline{0}) \)</p>
+            <br>
+            <p>${S(8)}<span style="opacity: 0.5;">07.04.03.</span> If \( Cof(a_0)=\overline{1}\land a_0\neq\overline{1} \), then:</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.04.03.01.</span> If \( a_1=\overline{0}\land a_2=\overline{0} \), then:</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.04.03.01.01.</span> If \( n=\overline{0} \), return \( \overline{0} \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.04.03.01.02.</span> If \( n\neq\overline{0} \), return \( \chi_{a_0[\overline{0}]}(a[n[\overline{0}]]) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.04.03.02.</span> If \( a_1\neq\overline{0}\vee a_2\neq\overline{0} \), then:</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.04.03.02.01.</span> If \( n=\overline{0} \), then:</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.04.03.02.01.01.</span> If \( a_2=\overline{0} \), return \( Norm(\chi_{a_0}(a_1[\overline{0}])) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.04.03.02.01.02.</span> If \( a_2\neq\overline{0} \), return \( \psi_{\chi_{a_0}(a_1)}(a_2[\overline{0}]) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.04.03.02.02.</span> If \( n\neq\overline{0}\land n[\overline{0}]=\overline{0} \), return \( \chi_{a_0[\overline{0}]}(S(a[n[\overline{0}]])) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.04.03.02.03.</span> If \( n\neq\overline{0}\land n[\overline{0}]\neq\overline{0} \), return \( \chi_{a_0[\overline{0}]}(a[n[\overline{0}]]) \)</p>
+            <br>
+            <p>${S(8)}<span style="opacity: 0.5;">07.04.04.</span> If \( \overline{\omega}\le Cof(a_0)\land Cof(a_0)&lt;M \), then:</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.04.04.01.</span> If \( a_1=\overline{0}\land a_2=\overline{0} \), then:</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.04.04.01.01.</span> If \( \chi_{a_0[\overline{0}]}(S(Tail(a_0)))&lt;\chi_{a_0[1]}(\overline{0}) \), return \( \psi_{\chi_{a_0[n]}(\overline{0})}(\overline{0}) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.04.04.01.02.</span> If \( \chi_{a_0[\overline{0}]}(S(Tail(a_0)))\ge\chi_{a_0[1]}(\overline{0}) \), return \( \psi_{\chi_{a_0[n]}(S(Tail(a_0)))}(\overline{0}) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.04.04.02.</span> If \( a_1\neq\overline{0}\land a_2=\overline{0} \), return \( \psi_{\chi_{a_0[n]}(S(Norm(\chi_{a_0}(a_1[n]))))}(\overline{0}) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.04.04.03.</span> If \( a_2\neq\overline{0} \), return \( \psi_{\chi_{a_0[n]}(S(\psi_{\chi_{a_0}(a_1)}(a_2[\overline{0}])))}(\overline{0}) \)</p>
+            <br>
+            <p>${S(8)}<span style="opacity: 0.5;">07.04.05.</span> If \( Cof(a_0)=M \), then:</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.04.05.01.</span> If \( n=\overline{0} \), then:</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.04.05.01.01.</span> If \( a_1=\overline{0}\land a_2=\overline{0} \), return \( \overline{0} \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.04.05.01.02.</span> If \( a_1\neq\overline{0}\land a_2=\overline{0} \), return \( Norm(\chi_{a_0}(a_1[\overline{0}])) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.04.05.01.03.</span> If \( a_2\neq\overline{0} \), return \( a=\psi_{\chi_{a_0}(a_1)}(a_2[\overline{0}]) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">07.04.05.02.</span> If \( n\neq\overline{0} \), return \( \psi_{\chi_{a_0[a[n[\overline{0}]]]}(\overline{0})}(\overline{0}) \)</p>
+            <br>
+            <p>${S(8)}We define the recursion function \( Re(a,n) \) as follows:</p>
+            <p>${S(8)}\( (a\in T,n\in T)\rightarrow Re(a,n)\in T \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">01.</span> If \( n=\overline{0} \), return \( a[\overline{0}] \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">02.</span> If \( n\neq\overline{0} \), return \( a[\psi_{Cof(a)}(Re(a,n[\overline{0}]))] \)</p>
+            <br>
+            <p>${S(8)}We define the tail function \( Tail(a) \) as follows:</p>
+            <p>${S(8)}\( (a\in T)\rightarrow Tail(a)\in T \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">01.</span> If \( a=\overline{0}\vee a=M \), return \( \overline{0} \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">02.</span> If \( a\neq\overline{0}\vee a&lt;M \), return \( a \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">03.</span> If \( a&gt;M \), then:</p>
+            <p>${S(8)}<span style="opacity: 0.5;">03.01.</span> If \( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\backslash\{\overline{0}\} \), return \( Tail(a_1) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">03.02.</span> If \( a=\varphi_{a_0}(a_1)\land a_0,a_1\in T_m \), then:</p>
+            <p>${S(8)}<span style="opacity: 0.5;">03.02.01.</span> If \( Cof(a_1)&lt;\overline{\omega} \), return \( Tail(a_0) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">03.02.02.</span> If \( Cof(a_1)\ge\overline{\omega} \), return \( Tail(a_1) \)</p>
+            <br>
+            <p>${S(8)}We define the limit symbol \( M^\Gamma \) (Which is equal to \( \Gamma_{M+1} \)) as follows:</p>
+            <p>${S(8)}\( (n\in T)\rightarrow M^\Gamma[n]\in T \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">01.</span> If \( n=\overline{0} \), return \( M \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">02.</span> If \( n\neq\overline{0}\land n[\overline{0}]=\overline{0} \), return \( \varphi_{M^\Gamma[n[\overline{0}]]}(\overline{1}) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">03.</span> If \( n\neq\overline{0}\land n[\overline{0}]\neq\overline{0} \), return \( \varphi_{M^\Gamma[n[\overline{0}]]}(\overline{0}) \)</p>
+            <br>
+            <p>${S(8)}And this is another long definition other than the \( &lt; \) symbol. Wow. Line 07.01. explains why Rathjen made restrictions on the function \( \psi \), this is because when we plug something greater than \( M \) into the function, \( M \) actually acts like something smaller that looks like \( \psi_{\chi_{\Gamma_{M+1}}(0)}(0) \), which can be considered a bug. The reason why Rathjen also made restrictions on the function \( \varphi \) is probably because \( \psi_{\chi_{0}(0)}(\psi_{\chi_{\varphi_1(M+1)}(0)}(0))=\psi_\Omega(\psi_{\chi_{\varepsilon_{M+1}}(0)}(0)) \) is already equal to the PTO (Proof-Theoretic Ordinal) of \( KPM \).</p>
+            <p>${S(8)}Line 07.04.04.01.01. and 07.04.04.01.02. are the trickiest lines in the definition and took me about 8 hours to figure out. This is because it's extremely hard to reason the difference between the FS of \( \psi_{\chi_M(0)}(0) \) and the FS of \( \psi_{\chi_{\psi_{\chi_M(0)}(0)}(0)}(0) \) without using mathematical analysis and thus extremely hard to come up with the FS using programming language.</p>
+            <h2>Conclusion</h2>
+            <p>${S(8)}So, there you have it, the Fundamental Sequence System of Rathjen's little psi. I actually doubt whether this thing is done that thoroughly on the internet before this article is published. I think this OCF is very important for studying large ordinals, even though there are even stronger OCFs. I think after defining such system, some brief analysis is required, but since I've done this in the past, you can check out my previous articles for the analysis.</p>
+            <p>${S(8)}The "Small Rathjen Ordinal" (SRO), which is equal to \( \psi_\Omega(\psi_{\chi_{\varepsilon_{M+1}}(0)}(0)) \), is the PTO of \( KPM \). Now, with the definitions above, I think I can safely say that \( f_{SRO}(10) \) is well-defined and will most likely surpass about 85% of the large numbers ever coined on the internet (Mar 23, 2024). (Although technically, we have to convert natural numbers to symbols before plugging into the FGH function.)</p>
+            <p>${S(8)}I've actually written such article like this half a year ago. After I started working on the program, I found that there were a lot of errors in my article. So, I think writing a program is the best way to make the definition robust. Because it's hard to know whether there are errors in the definition.</p>
+            <p>${S(8)}All that being said, I think it's still possible that the definition in this article may contain bugs, either from this article, or from my original program itself. So, if I'm notified that there are bugs, I'll fix'em asap.</p>
+        </content>
+        <citation>
+            <!-- 0001 -->Buchholz, W. (1986). <a href="https://www.sciencedirect.com/science/article/pii/0168007286900527">A new system of proof-theoretic ordinal functions.</a> Annals of Pure and Applied Logic, 32, 195-207. Retrieved 2024-03-23. https://doi.org/10.1016/0168-0072(86)90052-7
+            <!-- 0002 -->Rathjen, M. (1990). <a href="https://www1.maths.leeds.ac.uk/~rathjen/Ord_Notation_Weakly_Mahlo.pdf">Ordinal notations based on a weakly Mahlo Cardinal.</a> Archive for Mathematical Logic, 29(4), 249-263. Retrieved 2024-03-23. https://doi.org/10.1007/bf01651328
+            <!-- 0003 -->Denis Maksudov. <a href="https://sites.google.com/site/travelingtotheinfinity/the-extension-of-buchholz-s-function">The extended Wilfried Buchholz's functions.</a> Traveling To The Infinity. Retrieved 2024-03-23.
+        </citation>
+    </body>
+</html>

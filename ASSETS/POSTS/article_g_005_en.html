@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <content>
+            <p>${S(8)}It's been 55 days since I posted my last article. This is because I've been working on a JavaScript program of Rathjen's capital \( \Psi \) function${C(1)} just like Rathjen's little \( \psi \)${C(2)}. The comparison rule and some other stuffs were easy since I just had to find them on the original paper and I made sure that these codes have no problems. But the expansion rule took long because this OCF (Ordinal Collapsing Function) turned out to be way more complicated than I thought and I was frustrated. I did a series of analysis on this OCF late last year. But as my program showed, my analysis contained errors and my understanding on this OCF was not enough.</p>
+            <p>${S(8)}In this article, I'm going to explain some common misconceptions, some problems I've solved and some challenges I'm facing on this OCF. Before we start, here are some abbreviations that'll be used throughout this article:</p>
+            <div style="text-align: center;">\( \begin{align} \omega^\alpha & := \varphi_0(\alpha) \\ \varepsilon_\alpha & := \varphi_1(\alpha) \\ \zeta_\alpha & := \varphi_2(\alpha) \\ \eta_\alpha & := \varphi_3(\alpha) \\ E_\alpha & := \Phi_1(\alpha) \\ Z_\alpha & := \Phi_2(\alpha) \\ H_\alpha & := \Phi_3(\alpha) \\ \Omega & := \chi_0(0):=\Omega_1 \\ \Omega_{2+\alpha} & := \chi_0(1+\alpha) \\ I & := \chi_1(0) \\ I_{2+\alpha} & := \chi_1(1+\alpha) \\ \Xi & := \Xi(1) \\ \Xi_{2+\alpha} & := \Xi(2+\alpha)\quad(\alpha&lt;\Xi(\Xi(\cdots\Xi(1)\cdots))) \end{align} \)</div>
+            <h2>The Main Problem Is to Work With Ordinals In The Form \( \Psi_\pi^0(\alpha) \)</h2>
+            <p>${S(8)}I have good news and bad news. The good news is, the FS (Fundamental Sequence) of the other functions (\( \varphi \), \( \Omega \) and \( \Xi \)) are quite easy.</p>
+            <p>${S(8)}The FS of the Veblen function \( \varphi_\alpha(\beta) \) is well-known among the googology community. You can check out my <a href="?section=3&id=8">previous article</a> and find my definition of the FS (Line 04.).</p>
+            <p>${S(8)}The FS of the \( \Omega_\alpha \) function (or \( \aleph_\alpha \) function) is also well-known and pretty easy:</p>
+            <div style="text-align: center;">\( \begin{align} \Omega_{\alpha+1}[n] & := n \\ \Omega_{\alpha}[n] & := \Omega_{\alpha[n]} \quad(\alpha\in Lim) \end{align} \)</div>
+            <br>
+            <p>${S(8)}The FS of the \( \Xi(\alpha) \) function is also pretty easy because it always returns a regular ordinal:</p>
+            <div style="text-align: center;">\( \Xi(\alpha)[n]:=n \)</div>
+            <br>
+            <p>${S(8)}And even for the \( \Psi_\pi^\xi(\alpha) \) function, if we have \( \xi&gt;0 \), then it still always returns a regular ordinal:</p>
+            <div style="text-align: center;">\( \Psi_\pi^\xi(\alpha)[n]:=n\quad(\xi&gt;0) \)</div>
+            <br>
+            <p>${S(8)}Which means, we just have to focus on the ordinals In The Form \( \Psi_\pi^0(\alpha) \).</p>
+            <p>${S(8)}But the bad news is, they're extremely difficult to work with. The first reason is this OCF doesn't work the same as the one we're familiar with like Buchholz's OCF${C(3)} and Rathjen's little \( \psi \). For example: (Rathjen's little \( \psi \) is noted as \( \rho \) for specification)</p>
+            <div style="text-align: center;">\( \begin{align} \psi_0(\Omega+1) & = sup\{0,\psi_0(\Omega),\psi_0(\Omega)*2,\psi_0(\Omega)*3,\cdots\} \\ \rho_\Omega(\Omega+1) & = sup\{\rho_\Omega(\Omega),\varphi_{\rho_\Omega(\Omega)}(1),\varphi_{\varphi_{\rho_\Omega(\Omega)}(1)}(0),\varphi_{\varphi_{\varphi_{\rho_\Omega(\Omega)}(1)}(0)}(0),\cdots\} \end{align} \)</div>
+            <br>
+            <p>${S(8)}Since Rathjen's capital \( \Psi \) also uses Veblen function, it's natural to expect this:</p>
+            <div style="text-align: center;">\( \Psi_\Omega^0(\Omega+1)=sup\{\Psi_\Omega^0(\Omega),\varphi_{\Psi_\Omega^0(\Omega)}(1),\varphi_{\varphi_{\Psi_\Omega^0(\Omega)}(1)}(0),\varphi_{\varphi_{\varphi_{\Psi_\Omega^0(\Omega)}(1)}(0)}(0),\cdots\} \)</div>
+            <br>
+            <p>${S(8)}But ACTUALLY:</p>
+            <div style="text-align: center;">\( \Psi_\Omega^0(\Omega+1)=sup\{\Psi_\Omega^0(\Omega),\Psi_\Omega^0(\Psi_\Omega^0(\Omega)),\Psi_\Omega^0(\Psi_\Omega^0(\Psi_\Omega^0(\Omega))),\Psi_\Omega^0(\Psi_\Omega^0(\Psi_\Omega^0(\Psi_\Omega^0(\Omega)))),\cdots\} \)</div>
+            <br>
+            <p>${S(8)}Like, "What the heck? OCFs are supposed to be monotonically increasing! You can't just plug in a smaller ordinal and get a larger ordinal! And also, \( \Psi_\Omega^0(\Psi_\Omega^0(\Omega)) \) is not in normal form and it's equal to \( \Psi_\Omega^0(\Omega) \)!"</p>
+            <h2>Veblen-Like OCFs Like This Are Hard to Work With</h2>
+            <p>${S(8)}Unfortunately, ladies and gentlemen, this is how this OCF works. Rathjen's capital \( \Psi \) is not monotonically increasing as the OCFs we're familiar with. Also, \( \Psi_\Omega^0(\Psi_\Omega^0(\Omega)) \) is actually in normal form (\( \in T(K) \)).</p>
+            <p>${S(8)}Also, let's check out these examples: (I'm using a different FS for the Veblen function from the one I previously defined)</p>
+            <div style="text-align: center;">\( \begin{align} \varphi_1(1) & = sup\{\varphi_1(0),\varphi_0(\varphi_1(0)+1),\varphi_0(\varphi_0(\varphi_1(0)+1)),\varphi_0(\varphi_0(\varphi_0(\varphi_1(0)+1))),\cdots\} \\ \Psi_\Omega^0(\Omega+1) & = sup\{\Psi_\Omega^0(\Omega),\Psi_\Omega^0(\Psi_\Omega^0(\Omega)),\Psi_\Omega^0(\Psi_\Omega^0(\Psi_\Omega^0(\Omega))),\Psi_\Omega^0(\Psi_\Omega^0(\Psi_\Omega^0(\Psi_\Omega^0(\Omega)))),\cdots\} \end{align} \)</div>
+            <br>
+            <p>${S(8)}If we write \( \varphi_\alpha(\beta) \) as \( \varphi(\Omega\alpha+\beta) \), we have: (Although this form is ill-defined)</p>
+            <div style="text-align: center;">\( \varphi(\Omega+1)=sup\{\varphi(\Omega),\varphi(\varphi(\Omega)+1),\varphi(\varphi(\varphi(\Omega)+1)),\varphi(\varphi(\varphi(\varphi(\Omega)+1))),\cdots\} \)</div>
+            <br>
+            <p>${S(8)}You can see that Veblen function and Rathjen's capital \( \Psi \) are similar in some way. I call OCFs like these "Veblen-like" and call the monotonically increasing OCFs like Buchholz's OCF and Rathjen's little \( \psi \) "Buchholz-like" (Although more rigorous definitions are required, For example, whether it's monotonically increasing). Actually, there's also another Veblen-like OCF called Weiermann's \( \vartheta \) function${C(4)} (It's actually a curly Theta). This OCF is actually much easier (and thus weaker) so check it out if you want to understand more about OCFs like these.</p>
+            <p>${S(8)}So, what's the problem? They just work different and look kinda cool. Well, again, unfortunately, it causes a lot of problems. Since Rathjen's capital \( \Psi \) is not monotonically increasing, it's really easy to have some "forgotten ordinals".</p>
+            <p>${S(8)}Let's recap the definition of FS. The FS of an ordinal \( \alpha \) is a sequence \( a[n] \) that:</p>
+            <p>${S(8)}1. Every element is less than \( \alpha \): \( \forall n\in cof(\alpha)(\alpha[n]&lt;\alpha) \)</p>
+            <p>${S(8)}2. Is monotonically (or even strictly) increasing: \( \forall m,n\in cof(\alpha)(m&lt;n\Rightarrow\alpha[m]\le\alpha[n]) \) (Or \( \alpha[m]&lt;\alpha[n] \))</p>
+            <p>${S(8)}3. The sequence approaches to \( \alpha \): \( sup\{\alpha[n]|n\in cof(\alpha)\}=\alpha \)</p>
+            <br>
+            <p>${S(8)}It's easy to make sure that the condition 1. and 2. are satisfied because we can write a code that compares 2 ordinals. But it's impossible (Or very difficult, at least) to verify whether a sequence approaches to some ordinal. There might always be some "forgotten ordinals" between the ordinal WE THINK the sequence approaches to and the ordinal the sequence ACTUALLY approaches to. Being careful enough is always too difficult.</p>
+            <p>${S(8)}For example, If we define the FS of \( \Psi_\Omega^0(\Omega+1) \) in such way:</p>
+            <div style="text-align: center;">\( \Psi_\Omega^0(\Omega+1)=sup\{\Psi_\Omega^0(\Omega),\varphi_{\Psi_\Omega^0(\Omega)}(1),\varphi_{\varphi_{\Psi_\Omega^0(\Omega)}(1)}(0),\varphi_{\varphi_{\varphi_{\Psi_\Omega^0(\Omega)}(1)}(0)}(0),\cdots\} \)</div>
+            <p>${S(8)}How do we write a code to determine that there are ordinals between the limit of this sequence (Which is actually \( \Psi_\Omega^0(\Psi_\Omega^0(\Omega)) \)) and \( \Psi_\Omega^0(\Omega+1) \) and thus this sequence is wrong? Because we can't just brute force, it will LITERALLY take FOREVER!!!</p>
+            <p>${S(8)}Well, after some analysis that I THINK is enough, it's still possible to write the correct expansion rule, which I did. It's still easy enough for some relatively small ordinals. But as the ordinal goes up, it gets more difficult to analyze and easier to mess up.</p>
+            <h2>Some Misconceptions About Whether A Term "Succeeds to Collapse"</h2>
+            <p>${S(8)}If you see the definition as follows:</p>
+            <div style="text-align: center;">\( \Psi_\pi^\xi(\alpha):=min(\{\rho\in M^\xi\cup\pi:C(\alpha,\rho)=\rho\land\pi,\alpha\in C(\alpha,\rho)\}\cup\{\pi\})\quad(\xi\le\alpha) \)</div>
+            <br>
+            <p>${S(8)}You might think there are cases that \( \Psi_\pi^\xi(\alpha)=\pi \). And actually, this is true. This is what I call the term "Fails to Collapse". And I call the terms \( \Psi_\pi^\xi(\alpha) \) that \( \Psi_\pi^\xi(\alpha)&lt;\pi \) "Succeeds to Collapse".</p>
+            <p>${S(8)}Since the whole ordinal system \( T(K) \) well-founded, meaning that it has a least element, then the set \( A=\{\alpha|\Psi_\pi^\xi(\alpha)&lt;\pi\} \) also has a least element which I call the "Collapsing Limit" and denote here as \( \lambda_\pi \). To get such limit, I just had to see how the cardinal \( \pi \) is composed of, for example:</p>
+            <div style="text-align: center;">\( \begin{align} \lambda_{\Omega} & = 0 \\ \lambda_{\Omega_2} & = 0 \\ \lambda_{\Omega_{\Psi_\Omega^0(0)+1}} & = 0+1=1 \\ \lambda_\Xi & = 1+1=2 \\ \lambda_{\Xi_2} & = 2+1=3 \\ \lambda_{\Xi(K)} & = K+1 \\ \lambda_{\Psi_{\Xi_2}^1(\Psi_{\Xi_2}^0(\Xi_2))} & = \Xi_2+1 \end{align} \)</div>
+            <br>
+            <p>${S(8)}But actually, some of the above are wrong. According to Definition 5.1(T6) on Rathjen's paper, \( A=\{\alpha|\pi\in C(\alpha,\pi)\} \), and he also defined a neat function \( K_\delta(\alpha) \) such that \( \alpha\in C(\gamma,\delta) \) IF AND ONLY IF \( K_\delta(\alpha)&lt;\gamma \). I should point out that this function returns a set of ordinals, and \( K_\delta(\alpha)&lt;\gamma \) means \( \gamma \) is greater than EVERY element in the set. And now we have \( \lambda_\pi=max(K_\pi(\pi))+1 \) (If \( K_\pi(\pi)=\{\} \) then \( \lambda_\pi=0 \)). Using this function, I figured out that my initial observation was wrong. If you don't know what I mean, you can check out the following table for more misconceptions like this:</p>
+            <table>
+                <tbody>
+                    <tr>
+                        <th>#C</th>
+                        <th>The false statement I believed to be true</th>
+                        <th>The correct statement</th>
+                    </tr>
+                    <tr>
+                        <td>01</td>
+                        <td>\( \Psi_{\Omega_{\Psi_\Omega^0(0)+1}}^0(0) \) fails to collapse<br>because there is \( \Psi_\Omega^0(0) \) in \( \Omega_{\Psi_\Omega^0(0)+1} \)<br>and thus \( \lambda_{\Omega_{\Psi_\Omega^0(0)+1}}=0+1=1 \).</td>
+                        <td>\( \Psi_{\Omega_{\Psi_\Omega^0(0)+1}}^0(0) \) succeeds to collapse and \( =\Gamma_{\Omega_{\Gamma_0}+1} \)<br>because \( \Omega_{\Psi_\Omega^0(0)+1}\in C(0,\Omega_{\Psi_\Omega^0(0)+1}) \) and thus \( \lambda_{\Omega_{\Psi_\Omega^0(0)+1}}=0 \).</td>
+                    </tr>
+                    <tr>
+                        <td>02</td>
+                        <td>\( \Psi_{\Omega_{\Psi_\Omega^0(0)+1}}^0(1) \) succeeds to collapse and \( =\Gamma_{\Omega_{\Gamma_0}+1} \)<br>because \( \lambda_{\Omega_{\Psi_\Omega^0(0)+1}}=1 \).</td>
+                        <td>\( \Psi_{\Omega_{\Psi_\Omega^0(0)+1}}^0(1)=\Gamma_{\Omega_{\Gamma_0}+2} \)<br>because \( 1&gt;\lambda_{\Omega_{\Psi_\Omega^0(0)+1}}=0 \).</td>
+                    </tr>
+                    <tr>
+                        <td>03</td>
+                        <td>\( \Psi_{\Omega_{\Psi_\Omega^0(\Omega)+1}}^0(0) \) fails to collapse<br>because there is \( \Psi_\Omega^0(\Omega) \) in \( \Omega_{\Psi_\Omega^0(\Omega)+1} \)<br>and thus \( \lambda_{\Omega_{\Psi_\Omega^0(\Omega)+1}}=\Omega+1 \), but \( 0&lt;\Omega+1 \).</td>
+                        <td>\( \Psi_{\Omega_{\Psi_\Omega^0(\Omega)+1}}^0(0) \) succeeds to collapse and \( =\Gamma_{\Omega_{\varphi(1,1,0)}+1} \)<br>because \( \Omega_{\Psi_\Omega^0(\Omega)+1}\in C(0,\Omega_{\Psi_\Omega^0(\Omega)+1}) \) and thus \( \lambda_{\Omega_{\Psi_\Omega^0(\Omega)+1}}=0 \).</td>
+                    </tr>
+                    <tr>
+                        <td>04</td>
+                        <td>\( \Psi_{\Omega_{\Psi_\Omega^0(\Omega)+1}}^0(\Omega+1) \) succeeds to collapse and \( =\Gamma_{\Omega_{\varphi(1,1,0)}+1} \)<br>because \( \lambda_{\Omega_{\Psi_\Omega^0(\Omega)+1}}=\Omega+1 \).</td>
+                        <td>\( \Psi_{\Omega_{\Psi_\Omega^0(\Omega)+1}}^0(\Omega+1)=\Gamma_{\Omega_{\varphi(1,1,0)}+\Omega+1} \)<br>because \( \Omega+1&gt;\lambda_{\Omega_{\Psi_\Omega^0(\Omega)+1}}=0 \).</td>
+                    </tr>
+                    <tr>
+                        <td>05</td>
+                        <td>\( \Psi_{\Omega_{\Xi+1}}^0(0) \) fails to collapse<br>because there is \( \Xi=\Xi(1) \) in \( \Omega_{\Xi+1} \)<br>and thus \( \lambda_{\Omega_{\Xi+1}}=1+1=2 \).</td>
+                        <td>\( \Psi_{\Omega_{\Xi+1}}^0(0) \) succeeds to collapse and \( =\Gamma_{I+1} \)<br>because \( \Omega_{\Xi+1}\in C(0,\Omega_{\Xi+1}) \) and thus \( \lambda_{\Omega_{\Xi+1}}=0 \).</td>
+                    </tr>
+                    <tr>
+                        <td>06</td>
+                        <td>\( \Psi_{\Omega_{\Xi+1}}^0(1) \) succeeds to collapse and \( =\Gamma_{I+1} \)<br>because \( \lambda_{\Omega_{\Xi+1}}=1 \).</td>
+                        <td>\( \Psi_{\Omega_{\Xi+1}}^0(1)=\Gamma_{I+2} \)<br>because \( 1&gt;\lambda_{\Omega_{\Xi+1}}=0 \).</td>
+                    </tr>
+                    <tr>
+                        <td>07</td>
+                        <td>\( \Psi_{\Omega_{\Psi_\Xi^0(\Xi)+1}}^0(0) \) fails to collapse<br>because there is \( \Psi_\Xi^0(\Xi) \) in \( \Omega_{\Psi_\Xi^0(\Xi)+1} \)<br>and thus \( \lambda_{\Omega_{\Psi_\Xi^0(\Xi)+1}}=\Xi+1 \), but \( 0&lt;\Xi+1 \).</td>
+                        <td>\( \Psi_{\Omega_{\Psi_\Xi^0(\Xi)+1}}^0(0) \) succeeds to collapse and \( =\Gamma_{\Omega_{Z_0}+1} \)<br>because \( \Omega_{\Psi_\Xi^0(\Xi)+1}\in C(0,\Omega_{\Psi_\Xi^0(\Xi)+1}) \) and thus \( \lambda_{\Omega_{\Psi_\Xi^0(\Xi)+1}}=0 \).</td>
+                    </tr>
+                    <tr>
+                        <td>08</td>
+                        <td>\( \Psi_{\Omega_{\Psi_\Xi^0(\Xi)+1}}^0(\Xi+1) \) succeeds to collapse and \( =\Gamma_{\Omega_{Z_0}+1} \)<br>because \( \lambda_{\Omega_{\Psi_\Xi^0(\Xi)+1}}=\Xi+1 \).</td>
+                        <td>\( \Psi_{\Omega_{\Psi_\Xi^0(\Xi)+1}}^0(\Xi+1)=\rho_{\Omega_{Z_0+1}}(Z_12) \)<br>and I'll explain why later in this article.</td>
+                    </tr>
+                    <tr>
+                        <td>09</td>
+                        <td>\( \Psi_{\Omega_{\beta+1}}^0(0) \) might fail to collapse<br>because there might be something like \( \Xi(K) \), \( \Psi_{\Xi_2}^1(\Psi_{\Xi_2}^0(\Xi_2)) \)<br>and so on that makes \( \lambda_{\Omega_{\beta+1}}\ge K+1 \), \( \lambda_{\Omega_{\beta+1}}\ge\Xi_2+1 \), respectively.</td>
+                        <td>No matter what \( \beta \) is, \( \Psi_{\Omega_{\beta+1}}^0(0) \) always succeeds to collapse<br>and \( =\Gamma_{\Omega_{\beta}+1} \) (\( =\Gamma_{\beta+1} \) If \( \beta=\Omega_{\beta} \)). Proof: \( \beta+1&lt;\Omega_{\beta+1} \)<br>\( \Rightarrow\beta+1\in C(0,\Omega_{\beta+1})\Rightarrow\Omega_{\beta+1}\in C(0,\Omega_{\beta+1}) \) and thus \( \lambda_{\Omega_{\beta+1}}=0 \).</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>\( \Psi_{\Psi_{\Xi_2}^1(\Psi_{\Xi_2}^0(\Xi_2))}^0(0) \) fails to collapse<br>because there is \( \Psi_{\Xi_2}^0(\Xi_2) \) in \( \Psi_{\Xi_2}^1(\Psi_{\Xi_2}^0(\Xi_2)) \) and also \( \Xi_2 \) in \( \Psi_{\Xi_2}^0(\Xi_2) \).<br>and thus \( \lambda_{\Psi_{\Xi_2}^1(\Psi_{\Xi_2}^0(\Xi_2))}=\Xi_2+1 \), but \( 0&lt;\Xi_2+1 \).</td>
+                        <td>\( \Psi_{\Psi_{\Xi_2}^1(\Psi_{\Xi_2}^0(\Xi_2))}^0(0) \) DOES fail to collapse,<br>but \( K_{\Psi_{\Xi_2}^1(\Psi_{\Xi_2}^0(\Xi_2))}(\Psi_{\Xi_2}^1(\Psi_{\Xi_2}^0(\Xi_2))) \) is actually \( \Psi_{\Xi_2}^0(\Xi_2) \).<br>and thus \( \lambda_{\Psi_{\Xi_2}^1(\Psi_{\Xi_2}^0(\Xi_2))}=\Psi_{\Xi_2}^0(\Xi_2)+1 \).</td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>\( \Psi_{\Psi_{\Xi_2}^1(\Psi_{\Xi_2}^0(\Xi_2))}^0(\Psi_{\Xi_2}^0(\Xi_2)+1) \) also fails to collapse.<br>There is \( \Psi_{\Xi_2}^0(\Xi_2) \) in \( \Psi_{\Xi_2}^1(\Psi_{\Xi_2}^0(\Xi_2)) \), but there is also \( \Xi_2 \) in \( \Psi_{\Xi_2}^0(\Xi_2) \).<br>and thus \( \lambda_{\Psi_{\Xi_2}^1(\Psi_{\Xi_2}^0(\Xi_2))}=\Xi_2+1 \).</td>
+                        <td>\( \Psi_{\Psi_{\Xi_2}^1(\Psi_{\Xi_2}^0(\Xi_2))}^0(\Psi_{\Xi_2}^0(\Xi_2)+1) \) succeeds to collapse<br>and \( =E_{\Psi_{\Xi_2}^0(\Xi_2)+2}=E_{\rho_{\chi_2(0)}(0)+2} \)<br>because \( \lambda_{\Psi_{\Xi_2}^1(\Psi_{\Xi_2}^0(\Xi_2))}=\Psi_{\Xi_2}^0(\Xi_2)+1 \).</td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>\( \Psi_{\Psi_{\Xi_2}^1(\Psi_{\Xi_2}^0(\Xi_2))}^0(\Xi_2+1) \) succeeds to collapse and \( =E_{\rho_{\chi_2(0)}(0)+2} \)<br>because \( \lambda_{\Psi_{\Xi_2}^1(\Psi_{\Xi_2}^0(\Xi_2))}=\Xi_2+1 \).</td>
+                        <td>\( \Psi_{\Psi_{\Xi_2}^1(\Psi_{\Xi_2}^0(\Xi_2))}^0(\Xi_2+1)=\rho_{I_{\rho_{\chi_2(0)}(0)+1}}(\rho_{\chi_2(0)}(1)*2) \)<br>and I'll explain why later in this article.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>${S(8)}In fact, according to the table, you can tell my old definition of \( \lambda_\pi \) is \( \lambda_\pi=max(K_0(\pi))+1 \) (If \( K_0(\pi)=\{\} \) then \( \lambda_\pi=0 \)), which is, of course, incorrect.</p>
+            <h2>Ordinals Between Something Like \( \Psi_\Omega^0(\Xi) \) And \( \Psi_\Omega^0(\Xi2) \) Are TRICKY</h2>
+            <p>${S(8)}Good! We have resolved some misconceptions. However, in this case, we have a PROBLEM.</p>
+            <p>${S(8)}Let's look at this ordinal: \( \alpha=\Psi_\Omega^0(\Xi+\Omega_{\Psi_\Xi^0(\Xi)+1}) \). You can immediately tell that:</p>
+            <p>${S(8)}\( \alpha[0]=0 \)</p>
+            <p>${S(8)}\( \alpha[1]=\Psi_\Omega^0(\Xi) \)</p>
+            <p>${S(8)}\( \alpha[2]=\Psi_\Omega^0(\Xi+\Psi_{\Omega_{\Psi_\Xi^0(\Xi)+1}}^0(\Xi)) \)</p>
+            <p>${S(8)}\( \alpha[3]=\Psi_\Omega^0(\Xi+\Psi_{\Omega_{\Psi_\Xi^0(\Xi)+1}}^0(\Xi+\Psi_{\Omega_{\Psi_\Xi^0(\Xi)+1}}^0(\Xi))) \)</p>
+            <br>
+            <p>${S(8)}OK. It seems there's nothing wrong. So, what is this ordinal \( \alpha=\Psi_{\Omega_{\Psi_\Xi^0(\Xi)+1}}^0(\Xi) \)? We might expect that:</p>
+            <p>${S(8)}\( \alpha[0]=0 \)</p>
+            <p>${S(8)}\( \alpha[1]=\Psi_{\Omega_{\Psi_\Xi^0(\Xi)+1}}^0(0) \)</p>
+            <p>${S(8)}\( \alpha[2]=\Psi_{\Omega_{\Psi_\Xi^0(\Xi)+1}}^0(\Psi_\Xi^0(2)) \)</p>
+            <p>${S(8)}\( \alpha[3]=\Psi_{\Omega_{\Psi_\Xi^0(\Xi)+1}}^0(\Psi_\Xi^0(\Psi_\Xi^0(2))) \)</p>
+            <p>${S(8)}\( \alpha[4]=\Psi_{\Omega_{\Psi_\Xi^0(\Xi)+1}}^0(\Psi_\Xi^0(\Psi_\Xi^0(\Psi_\Xi^0(2)))) \)</p>
+            <br>
+            <p>${S(8)}But, yet again, unfortunately, this is the wrong sequence. This sequence actually approaches to \( \Psi_{\Omega_{\Psi_\Xi^0(\Xi)+1}}^0(\Psi_\Xi^0(\Xi)) \), which, believe it or not, is in normal form. This is actually an example of the "forgotten ordinals" I just mentioned. This is because in the beginning, I didn't even consider this ordinal. So, what is the correct sequence? It's actually this: (At least I believe this is true)</p>
+            <p>${S(8)}\( \alpha[0]=0 \)</p>
+            <p>${S(8)}\( \alpha[1]=\Psi_{\Omega_{\Psi_\Xi^0(\Xi)+1}}^0(\Psi_\Xi^0(\Xi)) \)</p>
+            <p>${S(8)}\( \alpha[2]=\Psi_{\Omega_{\Psi_\Xi^0(\Xi)+1}}^0(\Psi_\Xi^0(\Psi_\Xi^0(\Xi))) \)</p>
+            <p>${S(8)}\( \alpha[3]=\Psi_{\Omega_{\Psi_\Xi^0(\Xi)+1}}^0(\Psi_\Xi^0(\Psi_\Xi^0(\Psi_\Xi^0(\Xi)))) \)</p>
+            <br>
+            <p>${S(8)}WOW. I was shocked when I found out this fact. So, what's the problem? Let's look at the following analysis: (Which I believe it's correct according to my current understanding)</p>
+            <table>
+                <tbody>
+                    <tr>
+                        <th>#A</th>
+                        <th>RathjenM</th>
+                        <th>RathjenK</th>
+                    </tr>
+                    <tr>
+                        <td>01</td>
+                        <td>\( \rho_\Omega(Z_0) \)</td>
+                        <td>\( \Psi_\Omega^0(\Xi) \)</td>
+                    </tr>
+                    <tr>
+                        <td>02</td>
+                        <td>\( \rho_\Omega(Z_02) \)</td>
+                        <td>\( \Psi_\Omega^0(\Xi+1) \)</td>
+                    </tr>
+                    <tr>
+                        <td>03</td>
+                        <td>\( \rho_\Omega({Z_0}^2) \)</td>
+                        <td>\( \Psi_\Omega^0(\Xi+\Psi_\Xi^0(\Xi)) \)</td>
+                    </tr>
+                    <tr>
+                        <td>04</td>
+                        <td>\( \rho_\Omega(\varepsilon_{Z_0+1}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Xi+\varepsilon_{\Psi_\Xi^0(\Xi)+1}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>05</td>
+                        <td>\( \rho_\Omega(\rho_{\Omega_{Z_0+1}}(0)) \)</td>
+                        <td>\( \Psi_\Omega^0(\Xi+\Psi_{\Omega_{\Psi_\Xi^0(\Xi)+1}}^0(0)) \)</td>
+                    </tr>
+                    <tr>
+                        <td>06</td>
+                        <td>\( \rho_\Omega(\rho_{\Omega_{Z_0+1}}(Z_0)) \)</td>
+                        <td>\( \Psi_\Omega^0(\Xi+\Psi_{\Omega_{\Psi_\Xi^0(\Xi)+1}}^0(\Psi_\Xi^0(\Xi))) \)</td>
+                    </tr>
+                    <tr>
+                        <td>07</td>
+                        <td>\( \rho_\Omega(\Omega_{Z_0+1}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Xi+\Psi_{\Omega_{\Psi_\Xi^0(\Xi)+1}}^0(\Omega_{\Psi_\Xi^0(\Xi)+1})) \)</td>
+                    </tr>
+                    <tr>
+                        <td>08</td>
+                        <td>\( \rho_\Omega(\Omega_{Z_0+1}+\rho_{\Omega_{Z_0+1}}(\Omega_{Z_0+1})) \)</td>
+                        <td>\( \Psi_\Omega^0(\Xi+\Psi_{\Omega_{\Psi_\Xi^0(\Xi)+1}}^0(\Omega_{\Psi_\Xi^0(\Xi)+1})+1) \)</td>
+                    </tr>
+                    <tr>
+                        <td>09</td>
+                        <td>\( \rho_\Omega(\Omega_{Z_0+1}+\rho_{\Omega_{Z_0+1}}(\Omega_{Z_0+1}+1)) \)</td>
+                        <td>\( \Psi_\Omega^0(\Xi+\Psi_{\Omega_{\Psi_\Xi^0(\Xi)+1}}^0(\Psi_{\Omega_{\Psi_\Xi^0(\Xi)+1}}^0(\Omega_{\Psi_\Xi^0(\Xi)+1}))) \)</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>\( \rho_\Omega(\Omega_{Z_0+1}2) \)</td>
+                        <td>\( \Psi_\Omega^0(\Xi+\Psi_{\Omega_{\Psi_\Xi^0(\Xi)+1}}^0(\Omega_{\Psi_\Xi^0(\Xi)+1}+1)) \)</td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>\( \rho_\Omega({\Omega_{Z_0+1}}^2) \)</td>
+                        <td>\( \Psi_\Omega^0(\Xi+\Psi_{\Omega_{\Psi_\Xi^0(\Xi)+1}}^0(\Omega_{\Psi_\Xi^0(\Xi)+1}2)) \)</td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>\( \rho_\Omega(\varepsilon_{\Omega_{Z_0+1}+1}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Xi+\Psi_{\Omega_{\Psi_\Xi^0(\Xi)+1}}^0(\varepsilon_{\Omega_{\Psi_\Xi^0(\Xi)+1}+1})) \)</td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>\( \rho_\Omega(\rho_{\Omega_{Z_0+2}}(0)) \)</td>
+                        <td>\( \Psi_\Omega^0(\Xi+\Psi_{\Omega_{\Psi_\Xi^0(\Xi)+1}}^0(\Psi_{\Omega_{\Psi_\Xi^0(\Xi)+2}}^0(0))) \)</td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td>\( \rho_\Omega(\Omega_{Z_0+2}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Xi+\Psi_{\Omega_{\Psi_\Xi^0(\Xi)+1}}^0(\Omega_{\Psi_\Xi^0(\Xi)+2})) \)</td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td>\( \rho_\Omega(E_{Z_0+1}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Xi+\Psi_{\Omega_{\Psi_\Xi^0(\Xi)+1}}^0(\Psi_\Xi^0(\Psi_\Xi^0(\Xi)))) \)</td>
+                    </tr>
+                    <tr>
+                        <td>16</td>
+                        <td>\( \rho_\Omega(E_{E_{Z_0+1}}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Xi+\Psi_{\Omega_{\Psi_\Xi^0(\Xi)+1}}^0(\Psi_\Xi^0(\Psi_\Xi^0(\Psi_\Xi^0(\Xi))))) \)</td>
+                    </tr>
+                    <tr>
+                        <td>17</td>
+                        <td>\( \rho_\Omega(Z_1) \)</td>
+                        <td>\( \Psi_\Omega^0(\Xi+\Psi_{\Omega_{\Psi_\Xi^0(\Xi)+1}}^0(\Xi)) \)</td>
+                    </tr>
+                    <tr>
+                        <td>18</td>
+                        <td>\( \rho_\Omega(Z_1+\rho_{\Omega_{Z_0+1}}(Z_1)) \)</td>
+                        <td>\( \Psi_\Omega^0(\Xi+\Psi_{\Omega_{\Psi_\Xi^0(\Xi)+1}}^0(\Xi)+1) \)</td>
+                    </tr>
+                    <tr>
+                        <td>19</td>
+                        <td>\( \rho_\Omega(Z_1+\rho_{\Omega_{Z_0+1}}(Z_1+1)) \)</td>
+                        <td>\( \Psi_\Omega^0(\Xi+\Psi_{\Omega_{\Psi_\Xi^0(\Xi)+1}}^0(\Psi_{\Omega_{\Psi_\Xi^0(\Xi)+1}}^0(\Xi))) \)</td>
+                    </tr>
+                    <tr>
+                        <td>20</td>
+                        <td>\( \rho_\Omega(Z_1+\Omega_{Z_0+1}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Xi+\Psi_{\Omega_{\Psi_\Xi^0(\Xi)+1}}^0(\Omega_{\Psi_\Xi^0(\Xi)+1}+\Psi_{\Omega_{\Psi_\Xi^0(\Xi)+1}}^0(\Xi))) \)</td>
+                    </tr>
+                    <tr>
+                        <td>21</td>
+                        <td>\( \rho_\Omega(Z_1+E_{Z_0+1}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Xi+\Psi_{\Omega_{\Psi_\Xi^0(\Xi)+1}}^0(\Psi_\Xi^0(\Psi_\Xi^0(\Xi))+\Psi_{\Omega_{\Psi_\Xi^0(\Xi)+1}}^0(\Xi))) \)</td>
+                    </tr>
+                    <tr>
+                        <td>22</td>
+                        <td>\( \rho_\Omega(Z_12) \)</td>
+                        <td>\( \Psi_\Omega^0(\Xi+\Psi_{\Omega_{\Psi_\Xi^0(\Xi)+1}}^0(\Xi+1)) \)</td>
+                    </tr>
+                    <tr>
+                        <td>23</td>
+                        <td>\( \rho_\Omega(Z_1\Omega_{Z_0+1}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Xi+\Omega_{\Psi_\Xi^0(\Xi)+1}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>24</td>
+                        <td>\( \rho_\Omega(Z_1\Omega_{Z_0+2}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Xi+\Omega_{\Psi_\Xi^0(\Xi)+2}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>25</td>
+                        <td>\( \rho_\Omega(Z_1E_{Z_0+1}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Xi+\Psi_\Xi^0(\Psi_\Xi^0(\Xi))) \)</td>
+                    </tr>
+                    <tr>
+                        <td>26</td>
+                        <td>\( \rho_\Omega({Z_1}^2) \)</td>
+                        <td>\( \Psi_\Omega^0(\Xi+\Psi_\Xi^0(\Xi+1)) \)</td>
+                    </tr>
+                    <tr>
+                        <td>27</td>
+                        <td>\( \rho_\Omega(Z_2) \)</td>
+                        <td>\( \Psi_\Omega^0(\Xi+\Psi_{\Omega_{\Psi_\Xi^0(\Xi+1)+1}}^0(\Xi)) \)</td>
+                    </tr>
+                    <tr>
+                        <td>28</td>
+                        <td>\( \rho_\Omega({Z_2}^2) \)</td>
+                        <td>\( \Psi_\Omega^0(\Xi+\Psi_\Xi^0(\Xi+2)) \)</td>
+                    </tr>
+                    <tr>
+                        <td>29</td>
+                        <td>\( \rho_\Omega(Z_\omega) \)</td>
+                        <td>\( \Psi_\Omega^0(\Xi+\Psi_\Xi^0(\Xi+\omega)) \)</td>
+                    </tr>
+                    <tr>
+                        <td>30</td>
+                        <td>\( \rho_\Omega(H_0) \)</td>
+                        <td>\( \Psi_\Omega^0(\Xi2) \)</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>${S(8)}As you can see from #A07-#A23, Rathjen's capital \( \Psi \) looks kinda awkward. And when we get actual values on both sides (#A26), why do we need it squared (Note that \( Z_1=\Psi_\Xi^0(\Xi+1) \))? It's so annoying! When working with ordinals in this range, this property makes it easier to make inaccurate analyses and create more "forgotten ordinals". Furthermore, this problem also happens in other ranges like \( \Psi_\Omega^0(\Xi2) \) to \( \Psi_\Omega^0(\Xi3) \), \( \Psi_\Omega^0(\Xi_2) \) to \( \Psi_\Omega^0(\Xi_22) \) and so on. It's like, LITERALLY EVERYWHERE! If we make \( \rho_{\Omega_{Z_0+1}}(0)=\Psi_{\Omega_{\Psi_\Xi^0(\Xi)+1}}^0(\Xi+1) \) as a result of my old understanding, it will make \( \rho_\Omega(\Omega_{Z_0+1})=\Psi_\Omega^0(\Xi+\Omega_{\Psi_\Xi^0(\Xi)+1}) \) (#A07Left = #A23Right) and so on and thus make the OCF look better.</p>
+            <p>${S(8)}What's worse, because of the mistake I mentioned above, I had to introduce irregularity in my FS! For example:</p>
+            <p>${S(8)}\( \alpha=\Psi_{\Omega_{\Psi_\Xi^0(2)+1}}^0(\Xi) \)</p>
+            <p>${S(8)}\( \alpha[0]=0 \)</p>
+            <p>${S(8)}\( \alpha[1]=\Psi_{\Omega_{\Psi_\Xi^0(2)+1}}^0(\Psi_\Xi^0(2)) \)</p>
+            <p>${S(8)}\( \alpha[2]=\Psi_{\Omega_{\Psi_\Xi^0(2)+1}}^0(\Psi_\Xi^0(\Psi_\Xi^0(2))) \)</p>
+            <p>${S(8)}\( \alpha[3]=\Psi_{\Omega_{\Psi_\Xi^0(2)+1}}^0(\Psi_\Xi^0(\Psi_\Xi^0(\Psi_\Xi^0(2)))) \)</p>
+            <br>
+            <p>${S(8)}\( \beta=\Psi_{\Omega_{\Psi_\Xi^0(3)+1}}^0(\Xi) \)</p>
+            <p>${S(8)}\( \beta[0]=0 \)</p>
+            <p>${S(8)}\( \beta[1]=\Psi_{\Omega_{\Psi_\Xi^0(3)+1}}^0(\Psi_\Xi^0(3)) \)</p>
+            <p>${S(8)}\( \beta[2]=\Psi_{\Omega_{\Psi_\Xi^0(3)+1}}^0(\Psi_\Xi^0(\Psi_\Xi^0(3))) \)</p>
+            <p>${S(8)}\( \beta[3]=\Psi_{\Omega_{\Psi_\Xi^0(3)+1}}^0(\Psi_\Xi^0(\Psi_\Xi^0(\Psi_\Xi^0(3)))) \)</p>
+            <br>
+            <p>${S(8)}\( \gamma=\Psi_{\Omega_{\Psi_\Xi^0(\Xi+1)+1}}^0(\Xi) \)</p>
+            <p>${S(8)}\( \gamma[0]=0 \)</p>
+            <p>${S(8)}\( \gamma[1]=\Psi_{\Omega_{\Psi_\Xi^0(\Xi+1)+1}}^0(\Psi_\Xi^0(\Xi+1)) \)</p>
+            <p>${S(8)}\( \gamma[2]=\Psi_{\Omega_{\Psi_\Xi^0(\Xi+1)+1}}^0(\Psi_\Xi^0(\Psi_\Xi^0(\Xi+1))) \)</p>
+            <p>${S(8)}\( \gamma[3]=\Psi_{\Omega_{\Psi_\Xi^0(\Xi+1)+1}}^0(\Psi_\Xi^0(\Psi_\Xi^0(\Psi_\Xi^0(\Xi+1)))) \)</p>
+            <br>
+            <p>${S(8)}You can check that the following FS also works for ordinal \( \beta \):</p>
+            <p>${S(8)}\( \beta[0]=0 \)</p>
+            <p>${S(8)}\( \beta[1]=\Psi_{\Omega_{\Psi_\Xi^0(3)+1}}^0(\Psi_\Xi^0(2)) \)</p>
+            <p>${S(8)}\( \beta[2]=\Psi_{\Omega_{\Psi_\Xi^0(3)+1}}^0(\Psi_\Xi^0(\Psi_\Xi^0(2))) \)</p>
+            <p>${S(8)}\( \beta[3]=\Psi_{\Omega_{\Psi_\Xi^0(3)+1}}^0(\Psi_\Xi^0(\Psi_\Xi^0(\Psi_\Xi^0(2)))) \)</p>
+            <br>
+            <p>${S(8)}But I didn't find a practical way to make this happen. Which is really unfortunate.</p>
+            <h2>Conclusion</h2>
+            <p>${S(8)}To summarize, Rathjen's capital \( \Psi \) turns out not to be an elegant OCF like Buchholz's OCF. Maybe such inelegance is a price to pay to understand larger ordinals and mathematical systems.</p>
+            <p>${S(8)}So, there should be some alternatives, right? I mean, Rathjen's capital \( \Psi \) is almost 30 YEARS OLD! Well, it is true that people in the googology community have created a lot of OCFs, and of course, some of them have to be stronger than Rathjen's capital \( \Psi \).</p>
+            <p>${S(8)}The problem is, all of my analyses are based on the COMPARISON RULES and the ORDINAL NOTATION SYSTEM on his ORIGINAL PAPER. I see that a lot of other OCFs don't have such important things, and due to my limited mathematical abilities, I can't just deduce such things all by myself like professional set theorists like Buchholz, Rathjen and so on.</p>
+            <p>${S(8)}I've already spent several days to fix my analyses, but even so, it's still possible that the new analyses contain errors. But even if the new analyses contain no errors, I still think I need to do a new series of analysis in the future. I plan to do this when I fully understand how Stegert's OCF${C(5)} works, which will be a VERY LONG TIME later, which I think is about 3 YEARS.</p>
+            <p>${S(8)}I've currently completed the expansion rule for ordinals \( \alpha\le\Psi_\Omega^0(K) \), which seems to be very close to complete the whole system. However, the road from \( \Psi_\Omega^0(K) \) to \( \Psi_\Omega^0(\Gamma_{K+1}) \) is actually much more difficult.</p>
+            <p>${S(8)}After experiencing so much frustrations with this OCF, I decide to take a break for one or a couple months from this and focus on something else like the program I mentioned in the beginning, except it's about easier systems like Buchholz's OCF and its extension${C(6)} and Rathjen's little \( \psi \).</p>
+        </content>
+        <citation>
+            <!-- 0001 -->Rathjen, M. (1994). <a href="https://www1.maths.leeds.ac.uk/~rathjen/Ehab.pdf">Proof theory of reflection.</a> Annals of Pure and Applied Logic, 68(2), 181-224. Retrieved 2024-05-17. https://doi.org/10.1016/0168-0072(94)90074-4
+            <!-- 0002 -->Rathjen, M. (1990). <a href="https://www1.maths.leeds.ac.uk/~rathjen/Ord_Notation_Weakly_Mahlo.pdf">Ordinal notations based on a weakly Mahlo Cardinal.</a> Archive for Mathematical Logic, 29(4), 249-263. Retrieved 2024-05-17. https://doi.org/10.1007/bf01651328
+            <!-- 0003 -->Buchholz, W. (1986). <a href="https://www.sciencedirect.com/science/article/pii/0168007286900527">A new system of proof-theoretic ordinal functions.</a> Annals of Pure and Applied Logic, 32, 195-207. Retrieved 2024-05-17. https://doi.org/10.1016/0168-0072(86)90052-7
+            <!-- 0004 -->Rathjen, M., & Weiermann, A. (1993). <a href="https://www.sciencedirect.com/science/article/pii/016800729390192G">Proof-theoretic investigations on Kruskal's theorem.</a> Annals of Pure and Applied Logic, 60(1), 49-88. Retrieved 2024-05-17. https://doi.org/10.1016/0168-0072(93)90192-G
+            <!-- 0005 -->Stegert, J. (2010). <a href="https://miami.uni-muenster.de/Record/429ac0b8-092f-426d-bf84-1e3a0adc8957">Ordinal proof theory of Kripke-Platek set theory augmented by strong reflection principles.</a> Retrieved 2024-05-17.
+            <!-- 0006 -->Denis Maksudov. <a href="https://sites.google.com/site/travelingtotheinfinity/the-extension-of-buchholz-s-function">The extended Wilfried Buchholz's functions.</a> Traveling To The Infinity. Retrieved 2024-05-17.
+        </citation>
+    </body>
+</html>

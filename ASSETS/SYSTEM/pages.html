@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <page name="menu">
+            <content lang="null">
+                <div class="logo"></div>
+                <div class="setting">
+                    <div class="lang">
+                        <div id="lang-tab" class="lang-button0" onclick="open_lang();"><p id="lang" class="lang-words"></p></div>
+                        <div id="lang-window"></div>
+                    </div>
+                    <div class="icon-lang"></div>
+                    <div class="icon-bright" onclick="change_bright();"></div>
+                </div>
+                <div class="menu">
+                    <div class="menu-split"></div>
+                    <div id="m0" class="menu-button" onclick="change_section(0);">
+                        <div class="menu-text1">HOME</div>
+                        <div id="menu0" class="menu-text2"></div>
+                    </div>
+                    <div class="menu-split"></div>
+                    <div id="m1" class="menu-button" onclick="change_section(1);">
+                        <div class="menu-text1">PROFILE</div>
+                        <div id="menu1" class="menu-text2"></div>
+                    </div>
+                    <div class="menu-split"></div>
+                    <div id="m2" class="menu-button" onclick="change_section(2);">
+                        <div class="menu-text1">PROJECTS</div>
+                        <div id="menu2" class="menu-text2"></div>
+                    </div>
+                    <div class="menu-split"></div>
+                    <div id="m3" class="menu-button" onclick="change_section(3);">
+                        <div class="menu-text1">ARTICLES</div>
+                        <div id="menu3" class="menu-text2"></div>
+                    </div>
+                    <div class="menu-split"></div>
+                </div>
+                <div id="content"></div>
+            </content>
+        </page>
+        <page name="home-page">
+            <content lang="null">
+                <div class="home">
+                    <div id="blogs" class="home-left"></div>
+                    <div class="home-right">
+                        <div id="home-right" class="home-window"></div>
+                    </div>
+                </div>
+            </content>
+        </page>
+        <page name="blog-lines">
+            <content lang="null">
+                <div class="blog-lines">
+                    <div class="blog-info"></div>
+                    <div class="blog-content"></div>
+                    <div class="blog-comment"></div>
+                    <div class="blog-content"></div>
+                </div>
+            </content>
+        </page>
+        <page name="profile-page">
+            <content lang="null">
+                <div class="profile">
+                    <div><img class="border1" src="ASSETS/SYSTEM/icon.png" alt="" width="320"></div>
+                    <div id="profile" class="profile-text"></div>
+                </div>
+            </content>
+        </page>
+        <page name="article-list">
+            <content lang="null">
+                <div class="article">
+                    <div id="articles" class="article-list">
+                    </div>
+                </div>
+            </content>
+        </page>
+        <page name="article-lines">
+            <content lang="null">
+                <div class="article-line">
+                    <div class="article-line2">
+                        <div class="article-title"></div>
+                        <div class="article-info"></div>
+                    </div>
+                </div>
+            </content>
+        </page>
+        <page name="article-content">
+            <content lang="null">
+                <div class="article">
+                    <div class="article-page">
+                        <div class="article-head">
+                            <div class="article-title-button">
+                                <div id="article-title"></div>
+                                <div id="article-left"></div>
+                                <div id="article-right"></div>
+                                <div id="article-back" onclick="view_article();"></div>
+                            </div>
+                            <div id="article-info" class="article-info"></div>
+                        </div>
+                        <div id="article-content" class="article-body"></div>
+                    </div>
+                </div>
+            </content>
+        </page>
+        <page name="home-right">
+            <content lang="en">
+                <p>Welcome to David_Exmachina's official website!</p>
+                <a class="home-link" href="https://x.com/David_Exmachina" target="_blank">
+                    <div>
+                        <div id="icon-twitter"></div>
+                        <div class="home-linkmark">\( \mathbb{X} \)</div>
+                    </div><div></div><div>Twitter</div>
+                </a>
+                <a class="home-link" href="https://googology.fandom.com/wiki/User:David_Exmachina" target="_blank">
+                    <div>
+                        <div id="icon-fandom"></div>
+                        <div class="home-linkmark">\( \omega \)</div>
+                    </div><div></div><div>Googology Wiki</div>
+                </a>
+            </content>
+            <content lang="zh-Hans">
+                <p>欢迎来到David_Exmachina的官方网站！</p>
+                <a class="home-link" href="https://x.com/David_Exmachina" target="_blank">
+                    <div>
+                        <div id="icon-twitter"></div>
+                        <div class="home-linkmark">\( \mathbb{X} \)</div>
+                    </div><div></div><div>推特</div>
+                </a>
+                <a class="home-link" href="https://googology.fandom.com/wiki/User:David_Exmachina" target="_blank">
+                    <div>
+                        <div id="icon-fandom"></div>
+                        <div class="home-linkmark">\( \omega \)</div>
+                    </div><div></div><div>巨数学 Wiki</div>
+                </a>
+            </content>
+            <content lang="zh-Hant">
+                <p>歡迎來到David_Exmachina的官方網站！</p>
+                <a class="home-link" href="https://x.com/David_Exmachina" target="_blank">
+                    <div>
+                        <div id="icon-twitter"></div>
+                        <div class="home-linkmark">\( \mathbb{X} \)</div>
+                    </div><div></div><div>推特</div>
+                </a>
+                <a class="home-link" href="https://googology.fandom.com/wiki/User:David_Exmachina" target="_blank">
+                    <div>
+                        <div id="icon-fandom"></div>
+                        <div class="home-linkmark">\( \omega \)</div>
+                    </div><div></div><div>巨數學 Wiki</div>
+                </a>
+            </content>
+            <content lang="jp">
+                <p>David_Exmachinaの公式HPへようこそ！</p>
+                <a class="home-link" href="https://x.com/David_Exmachina" target="_blank">
+                    <div>
+                        <div id="icon-twitter"></div>
+                        <div class="home-linkmark">\( \mathbb{X} \)</div>
+                    </div><div></div><div>Twitter</div>
+                </a>
+                <a class="home-link" href="https://googology.fandom.com/wiki/User:David_Exmachina" target="_blank">
+                    <div>
+                        <div id="icon-fandom"></div>
+                        <div class="home-linkmark">\( \omega \)</div>
+                    </div><div></div><div>巨大数 Wiki</div>
+                </a>
+            </content>
+        </page>
+        <page name="profile-content">
+            <content lang="en">
+                <p><span class="highlight">Name:</span> <ruby>David_Exmachina<rt>/ˈdeɪvɪd/ /ɛksˈmɑːkɪnə/</rt></ruby></p>
+                <p><span class="highlight">Gender:</span> Male</p>
+                <p><span class="highlight">Birthday:</span> May 23</p>
+                <p><span class="highlight">Country/Territory:</span> International</p>
+                <p><span class="highlight">Languages:</span> English, Chinese, Japanese (Studying)</p>
+                <p><span class="highlight">Hobbies and Interests:</span> Games (Mainly RPG, Sandbox Games, Rhythm Games, Incremental Games, Chess), Anime, Music, Western Culture, Japanese Culture, Programming, Making Games, Composing, Writing, Mathematics (Mainly Set Theory, Googology and Computer Science), Natural Science, Linguistics, Cooking</p>
+                <p><span class="highlight">Things I Hate:</span> Unreasonable Restrictions and Rules, Threats, Traumas, Politics, History, Some Music</p>
+                <p class="connect">I'm a netizen with wide interests,</p>
+                <p class="connect">and I like to share some of my ideas with everyone on the internet.</p>
+                <p class="connect">My dream is to make games,</p>
+                <p class="connect">but I can only put my own ideas here due to my lack of ability.</p>
+                <p class="connect">I'm currently learning to create websites</p>
+                <p class="connect">and have a keen interest in googology and chess.</p>
+                <p><span class="highlight">Contact:</span> <span title="Never Gonna Give You Up!">david_exmachina@outlook.com</span></p>
+            </content>
+            <content lang="zh-Hans">
+                <p><span class="highlight">名称：</span><ruby>David_Exmachina<rt>戴维_艾克斯马奇纳</rt></ruby></p>
+                <p><span class="highlight">性别：</span>男</p>
+                <p><span class="highlight">生日：</span>05月23日</p>
+                <p><span class="highlight">国家/地区：</span>国际</p>
+                <p><span class="highlight">语言：</span>英语、中文、日语（学习中）</p>
+                <p><span class="highlight">喜好与兴趣：</span>游戏（主要是RPG、沙盒类、音乐节奏类、放置类、国际象棋）、动漫、音乐、欧美文化、日本文化、编程、游戏制作、作曲、写作、数学（主要是集合论、巨数学以及计算机科学）、自然科学、语言学、烹饪</p>
+                <p><span class="highlight">憎恶的事物：</span>不合理的限制与规则、威胁、创伤、政治、历史、某些音乐</p>
+                <p class="connect">我是一个兴趣广泛的网友，</p>
+                <p class="connect">喜欢将自己的一些主意分享给互联网上的大家。</p>
+                <p class="connect">梦想是游戏制作，</p>
+                <p class="connect">但是由于实力不足只能将自己的点子放在这里。</p>
+                <p class="connect">目前我在学习网站制作</p>
+                <p class="connect">且对巨数学（Googology）以及国际象棋拥有浓厚的兴趣。</p>
+                <p><span class="highlight">联系方式：</span> david_exmachina@outlook.com</p>
+            </content>
+            <content lang="zh-Hant">
+                <p><span class="highlight">名稱：</span><ruby>David_Exmachina<rt>戴維_艾克斯馬奇納</rt></ruby></p>
+                <p><span class="highlight">性別：</span>男</p>
+                <p><span class="highlight">生日：</span>05月23日</p>
+                <p><span class="highlight">國家/地區：</span>國際</p>
+                <p><span class="highlight">語言：</span>英語、中文、日語（學習中）</p>
+                <p><span class="highlight">喜好與興趣：</span>遊戲（主要是RPG、沙盒類、音樂節奏類、放置類、國際象棋）、動漫、音樂、歐美文化、日本文化、編程、遊戲製作、作曲、寫作、數學（主要是集合論、巨數學以及計算機科學）、自然科學、语言学、烹飪</p>
+                <p><span class="highlight">憎惡的事物：</span>不合理的限制與規則、威脅、創傷、政治、歷史、某些音樂</p>
+                <p class="connect">我是一個興趣廣泛的網友，</p>
+                <p class="connect">喜歡將自己的一些主意分享給互聯網上的大家。</p>
+                <p class="connect">夢想是遊戲製作，</p>
+                <p class="connect">但是由於實力不足只能將自己的點子放在這裡。</p>
+                <p class="connect">目前我在學習網站製作</p>
+                <p class="connect">且對巨數學（Googology）以及國際象棋擁有濃厚的興趣。</p>
+                <p><span class="highlight">聯絡方式：</span> david_exmachina@outlook.com</p>
+            </content>
+            <content lang="jp">
+                <p><span class="highlight">名前：</span><ruby>David_Exmachina<rt>ダヴィッド_エクスマキナ</rt></ruby></p>
+                <p><span class="highlight">性別：</span>男性</p>
+                <p><span class="highlight">誕生日：</span>05月23日</p>
+                <p><span class="highlight">国/地域：</span>国際的</p>
+                <p><span class="highlight">言語：</span>英語、中国語、日本語（勉強中）</p>
+                <p><span class="highlight">興味·趣味：</span>ゲーム（主にRPG、サンドボックス、リズム、放置ゲーム、チェス）、アニメ、音楽、欧米文化、日本文化、プログラミング、ゲーム制作、作曲、書くこと、数学（主に集合論、巨大数研究、計算機科学）、自然科学、言語学、料理</p>
+                <p><span class="highlight">嫌いなもの：</span>不当な制限やルール、脅威、トラウマ、政治、歴史、ある音楽</p>
+                <p class="connect">幅広い興味を持つネチズンです。</p>
+                <p class="connect">自分の考えをインターネットの皆様と共有したい。</p>
+                <p class="connect">夢はゲーム制作、</p>
+                <p class="connect">だが能力不足のため、ここでは自分のアイデアを述べるしかない。</p>
+                <p class="connect">俺は今サイト作成を勉強しており、</p>
+                <p class="connect">巨大数（Googology）とチェスに強い興味を持っている。</p>
+                <p><span class="highlight">連絡先：</span> david_exmachina@outlook.com</p>
+            </content>
+        </page>
+        <page name="project-placeholder">
+            <content lang="en">
+                <div class="big-text">Unfortunately, there's currently nothing here.</div>
+                <div class="small-text">There will be more and more interesting stuff here as time goes by, so stay tuned! (≧▽≦)</div>
+            </content>
+            <content lang="zh-Hans">
+                <div class="big-text">遗憾的是，现在这里什么都没有。</div>
+                <div class="small-text">随着时间推移，此处会有越来越多有趣的东西，敬请期待！(≧▽≦)</div>
+            </content>
+            <content lang="zh-Hant">
+                <div class="big-text">遺憾的是，現在這裡什麼都沒有。</div>
+                <div class="small-text">隨著時間推移，此處會有越來越多有趣的東西，敬請期待！(≧▽≦)</div>
+            </content>
+            <content lang="jp">
+                <div class="big-text">残念ながら、今ここには何もない。</div>
+                <div class="small-text">今後も面白いものはどんどん増えていくので、お楽しみに！(≧▽≦)</div>
+            </content>
+        </page>
+        <page name="error-not-exist">
+            <content lang="en">
+                <div class="big-text">ERROR: THIS PAGE DOES NOT EXIST</div>
+                <div class="small-text">I'm curious. How on earth did you get here?</div>
+            </content>
+            <content lang="zh-Hans">
+                <div class="big-text">错误：该页面不存在</div>
+                <div class="small-text">我很好奇。你到底是怎么来到这里的？</div>
+            </content>
+            <content lang="zh-Hant">
+                <div class="big-text">錯誤：該頁面不存在</div>
+                <div class="small-text">我很好奇。你到底是怎麼來到這裡的？</div>
+            </content>
+            <content lang="jp">
+                <div class="big-text">エラー：このページは存在しません</div>
+                <div class="small-text">気になる。お前は一体どうやってここに来たんだ？</div>
+            </content>
+        </page>
+        <page name="error-disconnected">
+            <content lang="en">
+                <div class="big-text">ERROR: DISCONNECTED</div>
+                <div class="small-text">Something went wrong. Check your internet connection.</div>
+            </content>
+            <content lang="zh-Hans">
+                <div class="big-text">错误：网络断开</div>
+                <div class="small-text">出了点问题。请检查网络连接。</div>
+            </content>
+            <content lang="zh-Hant">
+                <div class="big-text">錯誤：網路斷開</div>
+                <div class="small-text">出了點問題。請檢查網路連線。</div>
+            </content>
+            <content lang="jp">
+                <div class="big-text">エラー：ネットワーク切断</div>
+                <div class="small-text">問題が発生した。インターネット接続を確認してください。</div>
+            </content>
+        </page>
+        <page name="svg-logo">
+            <content lang="null"><svg width="560" width="64" viewBox="0 0 560 64" xmlns="http://www.w3.org/2000/svg"><path class="svg-theme" style="fill:#00ffff;" d="M 0 0 h 32 v 64 M 6 4 l 22 44 v -44 M 44 0 l 32 64 h -4 l -24 -48 v 48 h -4 M 56 0 h 4 l 24 48 v -48 h 4 v 64 M 100 0 h 4 v 64 h -4 M 116 0 l 32 64 h -32 M 120 16 v 44 h 22 M 160 60 h 44 v 4 h -44 M 216 0 h 36 v 4 h -32 v 26 h 32 v 4 h -32 v 26 h 32 v 4 h -36 M 264 0 h 4 l 14 28 l 14 -28 h 4 l -16 32 l 16 32 h -4 l -14 -28 l -14 28 h -4 l 16 -32 M 312 0 h 36 v 64 h -4 v -60 h -12 v 60 h -4 v -60 h -12 v 60 h -4 M 360 0 l 32 64 h -4 l -24 -48 v 48 h -4 M 372 0 h 32 v 4 h -26 l 26 52 v 8 M 416 0 h 4 v 30 h 28 v -30 h 4 v 64 h -4 v -30 h -28 v 30 h -4 M 464 0 h 4 v 64 h -4 M 480 0 h 36 v 64 h -4 v -60 h -28 v 60 h -4 M 528 0 l 32 64 h -4 l -24 -48 v 48 h -4"/></svg></content>
+        </page>
+        <page name="svg-lang">
+            <content lang="null"><svg height="48" width="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path class="svg-theme" style="fill:#00ffff;" d="M 0 0 h 48 v 48 h -48 Z M 2 2 v 44 h 44 v -44 M 4 7 h 8 v -3 h 4 v 3 h 8 v 3 h -2 l -6 6 l 8 8 h -4 l -6 -6 l -6 6 h -4 l 8 -8 l -6 -6 h -2 Z M 10 10 l 4 4 l 4 -4 M 44 24 v 20 h -3 v -4 h -9 l -4 4 h -4 Z M 35 37 h 6 v -6"/></svg></content>
+        </page>
+        <page name="svg-moon">
+            <content lang="null"><svg height="48" width="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path style="fill:#00ffff;" d="M 42.75 38.981 A 24 24 0 1 1 42.75 9.019 A 15 15 0 1 0 42.75 38.981 Z M 36.25 6.943 A 21 21 0 1 0 36.25 41.057 A 18 18 0 0 1 36.25 6.943"/></svg></content>
+        </page>
+        <page name="svg-sun">
+            <content lang="null"><svg height="48" width="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path style="fill:#0080ff;" d="M 12 24 A 12 12 0 0 0 36 24 A 12 12 0 0 0 12 24 Z M 15 24 A 9 9 0 0 1 33 24 A 9 9 0 0 1 15 24 M 39 22.5 L 48 22.5 L 48 25.5 L 39 25.5 M 33.546 12.333 L 39.91 5.969 L 42.031 8.09 L 35.667 14.454 M 22.5 9 L 22.5 0 L 25.5 0 L 25.5 9 M 12.333 14.454 L 5.969 8.09 L 8.09 5.969 L 14.454 12.333 M 9 25.5 L 0 25.5 L 0 22.5 L 9 22.5 M 14.454 35.667 L 8.09 42.031 L 5.969 39.91 L 12.333 33.546 M 25.5 39 L 25.5 48 L 22.5 48 L 22.5 39 M 35.667 33.546 L 42.031 39.91 L 39.91 42.031 L 33.546 35.667"/></svg></content>
+        </page>
+        <page name="svg-pin">
+            <content lang="null"><svg height="32" width="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path class="svg-pin" style="fill:#ffffff;" d="M 0 16 h 8 l 12 -12 l -2 -2 l 2 -2 l 12 12 l -2 2 l -2 -2 l -12 12 v 8 l -7.5 -7.5 l -7.5 7.5 h -1 v -1 l 7.5 -7.5"/></svg></content>
+        </page>
+        <page name="svg-left">
+            <content lang="null"><svg height="32" width="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path class="svg-left" style="fill:#ffffff;" d="M 7 16 l 14 -14 l 4 4 l -10 10 l 10 10 l -4 4"/></svg></content>
+        </page>
+        <page name="svg-right">
+            <content lang="null"><svg height="32" width="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path class="svg-right" style="fill:#ffffff;" d="M 25 16 l -14 -14 l -4 4 l 10 10 l -10 10 l 4 4"/></svg></content>
+        </page>
+        <page name="svg-back">
+            <content lang="null"><svg height="32" width="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path style="fill:#ffffff;" d="M 6 2 l 10 10 l 10 -10 l 4 4 l -10 10 l 10 10 l -4 4 l -10 -10 l -10 10 l -4 -4 l 10 -10 l -10 -10"/></svg></content>
+        </page>
+        <page name="svg-twitter">
+            <content lang="null"><svg height="48" width="48" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 248 204"><path fill="#1d9bf0" d="M221.95 51.29c.15 2.17.15 4.34.15 6.53 0 66.73-50.8 143.69-143.69 143.69v-.04c-27.44.04-54.31-7.82-77.41-22.64 3.99.48 8 .72 12.02.73 22.74.02 44.83-7.61 62.72-21.66-21.61-.41-40.56-14.5-47.18-35.07 7.57 1.46 15.37 1.16 22.8-.87-23.56-4.76-40.51-25.46-40.51-49.5v-.64c7.02 3.91 14.88 6.08 22.92 6.32C11.58 63.31 4.74 33.79 18.14 10.71c25.64 31.55 63.47 50.73 104.08 52.76-4.07-17.54 1.49-35.92 14.61-48.25 20.34-19.12 52.33-18.14 71.45 2.19 11.31-2.23 22.15-6.38 32.07-12.26-3.77 11.69-11.66 21.62-22.2 27.93 10.01-1.18 19.79-3.86 29-7.95-6.78 10.16-15.32 19.01-25.2 26.16z"/></svg></content>
+        </page>
+        <page name="svg-fandom">
+            <content lang="null"><svg height="48" width="48" xmlns="http://www.w3.org/2000/svg" id="wds-brand-fandom-logomark" viewBox="0 0 174 242"><path fill="#FA005A" d="M166.935 118.154L50.108 1.273C49.504.67 48.735.259 47.898.093c-.837-.166-1.705-.08-2.493.247-.788.327-1.461.88-1.935 1.59-.474.71-.727 1.546-.727 2.4v98.276L7.365 67.22c-.604-.604-1.373-1.014-2.21-1.18-.837-.166-1.704-.08-2.492.247-.789.327-1.462.88-1.936 1.59-.474.71-.727 1.545-.727 2.4v101.487c-.003 3.172.62 6.312 1.833 9.242 1.214 2.929 2.993 5.59 5.237 7.83l46.037 46.099c4.528 4.53 10.666 7.078 17.068 7.085h33.68c6.4-.003 12.537-2.547 17.063-7.075l46.027-46.099c2.239-2.242 4.014-4.904 5.225-7.833 1.21-2.93 1.832-6.069 1.83-9.239v-36.533c.002-3.173-.621-6.315-1.834-9.247-1.212-2.932-2.989-5.596-5.231-7.84z"/><path fill="#FFC500" d="M131.297 160.901c.001 1.915-.757 3.754-2.108 5.111l-37.11 37.3c-.672.677-1.472 1.215-2.354 1.582-.88.366-1.826.555-2.78.555-.954 0-1.9-.189-2.78-.555-.882-.367-1.682-.905-2.355-1.582l-36.99-37.3c-1.352-1.351-2.114-3.184-2.117-5.096v-14.191c0-.951.19-1.892.554-2.77.366-.878.9-1.675 1.574-2.346l13.317-13.328c.672-.675 1.47-1.209 2.35-1.574.879-.365 1.82-.553 2.772-.553.952 0 1.894.188 2.773.553.879.365 1.677.899 2.35 1.574l18.624 18.645 18.596-18.65c.672-.675 1.47-1.209 2.349-1.574.879-.365 1.821-.553 2.773-.553.951 0 1.893.188 2.772.553.879.365 1.677.899 2.349 1.574l13.318 13.328c.673.671 1.207 1.469 1.571 2.347.364.877.552 1.819.552 2.769v14.181z"/></svg></content>
+        </page>
+    </body>
+</html>
