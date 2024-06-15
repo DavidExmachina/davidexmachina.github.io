@@ -195,7 +195,7 @@
             <p>${S(8)}I should mention that in this case, we have to be careful using \( \eta \)-reduction because for all natural numbers \( A \), \( \lambda x.Ax \) results in an error for all inputs \( x \), which differs from the natural number \( A \).</p>
             <p>${S(8)}Now, we can finally complete the definition:</p>
             <p>${S(8)}The code of \( f(n) \) is \( a \), i.e. \( F_a \) computes \( f(n) \), i.e. \( F_a(n)=f(n) \) iff:</p>
-            <p>${S(8)}For all \( n\in\omega \), \( F_a (\lambda gx.\underbrace{g(g(\cdots g(}_{n}x)\cdots))) P Z \) returns \( \underbrace{P(P(\cdots P(}_{f(n)}Z)\cdots))) \).</p>
+            <p>${S(8)}For all \( n\in\omega \), \( F_a (\lambda gx.\underbrace{g(g(\cdots g(}_nx)\cdots))) P Z \) returns \( \underbrace{P(P(\cdots P(}_{f(n)}Z)\cdots))) \).</p>
             <br>
             <p>${S(8)}With the definition above, we can find out that not all Lambda Terms are such functions because they sometimes return non-natural numbers or result in errors. Now, we can do the same thing and encode more computable functions:</p>
             <p>${S(8)}\( F_{4}=SK=False=KI=K1_C\Rightarrow F_{4}(n)=1 \).</p>
@@ -442,7 +442,7 @@
             <p>${S(8)}Furthermore, the table also shows that all the large ordinals defined to measure mathematical theories can be handled by computer programs and therefore less than \( \omega_1^{CK} \), even though their sequence numbers in the FS of \( \omega_1^{CK} \) are relatively large, which illustrates how large \( \omega_1^{CK} \) is and thus explains why a lot of googologists tend not to study highly complex OCFs (Ordinal Collapsing Functions) such as Rathjen's OCF based on the "Weakly Compact Cardinal"${C(5)} and Stegert's OCF${C(6)} and jump right into this ordinal.</p>
             <h2>Beyond \( \omega_1^{CK} \)</h2>
             <p>${S(8)}With the FS of \( \omega_1^{CK} \) being well-defined (at least I think so), we can start plugging ordinals "slightly" greater than \( \omega_1^{CK} \) into the FGH function. To illustrate the growth rate, we define the UGH (Uncomputable-Growing Hierarchy) function (Ughhhhh...), which I believe a lot of googologists have also tried. Notice this function is the same as FGH except for the base rule.</p>
-            <div style="text-align: center;">\( \begin{align} s_0(n) & := \Sigma(n) \\ s_{\alpha+1}(n) & := s_\alpha^n(n)=\underbrace{s_\alpha(s_\alpha(\cdots s_\alpha(}_{n}n)\cdots)) \\ \alpha\in Lim \Rightarrow s_\alpha(n) & := s_{\alpha[n]}(n) \end{align} \)</div>
+            <div style="text-align: center;">\( \begin{align} s_0(n) & := \Sigma(n) \\ s_{\alpha+1}(n) & := s_\alpha^n(n)=\underbrace{s_\alpha(s_\alpha(\cdots s_\alpha(}_nn)\cdots)) \\ \alpha\in Lim \Rightarrow s_\alpha(n) & := s_{\alpha[n]}(n) \end{align} \)</div>
             <br>
             <p>${S(8)}So, we have:</p>
             <p>${S(8)}\( s_1(0)=0 \)</p>

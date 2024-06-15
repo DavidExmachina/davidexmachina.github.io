@@ -5,7 +5,7 @@
         <content>
             <h2>The role of countable ordinals in googology</h2>
             <p>${S(8)}Countable ordinals play a vital role in googology. In a nutshell, countable ordinals are used to "measure" the growth rate of functions or notations. They're mainly used in a well-known function in googology called FGH (Fast-Growing Hierarchy), which is defined like this:</p>
-            <div style="text-align: center;">\( \begin{align} f_0(n) & := n+1 \\ f_{\alpha+1}(n) & := f_\alpha^n(n)=\underbrace{f_\alpha(f_\alpha(\cdots f_\alpha(}_{n}n)\cdots)) \\ \alpha\in Lim \Rightarrow f_\alpha(n) & := f_{\alpha[n]}(n) \end{align} \)</div>
+            <div style="text-align: center;">\( \begin{align} f_0(n) & := n+1 \\ f_{\alpha+1}(n) & := f_\alpha^n(n)=\underbrace{f_\alpha(f_\alpha(\cdots f_\alpha(}_nn)\cdots)) \\ \alpha\in Lim \Rightarrow f_\alpha(n) & := f_{\alpha[n]}(n) \end{align} \)</div>
             <p>${S(8)}Where \( \alpha \) denotes ordinal numbers, \( n \) denotes natural numbers, \( Lim \) denotes the class of limit ordinals (EXCLUDING 0) and \( \alpha[n] \) denotes the FS (Fundamental Sequence) function, which, in a nutshell, returns the \( n \)-th ordinal of a monotonically increasing sequence whose limit is \( \alpha \):</p>
             <div style="text-align: center;">\( m&lt;n \Rightarrow \alpha[m] \le \alpha[n] \)</div>
             <div style="text-align: center;">\( sup\{\alpha[n]|n&lt;\omega\}=\alpha \)</div>
@@ -274,7 +274,7 @@
             </table>
             <b>#0040~#0079 - \( \varepsilon_0-\varphi_\omega(0) \)</b>
             <p>${S(8)}The notation used in this part are the same as in the previous part, except for the following changes:</p>
-            <p>${S(8)}1. \( \underbrace{\varphi_0(0)+\varphi_0(0)+\cdots+\varphi_0(0)}_{n} \) and \( \underbrace{\psi_0(0)+\psi_0(0)+\cdots+\psi_0(0)}_{n} \) are written as \( n \) due to numerical equivalence.</p>
+            <p>${S(8)}1. \( \underbrace{\varphi_0(0)+\varphi_0(0)+\cdots+\varphi_0(0)}_n \) and \( \underbrace{\psi_0(0)+\psi_0(0)+\cdots+\psi_0(0)}_n \) are written as \( n \) due to numerical equivalence.</p>
             <p>${S(8)}2. Repeated terms will be written in the form of multiplication, for example:</p>
             <div style="text-align: center;">\( \begin{align} \omega+\omega+\omega & = \omega3 \\ \varphi_1(0)+\varphi_1(0)+\varphi_1(0)+\varphi_1(0) & = \varphi_1(0)*4 \end{align} \)</div>
             <p>${S(8)}3. \( \psi_0(\beta) \) is written as \( \omega^\beta \) if \( \beta&lt;\psi_1(0) \) and \( \psi_\alpha(\beta) \) is written as \( \Omega_\alpha\omega^\beta \) if \( \beta&lt;\psi_{\alpha+1}(0) \) and \( \alpha>0 \). And then, further simplifications will be done using the fact that \( \Omega_\alpha=\omega^{\Omega_\alpha} \) for \( \alpha>0 \), for example:</p>
