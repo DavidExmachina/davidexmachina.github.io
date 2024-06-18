@@ -18,7 +18,7 @@
             <p>${S(8)}And then, we define the set \( T_m \) (Or maybe \( T \) elsewhere) that contains all the valid strings and the set \( T_s \) (Or maybe \( PT \) elsewhere) that contains all the valid strings composed of only one terms. Apparently, \( S\supset T_m\supset T_s \) (Proper subset).</p>
             <p>${S(8)}<span style="opacity: 0.5;">01.</span> \( \overline{0}\in T_m \)</p>
             <p>${S(8)}<span style="opacity: 0.5;">02.</span> \( M\in T_m \) and \( M\in T_s \)</p>
-            <p>${S(8)}<span style="opacity: 0.5;">03.</span> For all \( a\in T_s \) and \( b\in T_m\backslash\{\overline{0}\} \), \( a+b\in T_m \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">03.</span> For all \( a\in T_s \) and \( b\in T_m\setminus\{\overline{0}\} \), \( a+b\in T_m \)</p>
             <p>${S(8)}<span style="opacity: 0.5;">04.</span> For all \( a\in T_m \) and \( b\in T_m \), \( \varphi(a,b)\in T_m \) and \( \varphi(a,b)\in T_s \)</p>
             <p>${S(8)}<span style="opacity: 0.5;">05.</span> For all \( a\in T_m \) and \( b\in T_m \), \( \Phi(a,b)\in T_m \) and \( \Phi(a,b)\in T_s \)</p>
             <p>${S(8)}<span style="opacity: 0.5;">06.</span> For all \( a\in T_m \) and \( b\in T_m \), \( \chi(a,b)\in T_m \) and \( \chi(a,b)\in T_s \)</p>
@@ -41,11 +41,11 @@
             <p>${S(8)}<span style="opacity: 0.5;">01.</span> If \( b=\overline{0} \), return \( \mathbb{F} \)</p>
             <p>${S(8)}<span style="opacity: 0.5;">02.</span> If \( a=\overline{0}\land b\neq\overline{0} \), return \( \mathbb{T} \) (\( \land \) means "and")</p>
             <br>
-            <p>${S(8)}<span style="opacity: 0.5;">03.</span> If \( a=a_0+a_1\land b=b_0+b_1\land a_0,b_0\in T_s\land a_1,b_1\in T_m\backslash\{\overline{0}\} \), then:</p>
+            <p>${S(8)}<span style="opacity: 0.5;">03.</span> If \( a=a_0+a_1\land b=b_0+b_1\land a_0,b_0\in T_s\land a_1,b_1\in T_m\setminus\{\overline{0}\} \), then:</p>
             <p>${S(8)}<span style="opacity: 0.5;">03.01.</span> If \( a_0&lt;b_0 \) (Meaning that \( a_0&lt;b_0 \) returns \( \mathbb{T} \)), return \( \mathbb{T} \)</p>
             <p>${S(8)}<span style="opacity: 0.5;">03.02.</span> If \( \neg a_0&lt;b_0 \) (Meaning that \( a_0&lt;b_0 \) returns \( \mathbb{F} \)), return \( \neg b_0&lt;a_0\land a_1&lt;b_1 \) (\( \neg \) means "not")</p>
-            <p>${S(8)}<span style="opacity: 0.5;">04.</span> If \( a=a_0+a_1\land b,a_0\in T_s\land a_1\in T_m\backslash\{\overline{0}\} \), return \( a_0&lt;b \)</p>
-            <p>${S(8)}<span style="opacity: 0.5;">05.</span> If \( b=b_0+b_1\land a,b_0\in T_s\land b_1\in T_m\backslash\{\overline{0}\} \), return \( \neg b_0&lt;a \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">04.</span> If \( a=a_0+a_1\land b,a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \), return \( a_0&lt;b \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">05.</span> If \( b=b_0+b_1\land a,b_0\in T_s\land b_1\in T_m\setminus\{\overline{0}\} \), return \( \neg b_0&lt;a \)</p>
             <br>
             <p>${S(8)}<span style="opacity: 0.5;">06.</span> If \( a=M\land b=M \), return \( \mathbb{F} \)</p>
             <br>
@@ -143,7 +143,7 @@
             <p>${S(8)}We define the symbol \( a^* \) as follows:</p>
             <p>${S(8)}\( (a\in T_m)\rightarrow a^*\in T_m \)</p>
             <p>${S(8)}<span style="opacity: 0.5;">01.</span> If \( a=\overline{0}\vee a=M \), return \( \overline{0} \)</p>
-            <p>${S(8)}<span style="opacity: 0.5;">02.</span> If \( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\backslash\{\overline{0}\} \), then:</p>
+            <p>${S(8)}<span style="opacity: 0.5;">02.</span> If \( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \), then:</p>
             <p>${S(8)}<span style="opacity: 0.5;">02.01.</span> If \( a^*&lt;b^* \), return \( b^* \)</p>
             <p>${S(8)}<span style="opacity: 0.5;">02.02.</span> If \( \neg a^*&lt;b^* \), return \( a^* \)</p>
             <p>${S(8)}<span style="opacity: 0.5;">03.</span> If \( a=\varphi_{a_0}(a_1)\land a_0,a_1\in T_m \), then:</p>
@@ -158,10 +158,10 @@
             <p>${S(8)}<span style="opacity: 0.5;">03.</span> If \( a\neq\overline{0}\land b\neq\overline{0} \), return \( a+b \)</p>
             <br>
             <p>${S(8)}We define succession \( S(a) \) as follows. Which is simple but comes in handy in simplifying later definitions.</p>
-            <p>${S(8)}\( (a\in T_m)\rightarrow S(a)\in T_m\backslash\{\overline{0}\} \)</p>
+            <p>${S(8)}\( (a\in T_m)\rightarrow S(a)\in T_m\setminus\{\overline{0}\} \)</p>
             <p>${S(8)}return \( Add(a,\overline{1}) \)</p>
             <br>
-            <p>${S(8)}We define the set \( R \). Which is actually \( (Reg\cap M)\backslash\chi_\overline{0}(\overline{0}) \)</p>
+            <p>${S(8)}We define the set \( R \). Which is actually \( (Reg\cap M)\setminus\chi_\overline{0}(\overline{0}) \)</p>
             <p>${S(8)}<span style="opacity: 0.5;">01.</span> For all \( a\in T_m \), \( \chi_a(\overline{0})\in R \)</p>
             <p>${S(8)}<span style="opacity: 0.5;">02.</span> For all \( a\in T_m \) and \( b\in T_m \), \( \chi_a(S(b))\in R \)</p>
             <br>
@@ -169,7 +169,7 @@
             <p>${S(8)}<span style="opacity: 0.5;">01.</span> \( M\in C(a,b) \)</p>
             <p>${S(8)}<span style="opacity: 0.5;">02.</span> If \( a=\chi_{a_0}(\overline{0}) \), For all \( c\le a_0 \), \( c\in C(a,b) \)</p>
             <p>${S(8)}<span style="opacity: 0.5;">03.</span> If \( a=\chi_{a_0}(S(a_1)) \), For all \( c\le \chi_{a_0}(a_1) \), \( c\in C(a,b) \)</p>
-            <p>${S(8)}<span style="opacity: 0.5;">04.</span> For all \( c_0\in C(a,b)\cap T_s \) and \( c_1\in C(a,b)\backslash\{\overline{0}\} \), \( c_0+c_1\in C(a,b) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">04.</span> For all \( c_0\in C(a,b)\cap T_s \) and \( c_1\in C(a,b)\setminus\{\overline{0}\} \), \( c_0+c_1\in C(a,b) \)</p>
             <p>${S(8)}<span style="opacity: 0.5;">05.</span> For all \( c_0,c_1\in C(a,b) \), \( \varphi_{c_0}(c_1)\in C(a,b) \)</p>
             <p>${S(8)}<span style="opacity: 0.5;">06.</span> For all \( c_0,c_1\in C(a,b) \) and \( c_0,c_1&lt;M \) and \( c_0\neq\overline{0} \), \( \Phi_{c_0}(c_1)\in C(a,b) \)</p>
             <p>${S(8)}<span style="opacity: 0.5;">07.</span> For all \( c_0,c_1\in C(a,b) \), \( \chi_{c_0}(c_1)\in C(a,b) \)</p>
@@ -189,7 +189,7 @@
             <p>${S(8)}\( (a\in T_m)\rightarrow Norm(a)\in T \)</p>
             <p>${S(8)}<span style="opacity: 0.5;">01.</span> If \( a\in T \), return \( a \)</p>
             <p>${S(8)}<span style="opacity: 0.5;">02.</span> If \( \neg a\in T \), then:</p>
-            <p>${S(8)}<span style="opacity: 0.5;">02.01.</span> If \( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\backslash\{\overline{0}\} \), return \( Norm(a_0)+Norm(a_1) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">02.01.</span> If \( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \), return \( Norm(a_0)+Norm(a_1) \)</p>
             <p>${S(8)}<span style="opacity: 0.5;">02.02.</span> If \( a=\varphi_{a_0}(a_1)\land a_0,a_1\in T_m \), then:</p>
             <p>${S(8)}<span style="opacity: 0.5;">02.02.01.</span> If \( a=a_1 \), return \( a_1 \)</p>
             <p>${S(8)}<span style="opacity: 0.5;">02.02.02.</span> If \( a=a_0 \), return \( a_0 \)</p>
@@ -206,7 +206,7 @@
             <p>${S(8)}Now, we're done with normalizing symbols. But before proceeding, I should mention that the notation system \( T(M) \) in his PDF does not contain all the notations in \( T \), we can have something like \( \zeta_{M+\overline{1}}=\varphi_{\overline{1}+\overline{1}}(M+\overline{1}) \) and \( \psi_{\Omega}(M2)=\psi_{\chi_\overline{0}(\overline{0})}(M+M) \) in \( T \), but not in his \( T(M) \).</p>
             <p>${S(8)}To make things clear, we define the original notation system set \( T(M) \) as follows. This is actually a translation of his language in the language in this article. <b>Note that all the notations used in this definition are all in \( T \).</b></p>
             <p>${S(8)}<span style="opacity: 0.5;">01.</span> \( \overline{0}\in T(M) \) and \( M\in T(M) \)</p>
-            <p>${S(8)}<span style="opacity: 0.5;">02.</span> For all \( a_0\in T(M)\cap T_s \) and \( a_1\in T(M)\backslash\{\overline{0}\} \), \( a_0+a_1\in T(M) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">02.</span> For all \( a_0\in T(M)\cap T_s \) and \( a_1\in T(M)\setminus\{\overline{0}\} \), \( a_0+a_1\in T(M) \)</p>
             <p>${S(8)}<span style="opacity: 0.5;">03.</span> For all \( a_0,a_1\in T(M) \) and \( a_0,a_1&lt;M \), \( \varphi_{a_0}(a_1)\in T(M) \)</p>
             <p>${S(8)}<span style="opacity: 0.5;">04.</span> For all \( a_0,a_1\in T(M) \) and \( a_0,a_1&lt;M \) and \( a_0\neq\overline{0} \), \( \Phi_{a_0}(a_1)\in T(M) \)</p>
             <p>${S(8)}<span style="opacity: 0.5;">05.</span> For all \( a_0,a_1\in T(M) \), \( \chi_{a_0}(a_1)\in T(M) \)</p>
@@ -218,7 +218,7 @@
             <p>${S(8)}Now, we define cofinality \( Cof \), which is important in defining the FS (Fundamental Sequence). Some people will use \( Dom \) instead, which stands for "Domain". I don't think this makes as many senses as \( Cof \). The only idea I can think of is to regard every ordinal as a function whose domain is its cofinality. Actually, this notation is due to Buchholz${C(1)} in his OCF.</p>
             <p>${S(8)}\( (a\in T)\rightarrow Cof(a)\in T \)</p>
             <p>${S(8)}<span style="opacity: 0.5;">01.</span> If \( a=\overline{0}\vee a=M \), return \( a \)</p>
-            <p>${S(8)}<span style="opacity: 0.5;">02.</span> If \( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\backslash\{\overline{0}\} \), return \( Cof(a_1) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">02.</span> If \( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \), return \( Cof(a_1) \)</p>
             <p>${S(8)}<span style="opacity: 0.5;">03.</span> If \( (a=\varphi_{a_0}(a_1)\vee a=\Phi_{a_0}(a_1))\land a_0,a_1\in T_m \), then:</p>
             <p>${S(8)}<span style="opacity: 0.5;">03.01.</span> If \( \neg Cof(a_1)&lt;\overline{\omega} \), return \( Cof(a_1) \)</p>
             <p>${S(8)}<span style="opacity: 0.5;">03.02.</span> If \( \neg Cof(a_0)&lt;\overline{\omega}\land Cof(a_1)&lt;\overline{\omega} \), return \( Cof(a_0) \)</p>
@@ -240,7 +240,7 @@
             <p>${S(8)}\( (a\in T,n\in T)\rightarrow a[n]\in T \)</p>
             <p>${S(8)}<span style="opacity: 0.5;">01.</span> If \( a=\overline{0} \), return \( \overline{0} \)</p>
             <p>${S(8)}<span style="opacity: 0.5;">02.</span> If \( a=M \), return \( n \)</p>
-            <p>${S(8)}<span style="opacity: 0.5;">03.</span> If \( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\backslash\{\overline{0}\} \), return \( Add(a_0,a_1[n]) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">03.</span> If \( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \), return \( Add(a_0,a_1[n]) \)</p>
             <br>
             <p>${S(8)}<span style="opacity: 0.5;">04.</span> If \( a=\varphi_{a_0}(a_1)\land a_0,a_1\in T_m \), then:</p>
             <p>${S(8)}<span style="opacity: 0.5;">04.01.</span> If \( a_1=\overline{0} \), then:</p>
@@ -355,7 +355,7 @@
             <p>${S(8)}<span style="opacity: 0.5;">01.</span> If \( a=\overline{0}\vee a=M \), return \( \overline{0} \)</p>
             <p>${S(8)}<span style="opacity: 0.5;">02.</span> If \( a\neq\overline{0}\vee a&lt;M \), return \( a \)</p>
             <p>${S(8)}<span style="opacity: 0.5;">03.</span> If \( a&gt;M \), then:</p>
-            <p>${S(8)}<span style="opacity: 0.5;">03.01.</span> If \( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\backslash\{\overline{0}\} \), return \( Tail(a_1) \)</p>
+            <p>${S(8)}<span style="opacity: 0.5;">03.01.</span> If \( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \), return \( Tail(a_1) \)</p>
             <p>${S(8)}<span style="opacity: 0.5;">03.02.</span> If \( a=\varphi_{a_0}(a_1)\land a_0,a_1\in T_m \), then:</p>
             <p>${S(8)}<span style="opacity: 0.5;">03.02.01.</span> If \( Cof(a_1)&lt;\overline{\omega} \), return \( Tail(a_0) \)</p>
             <p>${S(8)}<span style="opacity: 0.5;">03.02.02.</span> If \( Cof(a_1)\ge\overline{\omega} \), return \( Tail(a_1) \)</p>
