@@ -1,0 +1,1276 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <content>
+            <p>${S(8)}In this article, I will list 200 more ordinals continued from the previous article using 3 OCFs. If I'm notified that there are errors in my list, I'll fix'em ASAP.</p>
+            <p>${S(8)}Throughout this article, the following abbreviation will be used:</p>
+            <div style="text-align: center;">\( \begin{align} \omega^\alpha & := \varphi_0(\alpha) \\ \varepsilon_\alpha & := \varphi_1(\alpha) \\ \zeta_\alpha & := \varphi_2(\alpha) \\ \eta_\alpha & := \varphi_3(\alpha) \end{align} \)</div>
+            <h2>#0200~#0299 - \( \psi_0(\Omega_2)-\psi_0(\Omega_\omega) \)</h2>
+            <p>${S(8)}In this part, ordinals will be represented in these 3 notations:</p>
+            <p>${S(8)}<b>Buchholz:</b> The notation using the Buchholz function \( \psi \)${C(1)}, the abbreviation is the same as in the previous article.</p>
+            <p>${S(8)}<b>Rathjen M:</b> The notation using the Rathjen's function \( \psi \) based on the "Mahlo Cardinal"(\( M \))${C(2)}. The following abbreviation will be used:</p>
+            <div style="text-align: center;">\( \begin{align} \Omega & := \chi_0(0) \\ \Omega_{2+\alpha} & := \chi_0(1+\alpha) \end{align} \)</div>
+            <p>${S(8)}<b>Rathjen K:</b> The notation using the Rathjen's function \( \Psi \) based on the "Weakly Compact Cardinal"(\( K \))${C(3)}. The following abbreviation will be used:</p>
+            <div style="text-align: center;">\( \Omega:=\Omega_1 \)</div>
+            <table>
+                <tbody>
+                    <tr>
+                        <th>#</th>
+                        <th>Buchholz</th>
+                        <th>Rathjen M</th>
+                        <th>Rathjen K</th>
+                    </tr>
+                    <tr>
+                        <td>0200</td>
+                        <td>\( BHO=\psi_0(\Omega_2) \)</td>
+                        <td>\( \psi_\Omega(\varepsilon_{\Omega+1}) \)</td>
+                        <td>\( \Psi_\Omega^0(\varepsilon_{\Omega+1}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0201</td>
+                        <td>\( \psi_0(\Omega_2+\Omega) \)</td>
+                        <td>\( \varepsilon_{\psi_\Omega(\varepsilon_{\Omega+1})+1} \)</td>
+                        <td>\( \varepsilon_{\Psi_\Omega^0(\varepsilon_{\Omega+1})+1} \)</td>
+                    </tr>
+                    <tr>
+                        <td>0202</td>
+                        <td>\( \psi_0(\Omega_2+\Omega^2) \)</td>
+                        <td>\( \zeta_{\psi_\Omega(\varepsilon_{\Omega+1})+1} \)</td>
+                        <td>\( \zeta_{\Psi_\Omega^0(\varepsilon_{\Omega+1})+1} \)</td>
+                    </tr>
+                    <tr>
+                        <td>0203</td>
+                        <td>\( \psi_0(\Omega_2+\Omega^\Omega) \)</td>
+                        <td>\( \psi_\Omega(\varepsilon_{\Omega+1}+1) \)</td>
+                        <td>\( \Psi_\Omega^0(\Psi_\Omega^0(\varepsilon_{\Omega+1})) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0204</td>
+                        <td>\( \psi_0(\Omega_2+\Omega^{\Omega^\Omega}) \)</td>
+                        <td>\( \psi_\Omega(\varepsilon_{\Omega+1}+\Omega^{\Omega^\Omega}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega^\Omega+\Psi_\Omega^0(\varepsilon_{\Omega+1})) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0205</td>
+                        <td>\( \psi_0(\Omega_2+\psi_1(\Omega_2)) \)</td>
+                        <td>\( \psi_\Omega(\varepsilon_{\Omega+1}2) \)</td>
+                        <td>\( \Psi_\Omega^0(\varepsilon_{\Omega+1}+1) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0206</td>
+                        <td>\( \psi_0(\Omega_2+\psi_1(\Omega_2+1)) \)</td>
+                        <td>\( \psi_\Omega(\varepsilon_{\Omega+1}\omega) \)</td>
+                        <td>\( \Psi_\Omega^0(\varepsilon_{\Omega+1}+\omega) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0207</td>
+                        <td>\( \psi_0(\Omega_2+\psi_1(\Omega_2+\Omega)) \)</td>
+                        <td>\( \psi_\Omega(\varepsilon_{\Omega+1}\Omega) \)</td>
+                        <td>\( \Psi_\Omega^0(\varepsilon_{\Omega+1}+\Omega) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0208</td>
+                        <td>\( \psi_0(\Omega_2+\psi_1(\Omega_2+\psi_1(\Omega_2))) \)</td>
+                        <td>\( \psi_\Omega(\varepsilon_{\Omega+1}^2) \)</td>
+                        <td>\( \Psi_\Omega^0(\varepsilon_{\Omega+1}2) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0209</td>
+                        <td>\( \psi_0(\Omega_2+\psi_1(\Omega_2+\psi_1(\Omega_2+\psi_1(\Omega_2)))) \)</td>
+                        <td>\( \psi_\Omega(\varepsilon_{\Omega+1}^{\varepsilon_{\Omega+1}}) \)</td>
+                        <td>\( \Psi_\Omega^0(\varepsilon_{\Omega+1}^2) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0210</td>
+                        <td>\( \psi_0(\Omega_22) \)</td>
+                        <td>\( \psi_\Omega(\varepsilon_{\Omega+2}) \)</td>
+                        <td>\( \Psi_\Omega^0(\varepsilon_{\Omega+2}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0211</td>
+                        <td>\( \psi_0(\Omega_23) \)</td>
+                        <td>\( \psi_\Omega(\varepsilon_{\Omega+3}) \)</td>
+                        <td>\( \Psi_\Omega^0(\varepsilon_{\Omega+3}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0212</td>
+                        <td>\( \psi_0(\Omega_2\omega) \)</td>
+                        <td>\( \psi_\Omega(\varepsilon_{\Omega+\omega}) \)</td>
+                        <td>\( \Psi_\Omega^0(\varepsilon_{\Omega+\omega}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0213</td>
+                        <td>\( \psi_0(\Omega_2*\psi_0(\Omega_2)) \)</td>
+                        <td>\( \psi_\Omega(\varepsilon_{\Omega+\psi_\Omega(\varepsilon_{\Omega+1})}) \)</td>
+                        <td>\( \Psi_\Omega^0(\varepsilon_{\Omega+\Psi_\Omega^0(\varepsilon_{\Omega+1})}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0214</td>
+                        <td>\( \psi_0(\Omega_2*\psi_0(\Omega_2*\psi_0(\Omega_2))) \)</td>
+                        <td>\( \psi_\Omega(\varepsilon_{\Omega+\psi_\Omega(\varepsilon_{\Omega+\psi_\Omega(\varepsilon_{\Omega+1})})}) \)</td>
+                        <td>\( \Psi_\Omega^0(\varepsilon_{\Omega+\Psi_\Omega^0(\varepsilon_{\Omega+\Psi_\Omega^0(\varepsilon_{\Omega+1})})}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0215</td>
+                        <td>\( \psi_0(\Omega_2\Omega) \)</td>
+                        <td>\( \psi_\Omega(\varepsilon_{\Omega2}) \)</td>
+                        <td>\( \Psi_\Omega^0(\varepsilon_{\Omega2}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0216</td>
+                        <td>\( \psi_0(\Omega_2\Omega^2) \)</td>
+                        <td>\( \psi_\Omega(\varepsilon_{\Omega^2}) \)</td>
+                        <td>\( \Psi_\Omega^0(\varepsilon_{\Omega^2}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0217</td>
+                        <td>\( \psi_0(\Omega_2\Omega^\Omega) \)</td>
+                        <td>\( \psi_\Omega(\varepsilon_{\Omega^\Omega}) \)</td>
+                        <td>\( \Psi_\Omega^0(\varepsilon_{\Omega^\Omega}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0218</td>
+                        <td>\( \psi_0(\Omega_2*\psi_1(\Omega_2)) \)</td>
+                        <td>\( \psi_\Omega(\varepsilon_{\varepsilon_{\Omega+1}}) \)</td>
+                        <td>\( \Psi_\Omega^0(\varepsilon_{\varepsilon_{\Omega+1}}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0219</td>
+                        <td>\( \psi_0(\Omega_2*\psi_1(\Omega_2*\psi_1(\Omega_2))) \)</td>
+                        <td>\( \psi_\Omega(\varepsilon_{\varepsilon_{\varepsilon_{\Omega+1}}}) \)</td>
+                        <td>\( \Psi_\Omega^0(\varepsilon_{\varepsilon_{\varepsilon_{\Omega+1}}}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0220</td>
+                        <td>\( \psi_0(\Omega_2^2) \)</td>
+                        <td>\( \psi_\Omega(\zeta_{\Omega+1}) \)</td>
+                        <td>\( \Psi_\Omega^0(\zeta_{\Omega+1}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0221</td>
+                        <td>\( \psi_0(\Omega_2^2+\Omega_2) \)</td>
+                        <td>\( \psi_\Omega(\varepsilon_{\zeta_{\Omega+1}+1}) \)</td>
+                        <td>\( \Psi_\Omega^0(\varepsilon_{\zeta_{\Omega+1}+1}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0222</td>
+                        <td>\( \psi_0(\Omega_2^22) \)</td>
+                        <td>\( \psi_\Omega(\zeta_{\Omega+2}) \)</td>
+                        <td>\( \Psi_\Omega^0(\zeta_{\Omega+2}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0223</td>
+                        <td>\( \psi_0(\Omega_2^2\omega) \)</td>
+                        <td>\( \psi_\Omega(\zeta_{\Omega+\omega}) \)</td>
+                        <td>\( \Psi_\Omega^0(\zeta_{\Omega+\omega}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0224</td>
+                        <td>\( \psi_0(\Omega_2^3) \)</td>
+                        <td>\( \psi_\Omega(\eta_{\Omega+1}) \)</td>
+                        <td>\( \Psi_\Omega^0(\eta_{\Omega+1}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0225</td>
+                        <td>\( \psi_0(\Omega_2^3+\Omega_2) \)</td>
+                        <td>\( \psi_\Omega(\varepsilon_{\eta_{\Omega+1}+1}) \)</td>
+                        <td>\( \Psi_\Omega^0(\varepsilon_{\eta_{\Omega+1}+1}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0226</td>
+                        <td>\( \psi_0(\Omega_2^3+\Omega_2^2) \)</td>
+                        <td>\( \psi_\Omega(\zeta_{\eta_{\Omega+1}+1}) \)</td>
+                        <td>\( \Psi_\Omega^0(\zeta_{\eta_{\Omega+1}+1}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0227</td>
+                        <td>\( \psi_0(\Omega_2^32) \)</td>
+                        <td>\( \psi_\Omega(\eta_{\Omega+2}) \)</td>
+                        <td>\( \Psi_\Omega^0(\eta_{\Omega+2}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0228</td>
+                        <td>\( \psi_0(\Omega_2^3\omega) \)</td>
+                        <td>\( \psi_\Omega(\eta_{\Omega+\omega}) \)</td>
+                        <td>\( \Psi_\Omega^0(\eta_{\Omega+\omega}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0229</td>
+                        <td>\( \psi_0(\Omega_2^4) \)</td>
+                        <td>\( \psi_\Omega(\varphi_4(\Omega+1)) \)</td>
+                        <td>\( \Psi_\Omega^0(\varphi_4(\Omega+1)) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0230</td>
+                        <td>\( \psi_0(\Omega_2^\omega) \)</td>
+                        <td>\( \psi_\Omega(\varphi_\omega(\Omega+1)) \)</td>
+                        <td>\( \Psi_\Omega^0(\varphi_\omega(\Omega+1)) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0231</td>
+                        <td>\( \psi_0(\Omega_2^{\omega+1}) \)</td>
+                        <td>\( \psi_\Omega(\varphi_{\omega+1}(\Omega+1)) \)</td>
+                        <td>\( \Psi_\Omega^0(\varphi_{\omega+1}(\Omega+1)) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0232</td>
+                        <td>\( \psi_0(\Omega_2^{\psi_0(\Omega_2)}) \)</td>
+                        <td>\( \psi_\Omega(\varphi_{\psi_\Omega(\varepsilon_{\Omega+1})}(\Omega+1)) \)</td>
+                        <td>\( \Psi_\Omega^0(\varphi_{\Psi_\Omega^0(\varepsilon_{\Omega+1})}(\Omega+1)) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0233</td>
+                        <td>\( \psi_0(\Omega_2^{\psi_0(\Omega_2^\omega)}) \)</td>
+                        <td>\( \psi_\Omega(\varphi_{\psi_\Omega(\varphi_\omega(\Omega+1))}(\Omega+1)) \)</td>
+                        <td>\( \Psi_\Omega^0(\varphi_{\Psi_\Omega^0(\varphi_\omega(\Omega+1))}(\Omega+1)) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0234</td>
+                        <td>\( \psi_0(\Omega_2^{\psi_0(\Omega_2^{\psi_0(\Omega_2)})}) \)</td>
+                        <td>\( \psi_\Omega(\varphi_{\psi_\Omega(\varphi_{\psi_\Omega(\varepsilon_{\Omega+1})}(\Omega+1))}(\Omega+1)) \)</td>
+                        <td>\( \Psi_\Omega^0(\varphi_{\Psi_\Omega^0(\varphi_{\Psi_\Omega^0(\varepsilon_{\Omega+1})}(\Omega+1))}(\Omega+1)) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0235</td>
+                        <td>\( \psi_0(\Omega_2^\Omega) \)</td>
+                        <td>\( \psi_\Omega(\varphi_\Omega(1)) \)</td>
+                        <td>\( \Psi_\Omega^0(\varphi_\Omega(1)) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0236</td>
+                        <td>\( \psi_0(\Omega_2^{\Omega^\Omega}) \)</td>
+                        <td>\( \psi_\Omega(\varphi_{\Omega^\Omega}(0)) \)</td>
+                        <td>\( \Psi_\Omega^0(\varphi_{\Omega^\Omega}(0)) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0237</td>
+                        <td>\( \psi_0(\Omega_2^{\Omega^{\Omega^\Omega}}) \)</td>
+                        <td>\( \psi_\Omega(\varphi_{\Omega^{\Omega^\Omega}}(0)) \)</td>
+                        <td>\( \Psi_\Omega^0(\varphi_{\Omega^{\Omega^\Omega}}(0)) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0238</td>
+                        <td>\( \psi_0(\Omega_2^{\psi_1(\Omega_2)}) \)</td>
+                        <td>\( \psi_\Omega(\varphi_{\varepsilon_{\Omega+1}}(0)) \)</td>
+                        <td>\( \Psi_\Omega^0(\varphi_{\varepsilon_{\Omega+1}}(0)) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0239</td>
+                        <td>\( \psi_0(\Omega_2^{\psi_1(\Omega_2^{\psi_1(\Omega_2)})}) \)</td>
+                        <td>\( \psi_\Omega(\varphi_{\varphi_{\varepsilon_{\Omega+1}}(0)}(0)) \)</td>
+                        <td>\( \Psi_\Omega^0(\varphi_{\varphi_{\varepsilon_{\Omega+1}}(0)}(0)) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0240</td>
+                        <td>\( \psi_0(\Omega_2^{\Omega_2}) \)</td>
+                        <td>\( \psi_\Omega(\psi_{\Omega_2}(0)) \)</td>
+                        <td>\( \Psi_\Omega^0(\Psi_{\Omega_2}^0(0)) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0241</td>
+                        <td>\( \psi_0(\Omega_2^{\Omega_2}+\Omega_2) \)</td>
+                        <td>\( \psi_\Omega(\varepsilon_{\psi_{\Omega_2}(0)+1}) \)</td>
+                        <td>\( \Psi_\Omega^0(\varepsilon_{\Psi_{\Omega_2}^0(0)+1}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0242</td>
+                        <td>\( \psi_0(\Omega_2^{\Omega_2}+\Omega_2^2) \)</td>
+                        <td>\( \psi_\Omega(\zeta_{\psi_{\Omega_2}(0)+1}) \)</td>
+                        <td>\( \Psi_\Omega^0(\zeta_{\Psi_{\Omega_2}^0(0)+1}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0243</td>
+                        <td>\( \psi_0(\Omega_2^{\Omega_2}2) \)</td>
+                        <td>\( \psi_\Omega(\psi_{\Omega_2}(1)) \)</td>
+                        <td>\( \Psi_\Omega^0(\Psi_{\Omega_2}^0(1)) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0244</td>
+                        <td>\( \psi_0(\Omega_2^{\Omega_2}\omega) \)</td>
+                        <td>\( \psi_\Omega(\psi_{\Omega_2}(\omega)) \)</td>
+                        <td>\( \Psi_\Omega^0(\Psi_{\Omega_2}^0(\omega)) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0245</td>
+                        <td>\( \psi_0(\Omega_2^{\Omega_2}*\psi_0(\Omega_2^{\Omega_2})) \)</td>
+                        <td>\( \psi_\Omega(\psi_{\Omega_2}(\psi_\Omega(\psi_{\Omega_2}(0)))) \)</td>
+                        <td>\( \Psi_\Omega^0(\Psi_{\Omega_2}^0(\Psi_\Omega^0(\Psi_{\Omega_2}^0(0)))) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0246</td>
+                        <td>\( \psi_0(\Omega_2^{\Omega_2}*\psi_0(\Omega_2^{\Omega_2}*\psi_0(\Omega_2^{\Omega_2}))) \)</td>
+                        <td>\( \psi_\Omega(\psi_{\Omega_2}(\psi_\Omega(\psi_{\Omega_2}(\psi_\Omega(\psi_{\Omega_2}(0)))))) \)</td>
+                        <td>\( \Psi_\Omega^0(\Psi_{\Omega_2}^0(\Psi_\Omega^0(\Psi_{\Omega_2}^0(\Psi_\Omega^0(\Psi_{\Omega_2}^0(0)))))) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0247</td>
+                        <td>\( \psi_0(\Omega_2^{\Omega_2}\Omega) \)</td>
+                        <td>\( \psi_\Omega(\psi_{\Omega_2}(\Omega)) \)</td>
+                        <td>\( \Psi_\Omega^0(\Psi_{\Omega_2}^0(\Omega)) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0248</td>
+                        <td>\( \psi_0(\Omega_2^{\Omega_2}*\psi_1(\Omega_2^{\Omega_2})) \)</td>
+                        <td>\( \psi_\Omega(\psi_{\Omega_2}(\psi_{\Omega_2}(0))) \)</td>
+                        <td>\( \Psi_\Omega^0(\Psi_{\Omega_2}^0(\Psi_{\Omega_2}^0(0))) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0249</td>
+                        <td>\( \psi_0(\Omega_2^{\Omega_2}*\psi_1(\Omega_2^{\Omega_2}*\psi_1(\Omega_2^{\Omega_2}))) \)</td>
+                        <td>\( \psi_\Omega(\psi_{\Omega_2}(\psi_{\Omega_2}(\psi_{\Omega_2}(0)))) \)</td>
+                        <td>\( \Psi_\Omega^0(\Psi_{\Omega_2}^0(\Psi_{\Omega_2}^0(\Psi_{\Omega_2}^0(0)))) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0250</td>
+                        <td>\( \psi_0(\Omega_2^{\Omega_2+1}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_2) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_2) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0251</td>
+                        <td>\( \psi_0(\Omega_2^{\Omega_2+1}+\psi_1(\Omega_2^{\Omega_2})) \)</td>
+                        <td>\( \psi_\Omega(\Omega_2+\psi_{\Omega_2}(0)) \)</td>
+                        <td>\( \Psi_\Omega^0(\Psi_{\Omega_2}^0(0)+\Psi_\Omega^0(\Omega_2)) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0252</td>
+                        <td>\( \psi_0(\Omega_2^{\Omega_2+1}+\psi_1(\Omega_2^{\Omega_2+1})) \)</td>
+                        <td>\( \psi_\Omega(\Omega_2+\psi_{\Omega_2}(\Omega_2)) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_2+1) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0253</td>
+                        <td>\( \psi_0(\Omega_2^{\Omega_2+1}+\psi_1(\Omega_2^{\Omega_2+1}+\psi_1(\Omega_2^{\Omega_2+1}))) \)</td>
+                        <td>\( \psi_\Omega(\Omega_2+\psi_{\Omega_2}(\Omega_2)^2) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_2+\Psi_{\Omega_2}^0(\Omega_2)) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0254</td>
+                        <td>\( \psi_0(\Omega_2^{\Omega_2+1}+\psi_1(\Omega_2^{\Omega_2+1}+\psi_1(\Omega_2^{\Omega_2+1}+\psi_1(\Omega_2^{\Omega_2+1})))) \)</td>
+                        <td>\( \psi_\Omega(\Omega_2+\psi_{\Omega_2}(\Omega_2)^{\psi_{\Omega_2}(\Omega_2)}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_2+\Psi_{\Omega_2}^0(\Omega_2)^2) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0255</td>
+                        <td>\( \psi_0(\Omega_2^{\Omega_2+1}+\Omega_2) \)</td>
+                        <td>\( \psi_\Omega(\Omega_2+\varepsilon_{\psi_{\Omega_2}(\Omega_2)+1}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_2+\varepsilon_{\Psi_{\Omega_2}^0(\Omega_2)+1}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0256</td>
+                        <td>\( \psi_0(\Omega_2^{\Omega_2+1}+\Omega_2^2) \)</td>
+                        <td>\( \psi_\Omega(\Omega_2+\zeta_{\psi_{\Omega_2}(\Omega_2)+1}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_2+\zeta_{\Psi_{\Omega_2}^0(\Omega_2)+1}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0257</td>
+                        <td>\( \psi_0(\Omega_2^{\Omega_2+1}+\Omega_2^{\Omega_2}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_2+\psi_{\Omega_2}(\Omega_2+1)) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_2+\Psi_{\Omega_2}^0(\Psi_{\Omega_2}^0(\Omega_2))) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0258</td>
+                        <td>\( \psi_0(\Omega_2^{\Omega_2+1}+\Omega_2^{\Omega_2}2) \)</td>
+                        <td>\( \psi_\Omega(\Omega_2+\psi_{\Omega_2}(\Omega_2+2)) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_2+\Psi_{\Omega_2}^0(\Psi_{\Omega_2}^0(\Omega_2)+1)) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0259</td>
+                        <td>\( \psi_0(\Omega_2^{\Omega_2+1}+\Omega_2^{\Omega_2}*\psi_1(\Omega_2^{\Omega_2+1}+\Omega_2^{\Omega_2})) \)</td>
+                        <td>\( \psi_\Omega(\Omega_2+\psi_{\Omega_2}(\Omega_2+\psi_{\Omega_2}(\Omega_2+1))) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_2+\Psi_{\Omega_2}^0(\Psi_{\Omega_2}^0(\Psi_{\Omega_2}^0(\Omega_2)))) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0260</td>
+                        <td>\( \psi_0(\Omega_2^{\Omega_2+1}2) \)</td>
+                        <td>\( \psi_\Omega(\Omega_22) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_2+\Psi_{\Omega_2}^0(\Omega_2+1)) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0261</td>
+                        <td>\( \psi_0(\Omega_2^{\Omega_2+1}2+\Omega_2^{\Omega_2}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_22+\psi_{\Omega_2}(\Omega_22+1)) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_2+\Psi_{\Omega_2}^0(\Psi_{\Omega_2}^0(\Omega_2+1))) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0262</td>
+                        <td>\( \psi_0(\Omega_2^{\Omega_2+1}2+\Omega_2^{\Omega_2}*\psi_1(\Omega_2^{\Omega_2+1}2+\Omega_2^{\Omega_2})) \)</td>
+                        <td>\( \psi_\Omega(\Omega_22+\psi_{\Omega_2}(\Omega_22+\psi_{\Omega_2}(\Omega_22+1))) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_2+\Psi_{\Omega_2}^0(\Psi_{\Omega_2}^0(\Psi_{\Omega_2}^0(\Omega_2+1)))) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0263</td>
+                        <td>\( \psi_0(\Omega_2^{\Omega_2+1}3) \)</td>
+                        <td>\( \psi_\Omega(\Omega_23) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_2+\Psi_{\Omega_2}^0(\Omega_2+2)) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0264</td>
+                        <td>\( \psi_0(\Omega_2^{\Omega_2+1}\omega) \)</td>
+                        <td>\( \psi_\Omega(\Omega_2\omega) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_2+\Psi_{\Omega_2}^0(\Omega_2+\omega)) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0265</td>
+                        <td>\( \psi_0(\Omega_2^{\Omega_2+1}*\psi_0(\Omega_2^{\Omega_2+1})) \)</td>
+                        <td>\( \psi_\Omega(\Omega_2*\psi_\Omega(\Omega_2)) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_2+\Psi_{\Omega_2}^0(\Omega_2+\Psi_\Omega^0(\Omega_2))) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0266</td>
+                        <td>\( \psi_0(\Omega_2^{\Omega_2+1}*\psi_0(\Omega_2^{\Omega_2+1}*\psi_0(\Omega_2^{\Omega_2+1}))) \)</td>
+                        <td>\( \psi_\Omega(\Omega_2*\psi_\Omega(\Omega_2*\psi_\Omega(\Omega_2))) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_2+\Psi_{\Omega_2}^0(\Omega_2+\Psi_\Omega^0(\Omega_2+\Psi_{\Omega_2}^0(\Omega_2+\Psi_\Omega^0(\Omega_2))))) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0267</td>
+                        <td>\( \psi_0(\Omega_2^{\Omega_2+1}\Omega) \)</td>
+                        <td>\( \psi_\Omega(\Omega_2\Omega) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_2+\Psi_{\Omega_2}^0(\Omega_2+\Omega)) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0268</td>
+                        <td>\( \psi_0(\Omega_2^{\Omega_2+1}*\psi_1(\Omega_2^{\Omega_2+1})) \)</td>
+                        <td>\( \psi_\Omega(\Omega_2*\psi_{\Omega_2}(\Omega_2)) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_2+\Psi_{\Omega_2}^0(\Omega_2+\Psi_{\Omega_2}^0(\Omega_2))) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0269</td>
+                        <td>\( \psi_0(\Omega_2^{\Omega_2+1}*\psi_1(\Omega_2^{\Omega_2+1}*\psi_1(\Omega_2^{\Omega_2+1}))) \)</td>
+                        <td>\( \psi_\Omega(\Omega_2*\psi_{\Omega_2}(\Omega_2*\psi_{\Omega_2}(\Omega_2))) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_2+\Psi_{\Omega_2}^0(\Omega_2+\Psi_{\Omega_2}^0(\Omega_2+\Psi_{\Omega_2}^0(\Omega_2)))) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0270</td>
+                        <td>\( \psi_0(\Omega_2^{\Omega_2+2}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_2^2) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_22) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0271</td>
+                        <td>\( \psi_0(\Omega_2^{\Omega_2+2}+\Omega_2) \)</td>
+                        <td>\( \psi_\Omega(\Omega_2^2+\varepsilon_{\psi_{\Omega_2}(\Omega_2^2)+1}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_22+\varepsilon_{\Psi_{\Omega_2}^0(\Omega_22)+1}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0272</td>
+                        <td>\( \psi_0(\Omega_2^{\Omega_2+2}+\Omega_2^{\Omega_2}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_2^2+\psi_{\Omega_2}(\Omega_2^2+1)) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_22+\Psi_{\Omega_2}^0(\Psi_{\Omega_2}^0(\Omega_22))) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0273</td>
+                        <td>\( \psi_0(\Omega_2^{\Omega_2+2}+\Omega_2^{\Omega_2+1}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_2^2+\Omega_2) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_22+\Psi_{\Omega_2}^0(\Omega_2+\Psi_{\Omega_2}^0(\Omega_22))) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0274</td>
+                        <td>\( \psi_0(\Omega_2^{\Omega_2+2}+\Omega_2^{\Omega_2+1}2) \)</td>
+                        <td>\( \psi_\Omega(\Omega_2^2+\Omega_22) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_22+\Psi_{\Omega_2}^0(\Omega_2+\Psi_{\Omega_2}^0(\Omega_22)+1)) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0275</td>
+                        <td>\( \psi_0(\Omega_2^{\Omega_2+2}2) \)</td>
+                        <td>\( \psi_\Omega(\Omega_2^22) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_22+\Psi_{\Omega_2}^0(\Omega_22+1)) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0276</td>
+                        <td>\( \psi_0(\Omega_2^{\Omega_2+3}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_2^3) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_23) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0277</td>
+                        <td>\( \psi_0(\Omega_2^{\Omega_22}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_2^{\Omega_2}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_2^2) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0278</td>
+                        <td>\( \psi_0(\Omega_2^{\Omega_2^2}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_2^{\Omega_2^2}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_2^3) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0279</td>
+                        <td>\( \psi_0(\Omega_2^{\Omega_2^{\Omega_2}}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_2^{\Omega_2^{\Omega_2}}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_2^{\Omega_2}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0280</td>
+                        <td>\( \psi_0(\Omega_3) \)</td>
+                        <td>\( \psi_\Omega(\varepsilon_{\Omega_2+1}) \)</td>
+                        <td>\( \Psi_\Omega^0(\varepsilon_{\Omega_2+1}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0281</td>
+                        <td>\( \psi_0(\Omega_3+\Omega) \)</td>
+                        <td>\( \varepsilon_{\psi_\Omega(\varepsilon_{\Omega_2+1})+1} \)</td>
+                        <td>\( \varepsilon_{\Psi_\Omega^0(\varepsilon_{\Omega_2+1})+1} \)</td>
+                    </tr>
+                    <tr>
+                        <td>0282</td>
+                        <td>\( \psi_0(\Omega_3+\psi_1(\Omega_2)) \)</td>
+                        <td>\( \psi_\Omega(\varepsilon_{\Omega_2+1}+\varepsilon_{\Omega+1}) \)</td>
+                        <td>\( \Psi_\Omega^0(\varepsilon_{\Omega+1}+\Psi_\Omega^0(\varepsilon_{\Omega_2+1})) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0283</td>
+                        <td>\( \psi_0(\Omega_3+\psi_1(\Omega_3)) \)</td>
+                        <td>\( \psi_\Omega(\varepsilon_{\Omega_2+1}+\psi_{\Omega_2}(\varepsilon_{\Omega_2+1})) \)</td>
+                        <td>\( \Psi_\Omega^0(\Psi_{\Omega_2}^0(\varepsilon_{\Omega_2+1})+\Psi_\Omega^0(\varepsilon_{\Omega_2+1})) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0284</td>
+                        <td>\( \psi_0(\Omega_3+\psi_1(\Omega_3+\psi_1(\Omega_3))) \)</td>
+                        <td>\( \psi_\Omega(\varepsilon_{\Omega_2+1}+\psi_{\Omega_2}(\varepsilon_{\Omega_2+1})^2) \)</td>
+                        <td>\( \Psi_\Omega^0(\Psi_{\Omega_2}^0(\varepsilon_{\Omega_2+1})*2+\Psi_\Omega^0(\varepsilon_{\Omega_2+1})) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0285</td>
+                        <td>\( \psi_0(\Omega_3+\psi_1(\Omega_3+\psi_1(\Omega_3+\psi_1(\Omega_3)))) \)</td>
+                        <td>\( \psi_\Omega(\varepsilon_{\Omega_2+1}+\psi_{\Omega_2}(\varepsilon_{\Omega_2+1})^{\psi_{\Omega_2}(\varepsilon_{\Omega_2+1})}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Psi_{\Omega_2}^0(\varepsilon_{\Omega_2+1})^2+\Psi_\Omega^0(\varepsilon_{\Omega_2+1})) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0286</td>
+                        <td>\( \psi_0(\Omega_3+\Omega_2) \)</td>
+                        <td>\( \psi_\Omega(\varepsilon_{\Omega_2+1}+\varepsilon_{\psi_{\Omega_2}(\varepsilon_{\Omega_2+1})+1}) \)</td>
+                        <td>\( \Psi_\Omega^0(\varepsilon_{\Psi_{\Omega_2}^0(\varepsilon_{\Omega_2+1})+1}+\Psi_\Omega^0(\varepsilon_{\Omega_2+1})) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0287</td>
+                        <td>\( \psi_0(\Omega_3+\psi_2(\Omega_3)) \)</td>
+                        <td>\( \psi_\Omega(\varepsilon_{\Omega_2+1}2) \)</td>
+                        <td>\( \Psi_\Omega^0(\varepsilon_{\Omega_2+1}+1) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0288</td>
+                        <td>\( \psi_0(\Omega_3+\psi_2(\Omega_3+\psi_2(\Omega_3))) \)</td>
+                        <td>\( \psi_\Omega(\varepsilon_{\Omega_2+1}^2) \)</td>
+                        <td>\( \Psi_\Omega^0(\varepsilon_{\Omega_2+1}2) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0289</td>
+                        <td>\( \psi_0(\Omega_3+\psi_2(\Omega_3+\psi_2(\Omega_3+\psi_2(\Omega_3)))) \)</td>
+                        <td>\( \psi_\Omega(\varepsilon_{\Omega_2+1}^{\varepsilon_{\Omega_2+1}}) \)</td>
+                        <td>\( \Psi_\Omega^0(\varepsilon_{\Omega_2+1}^2) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0290</td>
+                        <td>\( \psi_0(\Omega_32) \)</td>
+                        <td>\( \psi_\Omega(\varepsilon_{\Omega_2+2}) \)</td>
+                        <td>\( \Psi_\Omega^0(\varepsilon_{\Omega_2+2}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0291</td>
+                        <td>\( \psi_0(\Omega_3^2) \)</td>
+                        <td>\( \psi_\Omega(\zeta_{\Omega_2+1}) \)</td>
+                        <td>\( \Psi_\Omega^0(\zeta_{\Omega_2+1}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0292</td>
+                        <td>\( \psi_0(\Omega_3^{\Omega_3}) \)</td>
+                        <td>\( \psi_\Omega(\psi_{\Omega_3}(0)) \)</td>
+                        <td>\( \Psi_\Omega^0(\Psi_{\Omega_3}^0(0)) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0293</td>
+                        <td>\( \psi_0(\Omega_3^{\Omega_3+1}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_3) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_3) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0294</td>
+                        <td>\( \psi_0(\Omega_3^{\Omega_32}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_3^{\Omega_3}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_3^2) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0295</td>
+                        <td>\( \psi_0(\Omega_3^{\Omega_3^{\Omega_3}}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_3^{\Omega_3^{\Omega_3}}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_3^{\Omega_3}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0296</td>
+                        <td>\( \psi_0(\Omega_4) \)</td>
+                        <td>\( \psi_\Omega(\varepsilon_{\Omega_3+1}) \)</td>
+                        <td>\( \Psi_\Omega^0(\varepsilon_{\Omega_3+1}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0297</td>
+                        <td>\( \psi_0(\Omega_4^{\Omega_4+1}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_4) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_4) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0298</td>
+                        <td>\( \psi_0(\Omega_5) \)</td>
+                        <td>\( \psi_\Omega(\varepsilon_{\Omega_4+1}) \)</td>
+                        <td>\( \Psi_\Omega^0(\varepsilon_{\Omega_4+1}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0299</td>
+                        <td>\( \psi_0(\Omega_6) \)</td>
+                        <td>\( \psi_\Omega(\varepsilon_{\Omega_5+1}) \)</td>
+                        <td>\( \Psi_\Omega^0(\varepsilon_{\Omega_5+1}) \)</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>${S(8)}Ordinal #0200 is also known as the "Bachmann-Howard Ordinal" (BHO)</p>
+            <h2>#0300~#0400 - \( \psi_0(\Omega_\omega)-\psi_0(\Omega_{\Omega_{\Omega_{\cdot_{\cdot_\cdot}}}}) \)</h2>
+            <b>#0300~#0309 - \( \psi_0(\Omega_\omega)-\psi_0(\varepsilon_{\Omega_\omega+1}) \)</b>
+            <p>${S(8)}In this part, ordinals will be represented in the same notation as in the previous part.</p>
+            <table>
+                <tbody>
+                    <tr>
+                        <th>#</th>
+                        <th>Buchholz</th>
+                        <th>Rathjen M</th>
+                        <th>Rathjen K</th>
+                    </tr>
+                    <tr>
+                        <td>0300</td>
+                        <td>\( SBO=\psi_0(\Omega_\omega) \)</td>
+                        <td>\( \psi_\Omega(\Omega_\omega) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_\omega) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0301</td>
+                        <td>\( \psi_0(\Omega_\omega+\Omega^\Omega) \)</td>
+                        <td>\( \psi_\Omega(\Omega_\omega+1) \)</td>
+                        <td>\( \Psi_\Omega^0(\Psi_\Omega^0(\Omega_\omega)) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0302</td>
+                        <td>\( \psi_0(\Omega_\omega+\Omega^{\Omega+1}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_\omega+\Omega) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega+\Psi_\Omega^0(\Omega_\omega)) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0303</td>
+                        <td>\( \psi_0(\Omega_\omega+\Omega_2) \)</td>
+                        <td>\( \psi_\Omega(\Omega_\omega+\varepsilon_{\psi_\Omega(\Omega_\omega)+1}) \)</td>
+                        <td>\( \Psi_\Omega^0(\varepsilon_{\Psi_\Omega^0(\Omega_\omega)+1}+\Psi_\Omega^0(\Omega_\omega)) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0304</td>
+                        <td>\( \psi_0(\Omega_\omega+\Omega_2^{\Omega_2+1}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_\omega+\Omega_2) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_2+\Psi_\Omega^0(\Omega_\omega)) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0305</td>
+                        <td>\( \psi_0(\Omega_\omega+\Omega_3) \)</td>
+                        <td>\( \psi_\Omega(\Omega_\omega+\varepsilon_{\psi_{\Omega_2}(\Omega_\omega)+1}) \)</td>
+                        <td>\( \Psi_\Omega^0(\varepsilon_{\Psi_{\Omega_2}^0(\Omega_\omega)+1}+\Psi_\Omega^0(\Omega_\omega)) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0306</td>
+                        <td>\( \psi_0(\Omega_\omega+\Omega_3^{\Omega_3+1}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_\omega+\Omega_3) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_3+\Psi_\Omega^0(\Omega_\omega)) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0307</td>
+                        <td>\( \psi_0(\Omega_\omega2) \)</td>
+                        <td>\( \psi_\Omega(\Omega_\omega2) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_\omega+1) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0308</td>
+                        <td>\( \psi_0(\Omega_\omega^2) \)</td>
+                        <td>\( \psi_\Omega(\Omega_\omega^2) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_\omega2) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0309</td>
+                        <td>\( \psi_0(\Omega_\omega^{\Omega_\omega}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_\omega^{\Omega_\omega}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_\omega^2) \)</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>${S(8)}Ordinal #0300 is also known as the "Buchholz Ordinal" (BO), while I prefer the name "Small Buchholz Ordinal" (SBO).</p>
+            <b>#0310~#0400 - \( \psi_0(\Omega_{\omega+1})-\psi_0(\Omega_{\Omega_{\Omega_{\cdot_{\cdot_\cdot}}}}) \)</b>
+            <p>${S(8)}We have reached \( \psi_0(\varepsilon_{\Omega_\omega+1}) \), which is known as the "Takeuti-Feferman-Buchholz Ordinal" (TFBO) and this name was purposed by David Madore${C(4)}. Unfortunately, this is the largest ordinal the original Buchholz function can represent. To continue using this function to represent ordinals, we have to use the extension of this function called the "Extended Buchholz function" proposed by Denis Maksudov${C(5)}. The function is still notated as \( \psi \) while I use the symbol with an asterisk as a superscript \( \psi^* \) outside this article for specification.</p>
+            <p>${S(8)}In this part, ordinals will be represented in the same notation as in the previous part except the "Buchholz" column is "Extended Buchholz" and the "Extended Buchholz function" is used instead of the original Buchholz function. Note that some WEIRD ordinals are introduced to demonstrate how the two Rathjen's OCFs works.</p>
+            <table>
+                <tbody>
+                    <tr>
+                        <th>#</th>
+                        <th>Extended Buchholz</th>
+                        <th>Rathjen M</th>
+                        <th>Rathjen K</th>
+                    </tr>
+                    <tr>
+                        <td>0310</td>
+                        <td>\( TFBO=\psi_0(\Omega_{\omega+1}) \)</td>
+                        <td>\( \psi_\Omega(\varepsilon_{\Omega_\omega+1}) \)</td>
+                        <td>\( \Psi_\Omega^0(\varepsilon_{\Omega_\omega+1}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0311</td>
+                        <td>\( \psi_0(\Omega_{\omega+1}+\Omega_\omega) \)</td>
+                        <td>\( \psi_\Omega(\varepsilon_{\Omega_\omega+1}+\Omega_\omega) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_\omega+\Psi_\Omega^0(\varepsilon_{\Omega_\omega+1})) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0312</td>
+                        <td>\( \psi_0(\Omega_{\omega+1}+\psi_\omega(\Omega_{\omega+1})) \)</td>
+                        <td>\( \psi_\Omega(\varepsilon_{\Omega_\omega+1}2) \)</td>
+                        <td>\( \Psi_\Omega^0(\varepsilon_{\Omega_\omega+1}+1) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0313</td>
+                        <td>\( \psi_0(\Omega_{\omega+1}+\psi_\omega(\Omega_{\omega+1}+\psi_\omega(\Omega_{\omega+1}))) \)</td>
+                        <td>\( \psi_\Omega(\varepsilon_{\Omega_\omega+1}^2) \)</td>
+                        <td>\( \Psi_\Omega^0(\varepsilon_{\Omega_\omega+1}2) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0314</td>
+                        <td>\( \psi_0(\Omega_{\omega+1}2) \)</td>
+                        <td>\( \psi_\Omega(\varepsilon_{\Omega_\omega+2}) \)</td>
+                        <td>\( \Psi_\Omega^0(\varepsilon_{\Omega_\omega+2}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0315</td>
+                        <td>\( \psi_0(\Omega_{\omega+1}^2) \)</td>
+                        <td>\( \psi_\Omega(\zeta_{\Omega_\omega+1}) \)</td>
+                        <td>\( \Psi_\Omega^0(\zeta_{\Omega_\omega+1}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0316</td>
+                        <td>\( \psi_0(\Omega_{\omega+1}^{\Omega_{\omega+1}}) \)</td>
+                        <td>\( \psi_\Omega(\psi_{\Omega_{\omega+1}}(0)) \)</td>
+                        <td>\( \Psi_\Omega^0(\Psi_{\Omega_{\omega+1}}^0(0)) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0317</td>
+                        <td>\( \psi_0(\Omega_{\omega+1}^{\Omega_{\omega+1}+1}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_{\omega+1}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_{\omega+1}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0318</td>
+                        <td>\( \psi_0(\Omega_{\omega+2}) \)</td>
+                        <td>\( \psi_\Omega(\varepsilon_{\Omega_{\omega+1}+1}) \)</td>
+                        <td>\( \Psi_\Omega^0(\varepsilon_{\Omega_{\omega+1}+1}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0319</td>
+                        <td>\( \psi_0(\Omega_{\omega+3}) \)</td>
+                        <td>\( \psi_\Omega(\varepsilon_{\Omega_{\omega+2}+1}) \)</td>
+                        <td>\( \Psi_\Omega^0(\varepsilon_{\Omega_{\omega+2}+1}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0320</td>
+                        <td>\( \psi_0(\Omega_{\omega2}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_{\omega2}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_{\omega2}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0321</td>
+                        <td>\( \psi_0(\Omega_{\omega2}+\Omega_\omega) \)</td>
+                        <td>\( \psi_\Omega(\Omega_{\omega2}+\Omega_\omega) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_\omega+\Psi_\Omega^0(\Omega_{\omega2})) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0322</td>
+                        <td>\( \psi_0(\Omega_{\omega2}+\Omega_{\omega+1}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_{\omega2}+\varepsilon_{\psi_{\Omega_{\omega+1}}(\Omega_{\omega2})+1}) \)</td>
+                        <td>\( \Psi_\Omega^0(\varepsilon_{\Psi_{\Omega_{\omega+1}}^0(\Omega_{\omega2})+1}+\Psi_\Omega^0(\Omega_{\omega2})) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0323</td>
+                        <td>\( \psi_0(\Omega_{\omega2}+\Omega_{\omega+2}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_{\omega2}+\varepsilon_{\psi_{\Omega_{\omega+2}}(\Omega_{\omega2})+1}) \)</td>
+                        <td>\( \Psi_\Omega^0(\varepsilon_{\Psi_{\Omega_{\omega+2}}^0(\Omega_{\omega2})+1}+\Psi_\Omega^0(\Omega_{\omega2})) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0324</td>
+                        <td>\( \psi_0(\Omega_{\omega2}2) \)</td>
+                        <td>\( \psi_\Omega(\Omega_{\omega2}2) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_{\omega2}+1) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0325</td>
+                        <td>\( \psi_0(\Omega_{\omega2+1}) \)</td>
+                        <td>\( \psi_\Omega(\varepsilon_{\Omega_{\omega2}+1}) \)</td>
+                        <td>\( \Psi_\Omega^0(\varepsilon_{\Omega_{\omega2}+1}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0326</td>
+                        <td>\( \psi_0(\Omega_{\omega3}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_{\omega3}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_{\omega3}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0327</td>
+                        <td>\( \psi_0(\Omega_{\omega^2}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_{\omega^2}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_{\omega^2}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0328</td>
+                        <td>\( \psi_0(\Omega_{\omega^\omega}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_{\omega^\omega}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_{\omega^\omega}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0329</td>
+                        <td>\( \psi_0(\Omega_{\omega^{\omega^\omega}}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_{\omega^{\omega^\omega}}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_{\omega^{\omega^\omega}}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0330</td>
+                        <td>\( \psi_0(\Omega_{\psi_0(\Omega)}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_{\varepsilon_0}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_{\varepsilon_0}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0331</td>
+                        <td>\( \psi_0(\Omega_{\psi_0(\Omega^\Omega)}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_{\psi_\Omega(0)}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_{\Psi_\Omega^0(0)}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0332</td>
+                        <td>\( \psi_0(\Omega_{\psi_0(\Omega^\Omega)+1}) \)</td>
+                        <td>\( \psi_\Omega(\varepsilon_{\Omega_{\psi_\Omega(0)}+1}) \)</td>
+                        <td>\( \Psi_\Omega^0(\varepsilon_{\Omega_{\Psi_\Omega^0(0)}+1}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0333</td>
+                        <td>\( \psi_0(\Omega_{\psi_0(\Omega^\Omega)+1}^{\Omega_{\psi_0(\Omega^\Omega)+1}}) \)</td>
+                        <td>\( \psi_\Omega(\psi_{\Omega_{\psi_\Omega(0)+1}}(0)) \)</td>
+                        <td>\( \Psi_\Omega^0(\Psi_{\Omega_{\Psi_\Omega^0(0)+1}}^0(0)) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0334</td>
+                        <td>\( \psi_0(\Omega_{\psi_0(\Omega^{\Omega+1})}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_{\psi_\Omega(\Omega)}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_{\Psi_\Omega^0(\Omega)}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0335</td>
+                        <td>\( \psi_0(\Omega_{\psi_0(\Omega^{\Omega+1})+1}) \)</td>
+                        <td>\( \psi_\Omega(\varepsilon_{\Omega_{\psi_\Omega(\Omega)}+1}) \)</td>
+                        <td>\( \Psi_\Omega^0(\varepsilon_{\Omega_{\Psi_\Omega^0(\Omega)}+1}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0336</td>
+                        <td>\( \psi_0(\Omega_{\psi_0(\Omega^{\Omega+1})+1}^{\Omega_{\psi_0(\Omega^{\Omega+1})+1}}) \)</td>
+                        <td>\( \psi_\Omega(\psi_{\Omega_{\psi_\Omega(\Omega)+1}}(0)) \)</td>
+                        <td>\( \Psi_\Omega^0(\Psi_{\Omega_{\Psi_\Omega^0(\Omega)+1}}^0(0)) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0337</td>
+                        <td>\( \psi_0(\Omega_{\psi_0(\Omega^{\Omega2})}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_{\psi_\Omega(\Omega^\Omega)}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_{\Psi_\Omega^0(\Omega^2)}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0338</td>
+                        <td>\( \psi_0(\Omega_{\psi_0(\Omega^{\Omega^2})}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_{\psi_\Omega(\Omega^{\Omega^2})}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_{\Psi_\Omega^0(\Omega^3)}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0339</td>
+                        <td>\( \psi_0(\Omega_{\psi_0(\Omega^{\Omega^\Omega})}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_{\psi_\Omega(\Omega^{\Omega^\Omega})}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_{\Psi_\Omega^0(\Omega^\Omega)}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0340</td>
+                        <td>\( \psi_0(\Omega_{\psi_0(\Omega_2)}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_{\psi_\Omega(\varepsilon_{\Omega+1})}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_{\Psi_\Omega^0(\varepsilon_{\Omega+1})}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0341</td>
+                        <td>\( \psi_0(\Omega_{\psi_0(\Omega_2^{\Omega_2})}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_{\psi_\Omega(\psi_{\Omega_2}(0))}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_{\Psi_\Omega^0(\Psi_{\Omega_2}^0(0))}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0342</td>
+                        <td>\( \psi_0(\Omega_{\psi_0(\Omega_2^{\Omega_2})+1}) \)</td>
+                        <td>\( \psi_\Omega(\varepsilon_{\Omega_{\psi_\Omega(\psi_{\Omega_2}(0))}+1}) \)</td>
+                        <td>\( \Psi_\Omega^0(\varepsilon_{\Omega_{\Psi_\Omega^0(\Psi_{\Omega_2}^0(0))}+1}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0343</td>
+                        <td>\( \psi_0(\Omega_{\psi_0(\Omega_2^{\Omega_2})+1}^{\Omega_{\psi_0(\Omega_2^{\Omega_2})+1}}) \)</td>
+                        <td>\( \psi_\Omega(\psi_{\Omega_{\psi_\Omega(\psi_{\Omega_2}(0))+1}}(0)) \)</td>
+                        <td>\( \Psi_\Omega^0(\Psi_{\Omega_{\Psi_\Omega^0(\Psi_{\Omega_2}^0(0))+1}}^0(0)) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0344</td>
+                        <td>\( \psi_0(\Omega_{\psi_0(\Omega_2^{\Omega_2+1})}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_{\psi_\Omega(\Omega_2)}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_{\Psi_\Omega^0(\Omega_2)}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0345</td>
+                        <td>\( \psi_0(\Omega_{\psi_0(\Omega_2^{\Omega_22})}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_{\psi_\Omega(\Omega_2^{\Omega_2})}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_{\Psi_\Omega^0(\Omega_2^2)}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0346</td>
+                        <td>\( \psi_0(\Omega_{\psi_0(\Omega_2^{\Omega_2^2})}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_{\psi_\Omega(\Omega_2^{\Omega_2^2})}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_{\Psi_\Omega^0(\Omega_2^3)}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0347</td>
+                        <td>\( \psi_0(\Omega_{\psi_0(\Omega_2^{\Omega_2^{\Omega_2}})}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_{\psi_\Omega(\Omega_2^{\Omega_2^{\Omega_2}})}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_{\Psi_\Omega^0(\Omega_2^{\Omega_2})}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0348</td>
+                        <td>\( \psi_0(\Omega_{\psi_0(\Omega_3)}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_{\psi_\Omega(\varepsilon_{\Omega_2+1})}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_{\Psi_\Omega^0(\varepsilon_{\Omega_2+1})}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0349</td>
+                        <td>\( \psi_0(\Omega_{\psi_0(\Omega_4)}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_{\psi_\Omega(\varepsilon_{\Omega_3+1})}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_{\Psi_\Omega^0(\varepsilon_{\Omega_3+1})}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0350</td>
+                        <td>\( \psi_0(\Omega_{\psi_0(\Omega_\omega)}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_{\psi_\Omega(\Omega_\omega)}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_{\Psi_\Omega^0(\Omega_\omega)}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0351</td>
+                        <td>\( \psi_0(\Omega_{\psi_0(\Omega_\omega)+1}) \)</td>
+                        <td>\( \psi_\Omega(\varepsilon_{\Omega_{\psi_\Omega(\Omega_\omega)}+1}) \)</td>
+                        <td>\( \Psi_\Omega^0(\varepsilon_{\Omega_{\Psi_\Omega^0(\Omega_\omega)}+1}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0352</td>
+                        <td>\( \psi_0(\Omega_{\psi_0(\Omega_\omega)+1}^{\Omega_{\psi_0(\Omega_\omega)+1}}) \)</td>
+                        <td>\( \psi_\Omega(\psi_{\Omega_{\psi_\Omega(\Omega_\omega)+1}}(0)) \)</td>
+                        <td>\( \Psi_\Omega^0(\Psi_{\Omega_{\Psi_\Omega^0(\Omega_\omega)+1}}^0(0)) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0353</td>
+                        <td>\( \psi_0(\Omega_{\psi_0(\Omega_{\omega+1})}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_{\psi_\Omega(\varepsilon_{\Omega_\omega+1})}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_{\Psi_\Omega^0(\varepsilon_{\Omega_\omega+1})}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0354</td>
+                        <td>\( \psi_0(\Omega_{\psi_0(\Omega_{\omega+1}^{\Omega_{\omega+1}+1})}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_{\psi_\Omega(\Omega_{\omega+1})}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_{\Psi_\Omega^0(\Omega_{\omega+1})}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0355</td>
+                        <td>\( \psi_0(\Omega_{\psi_0(\Omega_{\omega2})}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_{\psi_\Omega(\Omega_{\omega2})}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_{\Psi_\Omega^0(\Omega_{\omega2})}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0356</td>
+                        <td>\( \psi_0(\Omega_{\psi_0(\Omega_{\psi_0(\Omega)})}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_{\psi_\Omega(\Omega_{\varepsilon_0})}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_{\Psi_\Omega^0(\Omega_{\varepsilon_0})}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0357</td>
+                        <td>\( \psi_0(\Omega_{\psi_0(\Omega_{\psi_0(\Omega^\Omega)})}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_{\psi_\Omega(\Omega_{\psi_\Omega(0)})}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_{\Psi_\Omega^0(\Omega_{\Psi_\Omega^0(0)})}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0358</td>
+                        <td>\( \psi_0(\Omega_{\psi_0(\Omega_{\psi_0(\Omega_2)})}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_{\psi_\Omega(\Omega_{\psi_\Omega(\varepsilon_{\Omega+1})})}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_{\Psi_\Omega^0(\Omega_{\Psi_\Omega^0(\varepsilon_{\Omega+1})})}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0359</td>
+                        <td>\( \psi_0(\Omega_{\psi_0(\Omega_{\psi_0(\Omega_\omega)})}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_{\psi_\Omega(\Omega_{\psi_\Omega(\Omega_\omega)})}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_{\Psi_\Omega^0(\Omega_{\Psi_\Omega^0(\Omega_\omega)})}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0360</td>
+                        <td>\( \psi_0(\Omega_\Omega) \)</td>
+                        <td>\( \psi_\Omega(\Omega_\Omega) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_\Omega) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0361</td>
+                        <td>\( \psi_0(\Omega_{\Omega+1}) \)</td>
+                        <td>\( \psi_\Omega(\varepsilon_{\Omega_\Omega+1}) \)</td>
+                        <td>\( \Psi_\Omega^0(\varepsilon_{\Omega_\Omega+1}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0362</td>
+                        <td>\( \psi_0(\Omega_{\Omega+1}^{\Omega_{\Omega+1}+1}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_{\Omega+1}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_{\Omega+1}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0363</td>
+                        <td>\( \psi_0(\Omega_{\Omega+\omega}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_{\Omega+\omega}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_{\Omega+\omega}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0364</td>
+                        <td>\( \psi_0(\Omega_{\Omega+\psi_0(\Omega_{\Omega+\omega})}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_{\Omega+\psi_\Omega(\Omega_{\Omega+\omega})}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_{\Omega+\Psi_\Omega^0(\Omega_{\Omega+\omega})}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0365</td>
+                        <td>\( \psi_0(\Omega_{\Omega2}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_{\Omega2}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_{\Omega2}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0366</td>
+                        <td>\( \psi_0(\Omega_{\Omega\omega}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_{\Omega\omega}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_{\Omega\omega}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0367</td>
+                        <td>\( \psi_0(\Omega_{\Omega^2}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_{\Omega^2}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_{\Omega^2}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0368</td>
+                        <td>\( \psi_0(\Omega_{\Omega^\Omega}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_{\Omega^\Omega}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_{\Omega^\Omega}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0369</td>
+                        <td>\( \psi_0(\Omega_{\Omega^{\Omega^\Omega}}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_{\Omega^{\Omega^\Omega}}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_{\Omega^{\Omega^\Omega}}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0370</td>
+                        <td>\( \psi_0(\Omega_{\psi_1(\Omega_2)}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_{\varepsilon_{\Omega+1}}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_{\varepsilon_{\Omega+1}}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0371</td>
+                        <td>\( \psi_0(\Omega_{\psi_1(\Omega_2^{\Omega_2})}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_{\psi_{\Omega_2}(0)}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_{\Psi_{\Omega_2}^0(0)}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0372</td>
+                        <td>\( \psi_0(\Omega_{\psi_1(\Omega_2^{\Omega_2})+1}) \)</td>
+                        <td>\( \psi_\Omega(\varepsilon_{\Omega_{\psi_{\Omega_2}(0)}+1}) \)</td>
+                        <td>\( \Psi_\Omega^0(\varepsilon_{\Omega_{\Psi_{\Omega_2}^0(0)}+1}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0373</td>
+                        <td>\( \psi_0(\Omega_{\psi_1(\Omega_2^{\Omega_2})+1}^{\Omega_{\psi_1(\Omega_2^{\Omega_2})+1}}) \)</td>
+                        <td>\( \psi_\Omega(\psi_{\Omega_{\psi_{\Omega_2}(0)+1}}(0)) \)</td>
+                        <td>\( \Psi_\Omega^0(\Psi_{\Omega_{\Psi_{\Omega_2}^0(0)+1}}^0(0)) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0374</td>
+                        <td>\( \psi_0(\Omega_{\psi_1(\Omega_2^{\Omega_2+1})}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_{\psi_{\Omega_2}(\Omega_2)}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_{\Psi_{\Omega_2}^0(\Omega_2)}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0375</td>
+                        <td>\( \psi_0(\Omega_{\psi_1(\Omega_2^{\Omega_22})}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_{\psi_{\Omega_2}(\Omega_2^{\Omega_2})}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_{\Psi_{\Omega_2}^0(\Omega_2^2)}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0376</td>
+                        <td>\( \psi_0(\Omega_{\psi_1(\Omega_2^{\Omega_2^{\Omega_2}})}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_{\psi_{\Omega_2}(\Omega_2^{\Omega_2^{\Omega_2}})}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_{\Psi_{\Omega_2}^0(\Omega_2^{\Omega_2})}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0377</td>
+                        <td>\( \psi_0(\Omega_{\psi_1(\Omega_3)}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_{\psi_{\Omega_2}(\varepsilon_{\Omega_2+1})}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_{\Psi_{\Omega_2}^0(\varepsilon_{\Omega_2+1})}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0378</td>
+                        <td>\( \psi_0(\Omega_{\psi_1(\Omega_\omega)}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_{\psi_{\Omega_2}(\Omega_\omega)}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_{\Psi_{\Omega_2}^0(\Omega_\omega)}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0379</td>
+                        <td>\( \psi_0(\Omega_{\psi_1(\Omega_{\psi_1(\Omega_\omega)})}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_{\psi_{\Omega_2}(\Omega_{\psi_{\Omega_2}(\Omega_\omega)})}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_{\Psi_{\Omega_2}^0(\Omega_{\Psi_{\Omega_2}^0(\Omega_\omega)})}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0380</td>
+                        <td>\( \psi_0(\Omega_{\Omega_2}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_{\Omega_2}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_{\Omega_2}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0381</td>
+                        <td>\( \psi_0(\Omega_{\Omega_22}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_{\Omega_22}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_{\Omega_22}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0382</td>
+                        <td>\( \psi_0(\Omega_{\psi_2(\Omega_3)}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_{\varepsilon_{\Omega_2+1}}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_{\varepsilon_{\Omega_2+1}}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0383</td>
+                        <td>\( \psi_0(\Omega_{\psi_2(\Omega_3^{\Omega_3+1})}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_{\psi_{\Omega_3}(\Omega_3)}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_{\Psi_{\Omega_3}^0(\Omega_3)}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0384</td>
+                        <td>\( \psi_0(\Omega_{\psi_2(\Omega_\omega)}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_{\psi_{\Omega_3}(\Omega_\omega)}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_{\Psi_{\Omega_3}^0(\Omega_\omega)}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0385</td>
+                        <td>\( \psi_0(\Omega_{\psi_2(\Omega_{\psi_2(\Omega_\omega)})}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_{\psi_{\Omega_3}(\Omega_{\psi_{\Omega_3}(\Omega_\omega)})}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_{\Psi_{\Omega_3}^0(\Omega_{\Psi_{\Omega_3}^0(\Omega_\omega)})}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0386</td>
+                        <td>\( \psi_0(\Omega_{\Omega_3}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_{\Omega_3}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_{\Omega_3}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0387</td>
+                        <td>\( \psi_0(\Omega_{\psi_3(\Omega_\omega)}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_{\psi_{\Omega_4}(\Omega_\omega)}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_{\Psi_{\Omega_4}^0(\Omega_\omega)}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0388</td>
+                        <td>\( \psi_0(\Omega_{\psi_3(\Omega_{\psi_3(\Omega_\omega)})}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_{\psi_{\Omega_4}(\Omega_{\psi_{\Omega_4}(\Omega_\omega)})}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_{\Psi_{\Omega_4}^0(\Omega_{\Psi_{\Omega_4}^0(\Omega_\omega)})}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0389</td>
+                        <td>\( \psi_0(\Omega_{\Omega_4}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_{\Omega_4}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_{\Omega_4}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0390</td>
+                        <td>\( \psi_0(\Omega_{\Omega_\omega}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_{\Omega_\omega}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_{\Omega_\omega}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0391</td>
+                        <td>\( \psi_0(\Omega_{\Omega_{\omega+1}}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_{\Omega_{\omega+1}}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_{\Omega_{\omega+1}}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0392</td>
+                        <td>\( \psi_0(\Omega_{\Omega_{\psi_0(\Omega)}}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_{\Omega_{\varepsilon_0}}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_{\Omega_{\varepsilon_0}}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0393</td>
+                        <td>\( \psi_0(\Omega_{\Omega_{\psi_0(\Omega^\Omega)}}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_{\Omega_{\psi_\Omega(0)}}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_{\Omega_{\Psi_\Omega^0(0)}}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0394</td>
+                        <td>\( \psi_0(\Omega_{\Omega_{\psi_0(\Omega_{\Omega_\omega})}}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_{\Omega_{\psi_\Omega(\Omega_{\Omega_\omega})}}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_{\Omega_{\Psi_\Omega^0(\Omega_{\Omega_\omega})}}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0395</td>
+                        <td>\( \psi_0(\Omega_{\Omega_\Omega}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_{\Omega_\Omega}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_{\Omega_\Omega}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0396</td>
+                        <td>\( \psi_0(\Omega_{\Omega_{\Omega_2}}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_{\Omega_{\Omega_2}}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_{\Omega_{\Omega_2}}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0397</td>
+                        <td>\( \psi_0(\Omega_{\Omega_{\Omega_\omega}}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_{\Omega_{\Omega_\omega}}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_{\Omega_{\Omega_\omega}}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0398</td>
+                        <td>\( \psi_0(\Omega_{\Omega_{\Omega_\Omega}}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_{\Omega_{\Omega_\Omega}}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_{\Omega_{\Omega_\Omega}}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0399</td>
+                        <td>\( \psi_0(\Omega_{\Omega_{\Omega_{\Omega_\Omega}}}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_{\Omega_{\Omega_{\Omega_\Omega}}}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_{\Omega_{\Omega_{\Omega_\Omega}}}) \)</td>
+                    </tr>
+                    <tr>
+                        <td>0400</td>
+                        <td>\( LBO=\psi_0(\Omega_{\Omega_{\Omega_{\cdot_{\cdot_\cdot}}}}) \)</td>
+                        <td>\( \psi_\Omega(\Omega_{\Omega_{\Omega_{\cdot_{\cdot_\cdot}}}}) \)</td>
+                        <td>\( \Psi_\Omega^0(\Omega_{\Omega_{\Omega_{\cdot_{\cdot_\cdot}}}}) \)</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>${S(8)}Ordinal #0400 is also known as the "Extended Buchholz Ordinal" (EBO) and this name was purposed by 叢武 (read as "Muratake")${C(6)}, while I prefer XBO as the abbreviation. I call this ordinal the "Large Buchholz Ordinal" (LBO). This is the largest ordinal the Extended Buchholz function can represent. To represent larger ordinals, we have to use the two Rathjen's OCFs.</p>
+            <br>
+            <p>${S(8)}In the next article, I will show my analysis from \( \psi_\Omega(E_0) \) to \( \psi_\Omega(\psi_{\chi_\omega(0)}(0)) \).</p>
+            <br>
+            <p>${S(8)}EDIT 2024/04/06: According to my FURTHER analysis, some of the analyses on Rathjen K in this article (Starting from #0200) is WRONG. I will fix them as I understand deeper about this OCF.</p>
+            <p><b>${S(8)}EDIT 2024/05/09: I have fixed all of my wrong analyses.</b></p>
+        </content>
+        <citation>
+            <!-- 0001 -->Buchholz, W. (1986). <a href="https://www.sciencedirect.com/science/article/pii/0168007286900527">A new system of proof-theoretic ordinal functions.</a> Annals of Pure and Applied Logic, 32, 195-207. Retrieved 2023-12-06. https://doi.org/10.1016/0168-0072(86)90052-7
+            <!-- 0002 -->Rathjen, M. (1990). <a href="https://www1.maths.leeds.ac.uk/~rathjen/Ord_Notation_Weakly_Mahlo.pdf">Ordinal notations based on a weakly Mahlo Cardinal.</a> Archive for Mathematical Logic, 29(4), 249-263. Retrieved 2023-12-06. https://doi.org/10.1007/bf01651328
+            <!-- 0003 -->Rathjen, M. (1994). <a href="https://www1.maths.leeds.ac.uk/~rathjen/Ehab.pdf">Proof theory of reflection.</a> Annals of Pure and Applied Logic, 68(2), 181-224. Retrieved 2023-12-06. https://doi.org/10.1016/0168-0072(94)90074-4
+            <!-- 0004 --><a href="https://neugierde.github.io/cantors-attic/Buchholz%27s_%CF%88_functions#takeuti-feferman-buchholz-ordinal">Buchholz's \( \psi \) functions.</a> Cantor's Attic. Retrieved 2023-12-06.
+            <!-- 0005 -->Denis Maksudov. <a href="https://sites.google.com/site/travelingtotheinfinity/the-extension-of-buchholz-s-function">The extended Wilfried Buchholz's functions.</a> Traveling To The Infinity. Retrieved 2023-12-06.
+            <!-- 0006 -->叢武. <a href="https://x.com/muratake8901341/status/1286145244849823744">ゆのしふなんて無かった.</a> Twitter. Retrieved 2023-12-06.
+        </citation>
+    </body>
+</html>

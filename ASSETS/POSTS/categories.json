@@ -1,0 +1,69 @@
+{
+    "blogs"     : {
+        ""          : {
+            "en"        : "All",
+            "zh-Hans"   : "全部",
+            "zh-Hant"   : "全部",
+            "jp"        : "全て"
+        },
+        "news"      : {
+            "en"        : "News",
+            "zh-Hans"   : "新闻",
+            "zh-Hant"   : "新聞",
+            "jp"        : "ニュース"
+        },
+        "other"     : {
+            "en"        : "Miscellaneous",
+            "zh-Hans"   : "杂谈",
+            "zh-Hant"   : "雜談",
+            "jp"        : "雑談"
+        },
+        "article"   : {
+            "en"        : "Articles",
+            "zh-Hans"   : "文章",
+            "zh-Hant"   : "文章",
+            "jp"        : "記事"
+        }
+    },
+    "articles"  : {
+        ""          : {
+            "en"        : "All",
+            "zh-Hans"   : "全部",
+            "zh-Hant"   : "全部",
+            "jp"        : "全て"
+        },
+        "game"      : {
+            "en"        : "Games",
+            "zh-Hans"   : "游戏",
+            "zh-Hant"   : "遊戲",
+            "jp"        : "ゲーム"
+        },
+        "story"     : {
+            "en"        : "Stories",
+            "zh-Hans"   : "故事",
+            "zh-Hant"   : "故事",
+            "jp"        : "物語"
+        },
+        "math"      : {
+            "en"        : "Mathematics",
+            "zh-Hans"   : "数学",
+            "zh-Hant"   : "數學",
+            "jp"        : "数学"
+        },
+        "other"     : {
+            "en"        : "Other",
+            "zh-Hans"   : "其他",
+            "zh-Hant"   : "其他",
+            "jp"        : "その他"
+        }
+    },
+    "series"    : [
+        {
+            "list"      : [1, 2, 3, 4, 5, 6],
+            "default"   : "en",
+            "name"      : {
+                "en"        : "My analysis of Buchholz's OCF and two Rathjen's OCFs"
+            }
+        }
+    ]
+}

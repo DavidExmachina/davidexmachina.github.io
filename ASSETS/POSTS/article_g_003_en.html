@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <content>
+            <p>${S(8)}Church-Kleene Ordinal \( \omega_1^{CK} \) is the first non-recursive, i.e. uncomputable ordinal. This ordinal is so large that even computers cannot "handle" and thus very important and known to a lot of googologists. Since the FGH (Fast Growing Hierarchy) function uses extremely large ordinals to represent extremely large numbers, I believe a lot of googologists wonder how fast-growing the function \( f_{\omega_1^{CK}}(n) \) is.</p>
+            <p>${S(8)}Just like other large ordinals, to make the FGH function work properly, we have to define a system of FS (Fundamental Sequence) for all the ordinals less than or equal to this ordinal. And defining such FS requires defining a "code" for each computable function.</p>
+            <p>${S(8)}In this article, I will define such encoding using <a href="https://en.wikipedia.org/wiki/Lambda_calculus">"Lambda Calculus"</a> and <a href="https://en.wikipedia.org/wiki/SKI_combinator_calculus">"SK Combinatory Logic"</a> to find the approximation between the function \( f_{\omega_1^{CK}}(n) \) under this encoding and the Busy Beaver Function \( \Sigma(n) \). I'm not going to explain all of these concepts in depth and will jump right into the most important concepts for this article instead. If you want to learn more about Lambda Calculus and SK Combinatory Logic, check out <a href="https://www.irif.fr/~mellies/mpri/mpri-ens/biblio/Selinger-Lambda-Calculus-Notes.pdf">this PDF file</a> and it will help a lot.</p>
+            <h2>How does \( \omega_1^{CK} \) work?</h2>
+            <p>${S(8)}\( \omega_1^{CK} \) uses an ordinal system called "Kleene's \( \mathcal{O} \)". Every element in this system is a natural number called "notation" assigned to a recursive, i.e. computable ordinal. For example:</p>
+            <p>${S(8)}\( {0}_\mathcal{O}=0 \)</p>
+            <p>${S(8)}\( {1}_\mathcal{O}=1 \)</p>
+            <p>${S(8)}\( {7}_\mathcal{O}=\omega \)</p>
+            <p>${S(8)}\( {69}_\mathcal{O}=\varepsilon_0 \)</p>
+            <p>${S(8)}\( {420}_\mathcal{O}=\Gamma_0 \)</p>
+            <p>${S(8)}\( {114514}_\mathcal{O}=BHO=\psi_0(\Omega_2) \)</p>
+            <p>${S(8)}\( {7355608}_\mathcal{O}=LBO=\psi_0^\ast(\Omega_{\Omega_{\Omega_\ddots}}) \)</p>
+            <p>${S(8)}\( {({10}^{100})}_\mathcal{O}=LRO=\Psi_\Omega^0(\varepsilon_{K+1}) \)</p>
+            <br>
+            <p>${S(8)}And then, we need to define an encoding that assigns every computable function that takes ONE natural number as input and returns ONE natural number with a natural number I call "code". (There are countably many computer codes and therefore countably many computable functions, which is the reason why the natural numbers are used) For example:</p>
+            <p>${S(8)}\( F_0(n)=n+1 \)</p>
+            <p>${S(8)}\( F_1(n)=2n \)</p>
+            <p>${S(8)}\( F_2(n)=n! \)</p>
+            <p>${S(8)}\( F_3(n)=7777777\uparrow\uparrow\uparrow\uparrow\uparrow\uparrow\uparrow n \)</p>
+            <p>${S(8)}\( F_4(n)=TREE(n) \)</p>
+            <br>
+            <p>${S(8)}The ordinal system is defined as follows:</p>
+            <p>${S(8)}1. Base Rule:</p>
+            <p>${S(8)}\( 0\in\mathcal{O}\land 0_\mathcal{O}=0 \)</p>
+            <br>
+            <p>${S(8)}2. Successor Rule:</p>
+            <p>${S(8)}\( n\in\mathcal{O}\land n_\mathcal{O}=\nu\Rightarrow 2^n\in\mathcal{O}\land{(2^n)}_\mathcal{O}=\nu+1\land n&lt;_\mathcal{O}2^n \)</p>
+            <br>
+            <p>${S(8)}3. Limit Rule:</p>
+            <p>${S(8)}\( \forall n\in\omega(F_m(n)\in\mathcal{O}\land F_m(n)&lt;_\mathcal{O}F_m(n+1))\Rightarrow \)</p>
+            <p>${S(8)}\( 3*5^m\in\mathcal{O}\land{(3*5^m)}_\mathcal{O}=sup\{k:k=F_m(n)\land n\in\omega\}\land\forall n\in\omega(F_m(n)&lt;_\mathcal{O}3*5^m) \)</p>
+            <br>
+            <p>${S(8)}Where \( \mathcal{O} \) is the set of all notations, \( n_\mathcal{O} \) is the operation that converts notations into their ordinals and \( &lt;_\mathcal{O} \) is the partial ordering of this system.</p>
+            <br>
+            <p>${S(8)}And the FS of \( \omega_1^{CK} \) is defined as follows:</p>
+            <p>${S(8)}\( a_0=0 \)</p>
+            <p>${S(8)}\( a_{n+1}=min\{b:b\in\mathcal{O}\land a_n&lt;b\land a_n&lt;_\mathcal{O}b\} \)</p>
+            <p>${S(8)}\( \omega_1^{CK}[n]={(a_n)}_\mathcal{O} \)</p>
+            <br>
+            <p>${S(8)}For ordinals \( \alpha&lt;\omega_1^{CK} \):</p>
+            <p>${S(8)}\( 0[n]=0 \)</p>
+            <p>${S(8)}\( (\alpha+1)[n]=\alpha \)</p>
+            <p>${S(8)}\( \alpha[n]={F_{min\{m:{(3*5^m)}_\mathcal{O}=\alpha\}}(n)}_\mathcal{O} \) if \( \alpha \) is a limit ordinal</p>
+            <br>
+            <p>${S(8)}I wonder why the notation is \( 2^n \) for successor ordinals and \( 3*5^m \) for limit ordinals. I think this is unnecessary to avoid repetition and makes the notations grow too fast. Encodings like this that use prime numbers and exponentiation are commonly used in mathematics. I think the notation of \( 2n \) for successor ordinals and \( 2m+1 \) for limit ordinals is sufficient. But since this does have some advantages for later definitions, we will focus on the original definition in this article.</p>
+            <p>${S(8)}So, it seems that we have already defined the FS of this ordinal. But wait! In this definition, the encoding for all computable functions is UNSPECIFIED. This is because the limit ordinal of this ordinal system is the same for all encodings. (Which is something I'm unable to prove or disprove)</p>
+            <p>${S(8)}Since the output of \( f_{\omega_1^{CK}}(n) \) depends on the FS and therefore the encoding we use, we have to define the encoding ourselves. But how do we do this? What does "computable" even mean? What are the models of computation?</p>
+            <p>${S(8)}It turns out there are 2 well-known models of computation. One is the "Turing Machine", and the other is "Lambda Calculus". They're proven to "do the same thing" by "Church-Turing Thesis". Since using Turing Machines isn't as intuitive and convenient compared to using Lambda Calculus, we use Lambda Calculus to define the encoding in this article.</p>
+            <h2>The Lambda Calculus</h2>
+            <p>${S(8)}Lambda Calculus is a formal system for expressing computation invented by Alonzo Church. Yes. The "Church" in the name "Church-Kleene Ordinal". If you're familiar with programming languages like Python, you can understand it as a system of anonymous functions. The composition of Lambda Terms in this system consists of the following 3 rules:</p>
+            <p>${S(8)}1. Variable Rule: A variable is a Lambda Term. For example: \( x_0,x_1,x_2\cdots \)</p>
+            <p>${S(8)}2. Abstraction Rule: If \( x \) is a variable and \( M \) is a Lambda Term, then \( \lambda x.M \) is a Lambda Term, which simply means to define a function.</p>
+            <p>${S(8)}3. Application Rule: If both \( M \) and \( N \) are Lambda Terms, then \( (MN) \) is a Lambda Term, which simply means to plug something into the function.</p>
+            <br>
+            <p>${S(8)}The following are examples of Lambda Terms. For the sake of readability, the terms are considered left-associative and the leftmost parentheses are omitted. For example: \( ((AB)C)=(AB)C=ABC \). Furthermore, multiple lambda abstractions are contracted. For example: \( \lambda x.\lambda y.x=\lambda xy.x \).</p>
+            <p>${S(8)}\( I=\lambda x.x \)</p>
+            <p>${S(8)}\( True=\lambda xy.x \)</p>
+            <p>${S(8)}\( False=\lambda xy.y \)</p>
+            <p>${S(8)}\( And=\lambda xy.xyx \)</p>
+            <p>${S(8)}\( Or=\lambda xy.xxy \)</p>
+            <p>${S(8)}\( 2_C=\lambda fx.f(fx) \)</p>
+            <br>
+            <p>${S(8)}The following are the 3 ways to evaluate every Lambda Term. They use Greek Alphabets, which looks kinda mythical to me. Why do they use such alphabets?</p>
+            <p>${S(8)}1. \( \alpha \)-conversion, which just changes names bound variables.</p>
+            <p>${S(8)}2. \( \beta \)-reduction, which just plugs inputs into functions.</p>
+            <p>${S(8)}3. \( \eta \)-reduction, which simplifies functions in very complicated ways. The simplest of which is \( \lambda x.Mx=_\eta M \), where \( x \) isn't a free variable of \( M \)</p>
+            <br>
+            <p>${S(8)}For example:</p>
+            <p>${S(8)}\( (\lambda x.x+1)4=_\beta 4+1=5 \)</p>
+            <p>${S(8)}\( \lambda xy.xxy=\lambda x.\lambda y.(xx)y=_\eta \lambda x.xx \)</p>
+            <br>
+            <p>${S(8)}You will sometimes see notations like \( \lambda x.x+1 \) and \( \lambda\alpha.\omega^\alpha \), which simply means \( f(n)=n+1 \) and \( f(\alpha)=\omega^\alpha \). This is because EVERY LAMBDA TERM IS A FUNCTION. But these notations look weird (At least for now). How to write \( n+1 \) and \( \omega^\alpha \) in Lambda Terms? We have to define everything like Booleans, numbers, operations, arrays and so on using Lambda Terms.</p>
+            <h2>Defining Numbers And Operations Using Lambda Calculus</h2>
+            <p>${S(8)}So, how to define numbers and operations using Lambda Calculus? Just like defining natural numbers in set theory, there are a lot of ways to do this. The most common of them is using Church Numerals:</p>
+            <p>${S(8)}\( 0_C=\lambda fx.x=_\alpha \lambda xy.y=False \)</p>
+            <p>${S(8)}\( 1_C=\lambda fx.fx=_\eta \lambda x.x=I \)</p>
+            <p>${S(8)}\( 2_C=\lambda fx.f(fx) \)</p>
+            <p>${S(8)}\( 3_C=\lambda fx.f(f(fx)) \)</p>
+            <p>${S(8)}\( 4_C=\lambda fx.f(f(f(fx))) \)</p>
+            <br>
+            <p>${S(8)}It's just applying a function \( f \) on \( x \) multiple times, which is really neat. Note that 0 and 1 are equivalent to something else, which can sometimes be confusing. Actually, there are a lot of such cases in Lambda Calculus.</p>
+            <p>${S(8)}The basic operations on numbers are defined as follows:</p>
+            <p>${S(8)}Succession: \( Suc(n)=\lambda nfx.f(nfx) \)</p>
+            <p>${S(8)}Addition: \( a+b=\lambda abfx.af(bfx) \)</p>
+            <p>${S(8)}Multiplication: \( a*b=\lambda abf.a(bf) \)</p>
+            <p>${S(8)}Exponentiation: \( a^b=\lambda ab.ba \)</p>
+            <br>
+            <p>${S(8)}You can check whether these definitions are correct. I think the exponentiation function is pretty neat because you just swap Lambda Terms. Now, we can define all the big numbers in this way. We can also define subtraction, division and so on, but the definition is complicated and not important for this article. You can check out the PDF above if you want to know more.</p>
+            <p>${S(8)}Remember, every Lambda Term is a function, which means all of the Church Numerals defined above are functions. For example, \( 3_C \) not only represents the natural number 3, but also represents the function \( f(n)=n^3 \).</p>
+            <h2>The SK Combinatory Logic</h2>
+            <p>${S(8)}We might want to convert Lambda Terms into codes right away, but we have a problem. Due to \( \alpha \)-conversion, we can rename the variables in Lambda Terms whatever we want and generate multiple codes:</p>
+            <p>${S(8)}\( True=\lambda xy.x=_\alpha\lambda ab.a=_\alpha\lambda\mu\nu.\mu=_\alpha\lambda\textrm{Æ}\textrm{Ø}.\textrm{Æ}=_\alpha\lambda\textrm{甲}\textrm{乙}.\textrm{甲}=_\alpha\lambda\textrm{あ}\textrm{い}.\textrm{あ} \)</p>
+            <br>
+            <p>${S(8)}However, there's a solution. We can plug a function into a function and get something that works the same as a function familiar to us:</p>
+            <p>${S(8)}\( True\ I\ a\ b=(\lambda xy.x)I\ a\ b=_\beta(\lambda y.I)a\ b=_\beta I\ b=(\lambda x.x)b=_\beta b \)</p>
+            <p>${S(8)}\( False\ a\ b=(\lambda xy.y)a\ b=_\beta(\lambda y.y)b=_\beta b \)</p>
+            <p>${S(8)}\( True\ I\ a\ b=False\ a\ b=b \)</p>
+            <p>${S(8)}\( True\ I=False \)</p>
+            <br>
+            <p>${S(8)}So, we can just combine functions without using variables. And this is the core of Combinatory Logic. The following is a list of Combinators, which are Lambda Terms that can be combined into other functions. They're sometimes named like birds, which is interesting:</p>
+            <p>${S(8)}Kestrel: \( K=\lambda xy.x=True \)</p>
+            <p>${S(8)}Starling: \( S=\lambda abc.ac(bc) \)</p>
+            <p>${S(8)}Ibis: \( I=\lambda x.x=1_C \)</p>
+            <p>${S(8)}Kite: \( KI=\lambda xy.y=False=0_C \)</p>
+            <p>${S(8)}Mockingbird: \( M=\lambda x.xx=Or \)</p>
+            <p>${S(8)}Cardinal (Yes. This is also a bird name.): \( C=\lambda abc.acb \)</p>
+            <p>${S(8)}Bluebird: \( B=\lambda abc.a(bc) \)</p>
+            <p>${S(8)}Thrush: \( T=\lambda ab.ba \)</p>
+            <p>${S(8)}Vireo: \( V=\lambda abc.cab \)</p>
+            <br>
+            <p>${S(8)}They act like "atoms" of Lambda Terms, forming the whole "Lambda Universe". The question is, how many of them do we need to construct every Lambda Term? It turns out that we only need 2 of them, which are Kestrel and Starling.</p>
+            <p>${S(8)}If 2 of them can create any Lambda Terms, it means we can convert every Lambda Term into only Kestrels and Starlings, or SK form. And this is the core of SK Combinatory Logic. Sometimes it's known as the SKI Combinatory Logic because Ibis is also used, but since \( I=SKK \), we don't need Ibis to be an "atom combinator", although it can still be used as a useful abbreviation.</p>
+            <p>${S(8)}By the way, I should mention that there is also the "Iota Combinator", which is defined as: \( \iota=\lambda x.xSK \). And also:</p>
+            <p>${S(8)}\( I=\iota\iota \)</p>
+            <p>${S(8)}\( K=\iota(\iota(\iota\iota)) \)</p>
+            <p>${S(8)}\( S=\iota(\iota(\iota(\iota\iota))) \)</p>
+            <br>
+            <p>${S(8)}This enables us to write every Lambda Term using only Iota Combinators, which is really neat. The PROBLEM is, this form uses much more combinators than SK form. It's important to minimize the code for later purposes. Therefore, we must use as few combinators as possible, which ultimately makes this form not worth it. So, in this article, we focus on the SK form.</p>
+            <p>${S(8)}So, how do we convert every Lambda Term into SK form? The conversion \( Con \) is defined as follows:</p>
+            <p>${S(8)}\( Con[x]=x \), \( x \) is a variable.</p>
+            <p>${S(8)}\( Con[AB]=Con[A]\ Con[B] \)</p>
+            <p>${S(8)}\( Con[\lambda x.x]=SKK \)</p>
+            <p>${S(8)}\( Con[\lambda x.M]=K\ Con[M] \), \( x \) isn't a free variable of \( M \)</p>
+            <p>${S(8)}\( Con[\lambda x.MN]=S\ Con[\lambda x.M]\ Con[\lambda x.N] \)</p>
+            <p>${S(8)}\( Con[\lambda x.Mx]=M \), \( x \) isn't a free variable of \( M \)</p>
+            <br>
+            <p>${S(8)}For example, let's try to convert \( 3_C \) into SK form:</p>
+            <p>${S(8)}\( \begin{align} & 3 \\ = & \lambda fx.f(f(fx)) \\ = & \lambda f.[\lambda x.f(f(fx))] \\ = & \lambda f.S(\lambda x.f)(\lambda x.f(fx)) \\ = & \lambda f.S(Kf)(\lambda x.f(fx)) \\ = & S(\lambda f.S(Kf))(\lambda fx.f(fx)) \\ = & S(S(\lambda f.S)(\lambda f.Kf))(2) \\ = & S(S(KS)K)(2) \end{align} \)</p>
+            <br>
+            <p>${S(8)}We stop right here, because guess what? We've just converted the succession function into SK form:</p>
+            <p>${S(8)}\( Suc=S(S(KS)K) \)</p>
+            <br>
+            <p>${S(8)}We can just proceed with \( 3=Suc(2)=Suc(Suc(1))=Suc(Suc(Suc(0))) \). Now, we have to convert \( 0_C \) into SK form:</p>
+            <p>${S(8)}\( 0_C=False=KI=K(SKK) \)</p>
+            <br>
+            <p>${S(8)}But actually, there's a better way to represent \( 0_C \):</p>
+            <p>${S(8)}\( SKab=Kb(ab)=b \):</p>
+            <p>${S(8)}\( K(SKK)ab=(SKK)b=Ib=b \):</p>
+            <p>${S(8)}\( SK=K(SKK) \):</p>
+            <br>
+            <p>${S(8)}Which is a little optimization that is not easy to find because computers cannot determine whether 2 codes do the same thing, which requires to solve the "Halting Problem", which is known to be UNDECIDABLE. Furthermore:</p>
+            <p>${S(8)}\( 1_C=I=SKK \)</p>
+            <br>
+            <p>${S(8)}If we just plug \( 0_C \) into the succession function, we get a Lambda Term with 7 symbols, which uses more combinators. Remember, we must use as few combinators as possible.</p>
+            <p>${S(8)}Now, we can define Church Numerals in the SK form:</p>
+            <p>${S(8)}\( 0_C=SK \)</p>
+            <p>${S(8)}\( 1_C=SKK \)</p>
+            <p>${S(8)}\( (n+2)_C=S(S(KS)K)(n+1)_C,n\in\omega \)</p>
+            <h2>Back To The Encoding</h2>
+            <p>${S(8)}We're finally ready to define an encoding for all computable functions. Since Lambda Calculus expresses computation, every Lambda Term is computable. And since every Lambda Term is a function, the functions we're going to encode are all of the Lambda Terms. And since we can convert every Lambda Term into its SK form, the codes are all based on the SK form of the Lambda Term.</p>
+            <p>${S(8)}Firstly, we define the length of Lambda Term in SK form:</p>
+            <p>${S(8)}\( Len[K]=Len[S]=1 \)</p>
+            <p>${S(8)}\( Len[AB]=Len[A]+Len[B] \)</p>
+            <br>
+            <p>${S(8)}So, how many Lambda Terms are there that has a length of 1? The answer is 2.</p>
+            <p>${S(8)}What about Lambda Terms whose length is 2 (L2 Lambda Terms)? Since we have to combine two L1 Lambda Terms, we have 2*2=4.</p>
+            <p>${S(8)}What about L3? We can combine a L1 Lambda Term and a L2 Lambda Term in two ways. So, we get 2*4+4*2=16.</p>
+            <p>${S(8)}What about L4? We can combine a L1 Lambda Term and a L3 Lambda Term in two ways. We can also combine two L2 Lambda Terms, so the answer is 2*16+4*4+16*2=80</p>
+            <p>${S(8)}And we have 448 L5 Lambda Terms, 2,688 L6 Lambda Terms, 16,896 L7 Lambda Terms and so on. What's the pattern of the sequence? We can't just calculate them artificially. It turns out that there is a formula for all these numbers. Let A(n) be the amount of Ln Lambda Terms, we have:</p>
+            <p>${S(8)}\( L(n)=2^n*C(n-1),n\in\omega\setminus\{0\} \)</p>
+            <p>${S(8)}\( C(n)=\frac{2n!}{n!(n+1)!},n\in\omega \)</p>
+            <br>
+            <p>${S(8)}Where C(n) is the "Catalan Sequence", which is an interesting and important sequence that doesn't grow that fast in googological sense and can be bounded by \( 4^n \) (Which is not hard to prove using mathematical induction), which makes L(n) bounded by \( 8^n \).</p>
+            <p>${S(8)}Now we can finally define the encoding function \( N \) and the function \( F_a \) as follows:</p>
+            <p>${S(8)}\( N[K]=0,N[S]=1 \)</p>
+            <p>${S(8)}\( \begin{align} N[AB] = & \sum_{n=1}^{Len[AB]-1}{L(n)}+\sum_{n=1}^{Len[A]-1}{L(n)*L(Len[AB]-n)} \\ + & (N[A]-\sum_{n=1}^{Len[A]-1}{L(n)})*L(Len[B])+N[B]-\sum_{n=1}^{Len[B]-1}{L(n)}) \end{align} \)</p>
+            <p>${S(8)}\( F_a=A\Leftrightarrow N[A]=a \)</p>
+            <br>
+            <p>${S(8)}Woah. This function looks terrifying! But rest assured, this function can encode all the Lambda Terms without repetitions and vacancies. I call this encoding the Optimized Combinatory Logic Encoding (OCLE for short). In fact, there is a way to convert every Lambda Term into a binary code${C(1)}, which can immediately generate another encoding function that is relatively simple. But sometimes it can result in some invalid codes and we want the code to be optimized to be used as a standard.</p>
+            <p>${S(8)}Let's use \( Suc=S(S(KS)K) \), the successor function as an example. After plugging it into the formula, we get \( N[S(S(KS)K)]=240 \), which means:</p>
+            <p>${S(8)}\( F_{240}=S(S(KS)K)\Rightarrow F_{240}(n)=n+1 \).</p>
+            <br>
+            <p>${S(8)}Moreover, this is a function that takes ONE Church Numeral as input and returns ONE Church Numeral, which is what we need in the first place because we need computable functions that takes ONE natural number as input and returns ONE natural number and Church Numerals represent natural numbers.</p>
+            <p>${S(8)}But there's a problem. How do we verify that the output is really a Church Numeral? Although I've given the definition of Church Numerals above, There are actually countably infinitely many Lambda Terms that do the same thing. What I mean "do the same thing" is for each set of inputs, the outputs of these Lambda Terms are all the same. For example:</p>
+            <p>${S(8)}\( A=Suc(Suc(Suc(0_C))) \)</p>
+            <p>${S(8)}\( B=I(Suc(I(Suc(I(Suc(0_C)))))) \)</p>
+            <br>
+            <p>${S(8)}It's obvious that the Lambda Terms \( A \) and \( B \) do the same thing because with any inputs of \( f \) and \( x \), they both result in \( f(f(f(x))) \).</p>
+            <p>${S(8)}Actually, this problem is not too hard to solve. Since we expect the output to be one Lambda Term, which is a function, we can just plug the Lambda Terms \( Suc=S(S(KS)K) \) and \( 0_C=SK \) into the result and get a "normalized" Church Numeral.</p>
+            <p>${S(8)}But, to make things strict, what I'm going to do is to introduce 2 new combinators \( Z \) and \( P \).</p>
+            <p>${S(8)}\( Z \): The Zero combinator, the first natural number. Similar to \( 0_C=SK \) but different.</p>
+            <p>${S(8)}\( P \): The Plus combinator, can only take a natural number as input and return a natural number called successor. Similar to \( Suc=S(S(KS)K) \) but different.</p>
+            <br>
+            <p>${S(8)}And then define a new classification of Lambda Terms called natural numbers that are not functions and a case called error.</p>
+            <p>${S(8)}If \( A \) is a natural number, then \( PA \) is a natural number.</p>
+            <p>${S(8)}If \( A \) is not a natural number, then \( PA \) results in an error.</p>
+            <p>${S(8)}If \( A \) is a natural number and \( B \) is an arbitrary Lambda Term, then \( AB \) results in an error.</p>
+            <p>${S(8)}If \( A \) or \( B \) results in an error, then \( AB \) results in an error.</p>
+            <br>
+            <p>${S(8)}I should mention that in this case, we have to be careful using \( \eta \)-reduction because for all natural numbers \( A \), \( \lambda x.Ax \) results in an error for all inputs \( x \), which differs from the natural number \( A \).</p>
+            <p>${S(8)}Now, we can finally complete the definition:</p>
+            <p>${S(8)}The code of \( f(n) \) is \( a \), i.e. \( F_a \) computes \( f(n) \), i.e. \( F_a(n)=f(n) \) iff:</p>
+            <p>${S(8)}For all \( n\in\omega \), \( F_a (\lambda gx.\underbrace{g(g(\cdots g(}_nx)\cdots))) P Z \) returns \( \underbrace{P(P(\cdots P(}_{f(n)}Z)\cdots))) \).</p>
+            <br>
+            <p>${S(8)}With the definition above, we can find out that not all Lambda Terms are such functions because they sometimes return non-natural numbers or result in errors. Now, we can do the same thing and encode more computable functions:</p>
+            <p>${S(8)}\( F_{4}=SK=False=KI=K1_C\Rightarrow F_{4}(n)=1 \).</p>
+            <p>${S(8)}\( F_{8}=K(SK)=K0_C\Rightarrow F_{8}(n)=0 \).</p>
+            <p>${S(8)}\( F_{18}=SKK=I\Rightarrow F_{18}(n)=n \).</p>
+            <p>${S(8)}\( F_{12,146}=S(SKK)(SKK)=SII=M\Rightarrow F_{12,146}(n)=n^n \).</p>
+            <p>${S(8)}\( F_{80,466}=S(S(KS)K)(SKK)=2_C\Rightarrow F_{80,466}(n)=n^2 \).</p>
+            <br>
+            <p>${S(8)}This shows that the more combinators the Lambda Term uses, the larger the code is, that's the reason why we must use as few combinators as possible. For a Lambda Term of length N, the code is between \( \sum_{n=1}^{N-1}{L(n)} \) and \( \sum_{n=1}^N{L(n)}-1 \), and \( \frac{2}{7\sqrt{\pi}}&lt;\sum_{n=1}^N{L(n)}\div\frac{8^N}{N^{3/2}} \le \frac{1}{4} \), which is another case where \( \pi \) (randomly) shows up due to "Stirling's Approximation".</p>
+            <p>${S(8)}Furthermore, it seems that \( F_a \) itself looks like a function that takes a natural number as input and returns a Lambda Term. With the encoding function \( N \) given above, we can know that this function is also computable.</p>
+            <p>${S(8)}So, for those who are interested, there's a homework:</p>
+            <p>${S(8)}<b>Find a code \( k \) that \( F_k k_C = F_k \)</b></p>
+            <h2>\( f_{\omega_1^{CK}}(n) \) VS. \( \Sigma(n) \)</h2>
+            <p>${S(8)}Now, we're going to see how fast the function \( f_{\omega_1^{CK}}(n) \) grows. We start from listing everything simple using the definition above:</p>
+            <p>${S(8)}\( {0}_\mathcal{O}=0 \)</p>
+            <p>${S(8)}\( {1}_\mathcal{O}=1 \)</p>
+            <p>${S(8)}\( {2}_\mathcal{O}=2 \)</p>
+            <p>${S(8)}\( {4}_\mathcal{O}=3 \)</p>
+            <p>${S(8)}\( {16}_\mathcal{O}=4 \)</p>
+            <p>${S(8)}\( {65536}_\mathcal{O}=5 \)</p>
+            <p>${S(8)}\( {(2^{65536})}_\mathcal{O}=6 \)</p>
+            <p>${S(8)}\( {(2\uparrow\uparrow(n-1))}_\mathcal{O}=n \)</p>
+            <p>${S(8)}\( (3*5^k)_\mathcal{O}=\omega \), where \( F_k \) computes \( 2\uparrow\uparrow(n-1) \)</p>
+            <br>
+            <p>${S(8)}We want to know the code of the function \( F_k(n)=2\uparrow\uparrow(n-1) \). To do this, we need to generate a Lambda Term that computes \( 2\uparrow\uparrow(n-1) \). The idea is to apply the function \( 2xp(n)=2^n \) on 0 n times.</p>
+            <p>${S(8)}Firstly, we define a Lambda Term that computes \( 2^n \), which is not hard using the information above:</p>
+            <p>${S(8)}\( \begin{align} & 2xp \\ = & \lambda x.(x\ 2) \\ = & S(\lambda x.x)(\lambda x.2) \\ = & S(SKK)(K2) \\ = & S(SKK)(K(S(S(KS)K)(SKK)))) \end{align} \)</p>
+            <br>
+            <p>${S(8)}After some calculations, we get \( N[2xp]=1,000,414,034 \).</p>
+            <p>${S(8)}Secondly, we define a Lambda Term that computes \( 2\uparrow\uparrow(n-1) \) using the idea above:</p>
+            <p>${S(8)}\( \begin{align} & Tet2 \\ = & \lambda x.x\ 2xp\ 0 \\ = & \lambda x.((x\ 2xp)\ 0) \\ = & S(\lambda x.x\ 2xp)(\lambda x.0) \\ = & S(S(\lambda x.x)(\lambda x.2xp))(K(SK)) \\ = & S(S(SKK)(K 2xp))(K(SK)) \\ = & S(S(SKK)(K(S(SKK)(K(S(S(KS)K)(SKK))))))))(K(SK)) \end{align} \)</p>
+            <br>
+            <p>${S(8)}After some calculations, we get \( N[Tet2]=80,337,360,491,076,200\approx 8.03*10^{16} \). And this is the code of the function we wanted, which means \( {(3*5^{80,337,360,491,076,200})}_\mathcal{O}=\omega \). This huge (Although not googologically huge) notation, \( 3*5^{80,337,360,491,076,200} \), is between \( 2\uparrow\uparrow 5 \) and \( 2\uparrow\uparrow 6 \), which means \( a_7=3*5^{80,337,360,491,076,200} \).</p>
+            <p>${S(8)}However, it's possible that we can find a Lambda Term whose code is small enough (Less than 28,225 according to some easy calculations) and compute the same function. I mean, as I mentioned above, \( F_{12,146} \) already computes \( n^n \), which is a pretty fast-growing.</p>
+            <p>${S(8)}So, there's another homework for anyone interested:</p>
+            <p>${S(8)}<b>Determine whether there is a code \( k&lt;28,225 \) that \( F_k \) computes \( 2\uparrow\uparrow(n-1) \).</b></p>
+            <p>${S(8)}I mean, 28,225 is not too big. So, I consider analyzing all of these 28,225 codes to be a doable thing. There might be some techniques to simplify this problem, like "K-simplification" or something. Maybe concepts like "power set" and "S-explosion" can help discovering the function.</p>
+            <p>${S(8)}Now, we can finally evaluate \( f_{\omega_1^{CK}}(n) \) using everything we have in this article (Assuming the answer of the question above is the code \( k \) doesn't exist). I should point out that there are actually TWO Busy Beaver Functions. One is \( \Sigma(n) \), which is the NUMBER OF 1'S printed on the tape when the Turing Machine terminates. And the other is \( MS(n) \), a.k.a. the "Maximum Shifts Function", which is the number of STEPS when the Turing Machine terminates. And \( \forall n\in\omega(\Sigma(n)\le MS(n)) \).</p>
+            <table>
+                <tbody>
+                    <tr>
+                        <th>\( n \)</th>
+                        <th>\( a_n \)</th>
+                        <th>\( \omega_1^{CK}[n] \)</th>
+                        <th>\( f_{\omega_1^{CK}}(n) \)</th>
+                        <th>\( \Sigma(m) \)</th>
+                    </tr>
+                    <tr>
+                        <td>\( 0 \)</td>
+                        <td>\( 0 \)</td>
+                        <td>\( 0 \)</td>
+                        <td>\( f_0(0)=1 \)</td>
+                        <td>\( \Sigma(1)=1 \)</td>
+                    </tr>
+                    <tr>
+                        <td>\( 1 \)</td>
+                        <td>\( 1 \)</td>
+                        <td>\( 1 \)</td>
+                        <td>\( f_1(1)=2 \)</td>
+                        <td>\( \Sigma(1)=1 \)</td>
+                    </tr>
+                    <tr>
+                        <td>\( 2 \)</td>
+                        <td>\( 2 \)</td>
+                        <td>\( 2 \)</td>
+                        <td>\( f_2(2)=8 \)</td>
+                        <td>\( \Sigma(3)=6 \)</td>
+                    </tr>
+                    <tr>
+                        <td>\( 3 \)</td>
+                        <td>\( 4 \)</td>
+                        <td>\( 3 \)</td>
+                        <td>\( f_3(3)\approx 6.89508*10^{121,210,694} \)</td>
+                        <td>\( \Sigma(5)=4,098 \)${C(9)}</td>
+                    </tr>
+                    <tr>
+                        <td>\( 4 \)</td>
+                        <td>\( 16 \)</td>
+                        <td>\( 4 \)</td>
+                        <td>\( f_4(4)>2\uparrow\uparrow\uparrow 4=2\uparrow\uparrow 65,536 \)</td>
+                        <td>\( \Sigma(6)>3\uparrow\uparrow 16 \)${C(2)}</td>
+                    </tr>
+                    <tr>
+                        <td>\( 5 \)</td>
+                        <td>\( 65,536 \)</td>
+                        <td>\( 5 \)</td>
+                        <td>\( f_5(5)>2\uparrow\uparrow\uparrow\uparrow 5 \)</td>
+                        <td>\( \Sigma(7)? \)</td>
+                    </tr>
+                    <tr>
+                        <td>\( 6 \)</td>
+                        <td>\( 2^{65,536}\approx 2.00353*10^{19,728}\)</td>
+                        <td>\( 6 \)</td>
+                        <td>\( f_6(6)>2\uparrow\uparrow\uparrow\uparrow\uparrow 6 \)</td>
+                        <td>\( \Sigma(8)? \)</td>
+                    </tr>
+                    <tr>
+                        <td>\( 7 \)</td>
+                        <td>\( 3*5^{80,337,360,491,076,200} \)</td>
+                        <td>\( \omega \)</td>
+                        <td>\( f_\omega(7)=f_7(7)>2\uparrow\uparrow\uparrow\uparrow\uparrow\uparrow 7 \)</td>
+                        <td>\( \Sigma(8)? \)</td>
+                    </tr>
+                    <tr>
+                        <td>\( 8 \)</td>
+                        <td>\( 3*5^{???} \)</td>
+                        <td>\( \ge\omega 2 \)</td>
+                        <td>\( \ge f_{\omega 2}(8)>\{8,8,8,2\}=\{8,2,1,3\}>g_{64} \)</td>
+                        <td>\( \Sigma(37)&lt;f_{\omega 2}(167)&lt;\Sigma(38) \)${C(3)}</td>
+                    </tr>
+                    <tr>
+                        <td>\( \cdots \)</td>
+                        <td>\( \cdots \)</td>
+                        <td>\( \cdots \)</td>
+                        <td>\( \cdots \)</td>
+                        <td>\( \cdots \)</td>
+                    </tr>
+                    <tr>
+                        <td>\( 15 \)</td>
+                        <td>\( 3*5^{???} \)</td>
+                        <td>\( \ge\omega^2 \)</td>
+                        <td>\( \ge f_{\omega^2}(15)>\{15,15,15,15\}=\{15,2,1,1,2\} \)</td>
+                        <td>\( \Sigma(63)&lt;f_{\omega^2}(4,098)&lt;\Sigma(64) \)${C(3)}</td>
+                    </tr>
+                    <tr>
+                        <td>\( \cdots \)</td>
+                        <td>\( \cdots \)</td>
+                        <td>\( \cdots \)</td>
+                        <td>\( \cdots \)</td>
+                        <td>\( \cdots \)</td>
+                    </tr>
+                    <tr>
+                        <td>\( 50 \)</td>
+                        <td>\( 3*5^{???} \)</td>
+                        <td>\( \ge\varepsilon_0 \)</td>
+                        <td>\( \ge f_{\varepsilon_0}(50) \)</td>
+                        <td>\( \Sigma(84)&lt;f_{\varepsilon_0}(1,907)&lt;\Sigma(85) \)${C(3)}</td>
+                    </tr>
+                    <tr>
+                        <td>\( \cdots \)</td>
+                        <td>\( \cdots \)</td>
+                        <td>\( \cdots \)</td>
+                        <td>\( \cdots \)</td>
+                        <td>\( \cdots \)</td>
+                    </tr>
+                    <tr>
+                        <td>\( 85 \)</td>
+                        <td>\( 3*5^{???} \)</td>
+                        <td>\( \ge\Gamma_0 \)</td>
+                        <td>\( \ge f_{\Gamma_0}(85) \)</td>
+                        <td>\( \Sigma(140)? \)</td>
+                    </tr>
+                    <tr>
+                        <td>\( \cdots \)</td>
+                        <td>\( \cdots \)</td>
+                        <td>\( \cdots \)</td>
+                        <td>\( \cdots \)</td>
+                        <td>\( \cdots \)</td>
+                    </tr>
+                    <tr>
+                        <td>\( 120 \)</td>
+                        <td>\( 3*5^{???} \)</td>
+                        <td>\( \ge BHO=\psi_0(\Omega_2) \)</td>
+                        <td>\( \ge f_{BHO}(120) \)</td>
+                        <td>\( \Sigma(200)? \)</td>
+                    </tr>
+                    <tr>
+                        <td>\( \cdots \)</td>
+                        <td>\( \cdots \)</td>
+                        <td>\( \cdots \)</td>
+                        <td>\( \cdots \)</td>
+                        <td>\( \cdots \)</td>
+                    </tr>
+                    <tr>
+                        <td>\( 200 \)</td>
+                        <td>\( 3*5^{???} \)</td>
+                        <td>\( \ge LBO=\psi_0(\Omega_{\Omega_{\Omega_{\cdot_{\cdot_\cdot}}}}) \)</td>
+                        <td>\( \ge f_{LBO}(200) \)</td>
+                        <td>\( \Sigma(300)? \)</td>
+                    </tr>
+                    <tr>
+                        <td>\( \cdots \)</td>
+                        <td>\( \cdots \)</td>
+                        <td>\( \cdots \)</td>
+                        <td>\( \cdots \)</td>
+                        <td>\( \cdots \)</td>
+                    </tr>
+                    <tr>
+                        <td>\( 300 \)</td>
+                        <td>\( 3*5^{???} \)</td>
+                        <td>\( \ge LRO=\Psi_\Omega^0(\varepsilon_{K+1}) \)</td>
+                        <td>\( \ge f_{LRO}(300) \)</td>
+                        <td>\( \Sigma(400)? \)</td>
+                    </tr>
+                    <tr>
+                        <td>\( \cdots \)</td>
+                        <td>\( \cdots \)</td>
+                        <td>\( \cdots \)</td>
+                        <td>\( \cdots \)</td>
+                        <td>\( \cdots \)</td>
+                    </tr>
+                    <tr>
+                        <td>\( 400 \)</td>
+                        <td>\( 3*5^{???} \)</td>
+                        <td>\( \ge LSO=\Psi_{(\omega^+;P_0;\epsilon;\epsilon;0)}^{\varepsilon_{\Upsilon+1}} \)</td>
+                        <td>\( \ge f_{LSO}(400) \)</td>
+                        <td>\( \Sigma(500)? \)</td>
+                    </tr>
+                    <tr>
+                        <td>\( \cdots \)</td>
+                        <td>\( \cdots \)</td>
+                        <td>\( \cdots \)</td>
+                        <td>\( \cdots \)</td>
+                        <td>\( \cdots \)</td>
+                    </tr>
+                    <tr>
+                        <td>\( 600 \)</td>
+                        <td>\( 3*5^{???} \)</td>
+                        <td>\( \ge \omega_{ZFC}=PTO(ZFC) \)</td>
+                        <td>\( \ge f_{\omega_{ZFC}}(600) \)</td>
+                        <td>\( \Sigma(745)?&lt;MS(745) \)${C(4)}</td>
+                    </tr>
+                    <tr>
+                        <td>\( \cdots \)</td>
+                        <td>\( \cdots \)</td>
+                        <td>\( \cdots \)</td>
+                        <td>\( \cdots \)</td>
+                        <td>\( \cdots \)</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>${S(8)}EDIT 2024/07/16: The values of \( \Sigma(5) \) and \( MS(5) \) are now CONFIRMED to be 4,098 and 47,176,870 respectively.${C(9)}</p>
+            <p>${S(8)}Values for \( n\ge 8 \) are just estimations. For the sake of readability, let's set:</p>
+            <p>${S(8)}\( b_0=0 \)</p>
+            <p>${S(8)}\( b_1=3*5^{80,337,360,491,076,200} \)</p>
+            <p>${S(8)}\( b_2=3*5^{k_2}\land F_{k_2}(n)=2xp^n(b_1) \)</p>
+            <p>${S(8)}\( b_{m+1}=3*5^{k_{m+1}}\land F_{k_{m+1}}(n)=2xp^n(b_m) \)</p>
+            <br>
+            <p>${S(8)}I'm not sure if \( \omega_1^{CK}[8]=\omega 2 \) but I'm sure that this is the lower bound and has to be a limit ordinal. This is because there are too many notations between \( b_1 \) and \( 2^{b_1} \). It's easy to find a Lambda Term that computes \( 2xp^n(b_1) \) and results in a notation \( b_2 \) that is small enough. The reason why the value of \( \omega_1^{CK}[8] \) is uncertain is because it may take less combinators to compute \( b_2 \) than to compute \( b_1 \). We are not obligated to compute these values using the intended method. So, it's possible that \( \omega_1^{CK}[8]=\omega 3 \) or a larger limit ordinal.</p>
+            <p>${S(8)}It's possible to PROGRAM a function that computes the sequence \( b_n \), but it may take some attempts. So, it's possible that \( \omega_1^{CK}[9]&lt;\omega^2 \). And it should be safe to say \( \omega_1^{CK}[15]\ge\omega^2 \).</p>
+            <p>${S(8)}After a lot of Lambda Terms, we gradually allow the definition of Wainer Hierarchy and compute all the notations \( a \) that \( a_\mathcal{O}&lt;\varepsilon_0 \). I say this will happen at \( n=50 \), meaning that \( \omega_1^{CK}[50]\ge\varepsilon_0 \).</p>
+            <p>${S(8)}I myself managed to write a 2,220-bytes JavaScript code that defines the Wainer Hierarchy and a 3,486-bytes code that defines the Veblen Hierarchy. After some easy scaling (\( 50*\frac{3,486}{2,220}\approx 79 \) and \( 85*\frac{3,486}{2,220}\approx 134 \)), I conjecture that \( \omega_1^{CK}[85]\ge\Gamma_0 \) and \( \Sigma(140)>f_{\Gamma_0}(10) \).</p>
+            <p>${S(8)}For values beyond \( n=85 \), the estimations are really rough and likely to be nonsense because the estimation is too difficult and uncertain. The first reason is I currently haven't come up with the programs for all these ordinals. The programs are really difficult to write and I doubt if I will write them in the future. The second reason is to determine the value of \( \omega_1^{CK}[n] \) requires knowing all the values of \( \omega_1^{CK}[m] \) for all \( m&lt;n \). One wrong ordinal can affect all the ordinals after this one. The third reason is that \( \omega_1^{CK}[n] \) is UNCOMPUTABLE because the halting problem is known to be undecidable. We may never be sure if the results are correct.</p>
+            <p>${S(8)}But despite all these difficulties and uncertainties, it's likely that \( f_{\omega_1^{CK}}(n) \) grows slightly faster than \( \Sigma(n) \) under OCLE as the table shows. At this point, it is reasonable to conclude that \( f_{\omega_1^{CK}}(n)\approx\Sigma(n) \) under OCLE. It may be another story if we use the \( 2n \) and \( 2m+1 \) formula I mentioned early in this article, which makes the function grows slightly slower, but I think the approximation still holds in this case.</p>
+            <p>${S(8)}Furthermore, the table also shows that all the large ordinals defined to measure mathematical theories can be handled by computer programs and therefore less than \( \omega_1^{CK} \), even though their sequence numbers in the FS of \( \omega_1^{CK} \) are relatively large, which illustrates how large \( \omega_1^{CK} \) is and thus explains why a lot of googologists tend not to study highly complex OCFs (Ordinal Collapsing Functions) such as Rathjen's OCF based on the "Weakly Compact Cardinal"${C(5)} and Stegert's OCF${C(6)} and jump right into this ordinal.</p>
+            <h2>Beyond \( \omega_1^{CK} \)</h2>
+            <p>${S(8)}With the FS of \( \omega_1^{CK} \) being well-defined (at least I think so), we can start plugging ordinals "slightly" greater than \( \omega_1^{CK} \) into the FGH function. To illustrate the growth rate, we define the UGH (Uncomputable-Growing Hierarchy) function (Ughhhhh...), which I believe a lot of googologists have also tried. Notice this function is the same as FGH except for the base rule.</p>
+            <div style="text-align: center;">\( \begin{align} s_0(n) & := \Sigma(n) \\ s_{\alpha+1}(n) & := s_\alpha^n(n)=\underbrace{s_\alpha(s_\alpha(\cdots s_\alpha(}_nn)\cdots)) \\ \alpha\in Lim \Rightarrow s_\alpha(n) & := s_{\alpha[n]}(n) \end{align} \)</div>
+            <br>
+            <p>${S(8)}So, we have:</p>
+            <p>${S(8)}\( s_1(0)=0 \)</p>
+            <p>${S(8)}\( s_1(1)=\Sigma(1)=1 \)</p>
+            <p>${S(8)}\( s_1(2)=\Sigma(\Sigma(2))=\Sigma(4)=13 \)</p>
+            <p>${S(8)}\( s_1(3)=\Sigma(\Sigma(\Sigma(3)))=\Sigma(\Sigma(6))>\Sigma(3\uparrow\uparrow 16)>MS(745)>\Sigma(745) \)</p>
+            <br>
+            <p>${S(8)}Since ZFC is already unable to decide the value of \( MS(745) \)${C(4)}, the value of \( s_1(3) \) is already UNDECIDABLE in ZFC. Which demonstrates how terrifying this function grows.</p>
+            <p>${S(8)}It's easy to show that the value of \( f_{\omega_1^{CK}+1}(3) \) is also undecidable in ZFC. But we're not obligated to stop there, and remember, 1 is much less than \( \omega_1^{CK} \), we can just keep going:</p>
+            <p>${S(8)}\( f_{\omega_1^{CK}+2}(n)\approx s_2(n) \)</p>
+            <p>${S(8)}\( f_{\omega_1^{CK}+3}(n)\approx s_3(n) \)</p>
+            <p>${S(8)}\( f_{\omega_1^{CK}+\omega}(n)\approx s_\omega(n) \)</p>
+            <p>${S(8)}\( f_{\omega_1^{CK}+\varepsilon_0}(n)\approx s_{\varepsilon_0}(n) \)</p>
+            <p>${S(8)}\( f_{\omega_1^{CK}+BHO}(n)\approx s_{BHO}(n) \)</p>
+            <p>${S(8)}\( f_{\omega_1^{CK}+LSO}(n)\approx s_{LSO}(n) \)</p>
+            <p>${S(8)}\( f_{\omega_1^{CK}+\omega_{ZFC}}(n)\approx s_{\omega_{ZFC}}(n) \)</p>
+            <br>
+            <p>${S(8)}And we finally have \( f_{\omega_1^{CK}2}(n)\approx s_{\omega_1^{CK}}(n) \). Without the knowledge of the FS of \( \omega_1^{CK} \), we can only define that \( f_{\omega_1^{CK}}(n):=s_0(n) \), which fails to define \( f_{\omega_1^{CK}2}(n) \).</p>
+            <p>${S(8)}We also have \( f_{\omega_1^{CK}\omega}(n)\approx s_{\omega_1^{CK}\omega}(n) \). Which means that UGH "catches up with" FGH for ordinals \( \ge\omega_1^{CK}\omega \) under OCLE. So, we can just focus on FGH and forget about UGH and proceed like this:</p>
+            <p>${S(8)}\( f_{\omega_1^{CK}\omega+1}(n) \)</p>
+            <p>${S(8)}\( f_{\omega_1^{CK}\omega+\omega_1^{CK}}(n) \)</p>
+            <p>${S(8)}\( f_{\omega_1^{CK}\omega2}(n) \)</p>
+            <p>${S(8)}\( f_{{\omega_1^{CK}}^2}(n) \)</p>
+            <p>${S(8)}\( f_{{\omega_1^{CK}}^{\omega_1^{CK}}}(n) \)</p>
+            <p>${S(8)}\( f_{\varepsilon_{\omega_1^{CK}+1}}(n) \)</p>
+            <p>${S(8)}\( f_{\Gamma_{\omega_1^{CK}+1}}(n) \)</p>
+            <br>
+            <p>${S(8)}We are now creating complex ordinals greater than \( \omega_1^{CK} \). To proceed, we can try to define an "Uncomputable OCF" like this: (Although the well-definedness is not guaranteed)</p>
+            <div style="text-align: center;">\( \begin{align} C_0(\alpha,\beta) & := \begin{cases} \omega_1^{CK} & \alpha=0 \\ \Omega_\alpha & \alpha>0 \end{cases} \\ C_{n+1}(\alpha,\beta) & := \{\gamma|\gamma=\gamma_0+\gamma_1\land\gamma_0,\gamma_1\in C_n(\alpha,\beta)\}\cup\{\gamma|\gamma=\psi_{\alpha'}^{CK}(\beta')\land\alpha',\beta'\in C_n(\alpha,\beta)\land\beta'&lt;\beta\} \\ C(\alpha,\beta) & := \bigcup_{n&lt;\omega}{C_n(\alpha,\beta)}=C_0(\alpha,\beta)\cup C_1(\alpha,\beta)\cup C_2(\alpha,\beta)\cup\cdots\cup C_m(\alpha,\beta)\cup\cdots \\ \psi_\alpha^{CK}(\beta) & := min(Ord\setminus C(\alpha,\beta)) \end{align} \)</div>
+            <br>
+            <p>${S(8)}This is the same as the "Extended Buchholz function"${C(7)} except \( \psi_0(0)=1 \) and \( \psi_0^{CK}(0)=\omega_1^{CK} \). Now we can create even more complex uncomputable ordinals:</p>
+            <p>${S(8)}\( \psi_0^{CK}(1)=\omega_1^{CK}\omega \)</p>
+            <p>${S(8)}\( \psi_0^{CK}(\psi_0^{CK}(0))={\omega_1^{CK}}^2 \)</p>
+            <p>${S(8)}\( \psi_0^{CK}(\Omega)=\varepsilon_{\omega_1^{CK}+1} \)</p>
+            <p>${S(8)}\( \psi_0^{CK}(\Omega^\Omega)=\Gamma_{\omega_1^{CK}+1} \)</p>
+            <p>${S(8)}\( \psi_0^{CK}(\Omega_2) \)</p>
+            <p>${S(8)}\( \psi_0^{CK}(\Omega_\omega) \)</p>
+            <br>
+            <p>${S(8)}And eventually, we can create \( \psi_0^{CK}(\Omega_{\Omega_{\Omega_{\cdot_{\cdot_\cdot}}}}) \), which I call the "Church-Kleene-Buchholz Ordinal" (CKBO). However, under the scale of \( \omega_1^{CK} \), this ordinal is only slightly greater than \( \omega_1^{CK} \). But this reveals that OCFs may actually be able to handle uncomputable ordinals. So, we can imagine a large cardinal \( X \), the "regular uncomputable cardinal", I guess? I mean, I even doubt its existence. And since an ordinal is considered uncomputable iff its greater than \( \omega_1^{CK} \), \( \Omega \) is already uncomputable. We define that \( \psi_0(X)=\omega_1^{CK} \), note that I'm using the original Extended Buchholz function, which will result in LBO without this extra definition. And then we have:</p>
+            <p>${S(8)}\( \psi_0(X+1)=\psi_0^{CK}(1)=\omega_1^{CK}\omega \)</p>
+            <p>${S(8)}\( \psi_0(X+\psi_0(X))=\psi_0^{CK}(\psi_0^{CK}(0))={\omega_1^{CK}}^2 \)</p>
+            <p>${S(8)}\( \psi_0(X+\Omega)=\psi_0^{CK}(\Omega)=\varepsilon_{\omega_1^{CK}+1} \)</p>
+            <p>${S(8)}\( \psi_0(X+\Omega^\Omega)=\psi_0^{CK}(\Omega^\Omega)=\Gamma_{\omega_1^{CK}+1} \)</p>
+            <p>${S(8)}\( \psi_0(X+\psi_1(\Omega_2))=\psi_0^{CK}(\Omega_2) \)</p>
+            <p>${S(8)}\( \psi_0(X+\psi_1(\Omega_\omega))=\psi_0^{CK}(\Omega_\omega) \)</p>
+            <p>${S(8)}\( \psi_0(X+\psi_1(\Omega_{\Omega_{\Omega_{\cdot_{\cdot_\cdot}}}}))=\psi_0^{CK}(\Omega_{\Omega_{\Omega_{\cdot_{\cdot_\cdot}}}}) \)</p>
+            <br>
+            <p>${S(8)}Things are starting to get cursed and ill-defined. So, what's the value of \( \psi_0(X+\Omega_2) \)? I don't know because \( \psi_0(X+\Omega_2)=\psi_0(X+\psi_1(X+\psi_1(X+\cdots))) \) and I don't know how to define \( \psi_1(X) \). Things are just way too complicated. The best thing I can think of is something like \( \psi_0(X+\Psi_{(\omega^{++};P_0;\epsilon;\epsilon;0)}^{\Gamma_{\Upsilon+1}}) \) with an appropriate expansion on the definition, where \( \Psi_{(\omega^{++};P_0;\epsilon;\epsilon;0)}^{\Gamma_{\Upsilon+1}} \) is the largest ordinal achievable and under \( \omega^{++}=\Omega_2 \) using Stegert's OCF. Of course, there are larger ordinals like \( \omega_2^{CK} \), recursively XXX ordinal and so on. But we can't just jump right into there without knowing how these ordinals work. I think it's time to stop there.</p>
+            <h2>Conclusion</h2>
+            <p>${S(8)}In this article, I introduced the Church-Kleene Ordinal \( \omega_1^{CK} \) and defined an encoding for all computable functions which I called the Optimized Combinatory Logic Encoding (OCLE) using Lambda Calculus and SK Combinatory Logic, which defined the FS (Fundamental Sequence) for all the ordinals less than or equal to \( \omega_1^{CK} \). I also compared the function \( f_{\omega_1^{CK}}(n) \) and the Busy Beaver Function \( \Sigma(n) \) using this FS and concluded that \( f_{\omega_1^{CK}}(n)\approx\Sigma(n) \) under OCLE. And finally, I plugged larger non-recursive ordinals into the FGH (Fast Growing Hierarchy) function and demonstrated its extreme growth rate.</p>
+            <p>${S(8)}Despite all these, due to my limited mathematical abilities, I believe it's possible that there might be something that remains undefined or ill-defined. For example: Are there any problems on using Lambda Calculus for the definition that I overlooked? Will this definition still make the FGH function bounded by another ordinal less than \( \omega_1^{CK} \)${C(8)}?</p>
+            <p>${S(8)}The uncomputable function community has always been amazing to me. I see a lot of people that work very hard trying to determine only ONE value of a function, trying to determine something even though that's known to be undecidable. So, hopefully this article can make a lot of people in this community interested.</p>
+        </content>
+        <citation>
+            <!-- 0001 -->Tromp, J. (2023). <a href="https://tromp.github.io/cl/LC.pdf">Functional Bits: Lambda Calculus based Algorithmic Information Theory.</a> Retrieved 2024-02-17.
+            <!-- 0002 -->Shawn Ligocki. <a href="https://www.sligocki.com/2022/06/21/bb-6-2-t15.html#upper-bound">BB(6, 2) > 10↑↑15.</a> Retrieved 2024-02-17.
+            <!-- 0003 --><a href="https://googology.fandom.com/wiki/Busy_beaver_function#Larger_values">Busy beaver function.</a> Googology Wiki. Retrieved 2024-02-17. The original source is unknown.
+            <!-- 0004 -->Riebel, J. (2023). <a href="https://www.ingo-blechschmidt.eu/assets/bachelor-thesis-undecidability-bb748.pdf">The Undecidability of BB(748).</a> Retrieved 2024-02-17.
+            <!-- 0005 -->Rathjen, M. (1994). <a href="https://www1.maths.leeds.ac.uk/~rathjen/Ehab.pdf">Proof theory of reflection.</a> Annals of Pure and Applied Logic, 68(2), 181-224. Retrieved 2024-02-17. https://doi.org/10.1016/0168-0072(94)90074-4
+            <!-- 0006 -->Stegert, J. (2010). <a href="https://miami.uni-muenster.de/Record/429ac0b8-092f-426d-bf84-1e3a0adc8957">Ordinal proof theory of Kripke-Platek set theory augmented by strong reflection principles.</a> Retrieved 2024-02-17.
+            <!-- 0007 -->Denis Maksudov. <a href="https://sites.google.com/site/travelingtotheinfinity/the-extension-of-buchholz-s-function">The extended Wilfried Buchholz's functions.</a> Traveling To The Infinity. Retrieved 2024-02-17.
+            <!-- 0008 --><a href="https://www.math.mi.i.nagoya-u.ac.jp/~kihara/pdf/misc/omega-1-ck.pdf">omega-1-ck.pdf.</a> Retrieved 2024-02-17. (The FGH function is denoted as \( \mathcal{F}_a \) in this citation to avoid confusion) This is considered a proof on the <a href="https://googology.fandom.com/wiki/Church-Kleene_ordinal#Fast-growing_hierarchy">Googology Wiki page</a> that there exists an encoding that makes \( \mathcal{F}_{\omega_1^{CK}}(n) \) bounded by \( \mathcal{F}_{\omega+3}(n) \). However, the proof is invalid IN THIS CONTEXT because the "a-th fast growing function \( f_a \)" is UNSPECIFIED. In this proof, it's defined that \( f_{\omega_1^{CK}}(n)=f_{\alpha_n}(n) \), where \( \alpha_n \) is the sequence of NOTATIONS, not ordinals. If the "a-th fast growing function \( f_a \)" is FGH, then "\( f_{\omega_1^{CK}}(n)=f_{\alpha_n}(n)\le f_{\omega+3}(n) \)" does hold, but we're supposed to have "\( f_{\omega_1^{CK}}(n)=f_{{|\alpha_n|}_\mathcal{O}}(n) \)" because \( \alpha_n \) is less than \( \omega \) for all \( n\in\omega \). If the "a-th fast growing function \( f_a \)" is not FGH as the proof implies, then it doesn't conclude that the sequence \( \alpha_n \) in the proof makes \( \mathcal{F}_{\omega_1^{CK}}(n) \) bounded by \( \mathcal{F}_{\omega+3}(n) \) because the functions are different.
+            <!-- 0009 --><a href="https://wiki.bbchallenge.org/wiki/BB(5)">BB(5).</a> The Busy Beaver Challange Wiki. Retrieved 2024-07-16.
+        </citation>
+    </body>
+</html>
