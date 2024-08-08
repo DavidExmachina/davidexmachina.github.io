@@ -14,7 +14,7 @@
             <p>${S(8)}And other symbols "\( + \)", "\( ( \)", "\( ) \)", and "\( , \)".</p>
             <br>
             <p>${S(8)}That's a LOT symbols. Note that I added an overline to \( 0 \), this is because ordinals and ordinal notations are different, just like numbers and number strings. After all, in most cases, errors may happen if data types are messed up.</p>
-            <p>${S(8)}Now, we define a set \( S \) that contains all the strings composed of these 10 symbols. Technically, you can think of it as a function that takes a natural number less than the length of the string (The number of symbols the string uses) as input and returns a natural number less than 10. This is notated as \( s:L\rightarrow 10 \), where \( L \) is the length of the string, which is a natural number.</p>
+            <p>${S(8)}Now, we define a set \( S \) that contains all the strings composed of these 10 symbols. Technically, you can think of it as a function that takes a natural number less than the length of the string (The number of symbols the string uses) as input and returns a natural number less than 10. This is notated as \( s:L\rightarrow10 \), where \( L \) is the length of the string, which is a natural number.</p>
             <p>${S(8)}And then, we define the set \( T_m \) (Or maybe \( T \) elsewhere) that contains all the valid strings and the set \( T_s \) (Or maybe \( PT \) elsewhere) that contains all the valid strings composed of only one terms. Apparently, \( S\supset T_m\supset T_s \) (Proper subset).</p>
             <p>${S(8)}<span style="opacity: 0.5;">01.</span> \( \overline{0}\in T_m \)</p>
             <p>${S(8)}<span style="opacity: 0.5;">02.</span> \( M\in T_m \) and \( M\in T_s \)</p>
@@ -36,7 +36,7 @@
             <h2>Ordering</h2>
             <p>${S(8)}This is the most important part for ALL OCFs and ordinal notation systems. This is because without order, or comparison, there are no ordinals. What we're going to do here is just to define the less than symbol \( &lt; \) because we can define all the other comparison symbols using only this one.</p>
             <p>${S(8)}We define the binary relation \( &lt; \) recursively as follows:</p>
-            <p>${S(8)}\( (a\in T_m,b\in T_m)\rightarrow a&lt;b\in\{\mathbb{T},\mathbb{F}\} \) (Which is written like \( {T_m}^2\mapsto\{\mathbb{T},\mathbb{F}\}\quad(a,b)\rightarrow a&lt;b \) in other articles)</p>
+            <p>${S(8)}\( (a\in T_m,b\in T_m)\mapsto a&lt;b\in\{\mathbb{T},\mathbb{F}\} \) (Which is written like \( {T_m}^2\rightarrow\{\mathbb{T},\mathbb{F}\}\quad(a,b)\mapsto a&lt;b \) in other articles)</p>
             <br>
             <p>${S(8)}<span style="opacity: 0.5;">01.</span> If \( b=\overline{0} \), return \( \mathbb{F} \)</p>
             <p>${S(8)}<span style="opacity: 0.5;">02.</span> If \( a=\overline{0}\land b\neq\overline{0} \), return \( \mathbb{T} \) (\( \land \) means "and")</p>
@@ -117,19 +117,19 @@
             <br>
             <p>${S(8)}Wow! That's a LONG definition!!! This is the reason why Rathjen's little psi is difficult. Most of these cases are derived from Rathjen's PDF on this OCF${C(2)}. But there are some cases missing so I had to figure out myself. In fact, the PDF actually has some errors. For example, line 17. is based on Lemma 5.13.(ii) on the PDF, it should be "\( \gamma&lt;\psi\kappa\xi\Leftrightarrow\alpha,\beta&lt;\psi\kappa{\color{#ff0000}\xi}\land\gamma&lt;\kappa \)" rather than "\( \gamma&lt;\psi\kappa\xi\Leftrightarrow\alpha,\beta&lt;\psi\kappa{\color{#ff0000}\alpha}\land\gamma&lt;\kappa \)". Although, there might be republished versions that fixed this error.</p>
             <p>${S(8)}And now, we can define all the other comparison symbols:</p>
-            <p>${S(8)}\( (a\in T_m,b\in T_m)\rightarrow a&gt;b\in\{\mathbb{T},\mathbb{F}\} \)</p>
+            <p>${S(8)}\( (a\in T_m,b\in T_m)\mapsto a&gt;b\in\{\mathbb{T},\mathbb{F}\} \)</p>
             <p>${S(8)}return \( b&lt;a \)</p>
             <br>
-            <p>${S(8)}\( (a\in T_m,b\in T_m)\rightarrow a\le b\in\{\mathbb{T},\mathbb{F}\} \)</p>
+            <p>${S(8)}\( (a\in T_m,b\in T_m)\mapsto a\le b\in\{\mathbb{T},\mathbb{F}\} \)</p>
             <p>${S(8)}return \( \neg b&lt;a \)</p>
             <br>
-            <p>${S(8)}\( (a\in T_m,b\in T_m)\rightarrow a\ge b\in\{\mathbb{T},\mathbb{F}\} \)</p>
+            <p>${S(8)}\( (a\in T_m,b\in T_m)\mapsto a\ge b\in\{\mathbb{T},\mathbb{F}\} \)</p>
             <p>${S(8)}return \( \neg a&lt;b \)</p>
             <br>
-            <p>${S(8)}\( (a\in T_m,b\in T_m)\rightarrow a=_*b\in\{\mathbb{T},\mathbb{F}\} \)</p>
+            <p>${S(8)}\( (a\in T_m,b\in T_m)\mapsto a=_*b\in\{\mathbb{T},\mathbb{F}\} \)</p>
             <p>${S(8)}return \( \neg a&lt;b\land\neg b&lt;a \)</p>
             <br>
-            <p>${S(8)}\( (a\in T_m,b\in T_m)\rightarrow a\neq_*b\in\{\mathbb{T},\mathbb{F}\} \)</p>
+            <p>${S(8)}\( (a\in T_m,b\in T_m)\mapsto a\neq_*b\in\{\mathbb{T},\mathbb{F}\} \)</p>
             <p>${S(8)}return \( a&lt;b\vee b&lt;a \)</p>
             <br>
             <p>${S(8)}We can see that the special symbols \( =_* \) and \( \neq_* \) are introduced. The difference from \( = \) and \( \neq \) respectively is that \( = \) and \( \neq \) cares about the symbols we use and \( =_* \) and \( \neq_* \) only cares about ordinal values, for example:</p>
@@ -141,7 +141,7 @@
             <h2>Normal Form</h2>
             <p>${S(8)}We can also see some symbols like \( a^* \) and \( a\in C(b_0,b_1) \) appeared in the definition of \( a&lt;b \). We will define them as well.</p>
             <p>${S(8)}We define the symbol \( a^* \) as follows:</p>
-            <p>${S(8)}\( (a\in T_m)\rightarrow a^*\in T_m \)</p>
+            <p>${S(8)}\( (a\in T_m)\mapsto a^*\in T_m \)</p>
             <p>${S(8)}<span style="opacity: 0.5;">01.</span> If \( a=\overline{0}\vee a=M \), return \( \overline{0} \)</p>
             <p>${S(8)}<span style="opacity: 0.5;">02.</span> If \( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \), then:</p>
             <p>${S(8)}<span style="opacity: 0.5;">02.01.</span> If \( a^*&lt;b^* \), return \( b^* \)</p>
@@ -152,13 +152,13 @@
             <p>${S(8)}<span style="opacity: 0.5;">04.</span> If \( (a=\Phi_{a_0}(a_1)\vee a=\chi_{a_0}(a_1)\vee a=\psi_{a_0}(a_1))\land a_0,a_1\in T_m \), return \( a \)</p>
             <br>
             <p>${S(8)}We define addition \( Add(a,b) \) as follows. This is just to prevent inappropriate forms like \( 0+a \) and \( a+0 \). I didn't have to do this in my original program because \( a+b \) is just written as \( ab \) in my program and there is no multiplication.</p>
-            <p>${S(8)}\( (a\in T_m,b\in T_m)\rightarrow Add(a,b)\in T_m \)</p>
+            <p>${S(8)}\( (a\in T_m,b\in T_m)\mapsto Add(a,b)\in T_m \)</p>
             <p>${S(8)}<span style="opacity: 0.5;">01.</span> If \( a=\overline{0} \), return \( b \)</p>
             <p>${S(8)}<span style="opacity: 0.5;">02.</span> If \( a\neq\overline{0}\land b=\overline{0} \), return \( a \)</p>
             <p>${S(8)}<span style="opacity: 0.5;">03.</span> If \( a\neq\overline{0}\land b\neq\overline{0} \), return \( a+b \)</p>
             <br>
             <p>${S(8)}We define succession \( S(a) \) as follows. Which is simple but comes in handy in simplifying later definitions.</p>
-            <p>${S(8)}\( (a\in T_m)\rightarrow S(a)\in T_m\setminus\{\overline{0}\} \)</p>
+            <p>${S(8)}\( (a\in T_m)\mapsto S(a)\in T_m\setminus\{\overline{0}\} \)</p>
             <p>${S(8)}return \( Add(a,\overline{1}) \)</p>
             <br>
             <p>${S(8)}We define the set \( R \). Which is actually \( (Reg\cap M)\setminus\chi_\overline{0}(\overline{0}) \)</p>
@@ -186,7 +186,7 @@
             <br>
             <p>${S(8)}And everything in the set \( T \) is exactly what we're gonna use in comparison and the definition later. Although these definitions use sets and seems mathematical, rest assured, they can actually be written in programming languages and I've already done that.</p>
             <p>${S(8)}We define the function \( Norm \) that normalizes symbols to their normal form, without doing this, errors will happen.</p>
-            <p>${S(8)}\( (a\in T_m)\rightarrow Norm(a)\in T \)</p>
+            <p>${S(8)}\( (a\in T_m)\mapsto Norm(a)\in T \)</p>
             <p>${S(8)}<span style="opacity: 0.5;">01.</span> If \( a\in T \), return \( a \)</p>
             <p>${S(8)}<span style="opacity: 0.5;">02.</span> If \( \neg a\in T \), then:</p>
             <p>${S(8)}<span style="opacity: 0.5;">02.01.</span> If \( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \), return \( Norm(a_0)+Norm(a_1) \)</p>
@@ -216,7 +216,7 @@
             <p>${S(8)}Apparently, the definition has made some restrictions on the use of function \( \varphi \) and \( \psi \). I'll explain the possible reasons later in this article.</p>
             <h2>Cofinality</h2>
             <p>${S(8)}Now, we define cofinality \( Cof \), which is important in defining the FS (Fundamental Sequence). Some people will use \( Dom \) instead, which stands for "Domain". I don't think this makes as many senses as \( Cof \). The only idea I can think of is to regard every ordinal as a function whose domain is its cofinality. Actually, this notation is due to Buchholz${C(1)} in his OCF.</p>
-            <p>${S(8)}\( (a\in T)\rightarrow Cof(a)\in T \)</p>
+            <p>${S(8)}\( (a\in T)\mapsto Cof(a)\in T \)</p>
             <p>${S(8)}<span style="opacity: 0.5;">01.</span> If \( a=\overline{0}\vee a=M \), return \( a \)</p>
             <p>${S(8)}<span style="opacity: 0.5;">02.</span> If \( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \), return \( Cof(a_1) \)</p>
             <p>${S(8)}<span style="opacity: 0.5;">03.</span> If \( (a=\varphi_{a_0}(a_1)\vee a=\Phi_{a_0}(a_1))\land a_0,a_1\in T_m \), then:</p>
@@ -237,7 +237,7 @@
             <h2>Fundamental Sequence</h2>
             <p>${S(8)}Now comes the most important part in googology. If we use an ordinal in the FGH (Fast-Growing Hierarchy) function, to make the result number well-defined, we need to define the FS for all the ordinals less than or equal to this ordinal.</p>
             <p>${S(8)}But the problem is, mathematicians don't usually define a FS system for their OCFs (Although Buchholz DOES${C(1)}). This is because this process is completely artificial (At least for now). So, we have to do this ourselves and this is DIFFICULT.</p>
-            <p>${S(8)}\( (a\in T,n\in T)\rightarrow a[n]\in T \)</p>
+            <p>${S(8)}\( (a\in T,n\in T)\mapsto a[n]\in T \)</p>
             <p>${S(8)}<span style="opacity: 0.5;">01.</span> If \( a=\overline{0} \), return \( \overline{0} \)</p>
             <p>${S(8)}<span style="opacity: 0.5;">02.</span> If \( a=M \), return \( n \)</p>
             <p>${S(8)}<span style="opacity: 0.5;">03.</span> If \( a=a_0+a_1\land a_0\in T_s\land a_1\in T_m\setminus\{\overline{0}\} \), return \( Add(a_0,a_1[n]) \)</p>
@@ -353,12 +353,12 @@
             <p>${S(8)}<span style="opacity: 0.5;">07.04.05.02.</span> If \( n\neq\overline{0} \), return \( \psi_{\chi_{a_0[a[n[\overline{0}]]]}(\overline{0})}(\overline{0}) \)</p>
             <br>
             <p>${S(8)}We define the recursion function \( Re(a,n) \) as follows:</p>
-            <p>${S(8)}\( (a\in T,n\in T)\rightarrow Re(a,n)\in T \)</p>
+            <p>${S(8)}\( (a\in T,n\in T)\mapsto Re(a,n)\in T \)</p>
             <p>${S(8)}<span style="opacity: 0.5;">01.</span> If \( n=\overline{0} \), return \( a[\overline{0}] \)</p>
             <p>${S(8)}<span style="opacity: 0.5;">02.</span> If \( n\neq\overline{0} \), return \( a[\psi_{Cof(a)}(Re(a,n[\overline{0}]))] \)</p>
             <br>
             <p>${S(8)}We define the tail function \( Tail(a) \) as follows:</p>
-            <p>${S(8)}\( (a\in T)\rightarrow Tail(a)\in T \)</p>
+            <p>${S(8)}\( (a\in T)\mapsto Tail(a)\in T \)</p>
             <p>${S(8)}<span style="opacity: 0.5;">01.</span> If \( a=\overline{0}\vee a=M \), return \( \overline{0} \)</p>
             <p>${S(8)}<span style="opacity: 0.5;">02.</span> If \( a\neq\overline{0}\vee a&lt;M \), return \( a \)</p>
             <p>${S(8)}<span style="opacity: 0.5;">03.</span> If \( a&gt;M \), then:</p>
@@ -368,7 +368,7 @@
             <p>${S(8)}<span style="opacity: 0.5;">03.02.02.</span> If \( Cof(a_1)\ge\overline{\omega} \), return \( Tail(a_1) \)</p>
             <br>
             <p>${S(8)}We define the limit symbol \( M^\Gamma \) (Which is equal to \( \Gamma_{M+1} \)) as follows:</p>
-            <p>${S(8)}\( (n\in T)\rightarrow M^\Gamma[n]\in T \)</p>
+            <p>${S(8)}\( (n\in T)\mapsto M^\Gamma[n]\in T \)</p>
             <p>${S(8)}<span style="opacity: 0.5;">01.</span> If \( n=\overline{0} \), return \( \overline{0} \)</p>
             <p>${S(8)}<span style="opacity: 0.5;">02.</span> If \( n\neq\overline{0}\land n[\overline{0}]=\overline{0} \), return \( M \)</p>
             <p>${S(8)}<span style="opacity: 0.5;">03.</span> If \( n[\overline{0}]\neq\overline{0}\land n[\overline{0}][\overline{0}]=\overline{0} \), return \( \varphi_M(\overline{1}) \)</p>
