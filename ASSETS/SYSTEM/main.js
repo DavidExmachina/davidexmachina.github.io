@@ -203,7 +203,7 @@ function ago_text(t){
 function time_text(t){
     var d = (data.time.now - t) % 86400000;
     var n1 = data.time.now - d - t % 86400000, t1 = t - t % 86400000;
-    var n2 = time_param(n1), t2 = time_param(t1); 
+    var n2 = time_param(n1), t2 = time_param(t1);
     var dt = [n2[0], n2[1], n2[2], intdiv(d, 3600000) % 24, intdiv(d, 60000) % 60, intdiv(d, 1000) % 60, d % 1000];
     var t3 = time_param(t + get_timezone());
     if (dt[2] < t2[2]){
