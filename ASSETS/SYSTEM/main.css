@@ -36,7 +36,7 @@ body {
     margin: 0px 0px 0px 0px;
     padding: 0px 0px 0px 0px;
     color: var(--theme-font);
-    font-family: "Times New Roman", TNR, SimSun, SS;
+    font-family: TNR, SS;
     font-size: 1em;
     text-size-adjust: none;
     background-color: var(--theme-back);
