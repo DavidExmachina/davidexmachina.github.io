@@ -980,9 +980,9 @@ function update_setting_time(t1, t2){
 }
 
 function update_bright_time(t1, t2){
-    var c = data.animation.bright * 64 / 125;
     if (data.save.bright && data.animation.bright < 500) data.animation.bright = Math.min(data.animation.bright + t1 - t2, 500);
     if (!data.save.bright && data.animation.bright > 0) data.animation.bright = Math.max(data.animation.bright - t1 + t2, 0);
+    var c = intdiv(data.animation.bright * 64, 125);
     change_color("theme-back", color_code(c, c, c));
     change_color("theme-font", color_code(256 - c, 256 - c, 256 - c));
     change_color("theme-ui1", color_code(0, 256 - c / 2, 256));
@@ -992,6 +992,33 @@ function update_bright_time(t1, t2){
     change_color("theme-transition1", color_code(0, 256 - c / 2, 256) + "00");
     change_color("theme-transition2", color_code(0, 256 - c / 2, 256) + "40");
     change_color("theme-transition3", color_code(0, 256 - c / 2, 256) + "80");
+    if (data.save.special === "af2025" || (1743465600000 <= data.time.now && data.time.now < 1743552000000)){
+        var s = function (r, g, b, t){
+            if (r === g && g === b) return color_code(r, g, b);
+            var r2 = Math.round(r * 8), g2 = Math.round(g * 8), b2 = Math.round(b * 8);
+            var mn = Math.min(r2, g2, b2), mx = Math.max(r2, g2, b2), m = mx - mn, h;
+            if (mx === r2 && mx !== g2) h = g2 - b2;
+            if (mx === g2 && mx !== b2) h = b2 - r2 + m * 2;
+            if (mx === b2 && mx !== r2) h = r2 - g2 + m * 4;
+            if (h < 0) h += m * 6;
+            h = (h * 500 + m * t) % (m * 3000);
+            var r3 = mn * 500, g3 = mn * 500, b3 = mn * 500;
+            if (0 <= h && h < m * 500){r3 += m * 500; g3 += h;}
+            if (m * 500 <= h && h < m * 1000){r3 += m * 1000 - h; g3 += m * 500;}
+            if (m * 1000 <= h && h < m * 1500){g3 += m * 500; b3 += h - m * 1000;}
+            if (m * 1500 <= h && h < m * 2000){g3 += m * 2000 - h; b3 += m * 500;}
+            if (m * 2000 <= h && h < m * 2500){r3 += h - m * 2000; b3 += m * 500;}
+            if (m * 2500 <= h && h < m * 3000){r3 += m * 500; b3 += m * 3000 - h;}
+            return color_code(intdiv(r3, 4000), intdiv(g3, 4000), intdiv(b3, 4000));
+        }
+        change_color("theme-ui1", s(0, 256 - c / 2, 256, t1));
+        change_color("theme-ui2", s(128 - c / 2, 256 - c * 3 / 4, 256 - c / 2, t1));
+        change_color("theme-window1", s(0, 96 + c * 3 / 8, 192, t1) + "c0");
+        change_color("theme-window2", s(c, c, c, t1) + "c0");
+        change_color("theme-transition1", s(0, 256 - c / 2, 256, t1) + "00");
+        change_color("theme-transition2", s(0, 256 - c / 2, 256, t1) + "40");
+        change_color("theme-transition3", s(0, 256 - c / 2, 256, t1) + "80");
+    }
 }
 
 function update_background_time(t1, t2){
