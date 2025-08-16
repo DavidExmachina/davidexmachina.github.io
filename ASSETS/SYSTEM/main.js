@@ -783,6 +783,7 @@ function update_ani_menu_time(t1, t2){
 }
 
 function update_ani_content_time(t1, t2){
+    var oc = data.animation.change;
     if (data.animation.during_start){
         update_ani_content_inside(Math.min(Math.max(4000 - t1, 0), 500));
         document.querySelector(".content").style.display = t1 >= 3500 ? "block" : "none";
@@ -790,7 +791,7 @@ function update_ani_content_time(t1, t2){
     }
     if (!data.animation.change) return;
     data.animation.change = Math.max(data.animation.change - t1 + t2, 0);
-    if (data.animation.change + t1 - t2 >= 500 && data.animation.change < 500){
+    if (oc >= 500 && data.animation.change < 500){
         change_url(data.animation.destination);
         refresh(data.animation.category * 1);
     }
