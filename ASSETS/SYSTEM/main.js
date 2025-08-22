@@ -13,7 +13,7 @@ function replaceall(text, match, target){return text.split(match).join(target);}
 function add_space(text, space){return space >= 0 ? replaceall(text, "\n", `\n${sp(space)}`) : replaceall(text, `\n${sp(-space)}`, "\n");}
 
 function color_code(r, g, b){
-    var result = "#";
+    let result = "#";
     result += z(Math.min(Math.floor(r), 255).toString(16), 2);
     result += z(Math.min(Math.floor(g), 255).toString(16), 2);
     result += z(Math.min(Math.floor(b), 255).toString(16), 2);
@@ -21,7 +21,7 @@ function color_code(r, g, b){
 }
 
 function supertext(text){
-    var result = text, old = text, match, cites = {}, cite;
+    let result = text, old = text, match, cites = {}, cite;
     for (;;){
         match = result.match(/\${S\(([0-9]+)\)}/);
         if (match !== null) result = result.replace(match[0], "&nbsp;".repeat(match[1]));
@@ -41,7 +41,7 @@ function supertext(text){
 
 function clone(obj){
     if (typeof obj !== "object") return obj;
-    var result, k;
+    let result, k;
     if (Array.isArray(obj)){
         result = [];
         for (let i = 0; i < obj.length; i++) result.push(clone(obj[i]));
@@ -60,7 +60,7 @@ function dc(a){return decodeURIComponent(atob(a));}
 // READ FILE
 
 function read_file(file, raw = false){
-    var req = new XMLHttpRequest(), result = null;
+    let req = new XMLHttpRequest(), result = null;
     req.open("GET", file, false);
     req.onreadystatechange = function (){if ([0, 200].includes(req.status)) result = req.responseText;};
     req.send(null);
@@ -73,8 +73,8 @@ function to_dom(text){return new DOMParser().parseFromString(text, 'text/html');
 function lang(){return data.constant.langs[data.save.lang];}
 
 function fetch_page(name, lang, space = 0){
-    var a = data.assets.pages.getElementsByTagName("page");
-    var b = null;
+    let a = data.assets.pages.getElementsByTagName("page");
+    let b = null;
     for (let i = 0; i < a.length; i++) if (a[i].attributes.name.value === name){b = a[i]; break;}
     if (b === null) return "ERROR";
     a = b.getElementsByTagName("content");
@@ -93,7 +93,7 @@ function blog_comp(a, b){
 }
 
 function fetch_blog(){
-    var a = data.assets.blogs.getElementsByTagName("blog"), b = [];
+    let a = data.assets.blogs.getElementsByTagName("blog"), b = [];
     for (let i = 0; i < a.length; i++) b.push([a[i].attributes.category.value, a[i].attributes.time.value, a[i].hasAttribute("pinned"), a[i], i]);
     for (let i = 0; i < data.assets.articles.length; i++) b.push(["article", data.assets.articles[i].time, false, null, data.assets.articles[i].id]);
     return b.sort(blog_comp);
@@ -104,22 +104,22 @@ function fetch_blog(){
 function get_para(code, url = null){return new URLSearchParams(url === null ? window.location.search : url).get(code);}
 
 function get_section(url = null){
-    var section = get_para("section", url);
+    let section = get_para("section", url);
     return section === null ? "0" : section;
 }
 
 function get_category(url = null){
-    var category = get_para("category", url);
+    let category = get_para("category", url);
     return category === null ? "" : category;
 }
 
 function get_id(url = null){
-    var id = get_para("id", url);
+    let id = get_para("id", url);
     return id === null ? -1 : parseInt(id);
 }
 
 function get_lang(){
-    var lan = navigator.language.toLowerCase();
+    let lan = navigator.language.toLowerCase();
     if (lan.includes("ja")) return 3;
     if (!lan.includes("zh")) return 0;
     if (lan.includes("hant")) return 2;
@@ -130,7 +130,7 @@ function get_lang(){
 }
 
 function get_series(id){
-    var name = "";
+    let name = "";
     for (let i = 0; i < data.assets.categories.series.length; i++){
         if (data.assets.categories.series[i].list.indexOf(id) >= 0){
             if (data.assets.categories.series[i].default === null) name = data.assets.categories.series[i].name.null
@@ -145,7 +145,7 @@ function get_series(id){
 // TIME FUNCTION
 
 function get_now(){
-    var timedata, t1 = null, t2;
+    let timedata, t1 = null, t2;
     try {
         timedata = JSON.parse(read_file("https://worldtimeapi.org/api/timezone/Etc/UTC", true));
         t1 = timedata.unixtime * 1000 + Number(timedata.utc_datetime.split(".")[1].slice(0, 3));
@@ -161,7 +161,7 @@ function get_now(){
 function get_timezone(){return new Date().getTimezoneOffset() * -60000;}
 
 function read_time(t){
-    var a = replaceall(replaceall(replaceall(t, "/", " "), ":", " "), ".", " ").split(" ");
+    let a = replaceall(replaceall(replaceall(t, "/", " "), ":", " "), ".", " ").split(" ");
     return Date.UTC(a[0], a[1] - 1, a[2], a[3], a[4], a[5], a[6]);
 }
 
@@ -178,7 +178,7 @@ function time_param(t){
 }
 
 function now_text(t){
-    var result = data.assets.words[lang()].time_text;
+    let result = data.assets.words[lang()].time_text;
     result = result.replace("${YEAR}", t[0]);
     result = result.replace("${MONTH}", data.assets.words[lang()].months[t[1] - 1]);
     result = result.replace("${DAY}", z(t[2], 2));
@@ -190,7 +190,7 @@ function now_text(t){
 }
 
 function ago_text(t){
-    var unit = data.assets.words[lang()].time_units;
+    let unit = data.assets.words[lang()].time_units;
     if (t[0]) return `${t[0]}${unit[0]}` + (t[1] ? `${t[1]}${unit[1]}` : "") + unit[7];
     if (t[1]) return `${t[1]}${unit[1]}` + (t[2] >= 7 ? `${intdiv(t[2], 7)}${unit[2]}` : "") + unit[7];
     if (t[2] >= 7) return `${intdiv(t[2], 7)}${unit[2]}` + (t[2] % 7 ? `${t[2] % 7}${unit[3]}` : "") + unit[7];
@@ -201,11 +201,11 @@ function ago_text(t){
 }
 
 function time_text(t){
-    var d = (data.time.now - t) % 86400000;
-    var n1 = data.time.now - d - t % 86400000, t1 = t - t % 86400000;
-    var n2 = time_param(n1), t2 = time_param(t1);
-    var dt = [n2[0], n2[1], n2[2], intdiv(d, 3600000) % 24, intdiv(d, 60000) % 60, intdiv(d, 1000) % 60, d % 1000];
-    var t3 = time_param(t + get_timezone());
+    let d = (data.time.now - t) % 86400000;
+    let n1 = data.time.now - d - t % 86400000, t1 = t - t % 86400000;
+    let n2 = time_param(n1), t2 = time_param(t1);
+    let dt = [n2[0], n2[1], n2[2], intdiv(d, 3600000) % 24, intdiv(d, 60000) % 60, intdiv(d, 1000) % 60, d % 1000];
+    let t3 = time_param(t + get_timezone());
     if (dt[2] < t2[2]){
         dt[2] += (Date.UTC(t2[0], t2[1], 1, 0, 0, 0, 0) - t1) / 86400000;
         dt[1]--;
@@ -231,7 +231,7 @@ function set_scroll_top(y){
 // ANIMATION FUNCTION
 
 function generate_arc(){
-    var result = [], size, total, big;
+    let result = [], size, total, big;
     for (let i = 0;; i++){
         size = 1;
         for (let j = 0; j < 3; j++){
@@ -258,7 +258,7 @@ function generate_arc(){
 }
 
 function set_arcs(){
-    var div, arc, path, f1, f2, d, r1, r2;
+    let div, arc, path, f1, f2, d, r1, r2;
     data.animation.arcs = generate_arc();
     for (let i = 0; i < data.animation.arcs.length; i++){
         f1 = i;
@@ -294,7 +294,7 @@ function set_arcs(){
 }
 
 function generate_rect(t, h){
-    var result = [t, h];
+    let result = [t, h];
     result.push(Math.floor(Math.random() * 2));
     result.push(Math.floor(Math.random() * 201) + 100);
     result.push(Math.floor(Math.random() * 6) - 45);
@@ -305,7 +305,7 @@ function generate_rect(t, h){
 }
 
 function occupied_space(branch){
-    var result = [], p;
+    let result = [], p;
     for (let i = 0; i < branch.length; i++){
         for (let j = 0; j < Math.abs(branch[i][2]); j++){
             p = `${branch[i][0] + j},${branch[i][1] + j * (branch[i][2] > 0 ? 1 : -1)}`;
@@ -320,7 +320,7 @@ function occupied_space(branch){
 }
 
 function available_space(branch){
-    var result = [], p;
+    let result = [], p;
     for (let i = 0; i < branch.length; i++){
         result = result.filter((x) => x !== `${branch[i][0]},${branch[i][1]}`);
         for (let j = 1; j < branch[i][3]; j++){
@@ -332,7 +332,7 @@ function available_space(branch){
 }
 
 function generate_branch(t){
-    var result = [t], branch = [], occ, ava, err, p, d, b, g;
+    let result = [t], branch = [], occ, ava, err, p, d, b, g;
     result.push(Math.floor(Math.random() * 2));
     result.push(window.innerHeight * (Math.random() * 6 + 1) / 8);
     for (let i = 0; i < Math.floor(Math.random() * 5) + 3; i++){
@@ -374,7 +374,7 @@ function generate_branch(t){
 }
 
 function set_alphabet(){
-    var result = [], ord = [], r;
+    let result = [], ord = [], r;
     for (let i = 0; i < 15; i++){
         r = [];
         for (let j = 0; j < 15; j++) if (!ord.includes(j)) r.push(j);
@@ -394,7 +394,7 @@ function set_alphabet(){
 }
 
 function set_squares(){
-    var result = [], ord = [], r;
+    let result = [], ord = [], r;
     for (let i = 0; i < 5; i++){
         r = [];
         for (let j = 0; j < 5; j++) if (!ord.includes(j)) r.push(j);
@@ -415,7 +415,7 @@ function set_squares(){
 
 function text_appear(text, t){
     if (t >= 1000 || t === null) return text;
-    var result = "", len = 0, lens = [];
+    let result = "", len = 0, lens = [];
     for (let i = 0; i < text.length; i++){
         lens.push(len);
         len += (text.charCodeAt(i) >= 128) + 1;
@@ -430,7 +430,7 @@ function text_appear(text, t){
 }
 
 function update_ani_center(){
-    var size = Math.min(window.innerWidth, window.innerHeight, 864);
+    let size = Math.min(window.innerWidth, window.innerHeight, 864);
     document.querySelector(".back-center").style.left = (window.innerWidth / 2 - size * 10 / 27) + "px";
     document.querySelector(".back-center").style.top = (window.innerHeight / 2 - size * 10 / 27) + "px";
     document.querySelector(".back-center").style.width = (size * 20 / 27) + "px";
@@ -440,7 +440,7 @@ function update_ani_center(){
 }
 
 function update_ani_gear(){
-    var size = Math.min(window.innerWidth, window.innerHeight, 864);
+    let size = Math.min(window.innerWidth, window.innerHeight, 864);
     document.querySelector(".back-gear").style.left = (window.innerWidth / 2 - size * 10 / 27) + "px";
     document.querySelector(".back-gear").style.top = (window.innerHeight / 2 - size * 10 / 27) + "px";
     document.querySelector(".back-gear").style.width = (size * 20 / 27) + "px";
@@ -450,7 +450,7 @@ function update_ani_gear(){
 }
 
 function update_ani_arc(){
-    var size = Math.min(window.innerWidth, window.innerHeight, 864);
+    let size = Math.min(window.innerWidth, window.innerHeight, 864);
     for (let i = 0; i < data.animation.arcs.length; i++){
         document.querySelector(".back-arc" + i).style.left = (window.innerWidth - size) / 2 + "px";
         document.querySelector(".back-arc" + i).style.top = (window.innerHeight - size) / 2 + "px";
@@ -462,7 +462,7 @@ function update_ani_arc(){
 }
 
 function update_ani_rect(){
-    var k = Object.keys(data.animation.rects), rect;
+    let k = Object.keys(data.animation.rects), rect;
     for (let i = 0; i < k.length; i++){
         rect = data.animation.rects[k[i]];
         document.querySelector(`.back-rect${z(k[i], 6)}`).style.width = `calc(${rect[5] / 10}vw + 2px)`;
@@ -473,7 +473,7 @@ function update_ani_rect(){
 }
 
 function update_ani_branch(){
-    var k = Object.keys(data.animation.branches), branch;
+    let k = Object.keys(data.animation.branches), branch;
     for (let i = 0; i < k.length; i++){
         branch = data.animation.branches[k[i]];
         document.querySelector(`.back-branch${z(k[i], 6)}`).style.width = Math.min(window.innerWidth, 800) + "px";
@@ -494,7 +494,7 @@ function update_animation(){
 function update_ani_center_time(t1){document.querySelector(".back-center").style.opacity = data.animation.start ? Math.min(t1 / 1000, 1) : 1;}
 
 function update_ani_gear_time(t1){
-    var t;
+    let t;
     if (data.animation.start){
         if (t1 < 2000) t = 0;
         if (2000 <= t1 && t1 < 4000) t = t1 * t1 - t1 * 4000 + 4000000;
@@ -505,7 +505,7 @@ function update_ani_gear_time(t1){
 }
 
 function update_ani_arc_time(t1){
-    var t, deg;
+    let t, deg;
     if (data.animation.start){
         if (t1 < 2000) t = 0;
         if (2000 <= t1 && t1 < 4000) t = t1 ** 3 - 12000 * t1 ** 2 + 48500000 * t1 - 57000000000;
@@ -520,7 +520,7 @@ function update_ani_arc_time(t1){
 
 function update_ani_rect_time(t1, t2){
     if (t1 < 4000 && data.animation.start) return;
-    var change = false, id, k, rect, pos, div, r;
+    let change = false, id, k, rect, pos, div, r;
     if (Math.random() * 500 < t1 - t2){
         for (;;){
             id = Math.floor(Math.random() * 1000000);
@@ -563,7 +563,7 @@ function update_ani_rect_time(t1, t2){
 
 function update_ani_branch_time(t1, t2){
     if (t1 < 4000 && data.animation.start) return;
-    var change = false, id, k, branch, div, b, path, d;
+    let change = false, id, k, branch, div, b, path, d;
     if (Math.random() * 2000 < t1 - t2){
         for (;;){
             id = Math.floor(Math.random() * 1000000);
@@ -650,12 +650,12 @@ function update_ani_laser_time(t1){
     if (!data.animation.start) return;
     document.querySelector(".back-lasers").innerHTML = "";
     if (t1 < 1000 || t1 > 2000) return;
-    var svg, t, op, laser, d, len;
-    var size = Math.min((window.innerWidth - 80) / 560, 1);
-    var x = Math.max(window.innerWidth - 560, 80) / 2;
-    var y = 1184 - Math.min(Math.max(window.innerWidth, 1088), 1152) + (1 - size) * 32;
-    var c = color_code(0, 256 - data.animation.bright * 32 / 125, 256);
-    var ls = [
+    let svg, t, op, laser, d, len;
+    let size = Math.min((window.innerWidth - 80) / 560, 1);
+    let x = Math.max(window.innerWidth - 560, 80) / 2;
+    let y = 1184 - Math.min(Math.max(window.innerWidth, 1088), 1152) + (1 - size) * 32;
+    let c = color_code(0, 256 - data.animation.bright * 32 / 125, 256);
+    let ls = [
         [0, 0], [2, 28], [3, 4], [2, 44], [3, 44], [2, 84], [3, 60],
         [2, 100], [3, 116], [2, 116], [0, 60], [1, 220], [4, 296], [3, 268],
         [2, 312], [1, 332], [2, 344], [3, 360], [2, 360], [3, 376], [2, 416],
@@ -710,7 +710,7 @@ function update_ani_logo_time(t1, t2){
         set_logo(true);
         return;
     }
-    var ds = [
+    let ds = [
         "M 0 0 h 32 v 64 M 6 4 l 22 44 v -44",
         "M 44 0 l 32 64 h -4 l -24 -48 v 48 h -4",
         "M 56 0 h 4 l 24 48 v -48 h 4 v 64",
@@ -727,7 +727,7 @@ function update_ani_logo_time(t1, t2){
         "M 480 0 h 36 v 64 h -4 v -60 h -28 v 60 h -4",
         "M 528 0 l 32 64 h -4 l -24 -48 v 48 h -4",
     ];
-    var as = data.animation.alphabet[intdiv(t1, 40) - 50], svg, a;
+    let as = data.animation.alphabet[intdiv(t1, 40) - 50], svg, a;
     svg = document.createElement("svg");
     svg.setAttribute("width", "560");
     svg.setAttribute("height", "64");
@@ -754,7 +754,7 @@ function update_ani_menu_time(t1, t2){
         set_menu(data.states.menu, Math.min(t1 - 3000, 1000));
         return;
     }
-    var items = 4 - data.states.menu * (data.states.menu !== 1), svg, path, l;
+    let items = 4 - data.states.menu * (data.states.menu !== 1), svg, path, l;
     document.querySelector(".menu").innerHTML = "";
     document.querySelector(".menu").style.height = 192 / items + "px";
     document.querySelector(".menu").style["background-color"] = "#00000000";
@@ -783,7 +783,7 @@ function update_ani_menu_time(t1, t2){
 }
 
 function update_ani_content_time(t1, t2){
-    var oc = data.animation.change;
+    let oc = data.animation.change;
     if (data.animation.during_start){
         update_ani_content_inside(Math.min(Math.max(4000 - t1, 0), 500));
         document.querySelector(".content").style.display = t1 >= 3500 ? "block" : "none";
@@ -804,7 +804,7 @@ function update_ani_content_time(t1, t2){
 }
 
 function update_ani_content_inside(t){
-    var t0 = Math.abs(t - 500), items, cates;
+    let t0 = Math.abs(t - 500), items, cates;
     document.querySelector(".content").style["pointer-events"] = t ? "none" : "auto";
     if (!data.save.change){
         document.querySelector(".content").style.opacity = t0 / 500;
@@ -844,7 +844,7 @@ function update_ani_home_right_time(t1, t2){
     if (data.states.home_right && data.animation.home_right < 500) data.animation.home_right = Math.min(data.animation.home_right + t1 - t2, 500);
     if (!data.states.home_right && data.animation.home_right > 0) data.animation.home_right = Math.max(data.animation.home_right - t1 + t2, 0);
     if (get_section() != 0 || data.states.content < 2) return;
-    var k, w1, w2;
+    let k, w1, w2;
     document.querySelector(".home-left2").style.opacity = (1000 - data.animation.home_right) / 1000;
     document.querySelector(".menu").style["pointer-events"] = [0, 500].includes(data.animation.home_right) ? "auto" : "none";
     document.querySelector(".content").style["pointer-events"] = [0, 500].includes(data.animation.home_right) ? "auto" : "none";
@@ -903,7 +903,7 @@ function update_animation_time(t1, t2){
 function update_math(){
     try {MathJax.typeset();}
     catch {
-        var command = function (){
+        let command = function (){
             set_content();
             try {MathJax.typeset();} catch {}
         };
@@ -919,7 +919,7 @@ function update_top(){
 function update_logo(){document.querySelector(".logo").style["margin-top"] = Math.min(Math.max(1188 - window.innerWidth, 32), 96) + "px";}
 
 function update_menu(){
-    var state = window.innerWidth >= 832 ? 1 : window.innerWidth >= 448 ? 2 : 3;
+    let state = window.innerWidth >= 832 ? 1 : window.innerWidth >= 448 ? 2 : 3;
     if (data.states.menu !== state){
         data.states.menu = state;
         set_menu(state);
@@ -927,7 +927,7 @@ function update_menu(){
 }
 
 function update_home(){
-    var state = (window.innerWidth < 1024) + 1;
+    let state = (window.innerWidth < 1024) + 1;
     if (data.states.content !== state){
         data.states.content = state;
         set_home(state);
@@ -935,7 +935,7 @@ function update_home(){
 }
 
 function update_profile(){
-    var state = (window.innerWidth < 1024) + 1;
+    let state = (window.innerWidth < 1024) + 1;
     if (data.states.content !== state){
         data.states.content = state;
         document.querySelector(".content").innerHTML = fetch_page("profile-page" + (state > 1 ? state : ""), "null");
@@ -944,7 +944,7 @@ function update_profile(){
 }
 
 function update_article(){
-    var state = (window.innerWidth < 1024) + 1;
+    let state = (window.innerWidth < 1024) + 1;
     if (data.states.content !== state){
         data.states.content = state;
         for (let i = 0; i < document.querySelectorAll(".category-text").length; i++){
@@ -960,7 +960,7 @@ function update_initial(){
 }
 
 function update(){
-    var section = get_section();
+    let section = get_section();
     update_initial();
     if (section == 0) update_home();
     if (section == 1) update_profile();
@@ -983,7 +983,7 @@ function update_setting_time(t1, t2){
 function update_bright_time(t1, t2){
     if (data.save.bright && data.animation.bright < 500) data.animation.bright = Math.min(data.animation.bright + t1 - t2, 500);
     if (!data.save.bright && data.animation.bright > 0) data.animation.bright = Math.max(data.animation.bright - t1 + t2, 0);
-    var c = intdiv(data.animation.bright * 64, 125);
+    let c = intdiv(data.animation.bright * 64, 125);
     change_color("theme-back", color_code(c, c, c));
     change_color("theme-font", color_code(256 - c, 256 - c, 256 - c));
     change_color("theme-ui1", color_code(0, 256 - c / 2, 256));
@@ -994,16 +994,16 @@ function update_bright_time(t1, t2){
     change_color("theme-transition2", color_code(0, 256 - c / 2, 256) + "40");
     change_color("theme-transition3", color_code(0, 256 - c / 2, 256) + "80");
     if (data.save.special === "af2025"){
-        var s = function (r, g, b, t){
+        let s = function (r, g, b, t){
             if (r === g && g === b) return color_code(r, g, b);
-            var r2 = Math.round(r * 8), g2 = Math.round(g * 8), b2 = Math.round(b * 8);
-            var mn = Math.min(r2, g2, b2), mx = Math.max(r2, g2, b2), m = mx - mn, h;
+            let r2 = Math.round(r * 8), g2 = Math.round(g * 8), b2 = Math.round(b * 8);
+            let mn = Math.min(r2, g2, b2), mx = Math.max(r2, g2, b2), m = mx - mn, h;
             if (mx === r2 && mx !== g2) h = g2 - b2;
             if (mx === g2 && mx !== b2) h = b2 - r2 + m * 2;
             if (mx === b2 && mx !== r2) h = r2 - g2 + m * 4;
             if (h < 0) h += m * 6;
             h = (h * 500 + m * t) % (m * 3000);
-            var r3 = mn * 500, g3 = mn * 500, b3 = mn * 500;
+            let r3 = mn * 500, g3 = mn * 500, b3 = mn * 500;
             if (0 <= h && h < m * 500){r3 += m * 500; g3 += h;}
             if (m * 500 <= h && h < m * 1000){r3 += m * 1000 - h; g3 += m * 500;}
             if (m * 1000 <= h && h < m * 1500){g3 += m * 500; b3 += h - m * 1000;}
@@ -1058,7 +1058,7 @@ function set_page(){
 }
 
 function set_title(){
-    var section = get_section();
+    let section = get_section();
     document.getElementsByTagName("html")[0].lang = lang();
     document.getElementById("title").innerHTML = "David_Exmachina - "
     if (["0", "1", "2", "3"].includes(section)) document.getElementById("title").innerHTML += data.assets.words[lang()].menu[section];
@@ -1098,9 +1098,9 @@ function set_logo(forced = false){
 
 function set_menu(state, t = null){
     if (data.animation.during_start && t === null) return;
-    var button = ["HOME", "PROFILE", "PROJECTS", "ARTICLES"];
-    var section = get_section(data.animation.destination);
-    var line, new1, k;
+    let button = ["HOME", "PROFILE", "PROJECTS", "ARTICLES"];
+    let section = get_section(data.animation.destination);
+    let line, new1, k;
     document.querySelector(".menu").style.height = "auto";
     document.querySelector(".menu").style["background-color"] = "var(--theme-window1)";
     document.querySelector(".menu").style.padding = "0px calc(30px - var(--content-scroll)) 0px 30px";
@@ -1129,7 +1129,7 @@ function set_menu(state, t = null){
 }
 
 function set_content(){
-    var section = get_section();
+    let section = get_section();
     if (!data.animation.during_start){
         document.querySelector(".content").style.opacity = 1;
         document.querySelector(".content").style["pointer-events"] = "auto";
@@ -1140,7 +1140,7 @@ function set_content(){
     }
     if (["af2024", "af2025"].includes(section)){
         document.querySelector(".content").innerHTML = fetch_page("special", lang(), -4);
-        var command = function (){
+        let command = function (){
             data.save.special = section;
             save_data();
             window.location.href = "?direct=1";
@@ -1156,7 +1156,7 @@ function set_content(){
 }
 
 function set_home(state, cate = null){
-    var blog_data = fetch_blog(), category, line, new1, new2, article, content, default_, contents, text, comment, include, keys, width;
+    let blog_data = fetch_blog(), category, line, new1, new2, article, content, default_, contents, text, comment, include, keys, width;
     category = cate === null ? get_category() : cate;
     document.querySelector(".content").innerHTML = fetch_page("home-page" + (state > 1 ? state : ""), "null");
     for (let i = 0; i < blog_data.length; i++){
@@ -1259,7 +1259,7 @@ function set_home(state, cate = null){
 function set_projects(){document.querySelector(".content").innerHTML = fetch_page("project-placeholder", lang());}
 
 function set_article(){
-    var article = null;
+    let article = null;
     if (get_id() === -1){
         set_article_list();
         return;
@@ -1276,7 +1276,7 @@ function set_article(){
 }
 
 function set_article_list(cate = null){
-    var category, keys, line, content, new1, series_data;
+    let category, keys, line, content, new1, series_data;
     set_squares();
     category = cate === null ? get_category() : cate;
     document.querySelector(".content").innerHTML = fetch_page("article", "null");
@@ -1317,7 +1317,7 @@ function set_article_list(cate = null){
 }
 
 function set_article_page(){
-    var article, content, new1, file, series_data, cites, citetext, citenum, cite, left = null, right = null;
+    let article, content, new1, file, series_data, cites, citetext, citenum, cite, left = null, right = null;
     for (let i = 0; i < data.assets.articles.length; i++) if (data.assets.articles[i].id == get_id()){
         article = data.assets.articles[i];
         break;
@@ -1407,7 +1407,7 @@ function set_article_page(){
 function set_error(code){document.querySelector(".content").innerHTML = fetch_page(`error-${code}`, lang(), -4);}
 
 function set_setting(initialize = false){
-    var newdiv, newdiv2, newdiv3, newp, k;
+    let newdiv, newdiv2, newdiv3, newp, k;
     document.getElementById("lang").innerHTML = data.assets.words[lang()].lang;
     document.getElementById("lang-tab").className = `lang-button${data.states.setting === 1 ? " triggered2" : " button2"}`;
     document.getElementById("lang-tab").style.cursor = "pointer";
@@ -1459,11 +1459,11 @@ function set_setting(initialize = false){
 
 function set_special(){
     if (data.save.special === "af2024"){
-        var er, k1, k2, a, b;
+        let er, k1, k2, a, b;
         if (data.temp.er === undefined){
             er = function (a){
                 if ([false, true].includes(a)) return a;
-                var result = "";
+                let result = "";
                 for (let i = 0; i < a.length; i++) result += String.fromCharCode(Math.floor(Math.random() * 94) + 33);
                 return result;
             }
@@ -1510,7 +1510,7 @@ function set_special(){
 }
 
 function refresh(mode = 0){
-    var y = get_scroll_top();
+    let y = get_scroll_top();
     data.states.menu = 0;
     data.states.content = 0;
     if (mode === 2){
@@ -1535,7 +1535,7 @@ function refresh(mode = 0){
 function save_data(){localStorage.setItem("data", JSON.stringify(data.save));}
 
 function load_data(){
-    var d = JSON.parse(localStorage.getItem("data")), k;
+    let d = JSON.parse(localStorage.getItem("data")), k;
     if (d === null) data.save.lang = get_lang();
     else data.save = d;
     k = Object.keys(data.constant.save);
@@ -1598,7 +1598,7 @@ function open_tool(){
 }
 
 function to_top(){
-    var scroll, command;
+    let scroll, command;
     scroll = get_scroll_top();
     for (let i = 0; i < 50; i++){
         command = function (){set_scroll_top(scroll * (49 - i) ** 4 / 6250000);};
@@ -1608,7 +1608,7 @@ function to_top(){
 
 function change_section(n = 0){
     if (get_section() == n) return;
-    var url = "?section=" + n;
+    let url = "?section=" + n;
     data.states.setting = 0;
     data.states.comment = [];
     if (data.save.change){
@@ -1625,8 +1625,8 @@ function change_section(n = 0){
 
 function change_category(category = ""){
     if (get_category() === category) return;
-    var section = get_section();
-    var url = "?section=" + section + (category === "" ? "" : "&category=" + category);
+    let section = get_section();
+    let url = "?section=" + section + (category === "" ? "" : "&category=" + category);
     if (section == 0) data.states.stop_behind = true;
     if (data.save.change){
         data.animation.change = 1000;
@@ -1662,7 +1662,7 @@ function check_comment(id){
 
 function view_article(id = null){
     if (get_id() == id) return;
-    var url = "?section=3" + (get_category() === "" ? "" : "&category=" + get_category()) + (id === null ? "" : "&id=" + id);
+    let url = "?section=3" + (get_category() === "" ? "" : "&category=" + get_category()) + (id === null ? "" : "&id=" + id);
     data.states.setting = 0;
     data.states.comment = [];
     if (data.save.change){
@@ -1687,7 +1687,7 @@ function restore(){
 
 // DATA
 
-var ccc = "";
+let ccc = "";
 ccc += "Y2NjJTNEJTdCY2QlM0ElNUIlNUIwJTJDNjUlMkMyNiU1RCUyQyU1QjI2JTJDOTclMkMyNiU1RCUyQyU1QjUyJTJDND";
 ccc += "glMkMxMCU1RCUyQyU1QjYyJTJDNDMlMkMxJTVEJTJDJTVCNjMlMkM0NyUyQzElNUQlNUQlMkNjMmklM0FmdW5jdGlv";
 ccc += "bihhKSU3QmZvcihsZXQlMjBpJTNEMCUzQmklM0N0aGlzLmNkLmxlbmd0aCUzQmklMkIlMkIpaWYodGhpcy5jZCU1Qm";
@@ -1697,19 +1697,19 @@ ccc += "VEKSUzQiU3RCUyQ2kyYyUzQWZ1bmN0aW9uKGEpJTdCZm9yKGxldCUyMGklM0QwJTNCaSUzQ3
 ccc += "JTNCaSUyQiUyQilpZih0aGlzLmNkJTVCaSU1RCU1QjAlNUQlM0MlM0RhJTI2JTI2YSUzQ3RoaXMuY2QlNUJpJTVEJT";
 ccc += "VCMCU1RCUyQnRoaXMuY2QlNUJpJTVEJTVCMiU1RClyZXR1cm4lMjBTdHJpbmcuZnJvbUNoYXJDb2RlKGEtdGhpcy5j";
 ccc += "ZCU1QmklNUQlNUIwJTVEJTJCdGhpcy5jZCU1QmklNUQlNUIxJTVEKSUzQiU3RCUyQ2MyaXMlM0FmdW5jdGlvbihhKS";
-ccc += "U3QnZhciUyMG4lM0QwbiUzQmZvcihsZXQlMjBpJTNEMCUzQmklM0NhLmxlbmd0aCUzQmklMkIlMkIpJTdCaWYoaSlu";
+ccc += "U3QmxldCUyMG4lM0QwbiUzQmZvcihsZXQlMjBpJTNEMCUzQmklM0NhLmxlbmd0aCUzQmklMkIlMkIpJTdCaWYoaSlu";
 ccc += "JTNDJTNDJTNENm4lM0JuJTJCJTNEdGhpcy5jMmkoYS5jaGFyQ29kZUF0KGkpKSUzQiU3RHJldHVybiUyMG4lM0IlN0";
-ccc += "QlMkNpMmNzJTNBZnVuY3Rpb24oYSklN0J2YXIlMjBjJTNEMCUyQ3QxJTNEYS50b1N0cmluZyg4KSUyQ3QyJTNEJTIy";
+ccc += "QlMkNpMmNzJTNBZnVuY3Rpb24oYSklN0JsZXQlMjBjJTNEMCUyQ3QxJTNEYS50b1N0cmluZyg4KSUyQ3QyJTNEJTIy";
 ccc += "JTIyJTNCZm9yKGxldCUyMGklM0QwJTNCaSUzQ3QxLmxlbmd0aCUzQmklMkIlMkIpJTdCYyUyQiUzRHBhcnNlSW50KH";
 ccc += "QxLmNoYXJBdChpKSklM0JpZihpJTI1MiklN0J0MiUyQiUzRHRoaXMuaTJjKGMpJTNCYyUzRDAlM0Jjb250aW51ZSUz";
 ccc += "QiU3RGMlM0MlM0MlM0QzJTNCJTdEcmV0dXJuJTIwdDIlM0IlN0QlMkNzdSUzQWZ1bmN0aW9uKGElMkNiKSU3QnJldH";
 ccc += "VybiUyMHRoaXMuaTJjKHBhcnNlSW50KCg2NG4lMkJ0aGlzLmMyaShhLmNoYXJDb2RlQXQoMCkpLXRoaXMuYzJpKGIu";
-ccc += "Y2hhckNvZGVBdCgwKSkpJTI1NjRuKSklM0IlN0QlMkNzdXMlM0FmdW5jdGlvbihhJTJDYiklN0J2YXIlMjB0JTNEJT";
+ccc += "Y2hhckNvZGVBdCgwKSkpJTI1NjRuKSklM0IlN0QlMkNzdXMlM0FmdW5jdGlvbihhJTJDYiklN0JsZXQlMjB0JTNEJT";
 ccc += "IyJTIyJTNCZm9yKGxldCUyMGklM0QwJTNCaSUzQ2EubGVuZ3RoJTNCaSUyQiUyQil0JTJCJTNEdGhpcy5zdShhLmNo";
 ccc += "YXJBdChpKSUyQ2IuY2hhckF0KGklMjViLmxlbmd0aCkpJTNCcmV0dXJuJTIwdCUzQiU3RCUyQ2tleSUzQWZ1bmN0aW";
 ccc += "9uKGElMkNiKSU3QnJldHVybiUyMHRoaXMuaTJjcyh0aGlzLmMyaXMoZWMoYSkpKnRoaXMuYzJpcyhlYyhiKSkpJTNC";
 ccc += "JTdEJTJDYWZmJTNBZnVuY3Rpb24oYSklN0JyZXR1cm4lMjBNYXRoLmZsb29yKChhKjMtTWF0aC5jZWlsKE1hdGguc3";
-ccc += "FydChhKmEqNSkpKSUyRjIpJTNCJTdEJTJDcG0lM0FmdW5jdGlvbihhKSU3QnZhciUyMHAlM0QlNUIxJTJDMiU1RCUy";
+ccc += "FydChhKmEqNSkpKSUyRjIpJTNCJTdEJTJDcG0lM0FmdW5jdGlvbihhKSU3QmxldCUyMHAlM0QlNUIxJTJDMiU1RCUy";
 ccc += "Q3BwJTNCaWYodGhpcy5hZmYoYSklM0MyKXJldHVybiUyMDElM0Jmb3IobGV0JTIwaSUzRDIlM0JpJTNDJTNEdGhpcy";
 ccc += "5hZmYoYSklM0JpJTJCJTJCKSU3QnBwJTNEdHJ1ZSUzQmZvcihsZXQlMjBqJTNEMSUzQnAlNUJqJTVEKnAlNUJqJTVE";
 ccc += "JTNDJTNEaSUzQmolMkIlMkIpaWYoIShpJTI1cCU1QmolNUQpKSU3QnBwJTNEZmFsc2UlM0JicmVhayUzQiU3RGlmKH";
@@ -1718,13 +1718,13 @@ ccc += "RCU3QyU3Q3AubGVuZ3RoJTNEJTNEJTNEMSlyZXR1cm4lMjBwLnNsaWNlKC0xKSU1QjAlNUQl
 ccc += "FmdW5jdGlvbihhJTJDYiklN0JyZXR1cm4odGhpcy5hZmYoYiklMkIodGhpcy5wbShiKSUyQmEpKnRoaXMucG0oYikp";
 ccc += "JTI1YiUzQiU3RCUyQ2RiJTNBZnVuY3Rpb24oKSU3QnJldHVybiglMjJBU1NFVFMlMkZQT1NUUyUyMiElM0QlM0R0aG";
 ccc += "lzLm5wKCUyMkFTU0VUUyUyRlBPU1RTJTIyJTJDZmFsc2UpKSUzQiU3RCUyQ25wJTNBZnVuY3Rpb24oYSUyQ2IlM0R0";
-ccc += "cnVlKSU3QnZhciUyMHIlM0RhJTJDbyUzRGElMkNtJTNCZm9yKCUzQiUzQiklN0JtJTNEci5tYXRjaCglMkZBU1NFVF";
+ccc += "cnVlKSU3QmxldCUyMHIlM0RhJTJDbyUzRGElMkNtJTNCZm9yKCUzQiUzQiklN0JtJTNEci5tYXRjaCglMkZBU1NFVF";
 ccc += "MlNUMlMkZQT1NUUyUyRiklM0JpZihtISUzRCUzRG51bGwpciUzRHIucmVwbGFjZShtJTVCMCU1RCUyQ2RhdGEuY29u";
 ccc += "c3RhbnQucG9zdF9wYXRoKSUzQmlmKGIlMjYlMjYhdGhpcy5kYigpKSU3Qm0lM0RyLm1hdGNoKCUyRnNyYyUzRCUyMi";
 ccc += "hBU1NFVFMlNUMlMkZQT1NUUy4qJTNGKSUyMiUyRiklM0JpZihtISUzRCUzRG51bGwpciUzRHIucmVwbGFjZShtJTVC";
 ccc += "MCU1RCUyQyUyMnNyYyUzRCU1QyUyMmRhdGElM0FpbWFnZSUyRnBuZyUzQmJhc2U2NCUyQyUyMiUyQnJlYWRfZmlsZS";
 ccc += "htJTVCMSU1RCklMkIlMjIlNUMlMjIlMjIpJTNCJTdEaWYociUzRCUzRCUzRG8pYnJlYWslM0JvJTNEciUzQiU3RHJl";
-ccc += "dHVybiUyMHIlM0IlN0QlMkNwciUzQWZ1bmN0aW9uKGElMkNiKSU3QnZhciUyMHQlM0RiLnNwbGl0KCUyMi4lMjIpLn";
+ccc += "dHVybiUyMHIlM0IlN0QlMkNwciUzQWZ1bmN0aW9uKGElMkNiKSU3QmxldCUyMHQlM0RiLnNwbGl0KCUyMi4lMjIpLn";
 ccc += "NsaWNlKC0xKSU1QjAlNUQlMkNrJTNEdGhpcy5rZXkod2luZG93LmxvY2F0aW9uLmhvc3QlMkNiKSUyQ3IlMkNjJTJD";
 ccc += "bCUzQmlmKHQlM0QlM0QlM0QlMjJodG1sJTIyKSU3QnIlM0QlMjIlMjIlMkNjJTNEZmFsc2UlMkNsJTNEYS5zcGxpdC";
 ccc += "glMjIlNUNyJTVDbiUyMiklM0Jmb3IobGV0JTIwaSUzRDAlM0JpJTNDbC5sZW5ndGglM0JpJTJCJTJCKSU3QmlmKGkp";
@@ -1737,7 +1737,7 @@ ccc += "JDay5sZW5ndGgpKSklM0IlN0RyZXR1cm4lMjByJTNCJTdEaWYodCUzRCUzRCUzRCUyMmpzb2
 ccc += "ZGModGhpcy5zdXMoSlNPTi5wYXJzZShhKS5kYXRhJTJDaykpJTNCcmV0dXJuJTIwYSUzQiU3RCU3RA";
 eval(dc(ccc));
 
-var data = {
+let data = {
     constant    : {
         langs       : ["en", "zh-Hans", "zh-Hant", "jp"],
         post_path   : "ASSETS/POSTS",
@@ -1800,7 +1800,7 @@ function main(){
 }
 
 function interval(){
-    var t = Date.now();
+    let t = Date.now();
     t -= data.time.now + data.time.offset;
     try {update_time(t, data.time.then);} catch {}
     data.time.then = t;
