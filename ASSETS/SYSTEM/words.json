@@ -104,7 +104,7 @@
         "pinned"            : "固定された",
         "view_comments"     : "コメントを表示",
         "hide_comments"     : "コメントを非表示",
-        "published_article" : "記事「${ARTICLE}」を公開しました。",
+        "published_article" : "記事「${ARTICLE}」を投稿しました。",
         "category"          : "カテゴリー：",
         "article_prev"      : "前の記事",
         "article_next"      : "次の記事",
