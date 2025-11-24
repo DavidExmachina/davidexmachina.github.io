@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <page name="body">
+            <content lang="null">
+                <div class="background"></div>
+                <div class="main"></div>
+                <div class="buttons"></div>
+            </content>
+        </page>
+        <page name="background">
+            <content lang="null">
+                <div class="back-center"></div>
+                <div class="back-gear"></div>
+                <div class="back-arcs"></div>
+                <div class="back-rects"></div>
+                <div class="back-branches"></div>
+                <div class="back-lasers"></div>
+            </content>
+        </page>
+        <page name="main">
+            <content lang="null">
+                <div class="logo"><div class="logo2"></div></div>
+                <div class="menu"></div>
+                <div class="content"></div>
+            </content>
+        </page>
+        <page name="buttons">
+            <content lang="null">
+                <div class="setting">
+                    <div class="lang">
+                        <div id="lang-tab" class="lang-button button2" onclick="open_lang();"><p id="lang" class="lang-words"></p></div>
+                        <div id="lang-window"></div>
+                    </div>
+                    <div class="icon-lang"></div>
+                    <div class="tool">
+                        <div id="icon-tool" class="icon-tool button2" onclick="open_tool();"></div>
+                        <div id="tool-window" class="tool-window"></div>
+                    </div>
+                </div>
+                <div id="top" class="top button2" onclick="to_top();"></div>
+                <div id="restore" class="restore button2" onclick="restore();"></div>
+            </content>
+        </page>
+        <page name="menu-button">
+            <content lang="null"><div><div class="menu-text1"></div><div class="menu-text2"></div></div></content>
+        </page>
+        <page name="home-page">
+            <content lang="null">
+                <div class="home">
+                    <div id="blogs" class="home-left"></div>
+                    <div class="home-right">
+                        <div class="home-window">
+                            <div class="home-window-content">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </content>
+        </page>
+        <page name="home-page2">
+            <content lang="null">
+                <div class="home">
+                    <div id="blogs" class="home-left2"></div>
+                    <div class="home-right2">
+                        <div class="home-window" onclick="change_home_right();">
+                            <div class="home-window-content">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </content>
+        </page>
+        <page name="home-page3">
+            <content lang="null">
+                <div class="home">
+                    <div id="blogs" class="home-left3" onclick="change_home_right();"></div>
+                    <div class="home-right3" onclick="change_home_right();">
+                        <div class="home-window">
+                            <div class="home-window-content">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </content>
+        </page>
+        <page name="blog-line">
+            <content lang="null">
+                <div class="blog-line">
+                    <div class="blog-info"></div>
+                    <div class="blog-content"></div>
+                </div>
+            </content>
+        </page>
+        <page name="profile-page">
+            <content lang="null">
+                <div class="profile">
+                    <div class="profile-img"><img class="img" src="ASSETS/SYSTEM/RESOURCES/icon.png" alt=""></div>
+                    <div id="profile" class="profile-text"></div>
+                </div>
+            </content>
+        </page>
+        <page name="profile-page2">
+            <content lang="null">
+                <div class="profile-img2"><div class="profile-img3"><img class="img" src="ASSETS/SYSTEM/RESOURCES/icon.png" alt=""></div></div>
+                <div class="profile">
+                    <div id="profile" class="profile-text2"></div>
+                </div>
+            </content>
+        </page>
+        <page name="article">
+            <content lang="null">
+                <div id="categories" class="categories"></div>
+                <div id="articles" class="article">
+                    <div class="article-list">
+                    </div>
+                </div>
+            </content>
+        </page>
+        <page name="article-category">
+            <content lang="null">
+                <div class="category">
+                    <div id="category-button" class="category2 button1">
+                        <div class="category3">
+                            <div class="category-icon"></div>
+                            <div class="category-text"></div>
+                        </div>
+                    </div>
+                </div>
+            </content>
+        </page>
+        <page name="article-lines">
+            <content lang="null">
+                <div class="article-line">
+                    <div class="article-line2 button1">
+                        <div class="article-title"></div>
+                        <div class="article-info"></div>
+                    </div>
+                </div>
+            </content>
+        </page>
+        <page name="article-content">
+            <content lang="null">
+                <div class="article">
+                    <div class="article-page">
+                        <div class="article-head">
+                            <div class="article-title-button">
+                                <div class="article-title"></div>
+                                <div id="article-left"></div>
+                                <div id="article-right"></div>
+                                <div id="article-back" onclick="view_article();"></div>
+                            </div>
+                            <div id="article-info" class="article-info"></div>
+                        </div>
+                        <div id="article-content" class="article-body"></div>
+                    </div>
+                </div>
+            </content>
+        </page>
+        <page name="home-right">
+            <content lang="en">
+                <p>Welcome to David_Exmachina's official website!</p>
+                <a class="home-link button1" href="https://bsky.app/profile/david-exmachina.bsky.social" target="_blank">
+                    <div>
+                        <div id="icon-bluesky"></div>
+                        <div class="home-link-mark">&nbsp;</div>
+                    </div><div></div><div>Bluesky</div>
+                </a>
+                <a class="home-link button1" href="https://googology.fandom.com/wiki/User:David_Exmachina" target="_blank">
+                    <div>
+                        <div id="icon-fandom"></div>
+                        <div class="home-link-mark">\( \omega \)</div>
+                    </div><div></div><div>Googology Wiki</div>
+                </a>
+            </content>
+            <content lang="zh-Hans">
+                <p>欢迎来到David_Exmachina的官方网站！</p>
+                <a class="home-link button1" href="https://bsky.app/profile/david-exmachina.bsky.social" target="_blank">
+                    <div>
+                        <div id="icon-bluesky"></div>
+                        <div class="home-link-mark">&nbsp;</div>
+                    </div><div></div><div>Bluesky</div>
+                </a>
+                <a class="home-link button1" href="https://googology.fandom.com/wiki/User:David_Exmachina" target="_blank">
+                    <div>
+                        <div id="icon-fandom"></div>
+                        <div class="home-link-mark">\( \omega \)</div>
+                    </div><div></div><div>巨数学 Wiki</div>
+                </a>
+            </content>
+            <content lang="zh-Hant">
+                <p>歡迎來到David_Exmachina的官方網站！</p>
+                <a class="home-link button1" href="https://bsky.app/profile/david-exmachina.bsky.social" target="_blank">
+                    <div>
+                        <div id="icon-bluesky"></div>
+                        <div class="home-link-mark">&nbsp;</div>
+                    </div><div></div><div>Bluesky</div>
+                </a>
+                <a class="home-link button1" href="https://googology.fandom.com/wiki/User:David_Exmachina" target="_blank">
+                    <div>
+                        <div id="icon-fandom"></div>
+                        <div class="home-link-mark">\( \omega \)</div>
+                    </div><div></div><div>巨數學 Wiki</div>
+                </a>
+            </content>
+            <content lang="jp">
+                <p>David_Exmachinaの公式HPへようこそ！</p>
+                <a class="home-link button1" href="https://bsky.app/profile/david-exmachina.bsky.social" target="_blank">
+                    <div>
+                        <div id="icon-bluesky"></div>
+                        <div class="home-link-mark">&nbsp;</div>
+                    </div><div></div><div>Bluesky</div>
+                </a>
+                <a class="home-link button1" href="https://googology.fandom.com/wiki/User:David_Exmachina" target="_blank">
+                    <div>
+                        <div id="icon-fandom"></div>
+                        <div class="home-link-mark">\( \omega \)</div>
+                    </div><div></div><div>巨大数 Wiki</div>
+                </a>
+            </content>
+        </page>
+        <page name="profile-content">
+            <content lang="en">
+                <p><span class="highlight">Name:</span> <ruby>David_Exmachina<rt>/ˈdeɪvɪd/ /ɛksˈmɑːkɪnə/</rt></ruby></p>
+                <p>(Don't miss the underscore)</p>
+                <p><span class="highlight">Gender:</span> Male</p>
+                <p><span class="highlight">Birthday:</span> May 23</p>
+                <p><span class="highlight">Country/Territory:</span> International</p>
+                <p><span class="highlight">Languages:</span> English, Chinese, Japanese (Studying)</p>
+                <p><span class="highlight">Hobbies and Interests:</span> Games (Mainly RPG, Sandbox Games, Rhythm Games, Incremental Games, Chess), Anime, Music, Western Culture, Japanese Culture, Programming, Making Games, Composing, Writing, Mathematics (Mainly Set Theory, Googology and Computer Science), Natural Science, Linguistics, Cooking</p>
+                <p><span class="highlight">Things I Hate:</span> Unreasonable Restrictions and Rules, Threats, Traumas, Politics, History, Some Music</p>
+                <p class="connect">I'm a netizen with wide interests,</p>
+                <p class="connect">and I like to share some of my ideas with everyone on the internet.</p>
+                <p class="connect">My dream is to make games,</p>
+                <p class="connect">but I can only put my own ideas here due to my lack of ability.</p>
+                <p class="connect">I've learned to create websites</p>
+                <p class="connect">and I'm currently finding something interesting to do.</p>
+                <p><span class="highlight">Contact:</span> david_exmachina@outlook.com</p>
+            </content>
+            <content lang="zh-Hans">
+                <p><span class="highlight">名称：</span><ruby>David_Exmachina<rt>戴维_艾克斯马奇纳</rt></ruby></p>
+                <p>（不要漏掉下划线）</p>
+                <p><span class="highlight">性别：</span>男</p>
+                <p><span class="highlight">生日：</span>05月23日</p>
+                <p><span class="highlight">国家/地区：</span>国际</p>
+                <p><span class="highlight">语言：</span>英语、中文、日语（学习中）</p>
+                <p><span class="highlight">喜好与兴趣：</span>游戏（主要是RPG、沙盒类、音乐节奏类、放置类、国际象棋）、动漫、音乐、欧美文化、日本文化、编程、游戏制作、作曲、写作、数学（主要是集合论、巨数学以及计算机科学）、自然科学、语言学、烹饪</p>
+                <p><span class="highlight">憎恶的事物：</span>不合理的限制与规则、威胁、创伤、政治、历史、某些音乐</p>
+                <p class="connect">我是一个兴趣广泛的网友，</p>
+                <p class="connect">喜欢将自己的一些主意分享给互联网上的大家。</p>
+                <p class="connect">梦想是游戏制作，</p>
+                <p class="connect">但是由于实力不足只能将自己的点子放在这里。</p>
+                <p class="connect">我已经学会了网站制作</p>
+                <p class="connect">并且目前正在寻找有趣的事情做。</p>
+                <p><span class="highlight">联系方式：</span> david_exmachina@outlook.com</p>
+            </content>
+            <content lang="zh-Hant">
+                <p><span class="highlight">名稱：</span><ruby>David_Exmachina<rt>戴維_艾克斯馬奇納</rt></ruby></p>
+                <p>（不要漏掉底線）</p>
+                <p><span class="highlight">性別：</span>男</p>
+                <p><span class="highlight">生日：</span>05月23日</p>
+                <p><span class="highlight">國家/地區：</span>國際</p>
+                <p><span class="highlight">語言：</span>英語、中文、日語（學習中）</p>
+                <p><span class="highlight">喜好與興趣：</span>遊戲（主要是RPG、沙盒類、音樂節奏類、放置類、國際象棋）、動漫、音樂、歐美文化、日本文化、編程、遊戲製作、作曲、寫作、數學（主要是集合論、巨數學以及計算機科學）、自然科學、语言学、烹飪</p>
+                <p><span class="highlight">憎惡的事物：</span>不合理的限制與規則、威脅、創傷、政治、歷史、某些音樂</p>
+                <p class="connect">我是一個興趣廣泛的網友，</p>
+                <p class="connect">喜歡將自己的一些主意分享給互聯網上的大家。</p>
+                <p class="connect">夢想是遊戲製作，</p>
+                <p class="connect">但是由於實力不足只能將自己的點子放在這裡。</p>
+                <p class="connect">我已經學會了網站製作</p>
+                <p class="connect">並且目前正在尋找有趣的事情做。</p>
+                <p><span class="highlight">聯絡方式：</span> david_exmachina@outlook.com</p>
+            </content>
+            <content lang="jp">
+                <p><span class="highlight">名前：</span><ruby>David_Exmachina<rt>ダヴィッド_エクスマキナ</rt></ruby></p>
+                <p>（下線を欠けないように）</p>
+                <p><span class="highlight">性別：</span>男性</p>
+                <p><span class="highlight">誕生日：</span>05月23日</p>
+                <p><span class="highlight">国/地域：</span>国際的</p>
+                <p><span class="highlight">言語：</span>英語、中国語、日本語（勉強中）</p>
+                <p><span class="highlight">興味·趣味：</span>ゲーム（主にRPG、サンドボックス、リズム、放置ゲーム、チェス）、アニメ、音楽、欧米文化、日本文化、プログラミング、ゲーム制作、作曲、書くこと、数学（主に集合論、巨大数研究、計算機科学）、自然科学、言語学、料理</p>
+                <p><span class="highlight">嫌いなもの：</span>不当な制限やルール、脅威、トラウマ、政治、歴史、ある音楽</p>
+                <p class="connect">幅広い興味を持つネチズンです。</p>
+                <p class="connect">自分の考えをインターネットの皆様と共有したい。</p>
+                <p class="connect">夢はゲーム制作、</p>
+                <p class="connect">だが能力不足のため、ここでは自分のアイデアを述べるしかない。</p>
+                <p class="connect">俺はサイト作成を学んでいて、</p>
+                <p class="connect">今は何か面白いことを探している。</p>
+                <p><span class="highlight">連絡先：</span> david_exmachina@outlook.com</p>
+            </content>
+        </page>
+        <page name="project-placeholder">
+            <content lang="en">
+                <div class="projects">
+                    <a class="project button1" href="https://davidexmachina.github.io/garden-of-ordinals" target="_blank">
+                        <img class="img" src="ASSETS/SYSTEM/RESOURCES/Ord_en.png" alt="">
+                        <div class="project-text">Garden of Ordinals</div>
+                    </a>
+                </div>
+            </content>
+            <content lang="zh-Hans">
+                <div class="projects">
+                    <a class="project button1" href="https://davidexmachina.github.io/garden-of-ordinals" target="_blank">
+                        <img class="img" src="ASSETS/SYSTEM/RESOURCES/Ord_zh-Hans.png" alt="">
+                        <div class="project-text">序数花园</div>
+                    </a>
+                </div>
+            </content>
+            <content lang="zh-Hant">
+                <div class="projects">
+                    <a class="project button1" href="https://davidexmachina.github.io/garden-of-ordinals" target="_blank">
+                        <img class="img" src="ASSETS/SYSTEM/RESOURCES/Ord_zh-Hant.png" alt="">
+                        <div class="project-text">序數花園</div>
+                    </a>
+                </div>
+            </content>
+            <content lang="jp">
+                <div class="projects">
+                    <a class="project button1" href="https://davidexmachina.github.io/garden-of-ordinals" target="_blank">
+                        <img class="img" src="ASSETS/SYSTEM/RESOURCES/Ord_jp.png" alt="">
+                        <div class="project-text">順序数の庭園</div>
+                    </a>
+                </div>
+            </content>
+        </page>
+        <page name="special">
+            <content lang="en">
+                <div class="big-text">...Oh? You seem to have triggered something...</div>
+            </content>
+            <content lang="zh-Hans">
+                <div class="big-text">……哦？你似乎触发了什么东西……</div>
+            </content>
+            <content lang="zh-Hant">
+                <div class="big-text">……哦？你似乎觸發了什麼東西……</div>
+            </content>
+            <content lang="jp">
+                <div class="big-text">……おや？何かを引き起こしたようだ……</div>
+            </content>
+        </page>
+        <page name="special-69">
+            <content lang="null">
+                <div class="big-text">69 NICE</div>
+            </content>
+        </page>
+        <page name="error-not-exist">
+            <content lang="en">
+                <div class="big-text">ERROR: THIS PAGE DOES NOT EXIST</div>
+                <div class="small-text">I'm curious. How on earth did you get here?</div>
+            </content>
+            <content lang="zh-Hans">
+                <div class="big-text">错误：该页面不存在</div>
+                <div class="small-text">我很好奇。你到底是怎么来到这里的？</div>
+            </content>
+            <content lang="zh-Hant">
+                <div class="big-text">錯誤：該頁面不存在</div>
+                <div class="small-text">我很好奇。你到底是怎麼來到這裡的？</div>
+            </content>
+            <content lang="jp">
+                <div class="big-text">エラー：このページは存在しません</div>
+                <div class="small-text">気になる。お前は一体どうやってここに来たんだ？</div>
+            </content>
+        </page>
+        <page name="error-disconnected">
+            <content lang="en">
+                <div class="big-text">ERROR: DISCONNECTED</div>
+                <div class="small-text">Something went wrong. Check your internet connection.</div>
+            </content>
+            <content lang="zh-Hans">
+                <div class="big-text">错误：网络断开</div>
+                <div class="small-text">出了点问题。请检查网络连接。</div>
+            </content>
+            <content lang="zh-Hant">
+                <div class="big-text">錯誤：網路斷開</div>
+                <div class="small-text">出了點問題。請檢查網路連線。</div>
+            </content>
+            <content lang="jp">
+                <div class="big-text">エラー：ネットワーク切断</div>
+                <div class="small-text">問題が発生した。インターネット接続を確認してください。</div>
+            </content>
+        </page>
+        <page name="svg-center">
+            <content lang="null">
+                <svg class="back-center-svg" viewBox="0 0 640 640" xmlns="http://www.w3.org/2000/svg">
+                    <clipPath id="cut1"><path d="M 0 0 V 640 H 640 V 0 M 314 248 L 326 248 L 326 256 L 334 256 L 334 268 L 326 268 L 326 274 L 373 274 L 342 336 L 362 336 L 362 352 L 278 352 L 278 336 L 298 336 L 267 274 L 314 274 L 314 268 L 306 268 L 306 256 L 314 256"/></clipPath>
+                    <clipPath id="cut2"><path d="M 0 0 V 640 H 640 V 0 M 416 208 L 416 240 L 278 378 L 287 387 L 277 397 L 265 385 L 235 415 L 238 418 L 226 430 L 210 414 L 222 402 L 225 405 L 255 375 L 243 363 L 253 353 L 262 362" clip-path="url(#cut1)"/></clipPath>
+                    <clipPath id="cut3"><path d="M 0 0 V 640 H 640 V 0 M 230 214 L 372 356 L 372 364 L 433 425 A 16 16 0 0 0 413 445 L 351 383 L 354 374 L 347 367 L 347 355 L 218 226" clip-path="url(#cut2)"/></clipPath>
+                    <path fill="#80808080" d="M 320 180 L 416 308 A 48 48 0 0 1 320 380 L 360 460 L 280 460 L 320 380 A 48 48 0 0 1 224 308" clip-path="url(#cut3)"/>
+                    <path fill="#80808080" d="M 230 218 L 370 358 L 370 366 L 426 422 A 16 16 0 0 0 410 438 L 354 382 L 357 373 L 349 365 L 349 353 L 222 226 M 351 355 L 351 363 L 358 370 L 360 364 M 356 361 L 359 364 L 357.5 368.5 L 355 366 M 226 226 L 362 362 L 364 360 L 228 224" clip-path="url(#cut2)"/>
+                    <path fill="#80808080" d="M 222 406 L 234 418 L 226 426 L 214 414 M 257 377 L 263 383 L 233 413 L 227 407 M 253 357 L 283 387 L 277 393 L 247 363 M 414 214 L 414 238 L 276 376 L 272 372 L 408 236 L 408 220 M 406 222 L 406 234 L 270 370 L 264 364" clip-path="url(#cut1)"/>
+                    <path fill="#80808080" d="M 316 250 L 324 250 L 324 258 L 332 258 L 332 266 L 324 266 L 324 274 L 316 274 L 316 266 L 308 266 L 308 258 L 316 258 M 270 276 L 370 276 L 340 336 L 300 336 M 280 338 L 360 338 L 360 350 L 280 350"/>
+                </svg>
+            </content>
+        </page>
+        <page name="svg-gear">
+            <content lang="null">
+                <svg class="back-gear-svg" viewBox="0 0 640 640" xmlns="http://www.w3.org/2000/svg">
+                    <clipPath id="cut"><path d="M 0 0 V 640 H 640 V 0 M 202.758 445.850 A 171 171 0 0 0 213.880 455.361 L 194.137 480.544 A 233.583 233.583 0 0 1 202.758 445.850 M 203.441 449.190 A 232.165 232.165 0 0 0 197.439 472.953 L 211.196 455.785 A 173 173 0 0 1 203.441 449.190 M 218.254 458.678 A 233.583 233.583 0 0 0 213.742 494.141 A 203 203 0 0 1 211.896 493.001 A 235.461 235.461 0 0 1 215.071 466.253 L 201.081 485.753 A 203 203 0 0 1 199.324 484.479 L 199.324 484.479 M 222.731 461.854 A 171 171 0 0 0 224.245 462.881 A 231.707 231.707 0 0 0 221.492 489.447 L 233.554 468.698 A 171 171 0 0 0 235.141 469.609 L 219.353 497.443 A 233.583 233.583 0 0 1 222.731 461.854 M 239.958 472.241 A 171 171 0 0 0 241.582 473.084 L 226.993 501.564 A 203 203 0 0 1 225.066 500.565 L 225.066 500.565 M 246.507 475.508 A 233.583 233.583 0 0 0 248.827 511.182 A 203 203 0 0 1 232.834 504.440 L 232.834 504.440 M 244.824 483.550 L 235.636 503.539 A 201 201 0 0 0 246.513 508.159 A 234.980 234.980 0 0 1 244.824 483.550 M 255.601 511.460 A 201 201 0 0 0 278.396 517.669 L 277.984 519.626 A 203 203 0 0 1 254.964 513.355 L 254.964 513.355 M 289.963 489.357 A 171 171 0 0 0 306.291 491.453 L 306.132 493.446 A 173 173 0 0 1 291.438 491.640 L 289.304 504.463 A 186 186 0 0 0 305.096 506.405 L 304.936 508.399 A 188 188 0 0 1 288.976 506.436 L 286.842 519.260 A 201 201 0 0 0 303.900 521.357 L 303.741 523.351 A 203 203 0 0 1 284.375 520.865 L 284.375 520.865 M 311.769 491.803 A 171 171 0 0 0 313.597 491.881 A 229.418 229.418 0 0 0 320 506 A 229.418 229.418 0 0 0 326.403 491.881 A 171 171 0 0 0 328.231 491.803 A 229.870 229.870 0 0 1 321 507.997 A 237.378 237.378 0 0 0 329.762 523.766 A 203 203 0 0 1 327.594 523.859 A 237.863 237.863 0 0 1 320 510 A 237.863 237.863 0 0 1 312.406 523.859 A 203 203 0 0 1 310.238 523.766 A 237.378 237.378 0 0 0 319 507.997 A 229.870 229.870 0 0 1 311.769 491.803 M 333.709 491.453 A 171 171 0 0 0 350.037 489.357 L 355.625 520.865 A 203 203 0 0 1 353.486 521.233 L 348.562 491.640 A 173 173 0 0 1 343.070 492.464 L 347.048 522.199 A 203 203 0 0 1 344.895 522.475 L 341.234 492.699 A 173 173 0 0 1 335.713 493.289 L 338.422 523.167 A 203 203 0 0 1 336.259 523.351 L 336.259 523.351 M 355.425 488.312 A 233.583 233.583 0 0 0 378.833 515.332 A 203 203 0 0 1 376.752 515.947 A 235.461 235.461 0 0 1 358.945 495.736 L 364.138 519.168 A 203 203 0 0 1 362.016 519.626 L 362.016 519.626 M 360.778 487.096 A 171 171 0 0 0 374.834 483.025 L 375.472 484.921 A 173 173 0 0 1 363.944 488.359 A 233.102 233.102 0 0 0 383.761 509.564 L 385.036 513.355 A 233.583 233.583 0 0 1 360.778 487.096 M 380.009 481.192 A 171 171 0 0 0 381.720 480.545 L 387.102 494.546 A 186 186 0 0 0 399.903 489.070 L 393.493 475.508 A 171 171 0 0 0 395.143 474.717 L 409.124 503.502 A 203 203 0 0 1 407.166 504.440 L 400.757 490.878 A 188 188 0 0 1 387.820 496.413 L 393.203 510.414 A 203 203 0 0 1 391.173 511.182 L 391.173 511.182 M 400.042 472.241 A 171 171 0 0 0 401.657 471.381 L 416.849 499.545 A 203 203 0 0 1 414.934 500.565 L 414.934 500.565 M 406.446 468.698 A 171 171 0 0 0 420.265 459.753 L 438.919 485.753 A 203 203 0 0 1 437.149 487.009 L 419.922 462.449 A 173 173 0 0 1 409.047 469.488 L 424.399 495.262 A 203 203 0 0 1 422.529 496.363 L 422.529 496.363 M 424.674 456.482 A 233.583 233.583 0 0 0 457.459 470.735 A 203 203 0 0 1 455.847 472.189 A 235.461 235.461 0 0 1 431.056 461.657 L 445.863 480.544 A 203 203 0 0 1 444.148 481.874 L 444.148 481.874"/></clipPath>
+                    <path fill="#80808080" d="M 527.611 260.386 A 216 216 0 0 1 534.620 295.627 L 559.025 292.855 A 92.347 92.347 0 0 1 607.803 309.351 A 288 288 0 0 1 607.803 330.649 A 92.347 92.347 0 0 1 559.025 347.145 L 534.620 344.373 A 216 216 0 0 1 527.611 379.614 L 551.218 386.393 A 92.347 92.347 0 0 1 589.970 420.299 A 288 288 0 0 1 581.820 439.976 A 92.347 92.347 0 0 1 530.442 436.549 L 508.956 424.649 A 216 216 0 0 1 488.994 454.525 L 508.210 469.822 A 92.347 92.347 0 0 1 531.037 515.978 A 288 288 0 0 1 515.978 531.037 A 92.347 92.347 0 0 1 469.822 508.210 L 454.525 488.994 A 216 216 0 0 1 424.649 508.956 L 436.549 530.442 A 92.347 92.347 0 0 1 439.976 581.820 A 288 288 0 0 1 420.299 589.970 A 92.347 92.347 0 0 1 386.393 551.218 L 379.614 527.611 A 216 216 0 0 1 344.373 534.620 L 347.145 559.025 A 92.347 92.347 0 0 1 330.649 607.803 A 288 288 0 0 1 309.351 607.803 A 92.347 92.347 0 0 1 292.855 559.025 L 295.627 534.620 A 216 216 0 0 1 260.386 527.611 L 253.607 551.218 A 92.347 92.347 0 0 1 219.701 589.970 A 288 288 0 0 1 200.024 581.820 A 92.347 92.347 0 0 1 203.451 530.442 L 215.351 508.956 A 216 216 0 0 1 185.475 488.994 L 170.178 508.210 A 92.347 92.347 0 0 1 124.022 531.037 A 288 288 0 0 1 108.963 515.978 A 92.347 92.347 0 0 1 131.790 469.822 L 151.006 454.525 A 216 216 0 0 1 131.044 424.649 L 109.558 436.549 A 92.347 92.347 0 0 1 58.180 439.976 A 288 288 0 0 1 50.030 420.299 A 92.347 92.347 0 0 1 88.782 386.393 L 112.389 379.614 A 216 216 0 0 1 105.380 344.373 L 80.975 347.145 A 92.347 92.347 0 0 1 32.197 330.649 A 288 288 0 0 1 32.197 309.351 A 92.347 92.347 0 0 1 80.975 292.855 L 105.380 295.627 A 216 216 0 0 1 112.389 260.386 L 88.782 253.607 A 92.347 92.347 0 0 1 50.030 219.701 A 288 288 0 0 1 58.180 200.024 A 92.347 92.347 0 0 1 109.558 203.451 L 131.044 215.351 A 216 216 0 0 1 151.006 185.475 L 131.790 170.178 A 92.347 92.347 0 0 1 108.963 124.022 A 288 288 0 0 1 124.022 108.963 A 92.347 92.347 0 0 1 170.178 131.790 L 185.475 151.006 A 216 216 0 0 1 215.351 131.044 L 203.451 109.558 A 92.347 92.347 0 0 1 200.024 58.180 A 288 288 0 0 1 219.701 50.030 A 92.347 92.347 0 0 1 253.607 88.782 L 260.386 112.389 A 216 216 0 0 1 295.627 105.380 L 292.855 80.975 A 92.347 92.347 0 0 1 309.351 32.197 A 288 288 0 0 1 330.649 32.197 A 92.347 92.347 0 0 1 347.145 80.975 L 344.373 105.380 A 216 216 0 0 1 379.614 112.389 L 386.393 88.782 A 92.347 92.347 0 0 1 420.299 50.030 A 288 288 0 0 1 439.976 58.180 A 92.347 92.347 0 0 1 436.549 109.558 L 424.649 131.044 A 216 216 0 0 1 454.525 151.006 L 469.822 131.790 A 92.347 92.347 0 0 1 515.978 108.963 A 288 288 0 0 1 531.037 124.022 A 92.347 92.347 0 0 1 508.210 170.178 L 488.994 185.475 A 216 216 0 0 1 508.956 215.351 L 530.442 203.451 A 92.347 92.347 0 0 1 581.820 200.024 A 288 288 0 0 1 589.970 219.701 A 92.347 92.347 0 0 1 551.218 253.607 M 355 145.6 L 285 145.6 L 285 163.875 A 160 160 0 1 0 355 163.875" clip-path="url(#cut)"/>
+                </svg>
+            </content>
+        </page>
+        <page name="svg-logo">
+            <content lang="null"><svg width="560" height="64" viewBox="0 0 560 64" xmlns="http://www.w3.org/2000/svg"><path class="svg-theme" d="M 0 0 h 32 v 64 M 6 4 l 22 44 v -44 M 44 0 l 32 64 h -4 l -24 -48 v 48 h -4 M 56 0 h 4 l 24 48 v -48 h 4 v 64 M 100 0 h 4 v 64 h -4 M 116 0 l 32 64 h -32 M 120 16 v 44 h 22 M 160 60 h 44 v 4 h -44 M 216 0 h 36 v 4 h -32 v 26 h 32 v 4 h -32 v 26 h 32 v 4 h -36 M 264 0 h 4 l 14 28 l 14 -28 h 4 l -16 32 l 16 32 h -4 l -14 -28 l -14 28 h -4 l 16 -32 M 312 0 h 36 v 64 h -4 v -60 h -12 v 60 h -4 v -60 h -12 v 60 h -4 M 360 0 l 32 64 h -4 l -24 -48 v 48 h -4 M 372 0 h 32 v 4 h -26 l 26 52 v 8 M 416 0 h 4 v 30 h 28 v -30 h 4 v 64 h -4 v -30 h -28 v 30 h -4 M 464 0 h 4 v 64 h -4 M 480 0 h 36 v 64 h -4 v -60 h -28 v 60 h -4 M 528 0 l 32 64 h -4 l -24 -48 v 48 h -4"/></svg></content>
+        </page>
+        <page name="svg-lang">
+            <content lang="null"><svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path class="svg-theme" d="M 0 0 h 48 v 48 h -48 M 2 2 v 44 h 44 v -44 M 4 7 h 8 v -3 h 4 v 3 h 8 v 3 h -2 l -6 6 l 8 8 h -4 l -6 -6 l -6 6 h -4 l 8 -8 l -6 -6 h -2 M 10 10 l 4 4 l 4 -4 M 44 24 v 20 h -3 v -4 h -9 l -4 4 h -4 M 35 37 h 6 v -6"/></svg></content>
+        </page>
+        <page name="svg-tool">
+            <content lang="null"><svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path class="svg-theme" d="M 0 0 h 48 v 48 h -48 M 2 2 v 44 h 44 v -44 M 38 4 l -6 6 v 6 h 6 l 6 -6 v 8 l -6 6 h -8 l -20 20 h -6 v -6 l 20 -20 v -8 l 6 -6"/></svg></content>
+        </page>
+        <page name="svg-moon">
+            <content lang="null"><svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path class="svg-theme" d="M 42.75 38.981 A 24 24 0 1 1 42.75 9.019 A 15 15 0 1 0 42.75 38.981 M 36.25 6.943 A 21 21 0 1 0 36.25 41.057 A 18 18 0 0 1 36.25 6.943"/></svg></content>
+        </page>
+        <page name="svg-sun">
+            <content lang="null"><svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path class="svg-theme" d="M 12 24 A 12 12 0 0 0 36 24 A 12 12 0 0 0 12 24 M 15 24 A 9 9 0 0 1 33 24 A 9 9 0 0 1 15 24 M 39 22.5 L 48 22.5 L 48 25.5 L 39 25.5 M 33.546 12.333 L 39.91 5.969 L 42.031 8.09 L 35.667 14.454 M 22.5 9 L 22.5 0 L 25.5 0 L 25.5 9 M 12.333 14.454 L 5.969 8.09 L 8.09 5.969 L 14.454 12.333 M 9 25.5 L 0 25.5 L 0 22.5 L 9 22.5 M 14.454 35.667 L 8.09 42.031 L 5.969 39.91 L 12.333 33.546 M 25.5 39 L 25.5 48 L 22.5 48 L 22.5 39 M 35.667 33.546 L 42.031 39.91 L 39.91 42.031 L 33.546 35.667"/></svg></content>
+        </page>
+        <page name="svg-start">
+            <content lang="null"><svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path class="svg-theme" d="M 48 0 v 16 h -4 v -9 l -25 25 l -3 -3 l 25 -25 h -9 v -4 M 0 48 v -40 h 24 v 4 h -20 v 32 h 32 v -20 h 4 v 24"/></svg></content>
+        </page>
+        <page name="svg-change">
+            <content lang="null"><svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path class="svg-theme" d="M 0 6 h 12 v 4 h -12 M 0 14 h 12 v 4 h -12 M 0 22 h 12 v 4 h -12 M 0 30 h 12 v 4 h -12 M 0 38 h 12 v 4 h -12 M 32 0 L 35.777 18.334 L 48 18.334 L 38.111 29.666 L 41.889 48 L 32 36.669 L 22.111 48 L 25.889 29.666 L 16 18.334 L 28.223 18.334"/></svg></content>
+        </page>
+        <page name="svg-background">
+            <content lang="null"><svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path class="svg-theme" d="M 0 0 h 48 v 48 h -48 M 9 14 A 5 5 0 0 0 19 14 A 5 5 0 0 0 9 14 M 2 2 v 44 h 44 v -44 M 4 34 l 10 -10 l 5 5 l 10 -10 l 15 15 v 10 h -40"/></svg></content>
+        </page>
+        <page name="svg-top">
+            <content lang="null"><svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><path class="svg-theme" d="M 0 0 h 64 v 64 h -64 M 4 4 v 56 h 56 v -56 M 8 32 l 24 -24 l 24 24 v 6 l -24 -24 l -24 24 M 8 50 l 24 -24 l 24 24 v 6 l -24 -24 l -24 24"/></svg></content>
+        </page>
+        <page name="svg-pin">
+            <content lang="null"><svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path class="svg-text" d="M 0 16 h 8 l 12 -12 l -2 -2 l 2 -2 l 12 12 l -2 2 l -2 -2 l -12 12 v 8 l -7.5 -7.5 l -7.5 7.5 h -1 v -1 l 7.5 -7.5"/></svg></content>
+        </page>
+        <page name="svg-comment">
+            <content lang="null"><svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path class="svg-theme" d="M 0 0 h 32 v 24 h -16 l -8 8 v -8 h -8 M 2 2 v 20 h 8 v 5 l 5 -5 h 15 v -20 M 6 6 h 20 v 2 h -20 M 6 11 h 20 v 2 h -20 M 6 16 h 20 v 2 h -20"/></svg></content>
+        </page>
+        <page name="svg-article-all">
+            <content lang="null"><svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><path class="svg-text" d="M 0 0 h 60 v 60 h -60 M 8 8 v 44 h 44 v -44 M 68 0 h 60 v 60 h -60 M 76 8 v 44 h 44 v -44 M 0 68 h 60 v 60 h -60 M 8 76 v 44 h 44 v -44 M 68 68 h 60 v 60 h -60 M 76 76 v 44 h 44 v -44"/></svg></content>
+        </page>
+        <page name="svg-article-game">
+            <content lang="null"><svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><path class="svg-text" d="M 34 16 h 60 a 34 34 0 0 1 34 34 v 42 a 20 20 0 0 1 -40 0 v -8 h -48 v 8 a 20 20 0 0 1 -40 0 v -42 a 34 34 0 0 1 34 -34 M 34 24 a 26 26 0 0 0 -26 26 v 42 a 12 12 0 0 0 24 0 v -16 h 64 v 16 a 12 12 0 0 0 24 0 v -42 a 26 26 0 0 0 -26 -26 M 16 44 h 12 v -12 h 12 v 12 h 12 v 12 h -12 v 12 h -12 v -12 h -12 M 94 32 a 6 6 0 0 1 0 12 a 6 6 0 0 1 0 -12 M 82 44 a 6 6 0 0 1 0 12 a 6 6 0 0 1 0 -12 M 94 56 a 6 6 0 0 1 0 12 a 6 6 0 0 1 0 -12 M 106 44 a 6 6 0 0 1 0 12 a 6 6 0 0 1 0 -12"/></svg></content>
+        </page>
+        <page name="svg-article-story">
+            <content lang="null"><svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><path class="svg-text" d="M 0 16 h 16 v -16 a 148 148 0 0 1 48 8 a 148 148 0 0 1 48 -8 v 16 h 16 v 104 h -16 a 148 148 0 0 0 -48 8 a 148 148 0 0 0 -48 -8 h -16 M 8 24 v 88 h 8 a 148 148 0 0 1 48 8 a 148 148 0 0 1 48 -8 h 8 v -88 h -8 v 80 a 148 148 0 0 0 -48 8 a 148 148 0 0 0 -48 -8 v -80 M 24 8 v 88 a 111 111 0 0 1 36 6 v -88 a 111 111 0 0 0 -36 -6 M 68 14 v 88 a 111 111 0 0 1 36 -6 v -88 a 111 111 0 0 0 -36 6"/></svg></content>
+        </page>
+        <page name="svg-article-math">
+            <content lang="null"><svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><path class="svg-text" d="M 0 26 h 26 v -26 h 8 v 26 h 26 v 8 h -26 v 26 h -8 v -26 h -26 M 68 26 h 60 v 8 h -60 M 6 68 l 24 24 l 24 -24 l 6 6 l -24 24 l 24 24 l -6 6 l -24 -24 l -24 24 l -6 -6 l 24 -24 l -24 -24 M 68 94 h 60 v 8 h -60 M 98 68 a 6 6 0 0 1 0 12 a 6 6 0 0 1 0 -12 M 98 116 a 6 6 0 0 1 0 12 a 6 6 0 0 1 0 -12"/></svg></content>
+        </page>
+        <page name="svg-article-other">
+            <content lang="null"><svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><path class="svg-text" d="M 64 0 a 64 64 0 0 1 0 128 a 64 64 0 0 1 0 -128 M 64 8 a 56 56 0 0 0 0 112 a 56 56 0 0 0 0 -112 M 32 58 a 6 6 0 0 1 0 12 a 6 6 0 0 1 0 -12 M 64 58 a 6 6 0 0 1 0 12 a 6 6 0 0 1 0 -12 M 96 58 a 6 6 0 0 1 0 12 a 6 6 0 0 1 0 -12"/></svg></content>
+        </page>
+        <page name="svg-left">
+            <content lang="null"><svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path class="svg-left" style="fill:#ffffff;" d="M 7 16 l 14 -14 l 4 4 l -10 10 l 10 10 l -4 4"/></svg></content>
+        </page>
+        <page name="svg-right">
+            <content lang="null"><svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path class="svg-right" style="fill:#ffffff;" d="M 25 16 l -14 -14 l -4 4 l 10 10 l -10 10 l 4 4"/></svg></content>
+        </page>
+        <page name="svg-back">
+            <content lang="null"><svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path style="fill:#ffffff;" d="M 6 2 l 10 10 l 10 -10 l 4 4 l -10 10 l 10 10 l -4 4 l -10 -10 l -10 10 l -4 -4 l 10 -10 l -10 -10"/></svg></content>
+        </page>
+        <page name="svg-restore">
+            <content lang="null"><svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><path class="svg-theme" d="M 0 0 h 64 v 64 h -64 M 4 4 v 56 h 56 v -56 M 12 32 A 20 20 0 0 1 46.142 17.858 L 48.971 15.029 V 26.343 H 37.657 L 40.485 23.515 A 12 12 0 0 0 20 32 M 52 32 A 20 20 0 0 1 17.858 46.142 L 15.029 48.971 V 37.657 H 26.343 L 23.515 40.485 A 12 12 0 0 0 44 32"/></svg></content>
+        </page>
+        <page name="svg-twitter">
+            <content lang="null"><svg width="48" height="48" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 248 204"><path fill="#1d9bf0" d="M221.95 51.29c.15 2.17.15 4.34.15 6.53 0 66.73-50.8 143.69-143.69 143.69v-.04c-27.44.04-54.31-7.82-77.41-22.64 3.99.48 8 .72 12.02.73 22.74.02 44.83-7.61 62.72-21.66-21.61-.41-40.56-14.5-47.18-35.07 7.57 1.46 15.37 1.16 22.8-.87-23.56-4.76-40.51-25.46-40.51-49.5v-.64c7.02 3.91 14.88 6.08 22.92 6.32C11.58 63.31 4.74 33.79 18.14 10.71c25.64 31.55 63.47 50.73 104.08 52.76-4.07-17.54 1.49-35.92 14.61-48.25 20.34-19.12 52.33-18.14 71.45 2.19 11.31-2.23 22.15-6.38 32.07-12.26-3.77 11.69-11.66 21.62-22.2 27.93 10.01-1.18 19.79-3.86 29-7.95-6.78 10.16-15.32 19.01-25.2 26.16z"/></svg></content>
+        </page>
+        <page name="svg-bluesky">
+            <content lang="null"><svg width="48" height="48" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 600 530"><path d="m135.72 44.03c66.496 49.921 138.02 151.14 164.28 205.46 26.262-54.316 97.782-155.54 164.28-205.46 47.98-36.021 125.72-63.892 125.72 24.795 0 17.712-10.155 148.79-16.111 170.07-20.703 73.984-96.144 92.854-163.25 81.433 117.3 19.964 147.14 86.092 82.697 152.22-122.39 125.59-175.91-31.511-189.63-71.766-2.514-7.3797-3.6904-10.832-3.7077-7.8964-0.0174-2.9357-1.1937 0.51669-3.7077 7.8964-13.714 40.255-67.233 197.36-189.63 71.766-64.444-66.128-34.605-132.26 82.697-152.22-67.108 11.421-142.55-7.4491-163.25-81.433-5.9562-21.282-16.111-152.36-16.111-170.07 0-88.687 77.742-60.816 125.72-24.795z" fill="#1185fe"/></svg></content>
+        </page>
+        <page name="svg-fandom">
+            <content lang="null"><svg width="48" height="48" xmlns="http://www.w3.org/2000/svg" id="wds-brand-fandom-logomark" viewBox="0 0 174 242"><path fill="#FA005A" d="M166.935 118.154L50.108 1.273C49.504.67 48.735.259 47.898.093c-.837-.166-1.705-.08-2.493.247-.788.327-1.461.88-1.935 1.59-.474.71-.727 1.546-.727 2.4v98.276L7.365 67.22c-.604-.604-1.373-1.014-2.21-1.18-.837-.166-1.704-.08-2.492.247-.789.327-1.462.88-1.936 1.59-.474.71-.727 1.545-.727 2.4v101.487c-.003 3.172.62 6.312 1.833 9.242 1.214 2.929 2.993 5.59 5.237 7.83l46.037 46.099c4.528 4.53 10.666 7.078 17.068 7.085h33.68c6.4-.003 12.537-2.547 17.063-7.075l46.027-46.099c2.239-2.242 4.014-4.904 5.225-7.833 1.21-2.93 1.832-6.069 1.83-9.239v-36.533c.002-3.173-.621-6.315-1.834-9.247-1.212-2.932-2.989-5.596-5.231-7.84z"/><path fill="#FFC500" d="M131.297 160.901c.001 1.915-.757 3.754-2.108 5.111l-37.11 37.3c-.672.677-1.472 1.215-2.354 1.582-.88.366-1.826.555-2.78.555-.954 0-1.9-.189-2.78-.555-.882-.367-1.682-.905-2.355-1.582l-36.99-37.3c-1.352-1.351-2.114-3.184-2.117-5.096v-14.191c0-.951.19-1.892.554-2.77.366-.878.9-1.675 1.574-2.346l13.317-13.328c.672-.675 1.47-1.209 2.35-1.574.879-.365 1.82-.553 2.772-.553.952 0 1.894.188 2.773.553.879.365 1.677.899 2.35 1.574l18.624 18.645 18.596-18.65c.672-.675 1.47-1.209 2.349-1.574.879-.365 1.821-.553 2.773-.553.951 0 1.893.188 2.772.553.879.365 1.677.899 2.349 1.574l13.318 13.328c.673.671 1.207 1.469 1.571 2.347.364.877.552 1.819.552 2.769v14.181z"/></svg></content>
+        </page>
+    </body>
+</html>
