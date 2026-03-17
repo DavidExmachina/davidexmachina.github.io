@@ -147,8 +147,8 @@ function get_series(id){
 function get_now(){
     let timedata, t1 = null, t2;
     try {
-        timedata = JSON.parse(read_file("https://worldtimeapi.org/api/timezone/Etc/UTC", true));
-        t1 = timedata.unixtime * 1000 + Number(timedata.utc_datetime.split(".")[1].slice(0, 3));
+        timedata = JSON.parse(read_file("https://timeapi.io/api/v1/time/current/utc", true));
+        t1 = new Date(timedata.utc_time).getTime();
     } catch {}
     t2 = Date.now();
     if (t1 === null) data.time.now = t2;
