@@ -147,8 +147,8 @@ function get_series(id){
 function get_now(){
     let timedata, t1 = null, t2;
     try {
-        timedata = JSON.parse(read_file("https://timeapi.io/api/v1/time/current/utc", true));
-        t1 = new Date(timedata.utc_time).getTime();
+        timedata = read_file("https://www.cloudflare.com/cdn-cgi/trace", true);
+        t1 = Number(timedata.split("\n")[3].slice(3, -4)) * 1000;
     } catch {}
     t2 = Date.now();
     if (t1 === null) data.time.now = t2;
