@@ -193,7 +193,7 @@ function get_timezone(){return new Date().getTimezoneOffset() * -60000;}
 
 function read_time(t, forced = false){
     let a = replaceall(replaceall(replaceall(t, "-", " "), ":", " "), ".", " ").split(" ");
-    if ((data.save.special === "af2026" || !("noaf" in data.temp)) && !forced){
+    if ((data.states.af === 2026) && !forced){
         let r = Math.random();
         a[0] = Number(a[0]);
         if (0.00 <= r && r < 0.50) a[0] += Math.floor(r * 4000 - 2000, 0);
@@ -270,7 +270,7 @@ function delta_text(t, ago){
 
 function time_text(t){
     let pt = time_param(t + get_timezone()), dt;
-    if (data.save.special === "af2026" || !("noaf" in data.temp)){
+    if (data.states.af === 2026){
         let d = data.time.now + data.temp.te.days * 86400000;
         if (d >= t) dt = delta_text(time_delta(d, t), false);
         else dt = delta_text(time_delta(t, d), true);
@@ -1080,18 +1080,18 @@ function update(){
 
 function change_color(v, c){document.querySelector(":root").style.setProperty("--" + v, c);}
 
-function update_setting_time(t){
+function update_setting_time(t1, t2){
     if (data.states.setting === 1 && data.animation.lang < 200){
-        data.animation.lang = Math.min(data.animation.lang + t, 200);
+        data.animation.lang = Math.min(data.animation.lang + t1 - t2, 200);
     }
     if (data.states.setting !== 1 && data.animation.lang > 0){
-        data.animation.lang = Math.max(data.animation.lang - t, 0);
+        data.animation.lang = Math.max(data.animation.lang + t2 - t1, 0);
     }
     if (data.states.setting === 2 && data.animation.tool < 200){
-        data.animation.tool = Math.min(data.animation.tool + t, 200);
+        data.animation.tool = Math.min(data.animation.tool + t1 - t2, 200);
     }
     if (data.states.setting !== 2 && data.animation.tool > 0){
-        data.animation.tool = Math.max(data.animation.tool - t, 0);
+        data.animation.tool = Math.max(data.animation.tool + t2 - t1, 0);
     }
     document.getElementById("lang-window").style.opacity = data.animation.lang / 200;
     document.getElementById("lang-window").style.display = data.animation.lang ? "block" : "none";
@@ -1099,25 +1099,16 @@ function update_setting_time(t){
     document.getElementById("tool-window").style.display = data.animation.tool ? "block" : "none";
 }
 
-function update_bright_time(t){
+function update_bright_time(t1, t2){
     if (data.save.bright && data.animation.bright < 500){
-        data.animation.bright = Math.min(data.animation.bright + t, 500);
+        data.animation.bright = Math.min(data.animation.bright + t1 - t2, 500);
     }
     if (!data.save.bright && data.animation.bright > 0){
-        data.animation.bright = Math.max(data.animation.bright - t, 0);
+        data.animation.bright = Math.max(data.animation.bright + t2 - t1, 0);
     }
     let c = intdiv(data.animation.bright * 64, 125);
-    change_color("theme-back", color_code(c, c, c));
-    change_color("theme-font", color_code(256 - c, 256 - c, 256 - c));
-    change_color("theme-ui1", color_code(0, 256 - c / 2, 256));
-    change_color("theme-ui2", color_code(128 - c / 2, 256 - c * 3 / 4, 256 - c / 2));
-    change_color("theme-window1", color_code(0, 96 + c * 3 / 8, 192, 192));
-    change_color("theme-window2", color_code(c, c, c, 192));
-    change_color("theme-transition1", color_code(0, 256 - c / 2, 256, 0));
-    change_color("theme-transition2", color_code(0, 256 - c / 2, 256, 64));
-    change_color("theme-transition3", color_code(0, 256 - c / 2, 256, 128));
-    if (data.save.special === "af2025"){
-        let s = function (t, r, g, b, a = 255){
+    if (data.states.af === 2025){
+        let s = function (t0, r, g, b, a = 255){
             if (r === g && g === b) return color_code(r, g, b);
             let r2 = Math.round(r * 8), g2 = Math.round(g * 8), b2 = Math.round(b * 8);
             let mn = Math.min(r2, g2, b2), mx = Math.max(r2, g2, b2), m = mx - mn, h;
@@ -1125,7 +1116,7 @@ function update_bright_time(t){
             if (mx === g2 && mx !== b2) h = b2 - r2 + m * 2;
             if (mx === b2 && mx !== r2) h = r2 - g2 + m * 4;
             if (h < 0) h += m * 6;
-            h = (h * 500 + m * t) % (m * 3000);
+            h = (h * 500 + m * t0) % (m * 3000);
             let r3 = mn * 500, g3 = mn * 500, b3 = mn * 500;
             if (0 <= h && h < m * 500){r3 += m * 500; g3 += h;}
             if (m * 500 <= h && h < m * 1000){r3 += m * 1000 - h; g3 += m * 500;}
@@ -1135,6 +1126,8 @@ function update_bright_time(t){
             if (m * 2500 <= h && h < m * 3000){r3 += m * 500; b3 += m * 3000 - h;}
             return color_code(intdiv(r3, 4000), intdiv(g3, 4000), intdiv(b3, 4000), a);
         }
+        change_color("theme-back", s(t1, c, c, c));
+        change_color("theme-font", s(t1, 256 - c, 256 - c, 256 - c));
         change_color("theme-ui1", s(t1, 0, 256 - c / 2, 256));
         change_color("theme-ui2", s(t1, 128 - c / 2, 256 - c * 3 / 4, 256 - c / 2));
         change_color("theme-window1", s(t1, 0, 96 + c * 3 / 8, 192, 192));
@@ -1142,15 +1135,25 @@ function update_bright_time(t){
         change_color("theme-transition1", s(t1, 0, 256 - c / 2, 256, 0));
         change_color("theme-transition2", s(t1, 0, 256 - c / 2, 256, 64));
         change_color("theme-transition3", s(t1, 0, 256 - c / 2, 256, 128));
+        return;
     }
+    change_color("theme-back", color_code(c, c, c));
+    change_color("theme-font", color_code(256 - c, 256 - c, 256 - c));
+    change_color("theme-ui1", color_code(0, 256 - c / 2, 256));
+    change_color("theme-ui2", color_code(128 - c / 2, 256 - c * 3 / 4, 256 - c / 2));
+    change_color("theme-window1", color_code(0, 96 + c * 3 / 8, 192, 192));
+    change_color("theme-window2", color_code(c, c, c, 192));
+    change_color("theme-transition1", color_code(0, 256 - c / 2, 256, 0));
+    change_color("theme-transition2", color_code(0, 256 - c / 2, 256, 64));
+    change_color("theme-transition3", color_code(0, 256 - c / 2, 256, 128));
 }
 
-function update_background_time(t){
+function update_background_time(t1, t2){
     if (data.save.background && data.animation.background < 500){
-        data.animation.background = Math.min(data.animation.background + t, 500);
+        data.animation.background = Math.min(data.animation.background + t1 - t2, 500);
     }
     if (!data.save.background && data.animation.background > 0){
-        data.animation.background = Math.max(data.animation.background - t, 0);
+        data.animation.background = Math.max(data.animation.background + t2 - t1, 0);
     }
     document.querySelector(".back-center-svg").style.opacity = data.animation.background / 500;
     document.querySelector(".back-gear-svg").style.opacity = data.animation.background / 500;
@@ -1160,7 +1163,7 @@ function update_background_time(t){
 }
 
 function update_time(t1, t2){
-    if (data.save.special === "af2026" || !("noaf" in data.temp)){
+    if (data.states.af === 2026){
         data.temp.te.interval = Math.max(data.temp.te.interval - t1 + t2, 0);
         data.temp.te.now += (t1 - t2) * data.temp.te.speed;
         if (!data.temp.te.interval){
@@ -1176,16 +1179,16 @@ function update_time(t1, t2){
             if (0.95 <= r && r < 1.00) data.temp.te.speed = r * 1000 - 900;
         }
         update_animation_time(data.temp.te.now, data.temp.te.then);
-        update_setting_time(data.temp.te.now - data.temp.te.then);
-        update_bright_time(data.temp.te.now - data.temp.te.then);
-        update_background_time(data.temp.te.now - data.temp.te.then);
+        update_setting_time(data.temp.te.now, data.temp.te.then);
+        update_bright_time(data.temp.te.now, data.temp.te.then);
+        update_background_time(data.temp.te.now, data.temp.te.then);
         data.temp.te.then = data.temp.te.now;
         return;
     }
     update_animation_time(t1, t2);
-    update_setting_time(t1 - t2);
-    update_bright_time(t1 - t2);
-    update_background_time(t1 - t2);
+    update_setting_time(t1, t2);
+    update_bright_time(t1, t2);
+    update_background_time(t1, t2);
 }
 
 // SET FUNCTION
@@ -1664,8 +1667,14 @@ function set_setting(initialize = false){
 }
 
 function set_special(){
-    if (get_para("noaf") === "1") data.temp.noaf = true;
-    if (data.save.special === "af2024"){
+    if (get_para("noaf") === null){
+        let param = time_param(data.time.now);
+        if (param[1] === 4 && param[2] === 1) data.states.af = param[0];
+        if (data.save.special === "af2024") data.states.af = 2024;
+        if (data.save.special === "af2025") data.states.af = 2025;
+        if (data.save.special === "af2026") data.states.af = 2026;
+    }
+    if (data.states.af === 2024){
         let er, k1, k2, a, b;
         if (data.temp.er === undefined){
             er = function (a){
@@ -1729,7 +1738,7 @@ function set_special(){
         data.temp.es.currentTime = 0;
         data.temp.es.play();
     }
-    if (data.save.special === "af2026" || !("noaf" in data.temp)){
+    if (data.states.af === 2026){
         if (data.temp.te === undefined){
             data.temp.te = {};
             let r = Math.random();
@@ -2013,6 +2022,7 @@ let data = {
         home_right  : false,
         stop_behind : false,
         setting     : 0,
+        af          : null,
     },
     animation   : {
         start           : false,
