@@ -90,6 +90,4 @@ let check = function (){
     if (elm) elm.onload = start;
 }
 
-
-
 window.onload = function (){setTimeout(check, 500);};
