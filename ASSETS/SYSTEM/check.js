@@ -63,6 +63,8 @@ let start = function (){main();}
 let check = function (){
     let content = document.body.innerHTML, c = [], archive = false, elm, t0;
     for (let i = 0; i < content.length; i++) if (!c.includes(content[i])) c.push(content[i]);
+    console.log(content);
+    console.log(c.filter((x) => (x !== " " && x !== "\n")));
     if (c.filter((x) => (x !== " " && x !== "\n"))) for (let i = 0; i < 1; i++){
         if (!content.includes("<!-- Code injected by live-server -->")){archive = true; break;}
         if (document.body.children.length !== 1){archive = true; break;}
