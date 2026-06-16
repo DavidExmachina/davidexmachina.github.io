@@ -462,7 +462,7 @@ function occupied_space(branch){
 function available_space(branch){
     let result = [], p;
     for (let i = 0; i < branch.length; i++){
-        result = result.filter((x) => x !== `${branch[i][0]},${branch[i][1]}`);
+        result = result.filter(x => (x !== `${branch[i][0]},${branch[i][1]}`));
         for (let j = 1; j < branch[i][3]; j++){
             p = `${branch[i][0] + Math.abs(branch[i][2]) + j},${branch[i][1] + branch[i][2]}`;
             if (!result.includes(p)) result.push(p);
@@ -1008,7 +1008,7 @@ async function update_math(elements = null, retry = 5){
     try {await MathJax.typesetPromise(elements);}
     catch {
         if (!retry) return;
-        await new Promise(r => setTimeout(r, 1000));
+        await new Promise(x => setTimeout(x, 1000));
         await update_math(elements, retry - 1);
     }
 }
@@ -1018,7 +1018,7 @@ async function update_math_gradual(elements = null, id = null, n = 10){
     if (get_section() != 3) return;
     if (id !== null && id !== get_id()) return;
     await update_math(elements.slice(0, n));
-    await new Promise(r => setTimeout(r, 10));
+    await new Promise(x => setTimeout(x, 10));
     await update_math_gradual(elements.slice(n), id, n);
 }
 
@@ -1300,10 +1300,10 @@ function set_content(){
 
 function set_pagination(){
     let a, b, now = get_page(), max = get_max_page(), numbers = [], mid, page;
-    if (max < 8) numbers = Array.from({length: max}, function (x, y){return y + 1});
+    if (max < 8) numbers = Array.from({length: max}, (x, y) => y + 1);
     else {
         mid = Math.min(Math.max(now, 4), max - 3);
-        numbers = [1].concat(Array.from({length: 5}, function (x, y){return y + mid - 2}), [max]);
+        numbers = [1].concat(Array.from({length: 5}, (x, y) => y + mid - 2), [max]);
     }
     for (let i = 0; i < numbers.length; i++){
         page = document.createElement("div");
@@ -2017,7 +2017,7 @@ function change_home_right(){
 
 function check_comment(id){
     if (data.states.comment.includes(id)){
-        data.states.comment = data.states.comment.filter(function (n){return n !== id});
+        data.states.comment = data.states.comment.filter(n => (n !== id));
     } else data.states.comment.push(id);
     data.states.comment.sort();
     refresh();
@@ -2187,5 +2187,5 @@ function interval(){
 
 window.onresize = update;
 window.onscroll = update_top;
-window.onpopstate = function (){refresh(2)};
+window.onpopstate = () => refresh(2);
 setInterval(interval, 1);

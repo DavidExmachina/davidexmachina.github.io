@@ -63,7 +63,7 @@ let start = function (){main();}
 let check = function (){
     let content = document.body.innerHTML, c = [], archive = false, elm, t0;
     for (let i = 0; i < content.length; i++) if (!c.includes(content[i])) c.push(content[i]);
-    if (c.filter((x) => (x !== " " && x !== "\n")).length) for (let i = 0; i < 1; i++){
+    if (c.filter(x => (x !== " " && x !== "\n")).length) for (let i = 0; i < 1; i++){
         if (!content.includes("<!-- Code injected by live-server -->")){archive = true; break;}
         if (document.body.children.length !== 1){archive = true; break;}
         if (document.body.children[0].tagName !== "SCRIPT"){archive = true; break;}
@@ -74,7 +74,7 @@ let check = function (){
         document.body.style.color = "#ff0000";
         for (let i = 0; i < 7; i++){
             t0 = atob(t.split("::")[lan()].split(":")[i]);
-            t0 = Uint8Array.from(t0, (x) => x.charCodeAt(0));
+            t0 = Uint8Array.from(t0, x => x.charCodeAt(0));
             t0 = new TextDecoder().decode(t0);
             document.body.appendChild(txt(t0, i === 0 ? 8 : i === 4 ? 1 : 0));
         }
@@ -90,4 +90,4 @@ let check = function (){
     if (elm) elm.onload = start;
 }
 
-window.onload = function (){setTimeout(check, 500);};
+window.onload = () => setTimeout(check, 500);
