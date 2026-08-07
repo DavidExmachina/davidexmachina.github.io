@@ -1,0 +1,7 @@
+User-agent: ia_archiver
+User-agent: CCBot
+User-agent: archive.org_bot
+Disallow: /
+
+User-agent: *
+Disallow:
