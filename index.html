@@ -2,60 +2,14 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="author" content="David_Exmachina">
+        <meta name="description" content="David_Exmachina's Official Website">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noarchive">
-        <title></title>
+        <title>David_Exmachina</title>
+        <link rel="icon" href="favicon.ico?v=2">
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="ASSETS/SYSTEM/check.js"></script>
     </head>
-    <body>
-        <div></div>
-        <script>
-            "use strict";
-            function get_lang(){
-                let d = JSON.parse(localStorage.getItem("data"));
-                if (d !== null) return d.lang;
-                let lan = navigator.language.toLowerCase();
-                if (lan.includes("ja")) return 3;
-                if (!lan.includes("zh")) return 0;
-                if (lan.includes("hant")) return 2;
-                if (lan.includes("hk")) return 2;
-                if (lan.includes("mo")) return 2;
-                if (lan.includes("tw")) return 2;
-                return 1;
-            }
-            let lang = get_lang();
-            let words = [
-                [
-                    "Welcome to David_Exmachina's official website!",
-                    "Unfortunately, this website is currently <b>UNDER MAINTENANCE</b>.",
-                    "I deeply apologize for the inconvenience.",
-                    "Please wait for a while (Usually several minutes) and then refresh the page.",
-                ],
-                [
-                    "欢迎来到David_Exmachina的官方网站！",
-                    "遗憾的是，该网站目前<b>正在维护</b>。",
-                    "对您带来的不便，我深感抱歉。",
-                    "请稍等片刻（通常是几分钟）然后刷新该页面。",
-                ],
-                [
-                    "歡迎來到David_Exmachina的官方網站！",
-                    "遺憾的是，該網站目前<b>正在維護</b>。",
-                    "對您帶來的不便，我深感抱歉。",
-                    "請稍等片刻（通常是幾分鐘）然後刷新該頁面。",
-                ],
-                [
-                    "David_Exmachinaの公式HPへようこそ！",
-                    "残念ながら、このサイトは今<b>メンテナンス中</b>です。",
-                    "ご迷惑をおかけして誠に申し訳ございませんでした。",
-                    "しばらく（通常は数分間）待ってから、このページを更新してみてください。",
-                ],
-            ];
-            let div = document.getElementsByTagName("div")[0], p;
-            document.title = words[lang][1].split("<b>")[1].split("</b>")[0];
-            for (let i = 0; i < 4; i++){
-                p = document.createElement("p");
-                p.innerHTML = words[lang][i];
-                div.appendChild(p);
-            }
-        </script>
-    </body>
+    <body></body>
 </html>
